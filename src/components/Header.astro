@@ -32,11 +32,9 @@
 <header class="bg-[#f5efea] backdrop-blur-[2px] sticky top-0 z-50">
   <!-- Mobile Header (SP: ~768px) - Figmaのバリアント2準拠: W:375px H:61px -->
   <div class="lg:hidden">
-    <div class="flex items-center justify-between w-[375px] mx-auto px-[24px] py-[16px] h-[61px]" data-name="プロパティ1=バリアント2" data-node-id="124:3949">
+    <div class="flex items-center justify-between w-[375px] mx-auto px-[24px] py-[16px] h-[72px]" data-name="プロパティ1=バリアント2" data-node-id="124:3949">
       <!-- Logo - Figma準拠: W:70.688px H:28px -->
-      <div class="text-[#7e9ba0] text-[20px] font-bold font-['Shippori_Mincho'] tracking-[2px] leading-[28px] w-[70.688px] h-[28px]">
-        LOGO
-      </div>
+      <img src="/images/logo.png" alt="LOGO" class="h-[40px] w-auto flex-shrink-0" />
       
       <!-- Icon Group (Search + Menu) - Figma準拠: W:155px -->
       <div class="flex items-center gap-[24px] w-[155px] justify-end">
@@ -54,37 +52,48 @@
       </div>
     </div>
     
-    <!-- Mobile Menu (Hidden by default) - Figma準拠のフルスクリーンメニュー -->
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-[#f5efea] z-50">
-      <!-- Header area with logo -->
-      <div class="flex items-center justify-between px-4 py-4 h-[65px] border-b border-[#436c5e] border-opacity-20">
-        <div class="text-[#7e9ba0] text-xl font-bold font-['Shippori_Mincho'] tracking-[2px] leading-none">
-          LOGO
-        </div>
-        
-        <!-- Close button -->
-        <button id="mobile-menu-close" class="w-6 h-6 text-[#436c5e]" aria-label="メニューを閉じる">
-          <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-      
-      <!-- Menu content -->
-      <div class="flex flex-col items-center justify-center flex-1 px-4 space-y-8">
-        <nav class="flex flex-col items-center space-y-6">
-          <a href="/" class="text-[#436c5e] text-lg tracking-[1.8px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity py-3">ROOM</a>
-          <a href="/services" class="text-[#436c5e] text-lg tracking-[1.8px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity py-3">SERVICE</a>
-          <a href="/faq" class="text-[#436c5e] text-lg tracking-[1.8px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity py-3">FAQ</a>
-          <a href="/access" class="text-[#436c5e] text-lg tracking-[1.8px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity py-3">ACCESS</a>
-          <a href="/contact" class="text-[#436c5e] text-lg tracking-[1.8px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity py-3">CONTACT</a>
-        </nav>
-        
-        <!-- Reservation Button - Figma準拠 -->
-        <div class="pt-8">
-          <a href="/contact" class="bg-white border border-[#436c5e] text-[#436c5e] px-12 py-3 text-base tracking-[1.6px] font-['Shippori_Mincho'] hover:bg-[#436c5e] hover:text-white transition-all duration-300 rounded-md inline-block">
-            ご予約
-          </a>
+    <!-- Mobile Menu (Hidden by default) - Figma準拠のオープンメニュー -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-[#F5EFEA] z-50">
+      <div class="w-[375px] h-[669px] mx-auto pt-[24px] pb-[34px] bg-[#F5EFEA]">
+        <div class="w-[327px] mx-auto">
+          <!-- Top Close Icon -->
+          <div class="flex items-center justify-end h-[28px]">
+            <button id="mobile-menu-close" class="w-[22px] h-[20px] text-[#436c5e]" aria-label="メニューを閉じる">
+              <svg class="w-full h-full" viewBox="0 0 22 20" fill="none" stroke="currentColor">
+                <path d="M2 2L20 18" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M20 2L2 18" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Logo -->
+          <img src="/images/logo.png" alt="LOGO" class="mt-[40px] h-[40px] w-auto flex-shrink-0" />
+
+          <!-- Reservation Button -->
+          <div class="mt-[40px]">
+            <a href="/reservation" class="bg-white text-[#436c5e] rounded-[6px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 w-[327px] h-[50px] flex items-center justify-center font-['Shippori_Mincho'] text-[16px] leading-[26px] tracking-[1.6px] font-medium">
+              ご予約はこちら
+            </a>
+          </div>
+
+          <!-- Navigation -->
+          <nav class="mt-[40px] flex flex-col items-start space-y-[24px] text-[#436c5e]">
+            <a href="/" class="text-[14px] leading-[20px] tracking-[1.4px] font-['Shippori_Mincho'] font-medium hover:opacity-60 transition-opacity">ROOM</a>
+            <div class="w-[317px] border-t-[1.5px] border-[#436c5e]"></div>
+            <a href="/services" class="text-[14px] leading-[20px] tracking-[1.4px] font-['Shippori_Mincho'] font-medium hover:opacity-60 transition-opacity">SERVICE</a>
+            <div class="w-[317px] border-t-[1.5px] border-[#436c5e]"></div>
+            <a href="/faq" class="text-[14px] leading-[20px] tracking-[1.4px] font-['Shippori_Mincho'] font-medium hover:opacity-60 transition-opacity">FAQ</a>
+            <div class="w-[317px] border-t-[1.5px] border-[#436c5e]"></div>
+            <a href="/access" class="text-[14px] leading-[20px] tracking-[1.4px] font-['Shippori_Mincho'] font-medium hover:opacity-60 transition-opacity">ACCESS</a>
+            <div class="w-[317px] border-t-[1.5px] border-[#436c5e]"></div>
+            <a href="/contact" class="text-[14px] leading-[20px] tracking-[1.4px] font-['Shippori_Mincho'] font-medium hover:opacity-60 transition-opacity">CONTACT</a>
+            <div class="w-[317px] border-t-[1.5px] border-[#436c5e]"></div>
+          </nav>
+
+          <!-- Bottom Search Icon -->
+          <div class="mt-[40px] flex justify-end">
+            <img src="/images/icons/search-icon.svg" alt="Search" class="w-[29px] h-[29px]" />
+          </div>
         </div>
       </div>
     </div>
@@ -95,9 +104,7 @@
     <div class="max-w-[1440px] mx-auto px-20 py-4">
       <div class="flex items-center justify-between w-full max-w-[1254.388px] mx-auto">
         <!-- Logo -->
-        <div class="text-[#7e9ba0] text-xl font-bold font-['Shippori_Mincho'] tracking-[2px]">
-          LOGO
-        </div>
+        <img src="/images/logo.png" alt="LOGO" class="h-[40px] w-auto flex-shrink-0" />
         
         <!-- Navigation & Actions Container -->
         <div class="flex items-center gap-[141px]">
