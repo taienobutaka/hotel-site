@@ -1,13 +1,21 @@
 /* Global Styles for Hotel Site */
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* Room Gallery Scroll Utilities */
 .scrollbar-hide {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  display: none;
+  /* Safari and Chrome */
 }
 
 /* Text Shadow Utilities */

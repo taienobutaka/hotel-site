@@ -464,7 +464,7 @@ import '../styles/index.css';
               </div>
               
               <!-- SP Sauna Text: W:343px H:261px -->
-              <div class="w-[343px] space-y-[16px] text-center" data-name="element.top-service.sauna-text" data-node-id="183:2044">
+              <div class="w-[343px] space-y-[16px] text-left" data-name="element.top-service.sauna-text" data-node-id="183:2044">
                 <div class="space-y-0" data-node-id="183:2045">
                   <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']" data-node-id="183:2046">PRIVATE SAUNA</p>
                   <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2047">サウナ</h3>
@@ -493,7 +493,7 @@ import '../styles/index.css';
               </div>
               
               <!-- SP Food Text: W:343px H:219px -->
-              <div class="w-[343px] space-y-[16px] text-center" data-name="element.top-service.sauna-text" data-node-id="183:2051">
+              <div class="w-[343px] space-y-[16px] text-left" data-name="element.top-service.sauna-text" data-node-id="183:2051">
                 <div class="space-y-0" data-node-id="183:2052">
                   <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']" data-node-id="183:2053">FOOD</p>
                   <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2054">お食事</h3>
@@ -545,18 +545,18 @@ import '../styles/index.css';
             </div>
           </div>
           
-          <!-- SP Layout - Background overlay area (Figmaデザインに準拠) -->
-          <div class="lg:hidden absolute bottom-[142px] left-0 w-[298px] h-[142px] bg-[#F5EFEA]" data-node-id="183:2084">
+          <!-- SP Layout - Background overlay area (Figma: y=332, h=142) -->
+          <div class="lg:hidden absolute top-[332px] left-0 w-[298px] h-[142px] bg-[#F5EFEA]" data-node-id="183:2084">
           </div>
           
-          <!-- SP Layout - Text Overlay -->
-          <div class="lg:hidden absolute bottom-[15px] left-0 w-[297px] h-[127px]" data-node-id="183:2143">
+          <!-- SP Layout - Text Overlay (Figma: y=348.38, h=127) -->
+          <div class="lg:hidden absolute top-[348.381px] left-0 w-[297px] h-[127px]" data-node-id="183:2143">
             <div class="absolute left-[16px] top-0 w-[265px] h-full flex flex-col justify-start gap-[8px]" data-node-id="183:2144">
               <div class="flex flex-col gap-[8px]" data-name="block.title" data-node-id="183:2147">
                 <h2 class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2145">ROOMS</h2>
                 <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2148">お部屋</p>
               </div>
-              <a href="/rooms" class="absolute left-[115px] top-[83.62px] border border-[#436C5E] text-[#436C5E] px-[49px] py-[10px] rounded-full text-[14px] tracking-[2.1px] leading-[22.75px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho']" data-name="secondary" data-node-id="183:2149">
+              <a href="/rooms" class="absolute left-[131px] top-[83.62px] border border-[#436C5E] text-[#436C5E] px-[49px] py-[10px] rounded-full text-[14px] tracking-[2.1px] leading-[22.75px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho']" data-name="secondary" data-node-id="183:2149">
                 MORE
               </a>
             </div>
@@ -666,109 +666,27 @@ import '../styles/index.css';
           </div>
         </div>
         <!-- SP Layout -->
-        <div class="lg:hidden">
-          <div 
-            id="room-gallery-sp" 
-            class="flex gap-4 px-4 overflow-hidden scrollbar-hide"
-            class="flex overflow-x-auto scrollbar-hide gap-[16px] w-[1296px]"
-          >
-            <!-- 修正後の画像順序：IMGL0079-Edit, IMGL0437, IMGL0443-Edit, IMGL0156, IMGL0440, IMGL0459 -->
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0079-Edit.jpg" 
-                alt="ベッドルーム"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0437.jpg" 
-                alt="廊下エリア"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0443-Edit.jpg" 
-                alt="バスルーム"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0156.jpg" 
-                alt="テーブルエリア"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0440.jpg" 
-                alt="リビングエリア"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0459.jpg" 
-                alt="客室メイン"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <!-- シームレススクロール用の復制セット -->
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0079-Edit.jpg" 
-                alt="ベッドルーム"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0437.jpg" 
-                alt="廊下エリア"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0443-Edit.jpg" 
-                alt="バスルーム"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0156.jpg" 
-                alt="テーブルエリア"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0440.jpg" 
-                alt="リビングエリア"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
-              <img 
-                src="/images/rooms/IMGL0459.jpg" 
-                alt="客室メイン"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="lg:hidden mt-[40px]">
+          <div class="relative h-[105.903px] overflow-hidden">
+            <div 
+              id="room-gallery-sp" 
+              class="flex gap-[16.94px] w-[610px] -ml-[117.5px]"
+            >
+              <div class="w-[148.264px] h-[105.903px] flex-shrink-0 overflow-hidden">
+                <img src="/images/rooms/IMGL0079-Edit.jpg" alt="ベッドルーム" class="w-full h-full object-cover" />
+              </div>
+              <div class="w-[148.264px] h-[105.903px] flex-shrink-0 overflow-hidden">
+                <img src="/images/rooms/IMGL0437.jpg" alt="廊下エリア" class="w-full h-full object-cover" />
+              </div>
+              <div class="w-[148.264px] h-[105.903px] flex-shrink-0 overflow-hidden">
+                <img src="/images/rooms/IMGL0156.jpg" alt="テーブルエリア" class="w-full h-full object-cover" />
+              </div>
+              <div class="w-[148.264px] h-[105.903px] flex-shrink-0 overflow-hidden">
+                <img src="/images/rooms/IMGL0440.jpg" alt="リビングエリア" class="w-full h-full object-cover" />
+              </div>
+              <div class="w-[148.264px] h-[105.903px] flex-shrink-0 overflow-hidden">
+                <img src="/images/rooms/IMGL0443-Edit.jpg" alt="バスルーム" class="w-full h-full object-cover" />
+              </div>
             </div>
           </div>
         </div>
