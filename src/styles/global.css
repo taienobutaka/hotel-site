@@ -54,3 +54,20 @@ body {
 .btn-reservation span {
   white-space: nowrap;
 }
+
+/* Room section description text */
+.room-section .room-desc {
+  color: #483F38;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 1.6px;
+}
+
+@media (min-width: 1024px) {
+  .room-section .room-desc {
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 1px;
+  }
+}

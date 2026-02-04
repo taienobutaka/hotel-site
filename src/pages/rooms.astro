@@ -4,275 +4,259 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="ROOMS | お部屋のご紹介">
-  <div class="bg-white">
+<Layout title="ROOM | お部屋">
+  <div class="bg-white text-[#483F38]">
     <Header />
-    
-    <!-- Page Hero -->
-    <section class="relative h-64 lg:h-80 overflow-hidden">
-      <img 
-        src="https://www.figma.com/api/mcp/asset/ace25b94-4a5b-436a-89cc-8b18940c5e77" 
-        alt="Rooms Hero" 
-        class="w-full h-full object-cover"
-      />
-      <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-        <div class="text-center text-white">
-          <h1 class="text-4xl lg:text-5xl font-semibold tracking-wider font-serif mb-2">ROOMS</h1>
-          <p class="text-sm tracking-wider font-serif">お部屋のご紹介</p>
+
+    <!-- KV -->
+    <section class="relative h-[339px] lg:h-[540px] overflow-hidden">
+      <div class="rooms-kv-bg absolute inset-0"></div>
+      <div class="absolute inset-0 bg-[#483F38] opacity-[0.39]"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <h1 class="text-white/85 text-[28px] lg:text-[48px] leading-none tracking-[2.8px] lg:tracking-[4.8px] font-['Shippori_Mincho']">
+          ROOM
+        </h1>
+      </div>
+    </section>
+
+    <!-- Concept -->
+    <section class="bg-[#F5EFEA] px-6 py-[72px] lg:px-0 lg:py-[120px]">
+      <div class="mx-auto flex max-w-[928px] flex-col items-center text-center">
+        <h2 class="whitespace-pre-line text-[24px] leading-[39px] tracking-[3.6px] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[#436C5E] font-semibold font-['Shippori_Mincho']">
+          日常を忘れ、
+          静寂とデザインに浸る
+        </h2>
+        <p class="mt-[32px] whitespace-pre-line text-[15px] leading-[27px] tracking-[1.6px] lg:mt-[32px] lg:text-[16px] lg:leading-[48px] lg:tracking-[1.6px] text-[#483F38] font-['Shippori_Mincho']">
+          吹き抜けが心地よい開放的なリビングと、機能美を追求したキッチン。
+          選び抜かれたデザイナーズ家具に囲まれ、何にも邪魔されない私的な時間をお過ごしください。
+          本格的な薪サウナや露天風呂も完備。
+          宮崎の空を近くに感じるこの場所で、心身が解き放たれる上質な滞在を。
+        </p>
+        <a href="/contact" class="mt-[32px] inline-flex h-[43px] w-[177px] items-center justify-center rounded-full border border-[#436C5E] text-[#436C5E] text-[14px] leading-[22.75px] tracking-[2.1px] font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors">
+          予約をする
+        </a>
+      </div>
+    </section>
+
+    <!-- Room -->
+    <section class="room-section px-[16px] py-[80px] lg:px-0 lg:py-[150px]">
+      <div class="mx-auto flex max-w-[343px] flex-col items-center lg:max-w-[1232px]">
+        <div class="text-center w-[294px] lg:w-auto">
+          <p class="text-[32px] leading-[48px] tracking-[3.6px] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[#483F38] font-semibold font-['Shippori_Mincho']">
+            ROOM
+          </p>
+          <p class="mt-[8px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#B99563] font-['Shippori_Mincho']">
+            お部屋
+          </p>
+        </div>
+        <p class="room-desc mt-[32px] w-[343px] whitespace-pre-line text-center lg:mt-[48px] lg:max-w-[627px] font-['Shippori_Mincho']">
+          室内には欧州家具やブランド食器、高品質なドライヤーなど、
+          細部までこだわった備品を揃えています。 
+          静かに、深く、青島での時間を味わうための滞在をお楽しみください。
+        </p>
+        <div class="mt-[32px] w-[333px] lg:mt-[40px] lg:w-full lg:max-w-[800px]">
+          <img src="/images/rooms/room-main.jpg" alt="客室メイン" class="h-[262px] w-[333px] object-cover lg:h-[668px] lg:w-full" />
         </div>
       </div>
     </section>
 
-    <!-- Rooms Introduction -->
-    <section class="bg-bg-beige py-20 lg:py-32">
-      <div class="max-w-4xl mx-auto px-4 lg:px-20 text-center">
-        <h2 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif mb-8">
-          心安らぐプライベート空間
-        </h2>
-        <p class="text-sm lg:text-base leading-7 text-text tracking-wide font-serif">
-          それぞれ異なる魅力を持つ客室で、特別なひとときをお過ごしください。<br>
-          自然に囲まれた静寂な環境で、日常の疲れを癒し、心身ともにリフレッシュしていただけます。
+    <!-- Features -->
+    <section class="bg-[#FAFAFA] px-[16px] py-[80px] lg:px-0 lg:py-[150px]">
+      <div class="mx-auto w-full max-w-[343px] lg:max-w-[1232px]">
+        <div class="text-center w-[294px] mx-auto">
+          <p class="text-[36px] leading-[54px] tracking-[3.6px] text-[#483F38] font-semibold font-['Shippori_Mincho'] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px]">
+            FEATURES
+          </p>
+          <p class="mt-[8px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#B99563] font-['Shippori_Mincho']">
+            部屋の特徴
+          </p>
+        </div>
+
+        <div class="mt-[40px] space-y-[40px] lg:mt-[120px] lg:space-y-[120px]">
+          <div class="flex flex-col gap-[24px] lg:flex-row lg:items-center lg:gap-[131px]">
+            <img src="/images/rooms/feature-1.jpg" alt="一日一組限定の一棟貸し" class="h-[305px] w-[343px] object-cover lg:h-[501px] lg:w-[563px]" />
+            <div class="max-w-[538px]">
+              <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho'] lg:text-[24px] lg:leading-[32px] lg:tracking-[2.4px]">
+                一日一組限定の一棟貸し
+              </h3>
+              <p class="mt-[16px] whitespace-pre-line text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:text-[14px] lg:leading-[30px] lg:tracking-[1.4px]">
+                完全なプライベート空間で、
+                誰にも邪魔されずにおくつろぎいただけます。
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-[24px] lg:flex-row lg:items-center lg:gap-[131px]">
+            <div class="order-2 max-w-[538px] lg:order-1">
+              <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho'] lg:text-[24px] lg:leading-[32px] lg:tracking-[2.4px]">
+                光と余白に癒える、非日常の邸宅
+              </h3>
+              <p class="mt-[16px] whitespace-pre-line text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:text-[14px] lg:leading-[30px] lg:tracking-[1.4px]">
+                吹き抜けが心地よい開放的なダイニング。
+                大切な人と「つくる」愉しみ、「味わう」歓びを分かち合ってください。
+              </p>
+            </div>
+            <div class="feature-2-img order-1 h-[305px] w-[343px] lg:order-2 lg:h-[501px] lg:w-[563px]"></div>
+          </div>
+
+          <div class="flex flex-col gap-[24px] lg:flex-row lg:items-center lg:gap-[131px]">
+              <div class="feature-3-img h-[307px] w-[343px] lg:h-[501px] lg:w-[563px]"></div>
+            <div class="max-w-[538px]">
+              <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho'] lg:text-[24px] lg:leading-[32px] lg:tracking-[2.4px]">
+                こだわりの高級家具・家電
+              </h3>
+              <p class="mt-[16px] whitespace-pre-line text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:text-[14px] lg:leading-[30px] lg:tracking-[1.4px]">
+                デザイン性と機能性を両立した、
+                上質なインテリアで快適な滞在を。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-[72px] lg:mt-[120px]">
+        <div class="rooms-cover-bg h-[192px] w-screen -mx-[16px] lg:h-[540px] lg:mx-0"></div>
+      </div>
+    </section>
+
+    <!-- Information -->
+    <section class="bg-[#FAFAFA] px-[16px] py-[80px] lg:px-0 lg:py-[150px]">
+      <div class="mx-auto w-full max-w-[1232px] lg:grid lg:grid-cols-[334px_699px] lg:gap-[199px] lg:items-center">
+        <div class="mx-auto w-[334px] text-left lg:w-[334px] lg:self-center">
+          <p class="text-center text-[36px] leading-[54px] tracking-[3.6px] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[#436C5E] font-semibold font-['Shippori_Mincho']">
+            INFORMATION
+          </p>
+        </div>
+
+        <div class="mt-[40px] w-[343px] space-y-[16px] lg:mt-0 lg:w-[699px]">
+          {[
+            ['広さ', 'XXX㎡'],
+            ['定員', '1~6名'],
+            ['間取り', '〈1F〉リビング、キッチン、トイレ、バルコニー\\n〈2F〉洋室、バルコニー、トイレ'],
+            ['ベッドタイプ', 'シングルベッド（2台）、ダブルベッド（1台）'],
+            ['設備・備品', 'テレビ、ポータブルオーディオ用スピーカー、電子レンジ、食器、洗濯機、乾燥機、シャンプー・リンス、ボディソープ・石鹸、タオル、ハミガキセット、ブラシ、ドライヤー、スリッパ、洗顔料、化粧水、乳液、メイク落とし、冷蔵庫、湯沸しポット、お茶セット'],
+            ['駐車場', '2台（宿泊者無料）'],
+          ].map(([label, value]) => (
+            <div class="flex flex-wrap items-center gap-[16px] border-b border-[#D1C7BF] px-[20px] py-[16px] text-[12px] leading-[20px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho'] lg:min-h-[74px] lg:flex-nowrap lg:items-start lg:gap-[159px] lg:py-[14px]">
+              <div class="w-[134px] shrink-0 text-[#483F38]">{label}</div>
+              <div class="w-full whitespace-pre-line text-[#483F38] lg:flex-1">{value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities -->
+    <section class="px-[16px] py-[80px] lg:px-0 lg:py-[150px]">
+      <div class="mx-auto w-full max-w-[343px] text-center lg:max-w-[1232px]">
+        <div class="flex flex-col items-center">
+          <p class="text-[36px] leading-[54px] tracking-[3.6px] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[#436C5E] font-semibold font-['Shippori_Mincho']">
+            AMENITIES
+          </p>
+          <p class="mt-[8px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho']">
+            アメニティ
+          </p>
+          <p class="mt-[32px] text-[15px] leading-[27px] tracking-[1.6px] lg:text-[16px] lg:leading-[32px] lg:tracking-[1px] text-[#483F38] font-['Shippori_Mincho']">
+            上質な滞在を演出する、こだわりのアメニティをご用意しております。
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-[40px]">
+        <div class="amenities-img-1 h-[173px] w-full lg:h-[663px]"></div>
+      </div>
+
+      <div class="mx-auto mt-[40px] w-[333px] lg:mt-[48px] lg:max-w-[1232px] lg:w-full">
+        <div class="grid grid-cols-2 gap-[27px] lg:grid-cols-5 lg:gap-[24px]">
+          {[
+            { label: 'BALMUDA ', image: '/images/rooms/amenities-item-1.jpg' },
+            { label: 'ル・クルーゼ', image: '/images/rooms/amenities-item-2.jpg' },
+            { label: 'レプロナイザー', image: '/images/rooms/amenities-item-3.jpg' },
+            { label: 'トルコ製ソファ', image: '/images/rooms/amenities-item-4.jpg' },
+            { label: 'Aesop ', image: '/images/rooms/amenities-item-5.jpg' },
+          ].map((item) => (
+            <div class="flex flex-col items-center text-center">
+              <img
+                src={item.image}
+                alt={item.label}
+                class={`w-[153px] rounded-[8px] object-cover lg:h-[216px] lg:w-full ${item.label.trim() === 'Aesop' ? 'h-[156px]' : 'h-[153px]'}`}
+              />
+              <p class="mt-[12px] text-[16px] leading-[32px] tracking-[1px] text-[#483F38] font-['Shippori_Mincho']">
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-[40px] lg:mt-[48px]">
+        <div class="mx-auto max-w-[1440px]">
+          <div class="amenities-img-2 h-[150px] w-[359px] -ml-[16px] bg-[url('/images/rooms/amenities-2.jpg')] lg:h-[320px] lg:w-full lg:ml-0"></div>
+        </div>
+      </div>
+      <div class="mt-[40px] lg:mt-[80px]">
+        <div class="mx-auto flex max-w-[1440px] justify-end w-screen -mx-[16px] lg:w-full lg:mx-0">
+          <div class="amenities-img-3 h-[150px] w-[296px] bg-[url('/images/rooms/amenities-3.jpg')] lg:h-[371px] lg:w-full"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="bg-[#FAFAFA] px-6 py-[80px] lg:px-0 lg:py-[150px]">
+      <div class="mx-auto max-w-[1232px] text-center">
+        <p class="text-[24px] leading-[36px] tracking-[2.4px] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[#436C5E] font-semibold font-['Shippori_Mincho']">
+          GALLERY
+        </p>
+        <p class="mt-[8px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho']">
+          ギャラリー
         </p>
       </div>
-    </section>
 
-    <!-- Room Categories -->
-    <section class="bg-white py-20 lg:py-32">
-      <div class="max-w-7xl mx-auto px-4 lg:px-20">
-        <div class="space-y-24 lg:space-y-32">
-          
-          <!-- Deluxe Room -->
-          <div class="lg:grid lg:grid-cols-2 lg:gap-16 space-y-8 lg:space-y-0">
-            <div class="space-y-4">
-              <img 
-                src="https://www.figma.com/api/mcp/asset/e54d7649-1ec5-4837-b40d-d7b223c082fd" 
-                alt="Deluxe Room" 
-                class="w-full h-64 lg:h-80 object-cover rounded-lg"
-              />
-              <div class="grid grid-cols-3 gap-2">
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/728e755d-a57d-47e5-a981-08a496565efc" 
-                  alt="Deluxe Room Detail 1" 
-                  class="w-full h-20 object-cover rounded"
-                />
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/484a2848-6a1c-45e3-baee-f847742607d6" 
-                  alt="Deluxe Room Detail 2" 
-                  class="w-full h-20 object-cover rounded"
-                />
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/bbd8b7e9-d410-4e28-8c60-d9d32a6e09c3" 
-                  alt="Deluxe Room Detail 3" 
-                  class="w-full h-20 object-cover rounded"
-                />
-              </div>
-            </div>
-            <div class="flex flex-col justify-center">
-              <div class="mb-6">
-                <p class="text-xs tracking-widest text-gold font-serif mb-2">DELUXE ROOM</p>
-                <h3 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif">デラックスルーム</h3>
-              </div>
-              <div class="space-y-4 mb-8">
-                <p class="text-sm leading-7 text-text tracking-wide font-serif">
-                  広々とした空間に上質な家具を配した、当館で最も贅沢な客室です。<br>
-                  大きな窓からは四季折々の美しい景色をお楽しみいただけ、<br>
-                  特別な記念日やご褒美旅行に最適です。
-                </p>
-                <div class="text-sm text-text font-serif space-y-2">
-                  <p><span class="font-medium">面積：</span>45㎡</p>
-                  <p><span class="font-medium">定員：</span>2名様</p>
-                  <p><span class="font-medium">アメニティ：</span>バスローブ、高級アメニティセット</p>
-                  <p><span class="font-medium">設備：</span>エアコン、冷蔵庫、セーフティボックス、Wi-Fi</p>
-                </div>
-              </div>
-              <div>
-                <p class="text-2xl font-semibold text-deep-green font-serif mb-2">¥35,000〜</p>
-                <p class="text-sm text-text font-serif">（1泊2名様・税込）</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Standard Room -->
-          <div class="lg:grid lg:grid-cols-2 lg:gap-16 space-y-8 lg:space-y-0">
-            <div class="order-2 lg:order-1 flex flex-col justify-center">
-              <div class="mb-6">
-                <p class="text-xs tracking-widest text-gold font-serif mb-2">STANDARD ROOM</p>
-                <h3 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif">スタンダードルーム</h3>
-              </div>
-              <div class="space-y-4 mb-8">
-                <p class="text-sm leading-7 text-text tracking-wide font-serif">
-                  快適性と機能性を兼ね備えたスタンダードルーム。<br>
-                  シンプルで洗練されたデザインの中に、<br>
-                  くつろぎのひとときを演出する工夫が随所に施されています。
-                </p>
-                <div class="text-sm text-text font-serif space-y-2">
-                  <p><span class="font-medium">面積：</span>28㎡</p>
-                  <p><span class="font-medium">定員：</span>2名様</p>
-                  <p><span class="font-medium">アメニティ：</span>基本アメニティセット</p>
-                  <p><span class="font-medium">設備：</span>エアコン、冷蔵庫、セーフティボックス、Wi-Fi</p>
-                </div>
-              </div>
-              <div>
-                <p class="text-2xl font-semibold text-deep-green font-serif mb-2">¥22,000〜</p>
-                <p class="text-sm text-text font-serif">（1泊2名様・税込）</p>
-              </div>
-            </div>
-            <div class="order-1 lg:order-2 space-y-4">
-              <img 
-                src="https://www.figma.com/api/mcp/asset/98f99d97-2d4b-4aaf-ad8c-a924f2ed0cf2" 
-                alt="Standard Room" 
-                class="w-full h-64 lg:h-80 object-cover rounded-lg"
-              />
-              <div class="grid grid-cols-3 gap-2">
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/e54d7649-1ec5-4837-b40d-d7b223c082fd" 
-                  alt="Standard Room Detail 1" 
-                  class="w-full h-20 object-cover rounded"
-                />
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/728e755d-a57d-47e5-a981-08a496565efc" 
-                  alt="Standard Room Detail 2" 
-                  class="w-full h-20 object-cover rounded"
-                />
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/484a2848-6a1c-45e3-baee-f847742607d6" 
-                  alt="Standard Room Detail 3" 
-                  class="w-full h-20 object-cover rounded"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Economy Room -->
-          <div class="lg:grid lg:grid-cols-2 lg:gap-16 space-y-8 lg:space-y-0">
-            <div class="space-y-4">
-              <img 
-                src="https://www.figma.com/api/mcp/asset/bbd8b7e9-d410-4e28-8c60-d9d32a6e09c3" 
-                alt="Economy Room" 
-                class="w-full h-64 lg:h-80 object-cover rounded-lg"
-              />
-              <div class="grid grid-cols-3 gap-2">
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/98f99d97-2d4b-4aaf-ad8c-a924f2ed0cf2" 
-                  alt="Economy Room Detail 1" 
-                  class="w-full h-20 object-cover rounded"
-                />
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/e54d7649-1ec5-4837-b40d-d7b223c082fd" 
-                  alt="Economy Room Detail 2" 
-                  class="w-full h-20 object-cover rounded"
-                />
-                <img 
-                  src="https://www.figma.com/api/mcp/asset/728e755d-a57d-47e5-a981-08a496565efc" 
-                  alt="Economy Room Detail 3" 
-                  class="w-full h-20 object-cover rounded"
-                />
-              </div>
-            </div>
-            <div class="flex flex-col justify-center">
-              <div class="mb-6">
-                <p class="text-xs tracking-widest text-gold font-serif mb-2">ECONOMY ROOM</p>
-                <h3 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif">エコノミールーム</h3>
-              </div>
-              <div class="space-y-4 mb-8">
-                <p class="text-sm leading-7 text-text tracking-wide font-serif">
-                  リーズナブルな価格でありながら、清潔で快適な滞在をお約束します。<br>
-                  必要十分な設備を整え、気軽にご利用いただける<br>
-                  カジュアルな客室です。
-                </p>
-                <div class="text-sm text-text font-serif space-y-2">
-                  <p><span class="font-medium">面積：</span>18㎡</p>
-                  <p><span class="font-medium">定員：</span>2名様</p>
-                  <p><span class="font-medium">アメニティ：</span>基本アメニティセット</p>
-                  <p><span class="font-medium">設備：</span>エアコン、冷蔵庫、Wi-Fi</p>
-                </div>
-              </div>
-              <div>
-                <p class="text-2xl font-semibold text-deep-green font-serif mb-2">¥15,000〜</p>
-                <p class="text-sm text-text font-serif">（1泊2名様・税込）</p>
-              </div>
-            </div>
+      <div class="mx-auto mt-[40px] max-w-[1232px] lg:mt-[80px]">
+        <div class="flex flex-col gap-[16px] lg:flex-row lg:gap-[32px]">
+          <img src="/images/rooms/gallery-left.jpg" alt="ギャラリー1" class="h-[240px] w-full rounded-[8px] object-cover lg:h-[600px] lg:w-[600px]" />
+          <div class="grid w-full grid-cols-2 gap-[16px] lg:w-[600px]">
+            <img src="/images/rooms/gallery-top-left.jpg" alt="ギャラリー2" class="h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
+            <img src="/images/rooms/gallery-top-right.jpg" alt="ギャラリー3" class="h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
+            <img src="/images/rooms/gallery-bottom-left.jpg" alt="ギャラリー4" class="h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
+            <img src="/images/rooms/gallery-bottom-right.jpg" alt="ギャラリー5" class="h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Room Features -->
-    <section class="bg-bg-beige py-20 lg:py-32">
-      <div class="max-w-4xl mx-auto px-4 lg:px-20">
-        <div class="text-center mb-16">
-          <h2 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif mb-4">
-            全客室共通設備・サービス
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div class="space-y-6">
-            <div>
-              <h3 class="text-lg font-medium text-deep-green font-serif mb-3">基本設備</h3>
-              <ul class="space-y-2 text-sm text-text font-serif">
-                <li>• 無料Wi-Fi完備</li>
-                <li>• エアコン（冷暖房）</li>
-                <li>• 液晶テレビ</li>
-                <li>• 冷蔵庫</li>
-                <li>• 電気ケトル</li>
-                <li>• ドライヤー</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-medium text-deep-green font-serif mb-3">アメニティ</h3>
-              <ul class="space-y-2 text-sm text-text font-serif">
-                <li>• フェイスタオル・バスタオル</li>
-                <li>• シャンプー・コンディショナー</li>
-                <li>• ボディソープ</li>
-                <li>• 歯ブラシセット</li>
-                <li>• スリッパ</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <div>
-              <h3 class="text-lg font-medium text-deep-green font-serif mb-3">サービス</h3>
-              <ul class="space-y-2 text-sm text-text font-serif">
-                <li>• 24時間フロントサービス</li>
-                <li>• 無料駐車場</li>
-                <li>• 荷物預かりサービス</li>
-                <li>• モーニングコール</li>
-                <li>• クリーニングサービス</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-medium text-deep-green font-serif mb-3">チェックイン・アウト</h3>
-              <ul class="space-y-2 text-sm text-text font-serif">
-                <li>• チェックイン：15:00〜</li>
-                <li>• チェックアウト：〜11:00</li>
-                <li>• 早朝チェックアウト対応可</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="mt-[40px] flex justify-center">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="inline-flex h-[43px] w-[185px] items-center justify-center rounded-full border border-[#436C5E] text-[#436C5E] text-[14px] leading-[22.75px] tracking-[2.1px] font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors">
+          Instagram
+        </a>
       </div>
     </section>
 
-    <!-- Reservation CTA -->
-    <section class="bg-white py-20 lg:py-32">
-      <div class="max-w-4xl mx-auto px-4 lg:px-20 text-center">
-        <h2 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif mb-8">
-          ご予約・お問い合わせ
-        </h2>
-        <p class="text-sm lg:text-base leading-7 text-text tracking-wide font-serif mb-12">
-          ご希望のお部屋タイプがございましたら、<br>
-          お気軽にご予約・お問い合わせください。
-        </p>
-        <div class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-8">
-          <a href="/reservation" class="bg-gold border border-gold text-white px-8 py-4 rounded-full text-sm tracking-wider hover:bg-gold/90 transition-colors duration-300 font-serif">
-            オンライン予約
-          </a>
-          <a href="/contact" class="border border-deep-green text-deep-green px-8 py-4 rounded-full text-sm tracking-wider hover:bg-deep-green hover:text-white transition-colors duration-300 font-serif">
-            お問い合わせ
+    <!-- Reservation -->
+    <section class="relative h-[438px] overflow-hidden bg-black px-[16px] py-[80px] lg:h-[578px] lg:w-[1440px] lg:px-0 lg:py-0 lg:mx-auto">
+      <div class="reservation-bg absolute inset-0"></div>
+      <div class="absolute inset-0 bg-black/[0.16] mix-blend-multiply"></div>
+      <div class="relative mx-auto w-full max-w-[343px] text-center lg:h-[578px] lg:w-[1440px] lg:max-w-none lg:text-left">
+        <div class="flex w-full flex-col items-center gap-[48px] lg:block lg:h-[578px] lg:gap-0">
+          <div class="flex w-full flex-col items-center gap-[16px] lg:absolute lg:left-[364px] lg:top-[150px] lg:h-[76px] lg:w-[712px]">
+            <p class="text-[36px] leading-[54px] tracking-[3.6px] text-white font-semibold font-['Shippori_Mincho'] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px]">
+              RESERVATION
+            </p>
+            <p class="text-center text-[14px] leading-[22.75px] tracking-[2.1px] text-[#CBD5E1] font-['Shippori_Mincho']">
+              ご予約
+            </p>
+          </div>
+          <p class="h-[56px] w-full whitespace-pre-line text-center text-[15px] leading-[27px] tracking-[1.6px] text-[#E2E8F0] font-['Shippori_Mincho'] lg:absolute lg:left-[518px] lg:top-[315px] lg:flex lg:h-[56px] lg:w-[404px] lg:items-center lg:justify-center lg:text-[16px] lg:leading-[32px] lg:tracking-[1px]" style="transform: translateY(-55px);">
+            <span class="lg:hidden">
+              オンラインで簡単に
+              空室確認・ご予約が可能です。
+              特別なひとときをお過ごしください。
+            </span>
+            <span class="hidden lg:inline">
+              オンラインで簡単に空室確認・ご予約が可能です。特別なひとときをお過ごしください。
+            </span>
+          </p>
+          <a href="/reservation" class="inline-flex h-[50px] w-[230px] -mt-[15px] items-center justify-center rounded-[6px] bg-white text-[#436C5E] text-[16px] leading-[26px] tracking-[1.6px] font-medium font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors lg:absolute lg:left-[518px] lg:top-[390px] lg:h-[50px] lg:w-[404px] lg:max-w-none">
+            ご予約はこちら
           </a>
         </div>
       </div>
@@ -281,3 +265,108 @@ import Footer from '../components/Footer.astro';
     <Footer />
   </div>
 </Layout>
+
+<style>
+  .rooms-kv-bg {
+    background-image: url('/images/rooms/rooms-kv.jpg');
+    background-repeat: no-repeat;
+    background-size: 179.54% 132.48%;
+    background-position: 55% 58%;
+  }
+
+  .rooms-cover-bg {
+    background-image: url('/images/rooms/rooms-cover.jpg');
+    background-repeat: no-repeat;
+    background-size: 111.13% 144.72%;
+    background-position: 88.36% 57.78%;
+  }
+
+  .feature-2-img {
+    background-image: url('/images/rooms/feature-2.jpg');
+    background-repeat: no-repeat;
+    background-size: 154.7% 115.9%;
+    background-position: 36.7% 100%;
+  }
+
+  .feature-3-img {
+    background-image: url('/images/rooms/feature-3.jpg');
+    background-repeat: no-repeat;
+    background-size: 133.8% 100%;
+    background-position: 16.9% 0%;
+  }
+
+  @media (min-width: 1024px) {
+    .rooms-kv-bg {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .rooms-cover-bg {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .feature-2-img {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .feature-3-img {
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  .amenities-img-1,
+  .amenities-img-2,
+  .amenities-img-3 {
+    background-repeat: no-repeat;
+  }
+
+  .amenities-img-1 {
+    background-image: url('/images/rooms/amenities-1.jpg');
+    background-size: 105% 150%;
+    background-position: 2.29% 41.15%;
+  }
+
+  .amenities-img-2 {
+    background-size: 91.43% 342.83%;
+    background-position: 0% 60%;
+  }
+
+  .amenities-img-3 {
+    background-size: 128.38% 168.67%;
+    background-position: 0% 93.4%;
+  }
+
+  .reservation-bg {
+    background-image: url('/images/rooms/reservation-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 175.16% 100%;
+    background-position: 35% 0%;
+  }
+
+  @media (min-width: 1024px) {
+    .amenities-img-1 {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .amenities-img-2 {
+      width: 731.46px;
+      background-size: 109.4% 376%;
+      background-position: 0% 58%;
+    }
+
+    .amenities-img-3 {
+      width: 883px;
+      background-size: 125.5% 198.9%;
+      background-position: 52% 81%;
+    }
+
+    .reservation-bg {
+      background-size: 1594.7px 1063.5px;
+      background-position: -77.1px -374.7px;
+    }
+  }
+</style>
