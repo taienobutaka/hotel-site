@@ -1,0 +1,457 @@
+---
+/**
+ * プライバシーポリシーページ
+ * 個人情報保護方針の詳細ページ
+ * Figmaデザイン: PC・SPレイアウト対応
+ */
+export const prerender = true;
+---
+
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <title>プライバシーポリシー | aoshima tei 鈴 – SUZU</title>
+  <meta name="description" content="aoshima tei 鈴 – SUZUの個人情報保護方針について。お客様の大切な個人情報を適切に保護・管理いたします。" />
+  
+  <!-- OGP -->
+  <meta property="og:title" content="プライバシーポリシー | aoshima tei 鈴 – SUZU" />
+  <meta property="og:description" content="aoshima tei 鈴 – SUZUの個人情報保護方針について。お客様の大切な個人情報を適切に保護・管理いたします。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/ogp.jpg" />
+  <meta property="og:site_name" content="aoshima tei 鈴 – SUZU" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="プライバシーポリシー | aoshima tei 鈴 – SUZU" />
+  <meta name="twitter:description" content="aoshima tei 鈴 – SUZUの個人情報保護方針について。お客様の大切な個人情報を適切に保護・管理いたします。" />
+  <meta name="twitter:image" content="/images/ogp.jpg" />
+
+  <!-- Shippori Mincho Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-[#F5EFEA] text-[#483F38]">
+  <!-- Header -->
+  <header class="bg-[#F5EFEA] py-4 px-6 md:px-20 lg:px-28 border-b border-[#436C5E]/10">
+    <nav class="flex justify-between items-center">
+      <a href="/" class="text-[#436C5E] text-xl md:text-2xl font-semibold tracking-wider">
+        aoshima tei 鈴 – SUZU
+      </a>
+      
+      <!-- デスクトップメニュー -->
+      <ul class="hidden lg:flex space-x-8 text-[#436C5E] font-medium">
+        <li><a href="/" class="hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
+        <li><a href="/rooms" class="hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
+        <li><a href="/services" class="hover:opacity-70 transition-opacity tracking-wide">サービス</a></li>
+        <li><a href="/plans" class="hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
+        <li><a href="/contact" class="hover:opacity-70 transition-opacity tracking-wide">お問い合わせ</a></li>
+      </ul>
+
+      <!-- モバイルハンバーガーメニュー -->
+      <button class="lg:hidden text-[#436C5E]" id="mobile-menu-button">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- モバイルメニュー -->
+    <div class="lg:hidden hidden" id="mobile-menu">
+      <div class="pt-4 pb-3 border-t border-[#436C5E]/10 mt-4">
+        <ul class="space-y-3 text-[#436C5E] font-medium">
+          <li><a href="/" class="block hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
+          <li><a href="/rooms" class="block hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
+          <li><a href="/services" class="block hover:opacity-70 transition-opacity tracking-wide">サービス</a></li>
+          <li><a href="/plans" class="block hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
+          <li><a href="/contact" class="block hover:opacity-70 transition-opacity tracking-wide">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="flex-1">
+    <!-- パンくずナビ -->
+    <div class="bg-white border-b border-[#436C5E]/10">
+      <div class="max-w-6xl mx-auto py-3 px-4 md:px-8">
+        <nav class="text-sm text-[#483F38] opacity-70">
+          <ol class="flex items-center space-x-2">
+            <li><a href="/" class="hover:opacity-80 transition-opacity">TOP</a></li>
+            <li><span class="mx-2">›</span></li>
+            <li class="text-[#436C5E] font-medium">プライバシーポリシー</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- プライバシーポリシー本文 -->
+    <section class="py-16 md:py-24 px-4 md:px-8">
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- ページタイトル -->
+        <div class="text-center mb-12 md:mb-16">
+          <h1 class="text-[#436C5E] text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide mb-6">
+            プライバシーポリシー
+          </h1>
+          <div class="w-20 h-px bg-gradient-to-r from-transparent via-[#B99563] to-transparent mx-auto"></div>
+        </div>
+
+        <!-- 基本方針 -->
+        <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-12">
+          <div class="prose prose-lg max-w-none">
+            <div class="mb-8">
+              <p class="text-[#483F38] leading-relaxed tracking-wide">
+                aoshima tei 鈴 – SUZU（以下「当館」）は、お客様の個人情報の重要性を認識し、
+                個人情報の保護に関する法律及び関連法令を遵守し、お客様の個人情報を適切に
+                取り扱うとともに、安全管理について最大限の注意を払います。
+              </p>
+            </div>
+
+            <div class="mb-8">
+              <p class="text-[#483F38] text-sm opacity-70">
+                制定日：2024年1月1日<br>
+                最終更新日：2024年1月1日
+              </p>
+            </div>
+
+            <!-- 各項目 -->
+            <div class="space-y-8">
+              
+              <!-- 第1条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第1条（個人情報の定義）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    本プライバシーポリシーにおいて「個人情報」とは、個人情報の保護に関する法律に規定される
+                    「個人情報」を指し、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、
+                    電話番号、メールアドレス、住所その他の記述等により特定の個人を識別することができる
+                    もの及び個人識別符号が含まれるものを指します。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第2条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第2条（個人情報の収集方法）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館は、お客様が利用登録をする際に氏名、メールアドレス、電話番号、住所等の
+                    個人情報をお尋ねすることがあります。
+                  </p>
+                  <p>
+                    また、お客様と提携先などとの間でなされた会員情報や決済に関する情報を
+                    当館の提携先などから収集することがあります。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第3条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第3条（個人情報を収集・利用する目的）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide">
+                  <p class="mb-4">当館が個人情報を収集・利用する目的は、以下のとおりです。</p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>当館サービスの提供・運営のため</li>
+                    <li>宿泊予約の受付・確認・変更・キャンセル対応のため</li>
+                    <li>お客様への連絡・お問い合わせに対する回答のため</li>
+                    <li>当館のサービスに関するお知らせ・キャンペーン情報の配信のため</li>
+                    <li>アンケート調査・マーケティング分析のため</li>
+                    <li>料金の決済・請求のため</li>
+                    <li>利用規約に違反したお客様への注意・警告のため</li>
+                    <li>上記の利用目的に付随する目的のため</li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- 第4条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第4条（利用目的の変更）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館は、利用目的が変更前と関連性を有すると合理的に認められる場合に限り、
+                    個人情報の利用目的を変更するものとします。
+                  </p>
+                  <p>
+                    利用目的の変更を行った場合には、変更後の目的について、
+                    当館所定の方法により、お客様に通知し、または本ウェブサイト上に公表するものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第5条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第5条（個人情報の第三者提供）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide">
+                  <p class="mb-4">
+                    当館は、次に掲げる場合を除いて、あらかじめお客様の同意を得ることなく、
+                    第三者に個人情報を提供することはありません。
+                  </p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>法令に基づく場合</li>
+                    <li>人の生命、身体または財産の保護のために必要がある場合であって、お客様の同意を得ることが困難である場合</li>
+                    <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、お客様の同意を得ることが困難である場合</li>
+                    <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、お客様の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがある場合</li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- 第6条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第6条（個人情報の開示）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館は、お客様ご本人から個人情報の開示を求められたときは、お客様ご本人に対し、
+                    遅滞なくこれを開示します。ただし、開示することにより次のいずれかに該当する場合は、
+                    その全部または一部を開示しないこともあり、開示しない決定をした場合には、
+                    その旨を遅滞なく通知します。
+                  </p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>お客様または第三者の生命、身体、財産その他の権利利益を害するおそれがある場合</li>
+                    <li>当館の業務の適正な実施に著しい支障を及ぼすおそれがある場合</li>
+                    <li>その他法令に違反することとなる場合</li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- 第7条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第7条（個人情報の訂正および削除）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    お客様は、当館の保有する自己の個人情報が誤った情報である場合には、
+                    当館が定める手続きにより、当館に対して個人情報の訂正、追加または削除
+                    （以下「訂正等」といいます。）を請求することができます。
+                  </p>
+                  <p>
+                    当館は、お客様から前項の請求を受けてその請求に応じる必要があると判断した場合には、
+                    遅滞なく、当該個人情報の訂正等を行うものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第8条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第8条（個人情報の利用停止等）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館は、本人から、個人情報が、利用目的の範囲を超えて取り扱われているという理由、
+                    または不正の手段により取得されたものであるという理由により、
+                    その利用の停止または消去（以下「利用停止等」といいます。）を求められた場合には、
+                    遅滞なく必要な調査を行います。
+                  </p>
+                  <p>
+                    前項の調査結果に基づき、その請求に応じる必要があると判断した場合には、
+                    遅滞なく、当該個人情報の利用停止等を行います。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第9条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第9条（個人情報の安全管理措置）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide">
+                  <p class="mb-4">
+                    当館は、個人情報の漏えい、滅失または毀損の防止その他の個人情報の
+                    安全管理のために必要かつ適切な措置を講じます。
+                  </p>
+                  <ul class="list-disc list-inside space-y-2 pl-4">
+                    <li>組織的安全管理措置</li>
+                    <li>人的安全管理措置</li>
+                    <li>物理的安全管理措置</li>
+                    <li>技術的安全管理措置</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 第10条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第10条（Cookie・アクセスログ等の取扱い）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館は、お客様により良いサービスを提供するため、Cookie技術やアクセスログを
+                    使用することがあります。これらの技術により、お客様の利用状況を把握し、
+                    サービスの改善に役立てております。
+                  </p>
+                  <p>
+                    Cookieの受け入れを希望されない場合は、ブラウザの設定でCookieを無効にすることが
+                    可能ですが、一部のサービスをご利用いただけない場合があります。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第11条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第11条（プライバシーポリシーの変更）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、
+                    お客様に通知することなく、変更することができるものとします。
+                  </p>
+                  <p>
+                    当館が別途定める場合を除いて、変更後のプライバシーポリシーは、
+                    本ウェブサイトに掲載したときから効力を生じるものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第12条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第12条（お問い合わせ窓口）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide">
+                  <p class="mb-4">
+                    本ポリシーに関するお問い合わせは、下記の窓口までお願いいたします。
+                  </p>
+                  
+                  <div class="bg-[#F5EFEA] border border-[#436C5E]/20 rounded-lg p-6">
+                    <div class="space-y-3">
+                      <div>
+                        <h3 class="text-[#436C5E] font-semibold mb-2">お問い合わせ窓口</h3>
+                        <p class="font-semibold">aoshima tei 鈴 – SUZU</p>
+                      </div>
+                      <div class="space-y-1 text-sm">
+                        <p>〒889-2162 宮崎県宮崎市青島4-48-4</p>
+                        <p>TEL: 012-345-6789</p>
+                        <p>FAX: 012-345-6790</p>
+                        <p>Email: info@aoshima-suzu.com</p>
+                        <p>受付時間: 9:00～18:00（年中無休）</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- フッターリンク -->
+        <div class="text-center">
+          <div class="inline-flex flex-wrap gap-4 md:gap-8 text-[#436C5E] text-sm">
+            <a href="/terms" class="hover:text-[#B99563] transition-colors">利用規約</a>
+            <a href="/usage-terms" class="hover:text-[#B99563] transition-colors">宿泊約款</a>
+            <a href="/faq" class="hover:text-[#B99563] transition-colors">よくあるご質問</a>
+            <a href="/contact" class="hover:text-[#B99563] transition-colors">お問い合わせ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="bg-[#436C5E] text-white py-16 px-4 md:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <!-- ロゴ・連絡先セクション -->
+        <div class="space-y-6">
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-wider">
+            aoshima tei 鈴 – SUZU
+          </h2>
+          
+          <div class="space-y-4 text-sm leading-relaxed opacity-90">
+            <div>
+              <p class="font-medium mb-1">〒 889-2162</p>
+              <p>宮崎県宮崎市青島4-48-4</p>
+            </div>
+            <div>
+              <p class="font-medium mb-1">TEL: 012-345-6789</p>
+              <p>FAX: 012-345-6790</p>
+            </div>
+            <div>
+              <p class="font-medium mb-1">チェックイン: 15:00～18:00</p>
+              <p>チェックアウト: ～11:00</p>
+            </div>
+          </div>
+          
+          <div class="flex space-x-4">
+            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.024-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 23.998 12.017 24c6.624 0 11.99-5.367 11.99-12C24.007 5.367 18.641.001.012.017 0z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- ナビゲーションセクション -->
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold mb-4 text-[#B99563]">サイトマップ</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/" class="hover:text-[#B99563] transition-colors">TOP</a></li>
+              <li><a href="/rooms" class="hover:text-[#B99563] transition-colors">客室紹介</a></li>
+              <li><a href="/services" class="hover:text-[#B99563] transition-colors">サービス</a></li>
+              <li><a href="/plans" class="hover:text-[#B99563] transition-colors">プラン</a></li>
+              <li><a href="/contact" class="hover:text-[#B99563] transition-colors">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4 text-[#B99563]">その他</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/privacy-policy" class="text-[#B99563]">プライバシーポリシー</a></li>
+              <li><a href="/terms" class="hover:text-[#B99563] transition-colors">利用規約</a></li>
+              <li><a href="/usage-terms" class="hover:text-[#B99563] transition-colors">宿泊約款</a></li>
+              <li><a href="/faq" class="hover:text-[#B99563] transition-colors">よくあるご質問</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- コピーライト -->
+      <div class="text-center pt-8 border-t border-white/20">
+        <p class="text-sm opacity-70">
+          &copy; 2024 aoshima tei 鈴 – SUZU. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // モバイルメニューの制御
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+  </script>
+
+  <style>
+    * {
+      font-family: 'Shippori Mincho', serif;
+    }
+  </style>
+</body>
+</html>

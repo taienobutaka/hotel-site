@@ -1,0 +1,626 @@
+---
+/**
+ * 宿泊約款ページ
+ * 宿泊に関する約款・規則の詳細ページ
+ * Figmaデザイン: PC・SPレイアウト対応
+ */
+export const prerender = true;
+---
+
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <title>宿泊約款 | aoshima tei 鈴 – SUZU</title>
+  <meta name="description" content="aoshima tei 鈴 – SUZUの宿泊約款について。ご宿泊に関する規則・条件をご確認ください。" />
+  
+  <!-- OGP -->
+  <meta property="og:title" content="宿泊約款 | aoshima tei 鈴 – SUZU" />
+  <meta property="og:description" content="aoshima tei 鈴 – SUZUの宿泊約款について。ご宿泊に関する規則・条件をご確認ください。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/ogp.jpg" />
+  <meta property="og:site_name" content="aoshima tei 鈴 – SUZU" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="宿泊約款 | aoshima tei 鈴 – SUZU" />
+  <meta name="twitter:description" content="aoshima tei 鈴 – SUZUの宿泊約款について。ご宿泊に関する規則・条件をご確認ください。" />
+  <meta name="twitter:image" content="/images/ogp.jpg" />
+
+  <!-- Shippori Mincho Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-[#F5EFEA] text-[#483F38]">
+  <!-- Header -->
+  <header class="bg-[#F5EFEA] py-4 px-6 md:px-20 lg:px-28 border-b border-[#436C5E]/10">
+    <nav class="flex justify-between items-center">
+      <a href="/" class="text-[#436C5E] text-xl md:text-2xl font-semibold tracking-wider">
+        aoshima tei 鈴 – SUZU
+      </a>
+      
+      <!-- デスクトップメニュー -->
+      <ul class="hidden lg:flex space-x-8 text-[#436C5E] font-medium">
+        <li><a href="/" class="hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
+        <li><a href="/rooms" class="hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
+        <li><a href="/services" class="hover:opacity-70 transition-opacity tracking-wide">サービス</a></li>
+        <li><a href="/plans" class="hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
+        <li><a href="/contact" class="hover:opacity-70 transition-opacity tracking-wide">お問い合わせ</a></li>
+      </ul>
+
+      <!-- モバイルハンバーガーメニュー -->
+      <button class="lg:hidden text-[#436C5E]" id="mobile-menu-button">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- モバイルメニュー -->
+    <div class="lg:hidden hidden" id="mobile-menu">
+      <div class="pt-4 pb-3 border-t border-[#436C5E]/10 mt-4">
+        <ul class="space-y-3 text-[#436C5E] font-medium">
+          <li><a href="/" class="block hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
+          <li><a href="/rooms" class="block hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
+          <li><a href="/services" class="block hover:opacity-70 transition-opacity tracking-wide">サービス</a></li>
+          <li><a href="/plans" class="block hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
+          <li><a href="/contact" class="block hover:opacity-70 transition-opacity tracking-wide">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="flex-1">
+    <!-- パンくずナビ -->
+    <div class="bg-white border-b border-[#436C5E]/10">
+      <div class="max-w-6xl mx-auto py-3 px-4 md:px-8">
+        <nav class="text-sm text-[#483F38] opacity-70">
+          <ol class="flex items-center space-x-2">
+            <li><a href="/" class="hover:opacity-80 transition-opacity">TOP</a></li>
+            <li><span class="mx-2">›</span></li>
+            <li class="text-[#436C5E] font-medium">宿泊約款</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- 宿泊約款本文 -->
+    <section class="py-16 md:py-24 px-4 md:px-8">
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- ページタイトル -->
+        <div class="text-center mb-12 md:mb-16">
+          <h1 class="text-[#436C5E] text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide mb-6">
+            宿泊約款
+          </h1>
+          <div class="w-20 h-px bg-gradient-to-r from-transparent via-[#B99563] to-transparent mx-auto"></div>
+        </div>
+
+        <!-- 基本方針 -->
+        <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-12">
+          <div class="prose prose-lg max-w-none">
+            <div class="mb-8">
+              <p class="text-[#483F38] leading-relaxed tracking-wide">
+                この宿泊約款は、aoshima tei 鈴 – SUZU（以下「当館」）が宿泊客との間で
+                締結する宿泊に関する契約及びこれに付随する契約について、その条件等を定めたものです。
+              </p>
+            </div>
+
+            <div class="mb-8">
+              <p class="text-[#483F38] text-sm opacity-70">
+                制定日：2024年1月1日<br>
+                最終更新日：2024年1月1日
+              </p>
+            </div>
+
+            <!-- 各項目 -->
+            <div class="space-y-8">
+              
+              <!-- 第1条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第1条（適用範囲）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館が宿泊客との間で締結する宿泊に関する契約及びこれに付随する契約は、
+                    この約款の定めるところによるものとし、この約款に定めのない事項については、
+                    法令又は一般に確立された慣習によるものとします。
+                  </p>
+                  <p>
+                    当館が法令及び慣習に反しない範囲でこの約款の特約をしたときは、
+                    前項の規定にかかわらず、その特約が優先するものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第2条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第2条（宿泊契約の申込み）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide">
+                  <p class="mb-4">
+                    当館に宿泊契約の申込みをしようとする者は、次の事項を当館に申し出ていただきます。
+                  </p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>宿泊客の氏名</li>
+                    <li>宿泊日及び到着予定時刻</li>
+                    <li>宿泊料金（原則として別表第1に掲げる基本宿泊料による）</li>
+                    <li>その他当館が必要と認める事項</li>
+                  </ol>
+                  <p class="mt-4">
+                    宿泊客が宿泊中に前項第2号の宿泊日を超えて宿泊の継続を申し入れた場合は、
+                    当館は、その申し出がなされた時点で新たな宿泊契約の申込みがあったものとして処理します。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第3条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第3条（宿泊契約の成立等）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    宿泊契約は、当館が前条の申込みを承諾したときに成立するものとします。
+                    ただし、当館が承諾をしなかったことを証明したときは、この限りではありません。
+                  </p>
+                  <p>
+                    前項の規定により宿泊契約が成立したときは、宿泊期間の末日までに
+                    基本宿泊料を限度として当館が定める申込金を、当館が指定する日までに、
+                    宿泊客に支払っていただきます。
+                  </p>
+                  <p>
+                    申込金は、最終的に宿泊客が支払うべき宿泊料金に充当いたします。
+                    第16条及び第18条の規定を適用する場合においても同様とします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第4条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第4条（申込金の支払いを要しないこととする特約）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    前条第2項の規定にかかわらず、当館は、契約の成立後申込金の支払いを要しないこととする
+                    特約に応じることがあります。
+                  </p>
+                  <p>
+                    宿泊契約の申込みを承諾するに当たり、当館が前条第2項の申込金の支払いを求めなかった場合
+                    及び前項の特約をした場合には、第6条第2項の規定を適用します。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第5条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第5条（申込金支払いの拒否）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館は、申込金が第3条第2項の規定により当館が指定した日までに支払われなかったときは、
+                    宿泊契約はなかったものとして処理することがあります。
+                    ただし、申込金の支払期日について当館が宿泊客に特に告知した場合に限ります。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第6条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第6条（宿泊契約締結の拒否）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide">
+                  <p class="mb-4">
+                    当館は、次に掲げる場合においては、宿泊契約の締結に応じないことがあります。
+                  </p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>宿泊の申込みがこの約款によらないとき。</li>
+                    <li>満室（員）により客室の余裕がないとき。</li>
+                    <li>宿泊しようとする者が宿泊に関し法令の規定、公の秩序若しくは善良な風俗に反する行為をするおそれがあると認められるとき。</li>
+                    <li>宿泊しようとする者が次のいずれかに該当するとき。</li>
+                  </ol>
+                  <div class="ml-8 mt-2">
+                    <p class="mb-2">イ　暴力団、暴力団員、暴力団準構成員、暴力団関係企業、総会屋等、その他反社会的勢力であると認められるとき。</p>
+                    <p class="mb-2">ロ　暴力団又は暴力団員が事業活動を支配する法人その他の団体であると認められるとき。</p>
+                    <p class="mb-2">ハ　法人でその役員のうちに暴力団員に該当する者があるとき。</p>
+                  </div>
+                  <ol start="5" class="list-decimal list-inside space-y-2 pl-4 mt-4">
+                    <li>宿泊しようとする者が泥酔者であって他の宿泊客に著しく迷惑をかけるおそれがあると認められるとき、又は伝染性の疾病にかかっていると認められるとき。</li>
+                    <li>宿泊に関し合理的な範囲を超える負担を求められたとき。</li>
+                    <li>天災、施設の故障、その他やむを得ない事由により宿泊させることができないとき。</li>
+                    <li>その他、当館が宿泊を適当でないと判断したとき。</li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- 第7条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第7条（宿泊客の契約解除権）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    宿泊客は、当館に申し出て宿泊契約を解除することができます。
+                  </p>
+                  <p>
+                    当館は、宿泊客がその責めに帰すべき事由により宿泊契約の全部又は一部を解除する場合
+                    （第5条の規定により当館が宿泊契約をなかったものとして処理する場合を除きます。）には、
+                    別表第2に掲げるところにより、取消料を申し受けます。
+                  </p>
+                  <p>
+                    当館は、宿泊客が連絡をしないで宿泊日当日の午後8時（あらかじめ到着予定時刻が明示されている場合は、
+                    その時刻を2時間経過した時刻）になっても到着しないときは、その宿泊契約は宿泊客により解除されたものとみなし処理することがあります。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第8条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第8条（当館の契約解除権）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide">
+                  <p class="mb-4">
+                    当館は、次に掲げる場合においては、宿泊契約を解除することができます。
+                  </p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>宿泊客が宿泊に関し法令の規定、公の秩序若しくは善良な風俗に反する行為をし、又はこれらの行為をするおそれがあると認められるとき。</li>
+                    <li>宿泊客が第6条第1項第4号イ、ロ、ハのいずれかに該当することが判明したとき。</li>
+                    <li>宿泊客が泥酔者であって他の宿泊客に著しく迷惑をかけるおそれがあると認められるとき、又は伝染性の疾病にかかっていると認められるとき。</li>
+                    <li>宿泊に関し合理的な範囲を超える負担を求められたとき。</li>
+                    <li>天災等不可抗力に起因する事由により宿泊させることができないとき。</li>
+                    <li>その他、当館が宿泊を適当でないと判断したとき。</li>
+                  </ol>
+                  <p class="mt-4">
+                    当館が前項の規定により宿泊契約を解除したときは、宿泊客がいまだ提供を受けていない
+                    宿泊サービス等の料金はいただきません。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第9条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第9条（宿泊の登録）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    宿泊客は、宿泊日当日、当館のフロントにおいて、次の事項を登録していただきます。
+                  </p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>宿泊客の氏名、年齢、性別、住所及び職業</li>
+                    <li>外国人にあっては、国籍、旅券番号、入国地及び入国年月日</li>
+                    <li>出発日及び出発予定時刻</li>
+                    <li>その他当館が必要と認める事項</li>
+                  </ol>
+                  <p>
+                    宿泊客が第12条の料金の支払いを旅行小切手、宿泊券、クレジットカード等通貨に代わり得る
+                    方法により行おうとするときは、あらかじめ、これらを当館に呈示していただきます。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第10条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第10条（客室の使用時間）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    宿泊客が当館の客室を使用できる時間は、午後3時から翌朝午前11時までとします。
+                    ただし、連続して宿泊する場合においては、到着日及び出発日を除き、終日使用することができます。
+                  </p>
+                  <p>
+                    当館は、前項の規定にかかわらず、同項に定める時間外の客室の使用に応じることがあります。
+                    この場合においては、次に掲げる追加料金を申し受けます。
+                  </p>
+                  <ul class="list-disc list-inside space-y-2 pl-4">
+                    <li>午前11時から午後3時まで：基本宿泊料の50％</li>
+                    <li>午後3時を超える場合：1泊分の基本宿泊料</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 第11条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第11条（利用規則の遵守）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    宿泊客は、当館内においては、当館が定めて館内に掲示した利用規則に従っていただきます。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第12条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第12条（料金の支払い）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide">
+                  <p class="mb-4">
+                    宿泊客が支払うべき宿泊料金等の内訳は、別表第1に掲げるところによります。
+                  </p>
+                  <p class="mb-4">
+                    前項の宿泊料金等の支払いは、日本国通貨により、宿泊客の出発の際又は当館が請求したとき、
+                    フロントにおいて行っていただきます。
+                  </p>
+                  <p class="mb-4">
+                    当館は、宿泊客が客室を使用可能になった後現実に使用しなかった場合においても、
+                    宿泊料金を申し受けます。
+                  </p>
+                  <p>
+                    宿泊料金等の支払いは、次の方法によることができます。
+                  </p>
+                  <ul class="list-disc list-inside space-y-2 pl-4">
+                    <li>現金</li>
+                    <li>当館が認めるクレジットカード</li>
+                    <li>当館が認める電子マネー</li>
+                    <li>宿泊券その他当館が承認する証券類</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 第13条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第13条（当館の責任）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館は、宿泊契約及びこれに付随する契約の履行に当たり、又はこれらの不履行により
+                    宿泊客に損害を与えたときは、その損害を賠償いたします。
+                    ただし、それが当館の責めに帰することができない事由によるものであるときは、この限りではありません。
+                  </p>
+                  <p>
+                    当館は、火災保険に加入しております。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第14条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第14条（寄託物の取扱い）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    宿泊客がフロントに寄託した物品又は現金について滅失、毀損等の損害が生じたときは、
+                    それが不可抗力による場合を除き、当館がその損害を賠償いたします。
+                    ただし、現金及び貴重品については、当館がその種類及び価額の明告を求めたにもかかわらず、
+                    宿泊客がこれに応じなかった場合においては、当館は15万円を限度としてその損害を賠償します。
+                  </p>
+                  <p>
+                    宿泊客が当館内にお持込みになった物品又は現金であってフロントに寄託されなかったものについて、
+                    当館の故意又は過失により滅失、毀損等の損害が生じたときは、当館がその損害を賠償いたします。
+                    ただし、宿泊客から種類及び価額の明告のなかったものについては、
+                    当館は15万円を限度としてその損害を賠償します。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第15条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第15条（宿泊客の手荷物又は携帯品の保管）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    宿泊客の手荷物が宿泊に先立って当館に到着した場合は、
+                    当館がその到着前に了承したときに限りこれを保管し、宿泊客がフロントにおいてチェックインする際にお渡しします。
+                  </p>
+                  <p>
+                    宿泊客がチェックアウトした後に、宿泊客の手荷物又は携帯品が当館に留置された場合において、
+                    その所有者が判明しているときは、当館は所有者に連絡をするとともに、その指示を求めます。
+                    ただし、所有者の指示がないとき又は所有者が判明しないときは、遺失物法その他の法令の定めるところによります。
+                  </p>
+                  <p>
+                    前2項の場合における宿泊客の手荷物又は携帯品の保管について、
+                    第1項については宿泊契約に付随するサービスとして、
+                    第2項については善良な管理者の注意をもって保管するものとし、
+                    その保管に関して生じた損害についての当館の責任は、前条の規定に準じるものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第16条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第16条（駐車の責任）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    宿泊客が当館の駐車場をご利用になる場合、当館は場所をお貸しするのみで、
+                    車両の管理責任は負わないものとします。ただし、駐車場の管理に当館の故意又は過失があったときは、
+                    その損害を賠償いたします。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 別表 -->
+            <div class="mt-12 space-y-8">
+              <div>
+                <h3 class="text-[#436C5E] text-lg md:text-xl font-semibold mb-4 tracking-wide">
+                  別表第1（第12条関係）宿泊料金等の内訳
+                </h3>
+                <div class="bg-[#F5EFEA] border border-[#436C5E]/20 rounded-lg p-6">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 class="text-[#436C5E] font-semibold mb-2">基本宿泊料</h4>
+                      <ul class="text-sm space-y-1">
+                        <li>客室料（室料）</li>
+                        <li>サービス料</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 class="text-[#436C5E] font-semibold mb-2">その他の料金</h4>
+                      <ul class="text-sm space-y-1">
+                        <li>飲食料金</li>
+                        <li>電話料金</li>
+                        <li>その他利用料金</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-4 text-sm text-[#483F38] opacity-70">
+                    <p>※料金には消費税及び入湯税が含まれております。</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-[#436C5E] text-lg md:text-xl font-semibold mb-4 tracking-wide">
+                  別表第2（第7条関係）取消料
+                </h3>
+                <div class="bg-[#F5EFEA] border border-[#436C5E]/20 rounded-lg p-6">
+                  <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                      <thead>
+                        <tr class="border-b border-[#436C5E]/20">
+                          <th class="text-left py-2 px-3 text-[#436C5E] font-semibold">取消日</th>
+                          <th class="text-left py-2 px-3 text-[#436C5E] font-semibold">取消料</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="border-b border-[#436C5E]/10">
+                          <td class="py-2 px-3">宿泊日の前日</td>
+                          <td class="py-2 px-3">基本宿泊料の20%</td>
+                        </tr>
+                        <tr class="border-b border-[#436C5E]/10">
+                          <td class="py-2 px-3">宿泊日の当日（午後6時まで）</td>
+                          <td class="py-2 px-3">基本宿泊料の50%</td>
+                        </tr>
+                        <tr class="border-b border-[#436C5E]/10">
+                          <td class="py-2 px-3">宿泊日の当日（午後6時以降）</td>
+                          <td class="py-2 px-3">基本宿泊料の80%</td>
+                        </tr>
+                        <tr>
+                          <td class="py-2 px-3">無連絡不泊</td>
+                          <td class="py-2 px-3">基本宿泊料の100%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="mt-4 text-sm text-[#483F38] opacity-70">
+                    <p>※団体（15名以上）の場合は、別途定める料率が適用されます。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- フッターリンク -->
+        <div class="text-center">
+          <div class="inline-flex flex-wrap gap-4 md:gap-8 text-[#436C5E] text-sm">
+            <a href="/privacy-policy" class="hover:text-[#B99563] transition-colors">プライバシーポリシー</a>
+            <a href="/terms" class="hover:text-[#B99563] transition-colors">利用規約</a>
+            <a href="/faq" class="hover:text-[#B99563] transition-colors">よくあるご質問</a>
+            <a href="/contact" class="hover:text-[#B99563] transition-colors">お問い合わせ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="bg-[#436C5E] text-white py-16 px-4 md:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <!-- ロゴ・連絡先セクション -->
+        <div class="space-y-6">
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-wider">
+            aoshima tei 鈴 – SUZU
+          </h2>
+          
+          <div class="space-y-4 text-sm leading-relaxed opacity-90">
+            <div>
+              <p class="font-medium mb-1">〒 889-2162</p>
+              <p>宮崎県宮崎市青島4-48-4</p>
+            </div>
+            <div>
+              <p class="font-medium mb-1">TEL: 012-345-6789</p>
+              <p>FAX: 012-345-6790</p>
+            </div>
+            <div>
+              <p class="font-medium mb-1">チェックイン: 15:00～18:00</p>
+              <p>チェックアウト: ～11:00</p>
+            </div>
+          </div>
+          
+          <div class="flex space-x-4">
+            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.024-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 23.998 12.017 24c6.624 0 11.99-5.367 11.99-12C24.007 5.367 18.641.001.012.017 0z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- ナビゲーションセクション -->
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold mb-4 text-[#B99563]">サイトマップ</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/" class="hover:text-[#B99563] transition-colors">TOP</a></li>
+              <li><a href="/rooms" class="hover:text-[#B99563] transition-colors">客室紹介</a></li>
+              <li><a href="/services" class="hover:text-[#B99563] transition-colors">サービス</a></li>
+              <li><a href="/plans" class="hover:text-[#B99563] transition-colors">プラン</a></li>
+              <li><a href="/contact" class="hover:text-[#B99563] transition-colors">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4 text-[#B99563]">その他</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/privacy-policy" class="hover:text-[#B99563] transition-colors">プライバシーポリシー</a></li>
+              <li><a href="/terms" class="hover:text-[#B99563] transition-colors">利用規約</a></li>
+              <li><a href="/usage-terms" class="text-[#B99563]">宿泊約款</a></li>
+              <li><a href="/faq" class="hover:text-[#B99563] transition-colors">よくあるご質問</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- コピーライト -->
+      <div class="text-center pt-8 border-t border-white/20">
+        <p class="text-sm opacity-70">
+          &copy; 2024 aoshima tei 鈴 – SUZU. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // モバイルメニューの制御
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+  </script>
+
+  <style>
+    * {
+      font-family: 'Shippori Mincho', serif;
+    }
+  </style>
+</body>
+</html>

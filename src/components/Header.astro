@@ -1,0 +1,167 @@
+---
+// Header Component - Figmaデザイン準拠
+---
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          'shippori': ['Shippori Mincho', 'serif']
+        },
+        colors: {
+          'deep-green': '#436C5E',
+          'bg-beige': '#F5EFEA',
+          'gold': '#B99563',
+          'text-main': '#483F38',
+          'text-sub': '#475569',
+          'logo-gray': '#7E9BA0'
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Shippori Mincho Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+
+<header class="bg-[#f5efea] backdrop-blur-[2px] sticky top-0 z-50">
+  <!-- Mobile Header (SP: ~768px) - Figmaのバリアント2準拠: W:375px H:61px -->
+  <div class="lg:hidden">
+    <div class="flex items-center justify-between w-[375px] mx-auto px-[24px] py-[16px] h-[61px]" data-name="プロパティ1=バリアント2" data-node-id="124:3949">
+      <!-- Logo - Figma準拠: W:70.688px H:28px -->
+      <div class="text-[#7e9ba0] text-[20px] font-bold font-['Shippori_Mincho'] tracking-[2px] leading-[28px] w-[70.688px] h-[28px]">
+        LOGO
+      </div>
+      
+      <!-- Icon Group (Search + Menu) - Figma準拠: W:155px -->
+      <div class="flex items-center gap-[24px] w-[155px] justify-end">
+        <!-- Search Icon - Figma準拠: W:29px H:29.011px -->
+        <button class="w-[29px] h-[29px] flex-shrink-0" aria-label="検索">
+          <img src="/images/icons/search-icon.svg" alt="Search" class="w-full h-full" />
+        </button>
+        
+        <!-- Mobile Menu Button - Figma準拠: W:26px H:16px -->
+        <button id="mobile-menu-btn" class="w-[26px] h-[16px] flex flex-col justify-between" aria-label="メニューを開く">
+          <div class="w-full h-0.5 bg-[#436c5e]"></div>
+          <div class="w-full h-0.5 bg-[#436c5e]"></div>
+          <div class="w-full h-0.5 bg-[#436c5e]"></div>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu (Hidden by default) - Figma準拠のフルスクリーンメニュー -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-[#f5efea] z-50">
+      <!-- Header area with logo -->
+      <div class="flex items-center justify-between px-4 py-4 h-[65px] border-b border-[#436c5e] border-opacity-20">
+        <div class="text-[#7e9ba0] text-xl font-bold font-['Shippori_Mincho'] tracking-[2px] leading-none">
+          LOGO
+        </div>
+        
+        <!-- Close button -->
+        <button id="mobile-menu-close" class="w-6 h-6 text-[#436c5e]" aria-label="メニューを閉じる">
+          <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Menu content -->
+      <div class="flex flex-col items-center justify-center flex-1 px-4 space-y-8">
+        <nav class="flex flex-col items-center space-y-6">
+          <a href="/" class="text-[#436c5e] text-lg tracking-[1.8px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity py-3">ROOM</a>
+          <a href="/services" class="text-[#436c5e] text-lg tracking-[1.8px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity py-3">SERVICE</a>
+          <a href="/faq" class="text-[#436c5e] text-lg tracking-[1.8px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity py-3">FAQ</a>
+          <a href="/access" class="text-[#436c5e] text-lg tracking-[1.8px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity py-3">ACCESS</a>
+          <a href="/contact" class="text-[#436c5e] text-lg tracking-[1.8px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity py-3">CONTACT</a>
+        </nav>
+        
+        <!-- Reservation Button - Figma準拠 -->
+        <div class="pt-8">
+          <a href="/contact" class="bg-white border border-[#436c5e] text-[#436c5e] px-12 py-3 text-base tracking-[1.6px] font-['Shippori_Mincho'] hover:bg-[#436c5e] hover:text-white transition-all duration-300 rounded-md inline-block">
+            ご予約
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PC Header (1024px+) - Figma準拠 -->
+  <div class="hidden lg:block">
+    <div class="max-w-[1440px] mx-auto px-20 py-4">
+      <div class="flex items-center justify-between w-full max-w-[1254.388px] mx-auto">
+        <!-- Logo -->
+        <div class="text-[#7e9ba0] text-xl font-bold font-['Shippori_Mincho'] tracking-[2px]">
+          LOGO
+        </div>
+        
+        <!-- Navigation & Actions Container -->
+        <div class="flex items-center gap-[141px]">
+          <!-- Navigation -->
+          <nav class="flex items-center gap-[47px]">
+            <a href="/" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity leading-5">ROOM</a>
+            <a href="/services" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity leading-5">SERVICE</a>
+            <a href="/faq" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity leading-5">FAQ</a>
+            <a href="/access" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity leading-5">ACCESS</a>
+            <a href="/contact" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity leading-5">CONTACT</a>
+          </nav>
+          
+          <!-- Search & Reservation -->
+          <div class="flex items-center gap-4 w-[271px] justify-end">
+            <!-- Search Icon - Figma正確なデザイン -->
+            <button class="w-[29px] h-[29px]">
+              <img src="/images/icons/search-icon.svg" alt="Search" class="w-full h-full" />
+            </button>
+            
+            <!-- Reservation Button -->
+            <a href="/contact" class="bg-[#436c5e] border border-[#436c5e] text-white px-[49px] py-[10px] rounded-full flex items-center gap-2.5 text-sm tracking-[2.1px] font-['Shippori_Mincho'] hover:bg-white hover:text-[#436c5e] hover:border-[#436c5e] transition-all w-[139px] justify-center whitespace-nowrap">
+              <!-- Calendar Icon - SVGインライン化でcurrentColorに対応 -->
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px] flex-shrink-0">
+                <path d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M12 1.5V4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 1.5V4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2.25 7.5H15.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="inline-block">ご予約</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', function() {
+        mobileMenu.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // スクロール停止
+      });
+    }
+    
+    if (mobileMenuClose && mobileMenu) {
+      mobileMenuClose.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = ''; // スクロール復活
+      });
+    }
+    
+    // メニュー外クリックで閉じる
+    mobileMenu?.addEventListener('click', function(e) {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+</script>

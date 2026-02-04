@@ -1,0 +1,311 @@
+---
+/**
+ * プラン紹介ページ
+ * Figmaデザインに完全準拠したレイアウト
+ */
+export const prerender = true;
+---
+
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <title>宿泊プラン | aoshima tei 鈴 – SUZU</title>
+  <meta name="description" content="宮崎の自然を堪能する特別な宿泊プラン。貸切温泉付きプランと宮崎堪能プランをご用意。極上のプライベート空間で忘れられない体験を。" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'shippori': ['Shippori Mincho', 'serif']
+          },
+          colors: {
+            'deep-green': '#436C5E',
+            'bg-beige': '#F5EFEA',
+            'gold': '#B99563',
+            'text-main': '#483F38',
+            'text-sub': '#475569',
+            'logo-gray': '#7E9BA0'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Shippori Mincho Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header - Figmaデザイン準拠 -->
+  <header class="bg-[#f5efea] px-20 py-4 backdrop-blur-sm">
+    <nav class="flex items-center justify-between max-w-[1280px] mx-auto">
+      <div class="text-[#7e9ba0] text-xl font-bold font-['Shippori_Mincho'] tracking-[2px]">
+        LOGO
+      </div>
+      
+      <div class="flex items-center gap-[141px]">
+        <ul class="flex items-center gap-12">
+          <li><a href="/" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-70 transition-opacity">ROOM</a></li>
+          <li><a href="/services" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-70 transition-opacity">SERVICE</a></li>
+          <li><a href="/faq" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-70 transition-opacity">FAQ</a></li>
+          <li><a href="/access" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-70 transition-opacity">ACCESS</a></li>
+          <li><a href="/contact" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-70 transition-opacity">CONTACT</a></li>
+        </ul>
+        
+        <div class="flex items-center gap-4">
+          <!-- 検索アイコン -->
+          <div class="w-7 h-7">
+            <svg viewBox="0 0 29 29" class="w-full h-full">
+              <path fill="#436c5e" d="M20.5 18.5L26 24M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#436c5e" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          
+          <!-- 予約ボタン -->
+          <a href="/contact" class="bg-[#436c5e] border border-[#436c5e] text-white px-12 py-2.5 rounded-full flex items-center gap-2.5 text-sm tracking-[2.1px] font-['Shippori_Mincho'] hover:bg-opacity-80 transition-all">
+            <svg class="w-4 h-4" viewBox="0 0 18 18">
+              <path fill="white" d="M9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18Z"/>
+            </svg>
+            ご予約
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- メインコンテンツ -->
+  <main class="bg-white">
+    <!-- プラン紹介テキスト -->
+    <section class="py-24 px-4">
+      <div class="max-w-lg mx-auto text-center">
+        <h1 class="text-text-main text-4xl font-['Shippori_Mincho'] tracking-[3.6px] mb-10">宿泊プランのご案内</h1>
+        <p class="text-text-sub text-[15px] leading-[2.2] tracking-[1.5px] font-['Shippori_Mincho']">
+          宮崎の豊かな自然と、極上のプライベート空間を享受する。<br>
+          特別な体験を約束する二つのスタイルをご用意いたしました。
+        </p>
+      </div>
+    </section>
+
+    <!-- プランセクション -->
+    <section class="space-y-32 pb-24">
+      <!-- 貸切温泉付きプラン -->
+      <div class="flex max-w-[1440px] mx-auto h-[700px]">
+        <!-- 画像部分 -->
+        <div class="relative w-[748px] h-[700px] overflow-hidden">
+          <div class="absolute inset-0" style="mask-image: url('https://www.figma.com/api/mcp/asset/bbab5dcf-0bf8-4407-ac96-a49463b78c0a'); -webkit-mask-image: url('https://www.figma.com/api/mcp/asset/bbab5dcf-0bf8-4407-ac96-a49463b78c0a'); mask-size: 607.5px 700px; -webkit-mask-size: 607.5px 700px; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; mask-position: center; -webkit-mask-position: center;">
+            <img src="https://www.figma.com/api/mcp/asset/e114461b-8eb2-46bf-a8d8-b22083cf18bd" alt="貸切温泉" class="w-full h-full object-cover" />
+          </div>
+        </div>
+        
+        <!-- テキスト部分 -->
+        <div class="w-[692px] bg-white relative">
+          <div class="absolute top-[137px] left-24 w-[500px] space-y-16">
+            <div class="space-y-8">
+              <!-- タイトル -->
+              <div class="space-y-4">
+                <h2 class="text-text-main text-2xl font-semibold tracking-[2.4px] font-['Shippori_Mincho']">貸切温泉付きプラン</h2>
+                <div class="w-12 h-px bg-gold"></div>
+              </div>
+              
+              <!-- 説明文 -->
+              <p class="text-text-sub text-sm leading-[2.1] tracking-[1.4px] font-['Shippori_Mincho']">
+                「何もしない」という贅沢。専用のプライベート温泉で、宮<br>
+                崎の風を感じながら心ゆくまで癒やしのひとときを。<br>
+                <br>
+                静寂に包まれた空間で、刻一刻と移ろう景色を眺める。誰に<br>
+                も邪魔されない、あなただけの極上な休日をお約束します。<br>
+                夜は星空を眺めながらの入浴、朝は小鳥のさえずりと共に。
+              </p>
+              
+              <!-- アメニティ情報 -->
+              <div class="pt-4 border-t border-gold">
+                <div class="flex items-center">
+                  <img src="https://www.figma.com/api/mcp/asset/4c369b09-e3cb-4c0b-aee0-920806fdc57a" alt="温泉アイコン" class="w-5 h-6 mr-3 transform scale-y-[-1]" />
+                  <span class="text-text-main text-[13px] tracking-[1.3px] font-['Shippori_Mincho']">源泉かけ流し</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- MOREボタン -->
+            <a href="/contact" class="inline-block border border-deep-green text-deep-green bg-transparent rounded-full px-12 py-2.5 text-sm tracking-[2.1px] font-['Shippori_Mincho'] hover:bg-deep-green hover:text-white transition-all">
+              MORE
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 宮崎堪能プラン -->
+      <div class="flex max-w-[1440px] mx-auto h-[700px]">
+        <!-- テキスト部分 -->
+        <div class="w-[692px] bg-white relative">
+          <div class="absolute top-[135px] left-24 w-[500px] space-y-16">
+            <div class="space-y-8">
+              <!-- タイトル -->
+              <div class="space-y-4">
+                <h2 class="text-text-main text-2xl font-semibold tracking-[2.4px] font-['Shippori_Mincho']">宮崎堪能プラン</h2>
+                <div class="w-12 h-px bg-gold"></div>
+              </div>
+              
+              <!-- 説明文 -->
+              <p class="text-text-sub text-sm leading-[2.1] tracking-[1.4px] font-['Shippori_Mincho']">
+                宮崎の太陽が育んだ至極の食材を、プライベートなテラス<br>
+                で。最高級の宮崎牛と地元産の新鮮な野菜をBBQスタイルで<br>
+                お愉しみください。<br>
+                <br>
+                専属のシェフが厳選した旬の味覚を、大切な方と囲む。心地<br>
+                よい夜風を感じながら、宮崎の「美味しい」を五感で味わ<br>
+                う。食の感動が、旅の思い出をより一層深めます。
+              </p>
+              
+              <!-- アメニティ情報 -->
+              <div class="pt-4 border-t border-gold flex gap-28">
+                <div class="flex items-center">
+                  <img src="https://www.figma.com/api/mcp/asset/06579948-c30b-4778-8b89-ec585f5b0b41" alt="BBQアイコン" class="w-5 h-6 mr-3 transform scale-y-[-1]" />
+                  <span class="text-text-main text-[13px] tracking-[1.3px] font-['Shippori_Mincho']">宮崎牛BBQ</span>
+                </div>
+                <div class="flex items-center">
+                  <img src="https://www.figma.com/api/mcp/asset/2f3ebb33-77a8-44f7-b71a-15794fbd4ac2" alt="ワインアイコン" class="w-5 h-6 mr-3 transform scale-y-[-1]" />
+                  <span class="text-text-main text-[13px] tracking-[1.3px] font-['Shippori_Mincho']">厳選ワインセット</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- MOREボタン -->
+            <a href="/contact" class="inline-block border border-deep-green text-deep-green bg-transparent rounded-full px-12 py-2.5 text-sm tracking-[2.1px] font-['Shippori_Mincho'] hover:bg-deep-green hover:text-white transition-all">
+              MORE
+            </a>
+          </div>
+        </div>
+        
+        <!-- 画像部分 -->
+        <div class="relative w-[748px] h-[700px] overflow-hidden">
+          <div class="absolute inset-0" style="mask-image: url('https://www.figma.com/api/mcp/asset/bbab5dcf-0bf8-4407-ac96-a49463b78c0a'); -webkit-mask-image: url('https://www.figma.com/api/mcp/asset/bbab5dcf-0bf8-4407-ac96-a49463b78c0a'); mask-size: 607.5px 700px; -webkit-mask-size: 607.5px 700px; mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; mask-position: center; -webkit-mask-position: center;">
+            <img src="https://www.figma.com/api/mcp/asset/009d0ae2-5a10-4bdf-ae26-adbf43685a6b" alt="宮崎牛BBQ" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RESERVATION セクション -->
+  <section class="bg-cover bg-center h-[600px] relative" style="background-image: url('https://www.figma.com/api/mcp/asset/009d0ae2-5a10-4bdf-ae26-adbf43685a6b')">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div class="text-center text-white">
+        <h2 class="text-4xl font-['Shippori_Mincho'] tracking-[4px] mb-8">RESERVATION</h2>
+        <p class="text-lg mb-8 leading-relaxed">
+          オンライン予約は承っておりません。<br>
+          お電話にてお気軽にお問い合わせください。
+        </p>
+        <a href="/contact" class="inline-block bg-white text-[#436c5e] px-16 py-4 rounded-full font-['Shippori_Mincho'] tracking-[2px] hover:bg-opacity-90 transition-all">
+          お問い合わせ
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="bg-[#436c5e] text-white py-16">
+    <div class="max-w-6xl mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <!-- 左側：ロゴと詳細情報 -->
+        <div class="space-y-6">
+          <div class="text-[#7e9ba0] text-xl font-bold font-['Shippori_Mincho'] tracking-[2px] mb-8">
+            LOGO
+          </div>
+          
+          <div class="text-sm opacity-90 space-y-1">
+            <p>Hayama Kamakura Kanagawa Prefecture, Japan 1-1-1</p>
+          </div>
+          
+          <!-- SNSアイコン -->
+          <div class="flex gap-4 mt-6">
+            <div class="w-6 h-6 border border-white rounded">
+              <svg class="w-full h-full p-1" fill="white" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 右側：ナビゲーション -->
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-[#b99563] font-semibold mb-4 font-['Shippori_Mincho']">ROOM</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/" class="hover:text-[#b99563] transition-colors">トップ</a></li>
+              <li><a href="/services" class="hover:text-[#b99563] transition-colors">サービス</a></li>
+              <li><a href="/faq" class="hover:text-[#b99563] transition-colors">FAQ</a></li>
+              <li><a href="/access" class="hover:text-[#b99563] transition-colors">アクセス</a></li>
+              <li><a href="/contact" class="hover:text-[#b99563] transition-colors">コンタクト</a></li>
+              <li><a href="/rooms" class="hover:text-[#b99563] transition-colors">部屋案内</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-[#b99563] font-semibold mb-4 font-['Shippori_Mincho']">SERVICE</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/privacy-policy" class="hover:text-[#b99563] transition-colors">プライバシーポリシー</a></li>
+              <li><a href="/terms" class="hover:text-[#b99563] transition-colors">利用規約</a></li>
+              <li><a href="/usage-terms" class="hover:text-[#b99563] transition-colors">宿泊約款</a></li>
+              <li><a href="/sitemap" class="hover:text-[#b99563] transition-colors">サイトマップ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- コピーライト -->
+      <div class="pt-8 border-t border-white border-opacity-20 text-center">
+        <p class="text-sm opacity-70">&copy; 2024 aoshima tei 鈴 – SUZU. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    * {
+      font-family: 'Shippori Mincho', serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: white;
+      color: #483F38;
+    }
+
+    /* SPレスポンシブ対応 */
+    @media (max-width: 768px) {
+      .max-w-\[1440px\] {
+        flex-direction: column;
+        height: auto;
+        padding: 0 16px;
+      }
+      
+      .w-\[748px\], .w-\[692px\] {
+        width: 100% !important;
+      }
+      
+      .absolute {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        padding: 40px 16px;
+      }
+      
+      .hidden {
+        display: none;
+      }
+      
+      .md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>

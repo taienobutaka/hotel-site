@@ -1,17 +1,1051 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/index.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="心を満たす、特別な時間 | 宿泊施設">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'shippori': ['Shippori Mincho', 'serif']
+          },
+          colors: {
+            'deep-green': '#436C5E',
+            'bg-beige': '#F5EFEA',
+            'gold': '#B99563',
+            'text-main': '#483F38',
+            'text-sub': '#475569',
+            'logo-gray': '#7E9BA0'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <div class="bg-white min-h-screen">
+    
+    <!-- Header -->
+    <Header />
+    
+    <!-- FV Section - 動画対応 (Rectangle43) - レスポンシブ対応 -->
+    <!-- SP: Frame 110 - W:375px H:753px -->
+    <!-- PC: FV - W:1440px H:828px -->
+    <section class="relative lg:h-[828px] h-[753px] overflow-hidden" data-name="FV" data-node-id="155:1171">
+      
+      <!-- Figma背景画像 - Mask group -->
+      <div class="absolute inset-0 w-full h-full" data-name="Mask group" data-node-id="228:1582">
+        <!-- PC Background -->
+        <div class="hidden lg:block absolute w-[1447px] h-[2170px] left-[-3px] top-[-674px]" data-name="IMGL0313-Edit" data-node-id="228:1590">
+          <img 
+            src="/images/hero/hero-bg.jpg" 
+            alt="背景画像 - IMGL0313-Edit"
+            class="absolute inset-0 w-full h-full object-cover max-w-none pointer-events-none"
+          />
+        </div>
+        <!-- Mobile Background -->
+        <div class="lg:hidden absolute w-[701.793px] h-[1052.558px] left-[-163.91px] top-[-149.4px]">
+          <img 
+            src="/images/hero/hero-bg.jpg" 
+            alt="背景画像 - モバイル"
+            class="absolute inset-0 w-full h-full object-cover max-w-none pointer-events-none"
+          />
+        </div>
+      </div>
+
+      <!-- Rectangle43 - 動画コンテナ（黒い背景、将来動画差し替え用） -->
+      <div class="absolute inset-0 bg-black w-full h-full" data-node-id="228:1588">
+        <!-- 動画要素（将来的に動画ファイルに差し替え可能） -->
+        <video 
+          id="hero-video" 
+          class="absolute inset-0 w-full h-full object-cover hidden"
+          autoplay 
+          muted 
+          loop 
+          playsinline
+        >
+          <source src="/videos/hero-video.mp4" type="video/mp4">
+          <source src="/videos/hero-video.webm" type="video/webm">
+        </video>
+        
+        <!-- 動画がない場合のフォールバック（現在の表示：黒背景） -->
+        <div id="hero-fallback" class="absolute inset-0 w-full h-full bg-black"></div>
+      </div>
+      
+      <!-- Hero Text Content - Frame 111 (SP): W:375px H:88px at top:287.99px -->
+      <!-- PC Layout: Group 14 - W:726.34px H:88px centered -->
+      <div class="lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center absolute top-[287.99px] left-0 w-full">
+        <!-- PC Layout: Group 14 - W:726.34px H:88px centered -->
+        <div class="lg:block hidden text-center text-white font-['Shippori_Mincho'] z-10 text-shadow-hero" data-node-id="155:1174">
+          <div class="w-[726.34px] h-[88px] flex flex-col gap-4 mx-auto">
+            <!-- PC タイトル: 40px -->
+            <h1 class="font-semibold text-[40px] leading-[60px] tracking-[6px] h-[60px] flex items-center justify-center whitespace-pre-wrap">心を満たす、特別な時間</h1>
+            <!-- PC サブテキスト: 16px -->
+            <p class="font-normal text-[16px] leading-[28px] tracking-[1.8px] h-[28px] flex items-center justify-center w-[394.914px] mx-auto whitespace-pre-wrap">静寂と美しさが織りなす、極上のリゾートへ</p>
+          </div>
+        </div>
+        
+        <!-- SP Layout: Frame 111 - W:375px H:88px at top:287.99px -->
+        <div class="lg:hidden block text-center text-white font-['Shippori_Mincho'] z-10 text-shadow-hero" data-node-id="176:1890">
+          <div class="w-[375px] h-[88px] flex flex-col gap-[8px] mx-auto">
+            <!-- SP タイトル: 24px -->
+            <h1 class="font-semibold text-[24px] leading-[32px] tracking-[2.4px] h-[32px] flex items-center justify-center whitespace-pre-wrap">心を満たす、特別な時間</h1>
+            <!-- SP サブテキスト: 14px -->
+            <div class="font-normal text-[14px] leading-[24px] tracking-[1.8px] h-[48px] w-[394.914px] mx-auto flex flex-col justify-center">
+              <p class="mb-0">静寂と美しさが織りなす、</p>
+              <p>極上のリゾートへ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Toggle Button (Optional) -->
+      <div class="absolute bottom-4 right-4 z-20 hidden" id="video-controls">
+        <button 
+          id="video-toggle" 
+          class="bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all"
+          onclick="toggleHeroVideo()"
+          title="動画を再生/一時停止"
+        >
+          <svg id="play-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <svg id="pause-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+    
+    <!-- Video Control & Management Script -->
+    <script>
+      // 動画管理用の関数
+      function toggleHeroVideo() {
+        const video = document.getElementById('hero-video');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        
+        if (video.paused) {
+          video.play();
+          playIcon.style.display = 'none';
+          pauseIcon.style.display = 'block';
+        } else {
+          video.pause();
+          playIcon.style.display = 'block';
+          pauseIcon.style.display = 'none';
+        }
+      }
+      
+      // Rectangle43動画切り替え用の関数
+      function switchToVideo() {
+        const video = document.getElementById('hero-video');
+        const fallback = document.getElementById('hero-fallback');
+        const controls = document.getElementById('video-controls');
+        
+        if (video && fallback) {
+          fallback.style.display = 'none';
+          video.style.display = 'block';
+          if (controls) controls.style.display = 'block';
+        }
+      }
+      
+      // Rectangle43を黒背景表示に戻す
+      function switchToBlackBackground() {
+        const video = document.getElementById('hero-video');
+        const fallback = document.getElementById('hero-fallback');
+        const controls = document.getElementById('video-controls');
+        
+        if (video && fallback) {
+          video.style.display = 'none';
+          fallback.style.display = 'block';
+          if (controls) controls.style.display = 'none';
+        }
+      }
+      
+      // ページ読み込み時に動画ファイルの存在をチェック
+      document.addEventListener('DOMContentLoaded', function() {
+        // 動画ファイルが存在する場合は自動的に切り替え
+        fetch('/videos/hero-video.mp4', { method: 'HEAD' })
+          .then(response => {
+            if (response.ok) {
+              switchToVideo();
+            }
+          })
+          .catch(() => {
+            // ファイルが存在しない場合は画像表示を継続
+            console.info('動画ファイルが配置されていません。画像表示中です。');
+          });
+      });
+    
+    // Fixed Reservation Button - SPはFV内から追従表示
+    document.addEventListener('DOMContentLoaded', function() {
+      const fixedReservationBtn = document.getElementById('fixed-reservation-btn');
+      if (fixedReservationBtn) {
+        const updateReservationButton = () => {
+          fixedReservationBtn.style.display = window.innerWidth <= 768 ? 'block' : 'none';
+        };
+
+        updateReservationButton();
+        window.addEventListener('resize', updateReservationButton);
+      }
+
+      // Room Gallery Auto Scroll Function
+      initRoomGalleryAutoScroll();
+      
+      function initRoomGalleryAutoScroll() {
+        const pcGallery = document.getElementById('room-gallery-pc');
+        const spGallery = document.getElementById('room-gallery-sp');
+        
+        // PC版のエンドレススクロール（6枚の画像で修正）
+        if (pcGallery) {
+          console.log('PC Gallery found, children count:', pcGallery.children.length);
+          let translateX = 0;
+          const itemWidth = 350 + 40; // アイテム幅 + gap
+          const totalItems = 6; // オリジナルアイテム数（6枚に修正）
+          const maxTranslate = itemWidth * totalItems;
+          const speed = 1.0; // 適度な速さに調整
+          
+          console.log('PC Gallery settings:', {
+            itemWidth,
+            totalItems,
+            maxTranslate,
+            actualChildren: pcGallery.children.length
+          });
+          
+          function animate() {
+            translateX += speed;
+            
+            // 最後の画像表示完了時にリセット
+            if (translateX >= maxTranslate) {
+              // transitionを無効化して瞬間リセット
+              pcGallery.style.transition = 'none';
+              translateX = 0;
+              pcGallery.style.transform = `translateX(0px)`;
+              
+              // 次のフレームでtransitionを復活させる
+              requestAnimationFrame(() => {
+                pcGallery.style.transition = 'transform 0.1s ease-out';
+              });
+              
+              console.log('PC Gallery instant reset completed');
+            } else {
+              pcGallery.style.transform = `translateX(-${translateX}px)`;
+            }
+            
+            requestAnimationFrame(animate);
+          }
+          
+          requestAnimationFrame(animate);
+        }
+        
+        // SP版のエンドレススクロール（6枚の画像で修正）
+        if (spGallery) {
+          console.log('SP Gallery found, children count:', spGallery.children.length);
+          let translateX = 0;
+          const itemWidth = 148 + 16; // アイテム幅 + gap (SP版は gap-4 = 16px)
+          const totalItems = 6; // オリジナルアイテム数（6枚に修正）
+          const maxTranslate = itemWidth * totalItems;
+          const speed = 1.0; // 適度な速さに調整
+          
+          console.log('SP Gallery settings:', {
+            itemWidth,
+            totalItems,
+            maxTranslate,
+            actualChildren: spGallery.children.length
+          });
+          
+          function animate() {
+            translateX += speed;
+            
+            // 最後の画像表示完了時にリセット
+            if (translateX >= maxTranslate) {
+              // transitionを無効化して瞬間リセット
+              spGallery.style.transition = 'none';
+              translateX = 0;
+              spGallery.style.transform = `translateX(0px)`;
+              
+              // 次のフレームでtransitionを復活させる
+              requestAnimationFrame(() => {
+                spGallery.style.transition = 'transform 0.1s ease-out';
+              });
+              
+              console.log('SP Gallery instant reset completed');
+            } else {
+              spGallery.style.transform = `translateX(-${translateX}px)`;
+            }
+            
+            requestAnimationFrame(animate);
+          }
+          
+          requestAnimationFrame(animate);
+        }
+      }
+    });
+    </script>
+    <!-- Concept Section - レスポンシブ対応 -->
+    <!-- PC: section.concept - W:1440px H:668px, py:150px px:256px -->
+    <!-- SP: section.concept - W:375px H:578px, py:80px px:16px -->
+    <section class="bg-[#F5EFEA] lg:py-[150px] lg:px-[256px] py-[80px] px-[16px] text-center" data-name="section.concept" data-node-id="371:2660">
+      <!-- PC Layout: Container 928px width centered -->
+      <div class="lg:block hidden lg:space-y-[40px]">
+        <!-- PC Title block.title - W:928px H:76px -->
+        <div class="w-[928px] mx-auto space-y-[16px]">
+          <h2 class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="371:2662">CONCEPT</h2>
+          <p class="text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="371:2663">私たちの想い</p>
+        </div>
+        
+        <!-- PC Content Text Block - W:928px H:252px -->
+        <div class="w-[928px] mx-auto text-[16px] text-[#483F38] leading-[56px] tracking-[1.6px] font-['Shippori_Mincho'] text-center" data-name="block.text" data-node-id="371:2664">
+          <div class="space-y-[38px]">
+            <p>都会の喧騒から離れ、心安らぐひとときを。<br />私たちのリゾートは、豊かな自然に囲まれた特別な空間です。</p>
+            <p>最高のおもてなしと洗練された施設で、<br />忘れられない体験をお約束します。</p>
+            <p>四季折々の風景を楽しみながら、心と体をリフレッシュしてください。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SP Layout: Frame 108 - W:343px H:343px at px:16px py:80px -->
+      <div class="lg:hidden block space-y-[32px]">
+        <!-- SP Title block.title - W:343px H:68px -->
+        <div class="w-[343px] mx-auto space-y-[8px]">
+          <h2 class="text-[32px] leading-[48px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="371:2700">CONCEPT</h2>
+          <p class="text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="371:2701">私たちの想い</p>
+        </div>
+        
+        <!-- SP Content Text - W:343px H:243px, font-size:15px line-height:27px -->
+        <div class="w-[343px] mx-auto text-[15px] text-[#483F38] leading-[27px] tracking-[1.6px] font-['Shippori_Mincho'] text-center whitespace-pre-wrap" data-node-id="371:2702">
+          <p class="mb-0">都会の喧騒から離れ、心安らぐひとときを。</p>
+          <p class="mb-0">私たちのリゾートは、豊かな自然に囲まれた特別な空間です。</p>
+          <p class="mb-0">&nbsp;</p>
+          <p class="mb-0">最高のおもてなしと洗練された施設で、</p>
+          <p class="mb-0">忘れられない体験をお約束します。</p>
+          <p class="mb-0">&nbsp;</p>
+          <p>四季折々の風景を楽しみながら、心と体をリフレッシュしてください。</p>
+        </div>
+        
+        <!-- SP Secondary Button - W:177px H:43px -->
+        <div class="flex justify-center">
+          <a href="/concept" class="flex items-center justify-center border border-[#436C5E] text-[#436C5E] px-[49px] py-[10px] rounded-full font-['Shippori_Mincho'] font-normal text-[14px] text-center tracking-[2.1px] transition-all duration-300 hover:bg-[#436C5E] hover:text-white min-w-[177px] h-[43px]" data-node-id="371:2703">
+            <span class="whitespace-nowrap">MORE</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cover Section - レスポンシブ対応 -->
+    <!-- PC: section.cover - W:1440px H:501px -->
+    <!-- SP: block.rooms.cover - W:375px H:192px -->
+    <section class="lg:h-[501px] h-[192px] relative overflow-hidden" data-name="section.cover" data-node-id="171:1155">
+      <!-- PC: element.cover-image -->
+      <div class="lg:block hidden absolute inset-0">
+        <img 
+          src="/images/concept-bg.jpg" 
+          alt="Cover Image - PC"
+          class="absolute inset-0 w-full h-full object-cover"
+          data-node-id="171:1187"
+        />
+      </div>
+      
+      <!-- SP: block.image - W:375px H:192px -->
+      <div class="lg:hidden block absolute inset-0" data-name="block.image" data-node-id="183:2027">
+        <img 
+          src="/images/concept-bg.jpg" 
+          alt="Cover Image - SP"
+          class="absolute inset-0 w-full h-full object-cover"
+          data-node-id="183:2030"
+        />
+      </div>
+    </section>
+
+    <!-- Services Section - レスポンシブ対応 -->
+    <!-- PC: section.service - W:1440px H:1661px, py:150px -->
+    <!-- SP: section.service - W:375px H:1332.607px, py:80px px:16px -->
+    <section class="bg-[#F5EFEA] lg:py-[150px] lg:px-[80px] py-[80px] px-[16px]" data-name="section.service" data-node-id="95:236">
+      <!-- PC Layout -->
+      <div class="lg:block hidden max-w-[1280px] mx-auto space-y-[120px]">
+        <!-- PC Title -->
+        <div class="text-center space-y-[16px]" data-name="block.title" data-node-id="95:238">
+          <h2 class="text-[36px] leading-[40px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:239">SERVICES</h2>
+          <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:240">施設のご案内</p>
+        </div>
+
+        <div class="space-y-[80px]">
+          <!-- PC Sauna Service -->
+          <div class="flex items-center gap-[80px]" data-name="block.top-service.sauna" data-node-id="95:241">
+            <!-- PC Image Left -->
+            <div class="w-[800px] h-[501px] relative overflow-hidden" data-name="element.top-service.sauna-image" data-node-id="95:242">
+              <img 
+                src="/images/services/sauna.jpg" 
+                alt="Private Sauna"
+                class="w-full h-full object-cover"
+                data-node-id="95:244"
+              />
+            </div>
+            
+            <!-- PC Text Right -->
+            <div class="w-[368px] space-y-[24px]" data-name="element.top-service.sauna-text" data-node-id="95:245">
+              <div class="space-y-0" data-node-id="171:1088">
+                <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']" data-node-id="171:1086">PRIVATE SAUNA</p>
+                <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:246">サウナ</h3>
+              </div>
+              <div class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']" data-node-id="95:247">
+                <p class="mb-0">薪ストーブ式のプライベートサウナを完備。</p>
+                <p class="mb-0">自ら火を入れ、薪の香りと熱に包まれながら、</p>
+                <p class="mb-0">ゆっくりと自分自身を取り戻す時間を提供します。</p>
+                <p class="mb-0">専用の外気浴スペースで風を感じ、</p>
+                <p>深い休息をご堪能いただけます。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- PC Food Service -->
+          <div class="flex items-center gap-[80px]" data-name="block.top-service.food" data-node-id="171:1089">
+            <!-- PC Text Left -->
+            <div class="w-[332px] space-y-[24px]" data-name="element.top-service.sauna-text" data-node-id="171:1094">
+              <div class="space-y-0" data-node-id="171:1095">
+                <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']" data-node-id="171:1096">FOOD</p>
+                <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="171:1097">お食事</h3>
+              </div>
+              <div class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']" data-node-id="171:1098">
+                <p class="mb-0">手ぶらで楽しめる</p>
+                <p class="mb-0">プライベートBBQスペースをご用意。</p>
+                <p class="mb-0">地元の新鮮な食材を使った</p>
+                <p class="mb-0">こだわりのBBQセットで、</p>
+                <p>大切な人との楽しい時間をお過ごしください。</p>
+              </div>
+            </div>
+
+            <!-- PC Image Right -->
+            <div class="w-[800px] h-[501px] relative overflow-hidden" data-name="element.top-service.sauna-image" data-node-id="171:1091">
+              <img 
+                src="/images/services/food.jpg" 
+                alt="Private BBQ"
+                class="w-full h-full object-cover"
+                data-node-id="171:1110"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- PC More Button -->
+        <div class="text-center">
+          <a href="/services" class="inline-flex items-center justify-center border border-[#436C5E] text-[#436C5E] px-[49px] py-[10px] rounded-full text-[14px] tracking-[2.1px] leading-[22.75px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho'] w-[150px] h-[43px]" data-name="secondary" data-node-id="95:260">
+            MORE
+          </a>
+        </div>
+      </div>
+
+      <!-- SP Layout: Frame 114 - W:343px H:1172.607px at px:16px -->
+      <div class="lg:hidden block w-[343px] mx-auto">
+        <div class="space-y-[40px]">
+          <!-- SP Title: block.title - W:227.967px H:68px, centered -->
+          <div class="text-center space-y-[8px]" data-name="block.title" data-node-id="183:2035">
+            <h2 class="text-[32px] leading-[48px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho'] w-[227.967px] mx-auto" data-node-id="183:2036">SERVICES</h2>
+            <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho'] w-[92.753px] mx-auto" data-node-id="183:2037">施設のご案内</p>
+          </div>
+
+          <!-- SP Content: Frame 113 - W:343px H:989.607px -->
+          <div class="space-y-[32px]" data-node-id="183:2064">
+            <!-- SP Sauna Service: Frame 112 - W:343px H:499.804px -->
+            <div class="space-y-[24px]" data-node-id="183:2063">
+              <!-- SP Sauna Image: W:343px H:214.804px -->
+              <div class="w-[343px] h-[214.804px] relative overflow-hidden" data-name="element.top-service.sauna-image" data-node-id="183:2041">
+                <img 
+                  src="/images/services/sauna.jpg" 
+                  alt="Private Sauna - SP"
+                  class="w-full h-full object-cover"
+                  data-node-id="183:2043"
+                />
+              </div>
+              
+              <!-- SP Sauna Text: W:343px H:261px -->
+              <div class="w-[343px] space-y-[16px] text-center" data-name="element.top-service.sauna-text" data-node-id="183:2044">
+                <div class="space-y-0" data-node-id="183:2045">
+                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']" data-node-id="183:2046">PRIVATE SAUNA</p>
+                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2047">サウナ</h3>
+                </div>
+                <div class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho'] whitespace-pre-wrap" data-node-id="183:2048">
+                  <p class="mb-0">薪ストーブ式のプライベートサウナを完備。</p>
+                  <p class="mb-0">自ら火を入れ、薪の香りと熱に包まれながら、</p>
+                  <p class="mb-0">ゆっくりと自分自身を取り戻す時間を</p>
+                  <p class="mb-0">提供します。</p>
+                  <p class="mb-0">専用の外気浴スペースで風を感じ、</p>
+                  <p>深い休息をご堪能いただけます。</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SP Food Service: W:343px H:457.804px -->
+            <div class="space-y-[24px]" data-name="block.top-service.sauna" data-node-id="183:2050">
+              <!-- SP Food Image: W:343px H:214.804px -->
+              <div class="w-[343px] h-[214.804px] relative overflow-hidden" data-name="element.top-service.sauna-image" data-node-id="183:2056">
+                <img 
+                  src="/images/services/food.jpg" 
+                  alt="Private BBQ - SP"
+                  class="w-full h-full object-cover"
+                  data-node-id="183:2060"
+                />
+              </div>
+              
+              <!-- SP Food Text: W:343px H:219px -->
+              <div class="w-[343px] space-y-[16px] text-center" data-name="element.top-service.sauna-text" data-node-id="183:2051">
+                <div class="space-y-0" data-node-id="183:2052">
+                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']" data-node-id="183:2053">FOOD</p>
+                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2054">お食事</h3>
+                </div>
+                <div class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho'] whitespace-pre-wrap" data-node-id="183:2055">
+                  <p class="mb-0">手ぶらで楽しめる</p>
+                  <p class="mb-0">プライベートBBQスペースをご用意。</p>
+                  <p class="mb-0">地元の新鮮な食材を使った</p>
+                  <p class="mb-0">こだわりのBBQセットで、</p>
+                  <p>大切な人との楽しい時間をお過ごしください。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SP More Button: W:150px H:43px centered -->
+          <div class="flex justify-center">
+            <a href="/services" class="inline-flex items-center justify-center border border-[#436C5E] text-[#436C5E] px-[49px] py-[10px] rounded-full text-[14px] tracking-[2.1px] leading-[22.75px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho'] w-[150px] h-[43px]" data-name="secondary" data-node-id="183:2061">
+              MORE
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms Section - レスポンシブ対応 -->
+    <section class="bg-[#F5EFEA] lg:pb-[150px] pb-[80px]" data-name="section.top-rooms" data-node-id="95:261">
+      <div class="lg:space-y-[100px] space-y-[40px]">
+        <!-- Main Image & Title -->
+        <div class="relative lg:h-[663px] h-[475px] overflow-hidden" data-name="block.top-rooms.main" data-node-id="95:262">
+          <!-- Background Image -->
+          <img 
+            src="/images/rooms/IMGL0459.jpg" 
+            alt="Rooms Background"
+            class="absolute inset-0 w-full h-full object-cover"
+            data-name="IMGL0459" data-node-id="171:1153"
+          />
+          
+          <!-- PC Layout - Rectangle2 -->
+          <div class="absolute lg:block hidden lg:bottom-0 lg:left-0 lg:w-[625px] lg:h-[156px] bg-[#F5EFEA]" data-node-id="95:266">
+            <div class="absolute top-[46px] left-[104px] w-[471px] h-[68px] flex items-end justify-between" data-node-id="171:1196">
+              <div class="space-y-[8px]" data-name="block.title" data-node-id="95:268">
+                <h2 class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:269">ROOMS</h2>
+                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:270">お部屋</p>
+              </div>
+              <a href="/rooms" class="border border-[#436C5E] text-[#436C5E] px-[49px] py-[10px] rounded-full text-[14px] tracking-[2.1px] leading-[22.75px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho'] inline-block h-[43px] flex items-center" data-name="secondary" data-node-id="95:271">
+                MORE
+              </a>
+            </div>
+          </div>
+          
+          <!-- SP Layout - Background overlay area (Figmaデザインに準拠) -->
+          <div class="lg:hidden absolute bottom-[142px] left-0 w-[298px] h-[142px] bg-[#F5EFEA]" data-node-id="183:2084">
+          </div>
+          
+          <!-- SP Layout - Text Overlay -->
+          <div class="lg:hidden absolute bottom-[15px] left-0 w-[297px] h-[127px]" data-node-id="183:2143">
+            <div class="absolute left-[16px] top-0 w-[265px] h-full flex flex-col justify-start gap-[8px]" data-node-id="183:2144">
+              <div class="flex flex-col gap-[8px]" data-name="block.title" data-node-id="183:2147">
+                <h2 class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2145">ROOMS</h2>
+                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2148">お部屋</p>
+              </div>
+              <a href="/rooms" class="absolute left-[115px] top-[83.62px] border border-[#436C5E] text-[#436C5E] px-[49px] py-[10px] rounded-full text-[14px] tracking-[2.1px] leading-[22.75px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho']" data-name="secondary" data-node-id="183:2149">
+                MORE
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room Gallery - Figmaメタデータに完全準拠で6枚のエンドレススクロール -->
+        <!-- PC Layout -->
+        <div class="lg:block hidden">
+          <div 
+            id="room-gallery-pc" 
+            class="flex gap-[40px] px-[25px] overflow-hidden scrollbar-hide"
+            class="flex overflow-x-auto scrollbar-hide gap-[40px] w-[2340px]"
+          >
+            <!-- 修正後の画像順序：IMGL0079-Edit, IMGL0437, IMGL0443-Edit, IMGL0156, IMGL0440, IMGL0459 -->
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0079-Edit.jpg" 
+                alt="ベッドルーム"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0437.jpg" 
+                alt="廊下エリア"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0443-Edit.jpg" 
+                alt="バスルーム"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0156.jpg" 
+                alt="テーブルエリア"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0440.jpg" 
+                alt="リビングエリア"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0459.jpg" 
+                alt="客室メイン"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <!-- シームレススクロール用の復制セット -->
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0079-Edit.jpg" 
+                alt="ベッドルーム"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden">
+              <img 
+                src="/images/rooms/IMGL0437.jpg" 
+                alt="廊下エリア"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden">
+              <img 
+                src="/images/rooms/IMGL0443-Edit.jpg" 
+                alt="バスルーム"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden">
+              <img 
+                src="/images/rooms/IMGL0156.jpg" 
+                alt="テーブルエリア"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden">
+              <img 
+                src="/images/rooms/IMGL0440.jpg" 
+                alt="リビングエリア"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="w-[350px] h-[250px] flex-shrink-0 overflow-hidden">
+              <img 
+                src="/images/rooms/IMGL0459.jpg" 
+                alt="客室メイン"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- SP Layout -->
+        <div class="lg:hidden">
+          <div 
+            id="room-gallery-sp" 
+            class="flex gap-4 px-4 overflow-hidden scrollbar-hide"
+            class="flex overflow-x-auto scrollbar-hide gap-[16px] w-[1296px]"
+          >
+            <!-- 修正後の画像順序：IMGL0079-Edit, IMGL0437, IMGL0443-Edit, IMGL0156, IMGL0440, IMGL0459 -->
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0079-Edit.jpg" 
+                alt="ベッドルーム"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0437.jpg" 
+                alt="廊下エリア"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0443-Edit.jpg" 
+                alt="バスルーム"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0156.jpg" 
+                alt="テーブルエリア"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0440.jpg" 
+                alt="リビングエリア"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0459.jpg" 
+                alt="客室メイン"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <!-- シームレススクロール用の復制セット -->
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0079-Edit.jpg" 
+                alt="ベッドルーム"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0437.jpg" 
+                alt="廊下エリア"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0443-Edit.jpg" 
+                alt="バスルーム"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0156.jpg" 
+                alt="テーブルエリア"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0440.jpg" 
+                alt="リビングエリア"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="w-[148px] h-[106px] flex-shrink-0 overflow-hidden relative group cursor-pointer">
+              <img 
+                src="/images/rooms/IMGL0459.jpg" 
+                alt="客室メイン"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Access Section - レスポンシブ対応 -->
+    <section class="bg-white lg:py-[150px] lg:px-[256px] py-[80px] px-[16px]">
+      <div class="lg:gap-[80px] gap-[32px] flex flex-col items-center">
+        <!-- Title -->
+        <div class="text-center space-y-[16px] w-full">
+          <h2 class="lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">ACCESS</h2>
+          <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']">アクセス</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="lg:flex lg:items-center lg:justify-between lg:pl-[120px] lg:w-[1232px] w-full lg:space-y-0 space-y-[32px]">
+          <!-- Left Content -->
+          <div class="lg:w-[361px] w-full lg:space-y-[40px] space-y-[24px] lg:items-start items-center flex flex-col lg:justify-center justify-center">
+            <div class="lg:space-y-[16px] space-y-[16px] w-full">
+              <div class="lg:space-y-[8px] space-y-[8px] lg:text-left text-center">
+                <h3 class="lg:text-[18px] lg:leading-[32px] lg:tracking-[1.6px] text-[18px] leading-[32px] tracking-[1.6px] font-medium text-[#436C5E] font-['Shippori_Mincho']">所在地</h3>
+                <div class="lg:text-[14px] lg:leading-[30px] lg:tracking-[1.4px] text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
+                  <p class="mb-0">〒 889-2162</p>
+                  <p>宮崎県宮崎市青島4-48-4</p>
+                </div>
+              </div>
+              
+              <div class="lg:space-y-[8px] space-y-[8px] lg:text-left text-center">
+                <h3 class="lg:text-[18px] lg:leading-[32px] lg:tracking-[1.6px] text-[18px] leading-[32px] tracking-[1.6px] font-medium text-[#436C5E] font-['Shippori_Mincho']">交通アクセス</h3>
+                <div class="lg:text-[14px] lg:leading-[22.75px] lg:tracking-[2.1px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#483F38] font-['Shippori_Mincho']">
+                  <p class="mb-0">宮崎空港より車で15分</p>
+                  <p class="mb-0">青島駅より徒歩4分</p>
+                  <p>バス停青島ホステルより徒歩２分</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:flex lg:justify-start flex justify-center lg:w-auto w-full">
+              <a href="/access" class="inline-flex items-center justify-center gap-[10px] border border-[#436C5E] text-[#436C5E] px-[49px] py-[10px] rounded-full text-[14px] tracking-[2.1px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho']">
+                <!-- Location Pin Icon -->
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
+                  <path d="M9 1.5C6.51472 1.5 4.5 3.51472 4.5 6C4.5 9.75 9 16.5 9 16.5C9 16.5 13.5 9.75 13.5 6C13.5 3.51472 11.4853 1.5 9 1.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <circle cx="9" cy="6" r="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                </svg>
+                GoogleMap
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Map -->
+          <div class="lg:w-[629px] lg:h-[424px] w-full h-[231px] relative lg:block hidden">
+            <img 
+              src="/images/access-map.jpg" 
+              alt="Access Map"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          
+          <!-- SP Map -->
+          <div class="w-full h-[231px] relative lg:hidden block">
+            <img 
+              src="/images/access-map-sp.jpg" 
+              alt="Access Map"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section - レスポンシブ対応 -->
+    <section class="bg-[#F5EFEA] lg:py-[150px] lg:px-[80px] py-[80px] px-[16px]">
+      <div class="lg:max-w-[1280px] max-w-full mx-auto lg:space-y-[80px] space-y-[40px] lg:px-[194px] px-0">
+        <!-- Title -->
+        <div class="text-center space-y-[16px]">
+          <h2 class="lg:text-[36px] lg:leading-[40px] lg:tracking-[3.6px] text-[36px] leading-[40px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">FAQ</h2>
+          <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']">よくあるご質問</p>
+        </div>
+
+        <div class="space-y-[24px]">
+          <div class="border-b border-[#436C5E]/20 pb-[24px]">
+            <div class="flex gap-1 items-start mb-2">
+              <span class="text-[#436C5E] text-[16px] leading-[32px] tracking-[1px] font-['Shippori_Mincho']">Q.</span>
+              <p class="text-[#436C5E] text-[15px] leading-[27px] tracking-[1.6px] font-['Shippori_Mincho'] flex-1">
+                チェックイン、チェックアウトの時間は？
+              </p>
+            </div>
+            <div class="pl-6">
+              <p class="text-[#436C5E] text-[14px] leading-[23px] tracking-[1.4px] font-['Shippori_Mincho']">
+                A. チェックインは15:00から、チェックアウトは11:00までとなります。
+              </p>
+            </div>
+          </div>
+          
+          <div class="border-b border-[#436C5E]/20 pb-[24px]">
+            <div class="flex gap-1 items-start mb-2">
+              <span class="text-[#436C5E] text-[16px] leading-[32px] tracking-[1px] font-['Shippori_Mincho']">Q.</span>
+              <p class="text-[#436C5E] text-[15px] leading-[27px] tracking-[1.6px] font-['Shippori_Mincho'] flex-1">
+                駐車場はありますか？
+              </p>
+            </div>
+            <div class="pl-6">
+              <p class="text-[#436C5E] text-[14px] leading-[23px] tracking-[1.4px] font-['Shippori_Mincho']">
+                A. 
+              </p>
+            </div>
+          </div>
+          
+          <div class="border-b border-[#436C5E]/20 pb-[24px]">
+            <div class="flex gap-1 items-start mb-2">
+              <span class="text-[#436C5E] text-[16px] leading-[32px] tracking-[1px] font-['Shippori_Mincho']">Q.</span>
+              <p class="text-[#436C5E] text-[15px] leading-[27px] tracking-[1.6px] font-['Shippori_Mincho'] flex-1">
+                アメニティには何がありますか？
+              </p>
+            </div>
+            <div class="pl-6">
+              <p class="text-[#436C5E] text-[14px] leading-[23px] tracking-[1.4px] font-['Shippori_Mincho']">
+                A. タオル、歯ブラシ、シャンプー、コンディショナー、ボディソープ、ドライヤーなどを<br>
+                ご用意しております。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="/faq" class="inline-block border border-[#436C5E] text-[#436C5E] px-12 py-3 rounded-full text-[14px] tracking-[2.1px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho']">
+            MORE
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation Section - レスポンシブ対応 -->
+    <section class="relative lg:py-[150px] lg:px-[272px] py-[80px] px-[16px]">
+      <!-- Background image with precise positioning -->
+      <div class="absolute inset-0 overflow-hidden">
+        <img 
+          src="/images/reservation-bg.jpg" 
+          alt=""
+          class="absolute lg:h-[192.46%] lg:left-[-9.47%] lg:top-[-71.84%] lg:w-[112.64%] lg:max-w-none h-full w-full object-cover"
+        />
+      </div>
+      <!-- Background overlay -->
+      <div class="absolute inset-0 bg-black/16 mix-blend-multiply"></div>
+      
+      <div class="relative z-10 w-full">
+        <div class="flex flex-col lg:gap-[40px] gap-[40px] items-center">
+          <!-- Title -->
+          <div class="text-center space-y-[16px]">
+            <h2 class="lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-white font-['Shippori_Mincho']">RESERVATION</h2>
+            <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#CBD5E1] font-['Shippori_Mincho']">ご予約</p>
+          </div>
+          
+          <!-- Description -->
+          <div class="text-[16px] leading-[32px] tracking-[1.6px] text-[#E2E8F0] font-['Shippori_Mincho'] text-center whitespace-pre-wrap lg:max-w-[896px] max-w-full">オンラインで簡単に空室確認・ご予約が可能です。
+みなさまのお越しを、心からお待ちしております。</div>
+          
+          <!-- Button -->
+          <div class="flex justify-center">
+            <a href="/reservation" class="bg-white text-[#436C5E] rounded-[6px] font-medium leading-[26px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho'] w-[404px] h-[50px] text-[16px] tracking-[1.6px] flex items-center justify-center" data-name="tertiary" data-node-id="85:207">
+              ご予約はこちら
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section - レスポンシブ対応 -->
+    <section class="bg-[#FAFAFA] lg:py-[150px] py-[80px]">
+      <div class="lg:px-[256px] px-[20px] w-full">
+        <!-- Title & Description -->
+        <div class="text-center lg:space-y-[40px] space-y-[30px] lg:mb-[80px] mb-20">
+          <div class="space-y-4">
+            <h2 class="lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[28px] leading-[42px] tracking-[2.8px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">CONTACT</h2>
+            <p class="lg:text-[14px] lg:leading-[22.75px] lg:tracking-[2.1px] text-[13px] leading-[20px] tracking-[1.8px] text-[#436C5E] font-['Shippori_Mincho']">お問い合わせ</p>
+          </div>
+          
+          <div class="lg:space-y-10 space-y-8">
+            <p class="lg:text-[16px] lg:leading-[32px] lg:tracking-[1px] text-[14px] leading-[28px] tracking-[0.8px] text-[#483F38] font-['Shippori_Mincho'] text-center">
+              ご不明な点がございましたら、お気軽にお問い合わせください。<br>
+              以下の連絡先またはお問い合わせフォームよりご連絡いただけます。
+            </p>
+            
+            <div class="space-y-2 text-center">
+              <p class="lg:text-[14px] lg:leading-[22.75px] lg:tracking-[2.1px] text-[13px] leading-[20px] tracking-[1.8px] text-[#483F38] font-['Shippori_Mincho']">お電話でのお問い合わせ</p>
+              <h3 class="lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[28px] leading-[42px] tracking-[2.8px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">012-345-6789</h3>
+              <p class="lg:text-[14px] lg:leading-[22.75px] lg:tracking-[2.1px] text-[13px] leading-[20px] tracking-[1.8px] text-[#483F38] font-['Shippori_Mincho']">(受付時間 9:00 - 18:00)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-white lg:p-[48px] p-[24px] rounded-lg shadow-sm lg:w-[672px] mx-auto">
+          <form class="space-y-[56px] lg:w-[576px] mx-auto">
+            <div class="lg:space-y-8 space-y-6">
+              <!-- Contact Type -->
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <label class="text-[16px] tracking-[1px] text-[#436C5E] font-['Shippori_Mincho']">お問い合わせ区分</label>
+                  <span class="text-[12px] tracking-[1.2px] text-red-500 uppercase font-['Shippori_Mincho']">*</span>
+                </div>
+                <div class="lg:flex lg:gap-6 space-y-4 lg:space-y-0">
+                  <label class="flex items-center lg:gap-[13px] gap-3">
+                    <input type="radio" name="contact_type" class="w-[29px] h-[29px] accent-[#436C5E]">
+                    <span class="text-[16px] leading-[32px] tracking-[1px] text-[#475569] font-['Shippori_Mincho']">一般のお客様</span>
+                  </label>
+                  <label class="flex items-center lg:gap-[13px] gap-3">
+                    <input type="radio" name="contact_type" class="w-[29px] h-[29px] accent-[#436C5E]">
+                    <span class="text-[16px] leading-[32px] tracking-[1px] text-[#475569] font-['Shippori_Mincho']">法人・団体の方</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Name -->
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <label class="text-[16px] leading-[32px] tracking-[1px] text-[#436C5E] font-['Shippori_Mincho']">お名前</label>
+                  <span class="text-[12px] leading-[16px] tracking-[1.2px] text-red-500 uppercase font-['Shippori_Mincho']">*</span>
+                </div>
+                <input type="text" class="w-full h-[45px] border border-[#93A9A1] bg-white px-4">
+              </div>
+
+              <!-- Email -->
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <label class="text-[16px] leading-[32px] tracking-[1px] text-[#436C5E] font-['Shippori_Mincho']">メールアドレス</label>
+                  <span class="text-[12px] leading-[16px] tracking-[1.2px] text-red-500 uppercase font-['Shippori_Mincho']">*</span>
+                </div>
+                <input type="email" class="w-full h-[45px] border border-[#93A9A1] bg-white px-4">
+              </div>
+
+              <!-- Message -->
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <label class="text-[16px] leading-[32px] tracking-[1px] text-[#436C5E] font-['Shippori_Mincho']">内容</label>
+                  <span class="text-[12px] leading-[16px] tracking-[1.2px] text-red-500 uppercase font-['Shippori_Mincho']">*</span>
+                </div>
+                <textarea class="w-full h-[160px] border border-[#93A9A1] bg-white p-4 resize-none"></textarea>
+              </div>
+
+              <!-- Privacy Policy -->
+              <div class="lg:space-y-4 space-y-3 text-[12px] text-[#483F38] font-['Shippori_Mincho']">
+                <p class="leading-[19px]">
+                  個人情報の取り扱いについて<br>
+                  当社が本サービスを通じて取得したユーザーの個人情報については、当社が規定する個人情報保護方針および個人情報保護法等法令の規定に準拠して取り扱うものとします。弊社のプライバシーポリシーをお読み頂き、同意いただける場合には下記のボタンから情報をご送信下さい。
+                </p>
+                <label class="flex items-start lg:items-center gap-2 cursor-pointer">
+                  <input type="checkbox" class="w-4 h-4 mt-1 lg:mt-0 accent-[#436C5E]">
+                  <span class="leading-[32px] tracking-[1.6px]">プライバシーポリシーに同意する</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="bg-[#B99563] border border-[#B99563] text-white lg:px-[49px] px-12 lg:py-[10px] py-3 rounded-full text-[14px] leading-[22.75px] tracking-[2.1px] hover:bg-white hover:text-[#B99563] hover:border-[#B99563] transition-all duration-300 font-['Shippori_Mincho']" data-name="primary" data-node-id="79:1911">
+                送信する
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Footer -->
+    <Footer />
+    
+    <!-- Fixed Reservation Button (SP only) - スクロール追従ボタン -->
+    <div id="fixed-reservation-btn" class="fixed left-1/2 transform -translate-x-1/2 z-50 lg:hidden">
+      <a href="/reservation" class="flex items-center justify-center gap-[10px] bg-[#436C5E] border border-[#436C5E] text-white px-[20px] py-[10px] rounded-full font-['Shippori_Mincho'] font-normal text-[14px] tracking-[2.1px] transition-all duration-300 shadow-lg hover:bg-white hover:text-[#436C5E] hover:border-[#436C5E] hover:shadow-xl min-w-[139px] h-[43px]">
+        <!-- Calendar Icon -->
+        <svg class="w-[18px] h-[18px] flex-shrink-0" viewBox="0 0 18 18" fill="none">
+          <path d="M15 2h-1V1c0-.55-.45-1-1-1s-1 .45-1 1v1H6V1c0-.55-.45-1-1-1s-1 .45-1 1v1H3c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 13H3V7h12v8zM3 5V4h12v1H3z" fill="currentColor"/>
+        </svg>
+        <span class="whitespace-nowrap">ご予約</span>
+      </a>
+    </div>
+  </div>
+</Layout>
+

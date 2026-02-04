@@ -1,0 +1,283 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="ROOMS | お部屋のご紹介">
+  <div class="bg-white">
+    <Header />
+    
+    <!-- Page Hero -->
+    <section class="relative h-64 lg:h-80 overflow-hidden">
+      <img 
+        src="https://www.figma.com/api/mcp/asset/ace25b94-4a5b-436a-89cc-8b18940c5e77" 
+        alt="Rooms Hero" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+        <div class="text-center text-white">
+          <h1 class="text-4xl lg:text-5xl font-semibold tracking-wider font-serif mb-2">ROOMS</h1>
+          <p class="text-sm tracking-wider font-serif">お部屋のご紹介</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms Introduction -->
+    <section class="bg-bg-beige py-20 lg:py-32">
+      <div class="max-w-4xl mx-auto px-4 lg:px-20 text-center">
+        <h2 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif mb-8">
+          心安らぐプライベート空間
+        </h2>
+        <p class="text-sm lg:text-base leading-7 text-text tracking-wide font-serif">
+          それぞれ異なる魅力を持つ客室で、特別なひとときをお過ごしください。<br>
+          自然に囲まれた静寂な環境で、日常の疲れを癒し、心身ともにリフレッシュしていただけます。
+        </p>
+      </div>
+    </section>
+
+    <!-- Room Categories -->
+    <section class="bg-white py-20 lg:py-32">
+      <div class="max-w-7xl mx-auto px-4 lg:px-20">
+        <div class="space-y-24 lg:space-y-32">
+          
+          <!-- Deluxe Room -->
+          <div class="lg:grid lg:grid-cols-2 lg:gap-16 space-y-8 lg:space-y-0">
+            <div class="space-y-4">
+              <img 
+                src="https://www.figma.com/api/mcp/asset/e54d7649-1ec5-4837-b40d-d7b223c082fd" 
+                alt="Deluxe Room" 
+                class="w-full h-64 lg:h-80 object-cover rounded-lg"
+              />
+              <div class="grid grid-cols-3 gap-2">
+                <img 
+                  src="https://www.figma.com/api/mcp/asset/728e755d-a57d-47e5-a981-08a496565efc" 
+                  alt="Deluxe Room Detail 1" 
+                  class="w-full h-20 object-cover rounded"
+                />
+                <img 
+                  src="https://www.figma.com/api/mcp/asset/484a2848-6a1c-45e3-baee-f847742607d6" 
+                  alt="Deluxe Room Detail 2" 
+                  class="w-full h-20 object-cover rounded"
+                />
+                <img 
+                  src="https://www.figma.com/api/mcp/asset/bbd8b7e9-d410-4e28-8c60-d9d32a6e09c3" 
+                  alt="Deluxe Room Detail 3" 
+                  class="w-full h-20 object-cover rounded"
+                />
+              </div>
+            </div>
+            <div class="flex flex-col justify-center">
+              <div class="mb-6">
+                <p class="text-xs tracking-widest text-gold font-serif mb-2">DELUXE ROOM</p>
+                <h3 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif">デラックスルーム</h3>
+              </div>
+              <div class="space-y-4 mb-8">
+                <p class="text-sm leading-7 text-text tracking-wide font-serif">
+                  広々とした空間に上質な家具を配した、当館で最も贅沢な客室です。<br>
+                  大きな窓からは四季折々の美しい景色をお楽しみいただけ、<br>
+                  特別な記念日やご褒美旅行に最適です。
+                </p>
+                <div class="text-sm text-text font-serif space-y-2">
+                  <p><span class="font-medium">面積：</span>45㎡</p>
+                  <p><span class="font-medium">定員：</span>2名様</p>
+                  <p><span class="font-medium">アメニティ：</span>バスローブ、高級アメニティセット</p>
+                  <p><span class="font-medium">設備：</span>エアコン、冷蔵庫、セーフティボックス、Wi-Fi</p>
+                </div>
+              </div>
+              <div>
+                <p class="text-2xl font-semibold text-deep-green font-serif mb-2">¥35,000〜</p>
+                <p class="text-sm text-text font-serif">（1泊2名様・税込）</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Standard Room -->
+          <div class="lg:grid lg:grid-cols-2 lg:gap-16 space-y-8 lg:space-y-0">
+            <div class="order-2 lg:order-1 flex flex-col justify-center">
+              <div class="mb-6">
+                <p class="text-xs tracking-widest text-gold font-serif mb-2">STANDARD ROOM</p>
+                <h3 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif">スタンダードルーム</h3>
+              </div>
+              <div class="space-y-4 mb-8">
+                <p class="text-sm leading-7 text-text tracking-wide font-serif">
+                  快適性と機能性を兼ね備えたスタンダードルーム。<br>
+                  シンプルで洗練されたデザインの中に、<br>
+                  くつろぎのひとときを演出する工夫が随所に施されています。
+                </p>
+                <div class="text-sm text-text font-serif space-y-2">
+                  <p><span class="font-medium">面積：</span>28㎡</p>
+                  <p><span class="font-medium">定員：</span>2名様</p>
+                  <p><span class="font-medium">アメニティ：</span>基本アメニティセット</p>
+                  <p><span class="font-medium">設備：</span>エアコン、冷蔵庫、セーフティボックス、Wi-Fi</p>
+                </div>
+              </div>
+              <div>
+                <p class="text-2xl font-semibold text-deep-green font-serif mb-2">¥22,000〜</p>
+                <p class="text-sm text-text font-serif">（1泊2名様・税込）</p>
+              </div>
+            </div>
+            <div class="order-1 lg:order-2 space-y-4">
+              <img 
+                src="https://www.figma.com/api/mcp/asset/98f99d97-2d4b-4aaf-ad8c-a924f2ed0cf2" 
+                alt="Standard Room" 
+                class="w-full h-64 lg:h-80 object-cover rounded-lg"
+              />
+              <div class="grid grid-cols-3 gap-2">
+                <img 
+                  src="https://www.figma.com/api/mcp/asset/e54d7649-1ec5-4837-b40d-d7b223c082fd" 
+                  alt="Standard Room Detail 1" 
+                  class="w-full h-20 object-cover rounded"
+                />
+                <img 
+                  src="https://www.figma.com/api/mcp/asset/728e755d-a57d-47e5-a981-08a496565efc" 
+                  alt="Standard Room Detail 2" 
+                  class="w-full h-20 object-cover rounded"
+                />
+                <img 
+                  src="https://www.figma.com/api/mcp/asset/484a2848-6a1c-45e3-baee-f847742607d6" 
+                  alt="Standard Room Detail 3" 
+                  class="w-full h-20 object-cover rounded"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Economy Room -->
+          <div class="lg:grid lg:grid-cols-2 lg:gap-16 space-y-8 lg:space-y-0">
+            <div class="space-y-4">
+              <img 
+                src="https://www.figma.com/api/mcp/asset/bbd8b7e9-d410-4e28-8c60-d9d32a6e09c3" 
+                alt="Economy Room" 
+                class="w-full h-64 lg:h-80 object-cover rounded-lg"
+              />
+              <div class="grid grid-cols-3 gap-2">
+                <img 
+                  src="https://www.figma.com/api/mcp/asset/98f99d97-2d4b-4aaf-ad8c-a924f2ed0cf2" 
+                  alt="Economy Room Detail 1" 
+                  class="w-full h-20 object-cover rounded"
+                />
+                <img 
+                  src="https://www.figma.com/api/mcp/asset/e54d7649-1ec5-4837-b40d-d7b223c082fd" 
+                  alt="Economy Room Detail 2" 
+                  class="w-full h-20 object-cover rounded"
+                />
+                <img 
+                  src="https://www.figma.com/api/mcp/asset/728e755d-a57d-47e5-a981-08a496565efc" 
+                  alt="Economy Room Detail 3" 
+                  class="w-full h-20 object-cover rounded"
+                />
+              </div>
+            </div>
+            <div class="flex flex-col justify-center">
+              <div class="mb-6">
+                <p class="text-xs tracking-widest text-gold font-serif mb-2">ECONOMY ROOM</p>
+                <h3 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif">エコノミールーム</h3>
+              </div>
+              <div class="space-y-4 mb-8">
+                <p class="text-sm leading-7 text-text tracking-wide font-serif">
+                  リーズナブルな価格でありながら、清潔で快適な滞在をお約束します。<br>
+                  必要十分な設備を整え、気軽にご利用いただける<br>
+                  カジュアルな客室です。
+                </p>
+                <div class="text-sm text-text font-serif space-y-2">
+                  <p><span class="font-medium">面積：</span>18㎡</p>
+                  <p><span class="font-medium">定員：</span>2名様</p>
+                  <p><span class="font-medium">アメニティ：</span>基本アメニティセット</p>
+                  <p><span class="font-medium">設備：</span>エアコン、冷蔵庫、Wi-Fi</p>
+                </div>
+              </div>
+              <div>
+                <p class="text-2xl font-semibold text-deep-green font-serif mb-2">¥15,000〜</p>
+                <p class="text-sm text-text font-serif">（1泊2名様・税込）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Room Features -->
+    <section class="bg-bg-beige py-20 lg:py-32">
+      <div class="max-w-4xl mx-auto px-4 lg:px-20">
+        <div class="text-center mb-16">
+          <h2 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif mb-4">
+            全客室共通設備・サービス
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-lg font-medium text-deep-green font-serif mb-3">基本設備</h3>
+              <ul class="space-y-2 text-sm text-text font-serif">
+                <li>• 無料Wi-Fi完備</li>
+                <li>• エアコン（冷暖房）</li>
+                <li>• 液晶テレビ</li>
+                <li>• 冷蔵庫</li>
+                <li>• 電気ケトル</li>
+                <li>• ドライヤー</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-medium text-deep-green font-serif mb-3">アメニティ</h3>
+              <ul class="space-y-2 text-sm text-text font-serif">
+                <li>• フェイスタオル・バスタオル</li>
+                <li>• シャンプー・コンディショナー</li>
+                <li>• ボディソープ</li>
+                <li>• 歯ブラシセット</li>
+                <li>• スリッパ</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-lg font-medium text-deep-green font-serif mb-3">サービス</h3>
+              <ul class="space-y-2 text-sm text-text font-serif">
+                <li>• 24時間フロントサービス</li>
+                <li>• 無料駐車場</li>
+                <li>• 荷物預かりサービス</li>
+                <li>• モーニングコール</li>
+                <li>• クリーニングサービス</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-medium text-deep-green font-serif mb-3">チェックイン・アウト</h3>
+              <ul class="space-y-2 text-sm text-text font-serif">
+                <li>• チェックイン：15:00〜</li>
+                <li>• チェックアウト：〜11:00</li>
+                <li>• 早朝チェックアウト対応可</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation CTA -->
+    <section class="bg-white py-20 lg:py-32">
+      <div class="max-w-4xl mx-auto px-4 lg:px-20 text-center">
+        <h2 class="text-2xl lg:text-3xl font-semibold tracking-wider text-deep-green font-serif mb-8">
+          ご予約・お問い合わせ
+        </h2>
+        <p class="text-sm lg:text-base leading-7 text-text tracking-wide font-serif mb-12">
+          ご希望のお部屋タイプがございましたら、<br>
+          お気軽にご予約・お問い合わせください。
+        </p>
+        <div class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-8">
+          <a href="/reservation" class="bg-gold border border-gold text-white px-8 py-4 rounded-full text-sm tracking-wider hover:bg-gold/90 transition-colors duration-300 font-serif">
+            オンライン予約
+          </a>
+          <a href="/contact" class="border border-deep-green text-deep-green px-8 py-4 rounded-full text-sm tracking-wider hover:bg-deep-green hover:text-white transition-colors duration-300 font-serif">
+            お問い合わせ
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
+</Layout>

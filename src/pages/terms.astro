@@ -1,0 +1,517 @@
+---
+/**
+ * 利用規約ページ
+ * ウェブサイト利用規約の詳細ページ
+ * Figmaデザイン: PC・SPレイアウト対応
+ */
+export const prerender = true;
+---
+
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <title>利用規約 | aoshima tei 鈴 – SUZU</title>
+  <meta name="description" content="aoshima tei 鈴 – SUZUの公式ウェブサイト利用規約について。ご利用前に必ずお読みください。" />
+  
+  <!-- OGP -->
+  <meta property="og:title" content="利用規約 | aoshima tei 鈴 – SUZU" />
+  <meta property="og:description" content="aoshima tei 鈴 – SUZUの公式ウェブサイト利用規約について。ご利用前に必ずお読みください。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/ogp.jpg" />
+  <meta property="og:site_name" content="aoshima tei 鈴 – SUZU" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="利用規約 | aoshima tei 鈴 – SUZU" />
+  <meta name="twitter:description" content="aoshima tei 鈴 – SUZUの公式ウェブサイト利用規約について。ご利用前に必ずお読みください。" />
+  <meta name="twitter:image" content="/images/ogp.jpg" />
+
+  <!-- Shippori Mincho Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-[#F5EFEA] text-[#483F38]">
+  <!-- Header -->
+  <header class="bg-[#F5EFEA] py-4 px-6 md:px-20 lg:px-28 border-b border-[#436C5E]/10">
+    <nav class="flex justify-between items-center">
+      <a href="/" class="text-[#436C5E] text-xl md:text-2xl font-semibold tracking-wider">
+        aoshima tei 鈴 – SUZU
+      </a>
+      
+      <!-- デスクトップメニュー -->
+      <ul class="hidden lg:flex space-x-8 text-[#436C5E] font-medium">
+        <li><a href="/" class="hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
+        <li><a href="/rooms" class="hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
+        <li><a href="/services" class="hover:opacity-70 transition-opacity tracking-wide">サービス</a></li>
+        <li><a href="/plans" class="hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
+        <li><a href="/contact" class="hover:opacity-70 transition-opacity tracking-wide">お問い合わせ</a></li>
+      </ul>
+
+      <!-- モバイルハンバーガーメニュー -->
+      <button class="lg:hidden text-[#436C5E]" id="mobile-menu-button">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- モバイルメニュー -->
+    <div class="lg:hidden hidden" id="mobile-menu">
+      <div class="pt-4 pb-3 border-t border-[#436C5E]/10 mt-4">
+        <ul class="space-y-3 text-[#436C5E] font-medium">
+          <li><a href="/" class="block hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
+          <li><a href="/rooms" class="block hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
+          <li><a href="/services" class="block hover:opacity-70 transition-opacity tracking-wide">サービス</a></li>
+          <li><a href="/plans" class="block hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
+          <li><a href="/contact" class="block hover:opacity-70 transition-opacity tracking-wide">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="flex-1">
+    <!-- パンくずナビ -->
+    <div class="bg-white border-b border-[#436C5E]/10">
+      <div class="max-w-6xl mx-auto py-3 px-4 md:px-8">
+        <nav class="text-sm text-[#483F38] opacity-70">
+          <ol class="flex items-center space-x-2">
+            <li><a href="/" class="hover:opacity-80 transition-opacity">TOP</a></li>
+            <li><span class="mx-2">›</span></li>
+            <li class="text-[#436C5E] font-medium">利用規約</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- 利用規約本文 -->
+    <section class="py-16 md:py-24 px-4 md:px-8">
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- ページタイトル -->
+        <div class="text-center mb-12 md:mb-16">
+          <h1 class="text-[#436C5E] text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide mb-6">
+            利用規約
+          </h1>
+          <div class="w-20 h-px bg-gradient-to-r from-transparent via-[#B99563] to-transparent mx-auto"></div>
+        </div>
+
+        <!-- 基本方針 -->
+        <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 mb-12">
+          <div class="prose prose-lg max-w-none">
+            <div class="mb-8">
+              <p class="text-[#483F38] leading-relaxed tracking-wide">
+                この利用規約（以下「本規約」）は、aoshima tei 鈴 – SUZU（以下「当館」）が
+                提供するウェブサイト（以下「本サイト」）をご利用いただく際の条件を定めたものです。
+                本サイトをご利用される方（以下「利用者」）は、本規約に同意したものとみなします。
+              </p>
+            </div>
+
+            <div class="mb-8">
+              <p class="text-[#483F38] text-sm opacity-70">
+                制定日：2024年1月1日<br>
+                最終更新日：2024年1月1日
+              </p>
+            </div>
+
+            <!-- 各項目 -->
+            <div class="space-y-8">
+              
+              <!-- 第1条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第1条（適用）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    本規約は、利用者と当館との間の本サイトの利用に関わる一切の関係に適用されるものとします。
+                  </p>
+                  <p>
+                    当館は本サイトに関し、本規約のほか、ご利用にあたってのルール等、
+                    各種の定め（以下「個別規定」といいます。）をすることがあります。
+                    これら個別規定はその名称のいかんに関わらず、本規約の一部を構成するものとします。
+                  </p>
+                  <p>
+                    本規約の規定が前条の個別規定の規定と矛盾する場合には、
+                    個別規定において特段の定めなき限り個別規定の規定が優先されるものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第2条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第2条（利用登録）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    本サイトにおいては、登録希望者が本規約に同意の上、当館の定める方法によって利用登録を申請し、
+                    当館がこれを承認することによって、利用登録が完了するものとします。
+                  </p>
+                  <p>
+                    当館は、利用登録の申請者に以下の事由があると判断した場合、
+                    利用登録の申請を承認しないことがあり、その理由については一切の開示義務を負わないものとします。
+                  </p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>利用登録の申請に際して虚偽の事項を届け出た場合</li>
+                    <li>本規約に違反したことがある者からの申請である場合</li>
+                    <li>その他、当館が利用登録を相当でないと判断した場合</li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- 第3条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第3条（利用者IDおよびパスワードの管理）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    利用者は、自己の責任において、本サイトの利用者IDおよびパスワードを適切に管理するものとします。
+                  </p>
+                  <p>
+                    利用者は、いかなる場合にも、利用者IDおよびパスワードを第三者に譲渡または貸与し、
+                    もしくは第三者と共用することはできません。当館は、利用者IDとパスワードの組み合わせが
+                    登録情報と一致してログインされた場合には、その利用者IDを登録している利用者自身による
+                    利用とみなします。
+                  </p>
+                  <p>
+                    利用者ID及びパスワードが第三者によって使用されたことによって生じた損害は、
+                    当館に故意又は重大な過失がある場合を除き、当館は一切の責任を負わないものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第4条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第4条（利用料金および支払方法）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    利用者は、本サイトの有料部分の対価として、当館が別途定め、
+                    本サイトに表示する利用料金を、当館が指定する方法により支払うものとします。
+                  </p>
+                  <p>
+                    利用者が利用料金の支払を遅滞した場合には、利用者は年14.6％の割合による遅延損害金を
+                    支払うものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第5条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第5条（禁止事項）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide">
+                  <p class="mb-4">
+                    利用者は、本サイトの利用にあたり、以下の行為をしてはなりません。
+                  </p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>法令または公序良俗に違反する行為</li>
+                    <li>犯罪行為に関連する行為</li>
+                    <li>当館、本サイトの他の利用者、または第三者のサーバーまたはネットワークの機能を破壊したり、妨害したりする行為</li>
+                    <li>当館のサイトの運営を妨害するおそれのある行為</li>
+                    <li>他の利用者に関する個人情報等を収集または蓄積する行為</li>
+                    <li>不正アクセスをし、またはこれを試みる行為</li>
+                    <li>他の利用者に成りすます行為</li>
+                    <li>当館のサイトに関連して、反社会的勢力に対して直接または間接に利益を供与する行為</li>
+                    <li>その他、当館が不適切と判断する行為</li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- 第6条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第6条（本サービスの提供の停止等）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide">
+                  <p class="mb-4">
+                    当館は、以下のいずれかの事由があると判断した場合、利用者に事前に通知することなく
+                    本サイトの全部または一部の提供を停止または中断することができるものとします。
+                  </p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>本サイトにかかるコンピュータシステムの保守点検または更新を行う場合</li>
+                    <li>地震、落雷、火災、停電または天災などの不可抗力により、本サイトの提供が困難となった場合</li>
+                    <li>コンピュータまたは通信回線等が事故により停止した場合</li>
+                    <li>その他、当館が本サイトの提供が困難と判断した場合</li>
+                  </ol>
+                  <p class="mt-4">
+                    当館は、本サイトの提供の停止または中断により、利用者または第三者が被ったいかなる不利益
+                    または損害についても、一切の責任を負わないものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第7条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第7条（利用制限および登録抹消）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide">
+                  <p class="mb-4">
+                    当館は、以下の場合には、事前の通知なく、利用者に対して、本サイトの全部もしくは
+                    一部の利用を制限し、または利用者としての登録を抹消することができるものとします。
+                  </p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>本規約のいずれかの条項に違反した場合</li>
+                    <li>登録事項に虚偽の事実があることが判明した場合</li>
+                    <li>利用料金等の支払債務の不履行があった場合</li>
+                    <li>当館からの連絡に対し、一定期間返答がない場合</li>
+                    <li>本サイトについて、最終の利用から一定期間利用がない場合</li>
+                    <li>その他、当館が本サイトの利用を適当でないと判断した場合</li>
+                  </ol>
+                  <p class="mt-4">
+                    当館は、本条に基づき当館が行った行為により利用者に生じた損害について、
+                    一切の責任を負いません。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第8条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第8条（退会）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    利用者は、当館の定める退会手続により、本サイトから退会できるものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第9条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第9条（保証の否認および免責事項）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館は、本サイトに事実上または法律上の瑕疵（安全性、信頼性、正確性、完全性、有効性、
+                    特定の目的への適合性、セキュリティなどに関する欠陥、エラーやバグ、権利侵害などを含みます。）が
+                    ないことを明示的にも黙示的にも保証しておりません。
+                  </p>
+                  <p>
+                    当館は、本サイトに起因して利用者に生じたあらゆる損害について、
+                    当館の故意又は重過失による場合を除き、一切の責任を負いません。
+                    ただし、本サイトに関する当館と利用者との間の契約（本規約を含みます。）が
+                    消費者契約法に定める消費者契約となる場合、この免責規定は適用されません。
+                  </p>
+                  <p>
+                    前項ただし書に定める場合であっても、当館は、当館の過失（重過失を除きます。）による
+                    債務不履行または不法行為により利用者に生じた損害のうち特別な事情から生じた損害
+                    （当館または利用者が損害発生につき予見し、または予見し得た場合を含みます。）については、
+                    一切の責任を負いません。また、当館の過失（重過失を除きます。）による債務不履行または
+                    不法行為により利用者に生じた損害の賠償は、利用者から当該損害が発生した月に受領した
+                    利用料金の額を上限とします。
+                  </p>
+                  <p>
+                    当館は、本サイトに関して、利用者と他の利用者または第三者との間において生じた取引、
+                    連絡または紛争等について一切責任を負いません。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第10条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第10条（サービス内容の変更等）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館は、利用者への事前の告知をもって、本サイトの内容を変更、
+                    追加または廃止することがあり、利用者はこれに同意するものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第11条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第11条（利用規約の変更）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館は以下の場合には、利用者の個別の同意を要することなく、本規約を変更することができるものとします。
+                  </p>
+                  <ol class="list-decimal list-inside space-y-2 pl-4">
+                    <li>本規約の変更が、利用者の一般の利益に適合するとき。</li>
+                    <li>本規約の変更が、本サイト利用契約の目的に反せず、かつ、変更の必要性、変更後の内容の相当性その他の変更に係る事情に照らして合理的なものであるとき。</li>
+                  </ol>
+                  <p>
+                    当館はユーザーに対し、前項による本規約の変更にあたり、事前に、本規約を変更する旨
+                    及び変更後の本規約の内容並びにその効力発生時期を通知します。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第12条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第12条（個人情報の取扱い）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    当館は、本サイトの利用によって取得する個人情報については、
+                    当館「プライバシーポリシー」に従い適切に取り扱うものとします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第13条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第13条（通知または連絡）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    利用者と当館との間の通知または連絡は、当館の定める方法によって行うものとします。
+                    当館は、利用者から、当館が別途定める方式に従った変更届け出がない限り、
+                    現在登録されている連絡先が有効なものとみなして当該連絡先へ通知または連絡を行い、
+                    これらは、発信時に利用者へ到達したものとみなします。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第14条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第14条（権利義務の譲渡の禁止）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    利用者は、当館の書面による事前の承諾なく、利用契約上の地位または本規約に基づく
+                    権利もしくは義務を第三者に譲渡し、または担保に供することはできません。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 第15条 -->
+              <div>
+                <h2 class="text-[#436C5E] text-xl md:text-2xl font-semibold mb-4 tracking-wide">
+                  第15条（準拠法・裁判管轄）
+                </h2>
+                <div class="text-[#483F38] leading-relaxed tracking-wide space-y-3">
+                  <p>
+                    本規約の解釈にあたっては、日本法を準拠法とします。
+                  </p>
+                  <p>
+                    本サイトに関して紛争が生じた場合には、
+                    当館の本店所在地を管轄する裁判所を専属的合意管轄とします。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- フッターリンク -->
+        <div class="text-center">
+          <div class="inline-flex flex-wrap gap-4 md:gap-8 text-[#436C5E] text-sm">
+            <a href="/privacy-policy" class="hover:text-[#B99563] transition-colors">プライバシーポリシー</a>
+            <a href="/usage-terms" class="hover:text-[#B99563] transition-colors">宿泊約款</a>
+            <a href="/faq" class="hover:text-[#B99563] transition-colors">よくあるご質問</a>
+            <a href="/contact" class="hover:text-[#B99563] transition-colors">お問い合わせ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="bg-[#436C5E] text-white py-16 px-4 md:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <!-- ロゴ・連絡先セクション -->
+        <div class="space-y-6">
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-wider">
+            aoshima tei 鈴 – SUZU
+          </h2>
+          
+          <div class="space-y-4 text-sm leading-relaxed opacity-90">
+            <div>
+              <p class="font-medium mb-1">〒 889-2162</p>
+              <p>宮崎県宮崎市青島4-48-4</p>
+            </div>
+            <div>
+              <p class="font-medium mb-1">TEL: 012-345-6789</p>
+              <p>FAX: 012-345-6790</p>
+            </div>
+            <div>
+              <p class="font-medium mb-1">チェックイン: 15:00～18:00</p>
+              <p>チェックアウト: ～11:00</p>
+            </div>
+          </div>
+          
+          <div class="flex space-x-4">
+            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.024-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 23.998 12.017 24c6.624 0 11.99-5.367 11.99-12C24.007 5.367 18.641.001.012.017 0z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- ナビゲーションセクション -->
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold mb-4 text-[#B99563]">サイトマップ</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/" class="hover:text-[#B99563] transition-colors">TOP</a></li>
+              <li><a href="/rooms" class="hover:text-[#B99563] transition-colors">客室紹介</a></li>
+              <li><a href="/services" class="hover:text-[#B99563] transition-colors">サービス</a></li>
+              <li><a href="/plans" class="hover:text-[#B99563] transition-colors">プラン</a></li>
+              <li><a href="/contact" class="hover:text-[#B99563] transition-colors">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-4 text-[#B99563]">その他</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/privacy-policy" class="hover:text-[#B99563] transition-colors">プライバシーポリシー</a></li>
+              <li><a href="/terms" class="text-[#B99563]">利用規約</a></li>
+              <li><a href="/usage-terms" class="hover:text-[#B99563] transition-colors">宿泊約款</a></li>
+              <li><a href="/faq" class="hover:text-[#B99563] transition-colors">よくあるご質問</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- コピーライト -->
+      <div class="text-center pt-8 border-t border-white/20">
+        <p class="text-sm opacity-70">
+          &copy; 2024 aoshima tei 鈴 – SUZU. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // モバイルメニューの制御
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+  </script>
+
+  <style>
+    * {
+      font-family: 'Shippori Mincho', serif;
+    }
+  </style>
+</body>
+</html>

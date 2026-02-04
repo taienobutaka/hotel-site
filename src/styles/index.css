@@ -1,0 +1,99 @@
+/* Index Page Specific Styles */
+
+/* Fixed Reservation Button */
+#fixed-reservation-btn {
+  opacity: 1;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease-in-out;
+  will-change: opacity, transform;
+  bottom: 32px !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* FV Section */
+  section.relative.h-[828px] {
+    height: 475px;
+  }
+
+  section.relative.h-[828px] h1 {
+    font-size: 32px;
+    line-height: 48px;
+    tracking: 4.8px;
+  }
+
+  section.relative.h-[828px] p {
+    font-size: 14px;
+    line-height: 24px;
+    tracking: 1.4px;
+  }
+
+  /* Concept Section */
+  section.bg-[#F5EFEA].py-[150px].px-[256px] {
+    padding: 100px 16px;
+  }
+
+  section.bg-[#F5EFEA] .px-[183px] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  section.bg-[#F5EFEA] h2 {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  section.bg-[#F5EFEA] .space-y-[38px] p {
+    font-size: 15px;
+    line-height: 27px;
+  }
+
+  /* Cover Section */
+  section.h-[501px] {
+    height: 192px;
+  }
+
+  /* Services Section */
+  .flex.items-center.gap-[80px] {
+    flex-direction: column;
+    gap: 24px;
+    height: auto;
+  }
+
+  .w-[368px],
+  .w-[332px] {
+    width: 100%;
+    max-width: 343px;
+  }
+
+  .w-[800px] {
+    width: 100%;
+    max-width: 343px;
+    height: 214px;
+  }
+
+  /* Rooms Section */
+  section.bg-[#F5EFEA].pb-[150px] .relative.h-[665px] {
+    height: 475px;
+  }
+
+  .absolute.bottom-[110px].left-[104px] {
+    bottom: 16px;
+    left: 16px;
+    width: calc(100% - 32px);
+  }
+
+  /* FAQ Section */
+  .max-w-[892px] {
+    max-width: 343px;
+  }
+
+  /* Form Section */
+  .max-w-[672px] {
+    max-width: 343px;
+  }
+
+  .p-[48px] {
+    padding: 40px 16px;
+  }
+}

@@ -1,0 +1,467 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="心を満たす、特別な時間 | 宿泊施設">
+  <div class="bg-white min-h-screen font-serif">
+    
+    <!-- Header -->
+    <Header />
+    
+    <!-- FV Section -->
+    <section class="relative h-[828px] overflow-hidden">
+      <img 
+        src="https://www.figma.com/api/mcp/asset/6009674a-a869-4169-80fa-9e1a00b5e5af" 
+        alt="Hero Background"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="text-center text-white space-y-4">
+          <h1 class="text-[40px] leading-[60px] tracking-[6px] font-normal">心を満たす、特別な時間</h1>
+          <p class="text-[16px] leading-[28px] tracking-[1.8px] font-normal">静寂と美しさが織りなす、極上のリゾートへ</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section class="bg-bg-beige py-[150px] px-[256px] text-center">
+      <div class="space-y-[40px]">
+        <div class="space-y-[16px]">
+          <h2 class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-deep-green">CONCEPT</h2>
+          <p class="text-[14px] leading-[22.75px] tracking-[2.1px] text-deep-green">私たちの想い</p>
+        </div>
+        <div class="px-[183px] space-y-[38px] text-[16px] text-text tracking-[1.6px]">
+          <p class="leading-[48px]">
+            都会の喧騒から離れ、心安らぐひとときを。<br>
+            私たちのリゾートは、豊かな自然に囲まれた特別な空間です。
+          </p>
+          <p class="leading-[48px]">
+            最高のおもてなしと洗練された施設で、<br>
+            忘れられない体験をお約束します。
+          </p>
+          <p class="leading-[48px]">
+            四季折々の風景を楽しみながら、心と体をリフレッシュしてください。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cover Section -->
+    <section class="h-[501px] relative overflow-hidden">
+      <img 
+        src="https://www.figma.com/api/mcp/asset/c588e8d3-7e1e-4d62-9381-1477e51f670d" 
+        alt="Cover"
+        class="w-full h-full object-cover"
+      />
+    </section>
+
+    <!-- Services Section -->
+    <section class="bg-bg-beige py-[150px] px-[80px]">
+      <div class="space-y-[80px]">
+        <div class="text-center space-y-[16px]">
+          <h2 class="text-[36px] leading-[40px] tracking-[3.6px] font-semibold text-deep-green">SERVICES</h2>
+          <p class="text-[14px] leading-[20px] tracking-[1.4px] text-deep-green">施設のご案内</p>
+        </div>
+        
+        <div class="space-y-[80px]">
+          <!-- Sauna Service -->
+          <div class="flex items-center gap-[80px] h-[501px]">
+            <div class="flex-1">
+              <img 
+                src="https://www.figma.com/api/mcp/asset/a560f078-b825-4c26-8800-714002536961" 
+                alt="Private Sauna"
+                class="w-[800px] h-[501px] object-cover"
+              />
+            </div>
+            <div class="w-[368px] space-y-[24px]">
+              <div>
+                <p class="text-[12px] leading-[48px] tracking-[4.8px] text-gold">PRIVATE SAUNA</p>
+                <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-deep-green">サウナ</h3>
+              </div>
+              <p class="text-[14px] leading-[30px] tracking-[1.4px] text-text">
+                薪ストーブ式のプライベートサウナを完備。<br>
+                自ら火を入れ、薪の香りと熱に包まれながら、<br>
+                ゆっくりと自分自身を取り戻す時間を提供します。<br>
+                専用の外気浴スペースで風を感じ、<br>
+                深い休息をご堪能いただけます。
+              </p>
+            </div>
+          </div>
+
+          <!-- Food Service -->
+          <div class="flex items-center justify-end gap-[80px] h-[501px]">
+            <div class="w-[332px] space-y-[24px]">
+              <div>
+                <p class="text-[12px] leading-[48px] tracking-[4.8px] text-gold">FOOD</p>
+                <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-deep-green">お食事</h3>
+              </div>
+              <p class="text-[14px] leading-[30px] tracking-[1.4px] text-text">
+                手ぶらで楽しめる<br>
+                プライベートBBQスペースをご用意。<br>
+                地元の新鮮な食材を使った<br>
+                こだわりのBBQセットで、<br>
+                大切な人との楽しい時間をお過ごしください。
+              </p>
+            </div>
+            <div class="flex-1">
+              <img 
+                src="https://www.figma.com/api/mcp/asset/1bb2d651-49f6-426e-bfaa-33c6662f83a1" 
+                alt="BBQ"
+                class="w-[800px] h-[501px] object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <button class="border border-deep-green text-deep-green text-[14px] tracking-[2.1px] px-[49px] py-[10px] rounded-full hover:bg-deep-green hover:text-white transition-colors">
+            MORE
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="bg-bg-beige pb-[150px]">
+      <div class="space-y-[100px]">
+        <!-- Main Room Image -->
+        <div class="relative h-[663px] overflow-hidden">
+          <img 
+            src="https://www.figma.com/api/mcp/asset/8413627a-bddc-48e3-9bca-020f674e8994" 
+            alt="Rooms"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute bottom-0 left-0 bg-bg-beige h-[156px] w-[625px]"></div>
+          <div class="absolute bottom-[110px] left-[104px] flex items-end justify-between w-[471px]">
+            <div class="space-y-[8px] text-center">
+              <h2 class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-deep-green">ROOMS</h2>
+              <p class="text-[14px] leading-[30px] tracking-[1.4px] text-deep-green">お部屋</p>
+            </div>
+            <button class="border border-deep-green text-deep-green text-[14px] tracking-[2.1px] px-[49px] py-[10px] rounded-full hover:bg-deep-green hover:text-white transition-colors">
+              MORE
+            </button>
+          </div>
+        </div>
+
+        <!-- Room Gallery -->
+        <div class="overflow-hidden">
+          <div class="flex gap-[40px] h-[250px] px-[25px]">
+            <img src="https://www.figma.com/api/mcp/asset/7f0faef1-564a-4371-94f2-d321dd088e1b" alt="Room 1" class="w-[350px] h-[250px] object-cover" />
+            <img src="https://www.figma.com/api/mcp/asset/cf5cf371-7fea-4515-99f4-5bb33e67dcfc" alt="Room 2" class="w-[350px] h-[250px] object-cover" />
+            <img src="https://www.figma.com/api/mcp/asset/bfe36649-ddfa-4a92-b642-4519f92b0772" alt="Room 3" class="w-[350px] h-[250px] object-cover" />
+            <img src="https://www.figma.com/api/mcp/asset/cf5cf371-7fea-4515-99f4-5bb33e67dcfc" alt="Room 4" class="w-[350px] h-[250px] object-cover" />
+            <img src="https://www.figma.com/api/mcp/asset/8c8e763c-cdb8-4e1b-ad97-3337f5cbfcc6" alt="Room 5" class="w-[350px] h-[250px] object-cover" />
+            <img src="https://www.figma.com/api/mcp/asset/99a96d98-c5dc-4b84-8aaf-576cc021654a" alt="Room 6" class="w-[350px] h-[250px] object-cover" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Access Section -->
+    <section class="bg-white py-[150px] px-[256px]">
+      <div class="space-y-[80px]">
+        <div class="text-center space-y-[16px]">
+          <h2 class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-deep-green">ACCESS</h2>
+          <p class="text-[14px] leading-[30px] tracking-[1.4px] text-deep-green">アクセス</p>
+        </div>
+        
+        <div class="flex items-center justify-between pl-[120px]">
+          <div class="w-[361px] space-y-[40px]">
+            <div class="space-y-[8px]">
+              <h3 class="text-[18px] leading-[32px] tracking-[1.6px] font-medium text-deep-green">所在地</h3>
+              <p class="text-[14px] leading-[30px] tracking-[1.4px] text-text">
+                〒 889-2162<br>
+                宮崎県宮崎市青島4-48-4
+              </p>
+            </div>
+            <div class="space-y-[8px]">
+              <h3 class="text-[18px] leading-[32px] tracking-[1.6px] font-medium text-deep-green">交通アクセス</h3>
+              <p class="text-[14px] leading-[22.75px] tracking-[2.1px] text-text">
+                宮崎空港より車で15分<br>
+                青島駅より徒歩4分<br>
+                バス停青島ホステルより徒歩２分
+              </p>
+            </div>
+            <button class="border border-deep-green text-deep-green text-[14px] tracking-[2.1px] px-[49px] py-[10px] rounded-full hover:bg-deep-green hover:text-white transition-colors">
+              MORE
+            </button>
+          </div>
+          <div class="w-[629px] h-[424px]">
+            <img 
+              src="https://www.figma.com/api/mcp/asset/c99232d9-0948-45c1-91de-0e8fc6f1a139" 
+              alt="Map"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-bg-beige py-[150px] px-[80px]">
+      <div class="max-w-[892px] mx-auto space-y-[80px]">
+        <div class="text-center space-y-[16px]">
+          <h2 class="text-[36px] leading-[40px] tracking-[3.6px] font-semibold text-deep-green">FAQ</h2>
+          <p class="text-[14px] leading-[20px] tracking-[1.4px] text-deep-green">よくあるご質問</p>
+        </div>
+        
+        <div class="space-y-[24px]">
+          <!-- FAQ Item 1 -->
+          <div class="border-b border-white/40 pb-[25px] space-y-[8px]">
+            <div class="text-white font-medium tracking-[1.6px]">
+              <span class="text-[20px] leading-[28px]">Q.</span>
+              <span class="text-[18px] leading-[28px] ml-[12px]">チェックイン、チェックアウトの時間は？</span>
+            </div>
+            <div class="pl-[32px]">
+              <p class="text-[16px] leading-[26px] tracking-[1.6px] text-white">A. チェックインは15:00から、チェックアウトは11:00までとなります。</p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="border-b border-white/40 pb-[25px] space-y-[8px]">
+            <div class="text-white font-medium tracking-[1.6px]">
+              <span class="text-[20px] leading-[28px]">Q.</span>
+              <span class="text-[18px] leading-[28px] ml-[12px]">駐車場はありますか？</span>
+            </div>
+            <div class="pl-[32px]">
+              <p class="text-[16px] leading-[26px] tracking-[1.6px] text-white">A. 無料駐車場を完備しております。事前のご予約は不要です。</p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="border-b border-white/40 pb-[25px] space-y-[8px]">
+            <div class="text-white font-medium tracking-[1.6px]">
+              <span class="text-[20px] leading-[28px]">Q.</span>
+              <span class="text-[18px] leading-[28px] ml-[12px]">キャンセル料はかかりますか？</span>
+            </div>
+            <div class="pl-[32px]">
+              <p class="text-[16px] leading-[26px] tracking-[1.6px] text-white">A. 宿泊約款に基づき、キャンセル料を申し受けております。詳細はお問い合わせください。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <button class="border border-deep-green text-deep-green text-[14px] tracking-[2.1px] px-[49px] py-[10px] rounded-full hover:bg-deep-green hover:text-white transition-colors">
+            MORE
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section class="py-[150px] px-[272px] relative overflow-hidden">
+      <img 
+        src="https://www.figma.com/api/mcp/asset/a6dc31cf-da8a-4d40-af05-a1af2221379b" 
+        alt="Reservation Background"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="relative z-10 text-center space-y-[40px]">
+        <div class="space-y-[16px]">
+          <h2 class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-white">RESERVATION</h2>
+          <p class="text-[14px] leading-[20px] tracking-[1.4px] text-slate-300">ご予約</p>
+        </div>
+        <p class="text-[16px] leading-[32px] tracking-[1.6px] text-slate-200">
+          オンラインで簡単に空室確認・ご予約が可能です。<br>
+          みなさまのお越しを、心からお持ちしております。
+        </p>
+        <button class="bg-white text-deep-green text-[16px] tracking-[1.6px] font-medium px-[76px] py-[12px] rounded-[6px] hover:bg-gray-100 transition-colors">
+          ご予約はこちら
+        </button>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="bg-[#fafafa] py-[150px] px-[256px]">
+      <div class="space-y-[80px]">
+        <div class="text-center space-y-[40px]">
+          <div class="space-y-[16px]">
+            <h2 class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-deep-green">CONTACT</h2>
+            <p class="text-[14px] leading-[22.75px] tracking-[2.1px] text-deep-green">お問い合わせ</p>
+          </div>
+          <div class="px-[112px] space-y-[40px]">
+            <p class="text-[16px] leading-[32px] tracking-[1px] text-text">
+              ご不明な点がございましたら、お気軽にお問い合わせください。<br>
+              以下の連絡先またはお問い合わせフォームよりご連絡いただけます。
+            </p>
+            <div class="space-y-[8px]">
+              <p class="text-[14px] leading-[22.75px] tracking-[2.1px] text-text">お電話でのお問い合わせ</p>
+              <p class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-deep-green">012-345-6789</p>
+              <p class="text-[14px] leading-[22.75px] tracking-[2.1px] text-text">(受付時間 9:00 - 18:00)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-white rounded-[8px] shadow-sm p-[48px] max-w-[672px] mx-auto">
+          <form class="space-y-[56px]">
+            <div class="space-y-[32px]">
+              <!-- Contact Type -->
+              <div class="space-y-[8px]">
+                <div class="flex gap-[8px]">
+                  <label class="text-[16px] leading-[32px] tracking-[1px] text-deep-green">お問い合わせ区分</label>
+                  <span class="text-[12px] leading-[16px] tracking-[1.2px] text-red-500">*</span>
+                </div>
+                <div class="flex gap-[24px]">
+                  <label class="flex items-center gap-[13px]">
+                    <input type="radio" name="inquiry_type" value="general" class="w-[29px] h-[29px]" checked />
+                    <span class="text-[16px] leading-[32px] tracking-[1px] text-slate-600">一般のお客様</span>
+                  </label>
+                  <label class="flex items-center gap-[13px]">
+                    <input type="radio" name="inquiry_type" value="corporate" class="w-[29px] h-[29px]" />
+                    <span class="text-[16px] leading-[32px] tracking-[1px] text-slate-600">法人・団体の方</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Name -->
+              <div class="space-y-[8px]">
+                <div class="flex gap-[8px]">
+                  <label class="text-[16px] leading-[32px] tracking-[1px] text-deep-green">お名前</label>
+                  <span class="text-[12px] leading-[16px] tracking-[1.2px] text-red-500">*</span>
+                </div>
+                <input type="text" class="w-full h-[45px] border border-light-green bg-white px-4" />
+              </div>
+
+              <!-- Email -->
+              <div class="space-y-[8px]">
+                <div class="flex gap-[8px]">
+                  <label class="text-[16px] leading-[32px] tracking-[1px] text-deep-green">メールアドレス</label>
+                  <span class="text-[12px] leading-[16px] tracking-[1.2px] text-red-500">*</span>
+                </div>
+                <input type="email" class="w-full h-[45px] border border-light-green bg-white px-4" />
+              </div>
+
+              <!-- Message -->
+              <div class="space-y-[8px]">
+                <div class="flex gap-[8px]">
+                  <label class="text-[16px] leading-[32px] tracking-[1px] text-deep-green">内容</label>
+                  <span class="text-[12px] leading-[16px] tracking-[1.2px] text-red-500">*</span>
+                </div>
+                <textarea class="w-full h-[160px] border border-light-green bg-white p-4 resize-none"></textarea>
+              </div>
+
+              <!-- Privacy Policy -->
+              <div class="space-y-[16px] text-[12px] leading-[19px] text-text">
+                <p>
+                  個人情報の取り扱いについて<br>
+                  当社が本サービスを通じて取得したユーザーの個人情報については、当社が規定する個人情報保護方針および個人情報保護法等法令の規定に準拠して取り扱うものとします。弊社のプライバシーポリシーをお読み頂き、同意いただける場合には下記のボタンから情報をご送信下さい。
+                </p>
+                <label class="flex items-center gap-[8px] tracking-[1.6px]">
+                  <input type="checkbox" class="w-[16px] h-[16px]" />
+                  <span>プライバシーポリシーに同意する</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="flex justify-center">
+              <button type="submit" class="bg-gold border border-gold text-white text-[14px] tracking-[2.1px] px-[49px] py-[10px] rounded-full hover:bg-opacity-90 transition-colors">
+                送信
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <Footer />
+  </div>
+</Layout>
+
+<!-- Responsive Styles for Mobile -->
+<style>
+  @media (max-width: 768px) {
+    /* Hero Section */
+    section.relative.h-[828px] {
+      height: 753px;
+    }
+    
+    section.relative.h-[828px] h1 {
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 2.4px;
+    }
+    
+    section.relative.h-[828px] p {
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: 1.8px;
+    }
+    
+    /* Concept Section */
+    section.bg-bg-beige.py-[150px] {
+      padding: 80px 16px;
+    }
+    
+    section.bg-bg-beige .px-[256px] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    
+    section.bg-bg-beige .px-[183px] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    
+    section.bg-bg-beige h2 {
+      font-size: 32px;
+      line-height: 48px;
+    }
+    
+    section.bg-bg-beige .space-y-[38px] p {
+      font-size: 15px;
+      line-height: 27px;
+    }
+    
+    /* Cover Section */
+    section.h-[501px] {
+      height: 192px;
+    }
+    
+    /* Services Section */
+    .flex.items-center.gap-[80px] {
+      flex-direction: column;
+      gap: 24px;
+      height: auto;
+    }
+    
+    .w-[368px], .w-[332px] {
+      width: 100%;
+      max-width: 343px;
+    }
+    
+    .w-[800px] {
+      width: 100%;
+      max-width: 343px;
+      height: 214px;
+    }
+    
+    /* Rooms Section */
+    section.bg-bg-beige.pb-[150px] .relative.h-[663px] {
+      height: 475px;
+    }
+    
+    .absolute.bottom-[110px].left-[104px] {
+      bottom: 16px;
+      left: 16px;
+      width: calc(100% - 32px);
+    }
+    
+    /* FAQ Section */
+    .max-w-[892px] {
+      max-width: 343px;
+    }
+    
+    /* Form Section */
+    .max-w-[672px] {
+      max-width: 343px;
+    }
+    
+    .p-[48px] {
+      padding: 40px 16px;
+    }
+  }
+</style>
