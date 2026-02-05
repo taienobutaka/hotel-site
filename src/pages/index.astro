@@ -36,7 +36,7 @@ import '../styles/index.css';
     <!-- FV Section - 動画対応 (Rectangle43) - レスポンシブ対応 -->
     <!-- SP: Frame 110 - W:375px H:753px -->
     <!-- PC: FV - W:1440px H:828px -->
-    <section class="relative lg:h-[828px] h-[753px] overflow-hidden" data-name="FV" data-node-id="155:1171">
+    <section class="relative lg:min-h-[828px] lg:h-screen h-[753px] overflow-hidden" data-name="FV" data-node-id="155:1171">
       
       <!-- Figma背景画像 - Mask group -->
       <div class="absolute inset-0 w-full h-full" data-name="Mask group" data-node-id="228:1582">
@@ -63,7 +63,7 @@ import '../styles/index.css';
         <!-- 動画要素（将来的に動画ファイルに差し替え可能） -->
         <video 
           id="hero-video" 
-          class="absolute inset-0 w-full h-full object-cover hidden"
+          class="absolute inset-0 w-full h-full min-w-full min-h-full object-cover hidden"
           autoplay 
           muted 
           loop 
@@ -184,6 +184,32 @@ import '../styles/index.css';
     
     // Fixed Reservation Button - SPはFV内から追従表示
     document.addEventListener('DOMContentLoaded', function() {
+      // Scroll fade-in for images (exclude FV/Rectangle43 and header/footer)
+      const fadeTargets = Array.from(document.querySelectorAll('main img')).filter((img) => {
+        if (img.closest('header') || img.closest('footer')) return false;
+        if (img.closest('section[data-name="FV"]')) return false;
+        if (img.hasAttribute('data-no-fade')) return false;
+        return true;
+      });
+
+      fadeTargets.forEach((img) => img.classList.add('scroll-fade'));
+
+      if (fadeTargets.length) {
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
+        );
+
+        fadeTargets.forEach((img) => observer.observe(img));
+      }
+
       const fixedReservationBtn = document.getElementById('fixed-reservation-btn');
       if (fixedReservationBtn) {
         const updateReservationButton = () => {
@@ -194,96 +220,53 @@ import '../styles/index.css';
         window.addEventListener('resize', updateReservationButton);
       }
 
-      // Room Gallery Auto Scroll Function
+      // Room Gallery Auto Scroll (rotation to avoid clipping)
       initRoomGalleryAutoScroll();
-      
+
       function initRoomGalleryAutoScroll() {
         const pcGallery = document.getElementById('room-gallery-pc');
         const spGallery = document.getElementById('room-gallery-sp');
-        
-        // PC版のエンドレススクロール（6枚の画像で修正）
-        if (pcGallery) {
-          console.log('PC Gallery found, children count:', pcGallery.children.length);
-          let translateX = 0;
-          const itemWidth = 350 + 40; // アイテム幅 + gap
-          const totalItems = 6; // オリジナルアイテム数（6枚に修正）
-          const maxTranslate = itemWidth * totalItems;
-          const speed = 1.0; // 適度な速さに調整
-          
-          console.log('PC Gallery settings:', {
-            itemWidth,
-            totalItems,
-            maxTranslate,
-            actualChildren: pcGallery.children.length
-          });
-          
-          function animate() {
-            translateX += speed;
-            
-            // 最後の画像表示完了時にリセット
-            if (translateX >= maxTranslate) {
-              // transitionを無効化して瞬間リセット
-              pcGallery.style.transition = 'none';
-              translateX = 0;
-              pcGallery.style.transform = `translateX(0px)`;
-              
-              // 次のフレームでtransitionを復活させる
-              requestAnimationFrame(() => {
-                pcGallery.style.transition = 'transform 0.1s ease-out';
-              });
-              
-              console.log('PC Gallery instant reset completed');
-            } else {
-              pcGallery.style.transform = `translateX(-${translateX}px)`;
-            }
-            
-            requestAnimationFrame(animate);
-          }
-          
-          requestAnimationFrame(animate);
-        }
-        
-        // SP版のエンドレススクロール（6枚の画像で修正）
-        if (spGallery) {
-          console.log('SP Gallery found, children count:', spGallery.children.length);
-          let translateX = 0;
-          const itemWidth = 148 + 16; // アイテム幅 + gap (SP版は gap-4 = 16px)
-          const totalItems = 6; // オリジナルアイテム数（6枚に修正）
-          const maxTranslate = itemWidth * totalItems;
-          const speed = 1.0; // 適度な速さに調整
-          
-          console.log('SP Gallery settings:', {
-            itemWidth,
-            totalItems,
-            maxTranslate,
-            actualChildren: spGallery.children.length
-          });
-          
-          function animate() {
-            translateX += speed;
-            
-            // 最後の画像表示完了時にリセット
-            if (translateX >= maxTranslate) {
-              // transitionを無効化して瞬間リセット
-              spGallery.style.transition = 'none';
-              translateX = 0;
-              spGallery.style.transform = `translateX(0px)`;
-              
-              // 次のフレームでtransitionを復活させる
-              requestAnimationFrame(() => {
-                spGallery.style.transition = 'transform 0.1s ease-out';
-              });
-              
-              console.log('SP Gallery instant reset completed');
-            } else {
-              spGallery.style.transform = `translateX(-${translateX}px)`;
-            }
-            
-            requestAnimationFrame(animate);
-          }
-          
-          requestAnimationFrame(animate);
-        }
+
+        setupRotatingGallery(pcGallery, 2200);
+        setupRotatingGallery(spGallery, 2200);
+      }
+
+      function setupRotatingGallery(container, intervalMs) {
+        if (!container || !container.children.length) return;
+
+        const getItemWidth = () => {
+          const first = container.children[0];
+          if (!first) return 0;
+          const rect = first.getBoundingClientRect();
+          const styles = window.getComputedStyle(container);
+          const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+          return rect.width + gap;
+        };
+
+        let isAnimating = false;
+        const step = () => {
+          if (isAnimating) return;
+          const moveX = getItemWidth();
+          if (!moveX) return;
+          isAnimating = true;
+
+          container.style.transition = 'transform 0.6s ease';
+          container.style.transform = `translateX(-${moveX}px)`;
+
+          const onEnd = () => {
+            container.style.transition = 'none';
+            container.style.transform = 'translateX(0)';
+            container.appendChild(container.children[0]);
+            requestAnimationFrame(() => {
+              isAnimating = false;
+            });
+          };
+
+          container.addEventListener('transitionend', onEnd, { once: true });
+        };
+
+        setInterval(step, intervalMs);
+        step();
       }
     });
     </script>
@@ -392,7 +375,7 @@ import '../styles/index.css';
                 <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']" data-node-id="171:1086">PRIVATE SAUNA</p>
                 <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:246">サウナ</h3>
               </div>
-              <div class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']" data-node-id="95:247">
+              <div class="text-[14px] leading-[40px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']" data-node-id="95:247">
                 <p class="mb-0">薪ストーブ式のプライベートサウナを完備。</p>
                 <p class="mb-0">自ら火を入れ、薪の香りと熱に包まれながら、</p>
                 <p class="mb-0">ゆっくりと自分自身を取り戻す時間を提供します。</p>
@@ -410,7 +393,7 @@ import '../styles/index.css';
                 <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']" data-node-id="171:1096">FOOD</p>
                 <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="171:1097">お食事</h3>
               </div>
-              <div class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']" data-node-id="171:1098">
+              <div class="text-[14px] leading-[40px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']" data-node-id="171:1098">
                 <p class="mb-0">手ぶらで楽しめる</p>
                 <p class="mb-0">プライベートBBQスペースをご用意。</p>
                 <p class="mb-0">地元の新鮮な食材を使った</p>
@@ -440,8 +423,8 @@ import '../styles/index.css';
       </div>
 
       <!-- SP Layout: Frame 114 - W:343px H:1172.607px at px:16px -->
-      <div class="lg:hidden block w-[343px] mx-auto">
-        <div class="space-y-[40px]">
+      <div class="lg:hidden block w-full sp-services">
+        <div class="sp-services-inner flex flex-col gap-[40px]" style="gap: 40px;">
           <!-- SP Title: block.title - W:227.967px H:68px, centered -->
           <div class="text-center space-y-[8px]" data-name="block.title" data-node-id="183:2035">
             <h2 class="text-[32px] leading-[48px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho'] w-[227.967px] mx-auto" data-node-id="183:2036">SERVICES</h2>
@@ -449,11 +432,11 @@ import '../styles/index.css';
           </div>
 
           <!-- SP Content: Frame 113 - W:343px H:989.607px -->
-          <div class="space-y-[32px]" data-node-id="183:2064">
+          <div class="sp-services-list flex flex-col gap-[32px]" data-node-id="183:2064" style="gap: 32px;">
             <!-- SP Sauna Service: Frame 112 - W:343px H:499.804px -->
-            <div class="space-y-[24px]" data-node-id="183:2063">
+            <div class="sp-service-item flex flex-col gap-[24px]" data-node-id="183:2063" style="gap: 24px;">
               <!-- SP Sauna Image: W:343px H:214.804px -->
-              <div class="w-[343px] h-[214.804px] relative overflow-hidden" data-name="element.top-service.sauna-image" data-node-id="183:2041">
+              <div class="w-full h-[214.804px] relative overflow-hidden" data-name="element.top-service.sauna-image" data-node-id="183:2041">
                 <img 
                   src="/images/services/sauna.jpg" 
                   alt="Private Sauna - SP"
@@ -463,10 +446,10 @@ import '../styles/index.css';
               </div>
               
               <!-- SP Sauna Text: W:343px H:261px -->
-              <div class="w-[343px] space-y-[16px] text-left" data-name="element.top-service.sauna-text" data-node-id="183:2044">
+              <div class="w-full sp-service-text flex flex-col gap-[4px] text-left" data-name="element.top-service.sauna-text" data-node-id="183:2044" style="gap: 4px;">
                 <div class="space-y-0" data-node-id="183:2045">
-                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']" data-node-id="183:2046">PRIVATE SAUNA</p>
-                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2047">サウナ</h3>
+                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho'] m-0" data-node-id="183:2046">PRIVATE SAUNA</p>
+                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho'] -mt-[10px] m-0" data-node-id="183:2047">サウナ</h3>
                 </div>
                 <div class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho'] whitespace-pre-line" data-node-id="183:2048">
                   薪ストーブ式のプライベートサウナを完備。
@@ -480,9 +463,9 @@ import '../styles/index.css';
             </div>
 
             <!-- SP Food Service: W:343px H:457.804px -->
-            <div class="space-y-[24px]" data-name="block.top-service.sauna" data-node-id="183:2050">
+            <div class="sp-service-item flex flex-col gap-[24px]" data-name="block.top-service.sauna" data-node-id="183:2050" style="gap: 24px;">
               <!-- SP Food Image: W:343px H:214.804px -->
-              <div class="w-[343px] h-[214.804px] relative overflow-hidden" data-name="element.top-service.sauna-image" data-node-id="183:2056">
+              <div class="w-full h-[214.804px] relative overflow-hidden" data-name="element.top-service.sauna-image" data-node-id="183:2056">
                 <img 
                   src="/images/services/food.jpg" 
                   alt="Private BBQ - SP"
@@ -492,10 +475,10 @@ import '../styles/index.css';
               </div>
               
               <!-- SP Food Text: W:343px H:219px -->
-              <div class="w-[343px] space-y-[16px] text-left" data-name="element.top-service.sauna-text" data-node-id="183:2051">
+              <div class="w-full sp-service-text flex flex-col gap-[4px] text-left" data-name="element.top-service.sauna-text" data-node-id="183:2051" style="gap: 4px;">
                 <div class="space-y-0" data-node-id="183:2052">
-                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']" data-node-id="183:2053">FOOD</p>
-                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2054">お食事</h3>
+                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho'] m-0" data-node-id="183:2053">FOOD</p>
+                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] font-semibold text-[#436C5E] font-['Shippori_Mincho'] -mt-[10px] m-0" data-node-id="183:2054">お食事</h3>
                 </div>
                 <div class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho'] whitespace-pre-line" data-node-id="183:2055">
                   手ぶらで楽しめる
@@ -698,7 +681,7 @@ import '../styles/index.css';
 
     <!-- Access Section - レスポンシブ対応 -->
     <section class="bg-white lg:py-[150px] lg:px-[256px] py-[80px] px-[16px]">
-      <div class="lg:gap-[80px] gap-[32px] flex flex-col items-center">
+      <div class="lg:gap-[32px] gap-[32px] flex flex-col items-center">
         <!-- Title -->
         <div class="text-center space-y-[16px] w-full">
           <h2 class="lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">ACCESS</h2>
@@ -708,19 +691,21 @@ import '../styles/index.css';
         <!-- Main Content -->
         <div class="lg:flex lg:items-center lg:justify-between lg:pl-[120px] lg:w-[1232px] w-full lg:space-y-0 space-y-[32px]">
           <!-- Left Content -->
-          <div class="lg:w-[361px] w-full lg:space-y-[40px] space-y-[24px] lg:items-start items-center flex flex-col lg:justify-center justify-center">
-            <div class="lg:space-y-[16px] space-y-[16px] w-full">
-              <div class="lg:space-y-[8px] space-y-[8px] lg:text-left text-center">
+          <div class="lg:w-[361px] w-full lg:space-y-[32px] space-y-[32px] lg:items-start items-center flex flex-col lg:justify-center justify-center">
+            <div class="flex w-full flex-col items-center lg:items-start gap-[32px]">
+              <div class="space-y-[16px] lg:text-left text-center w-full">
                 <h3 class="lg:text-[18px] lg:leading-[32px] lg:tracking-[1.6px] text-[18px] leading-[32px] tracking-[1.6px] font-medium text-[#436C5E] font-['Shippori_Mincho']">所在地</h3>
                 <div class="lg:text-[14px] lg:leading-[30px] lg:tracking-[1.4px] text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
                   <p class="mb-0">〒 889-2162</p>
                   <p>宮崎県宮崎市青島4-48-4</p>
                 </div>
               </div>
-              
-              <div class="lg:space-y-[8px] space-y-[8px] lg:text-left text-center">
+
+              <div class="h-[32px] w-px bg-[#436C5E]/20"></div>
+
+              <div class="space-y-[16px] lg:text-left text-center w-full">
                 <h3 class="lg:text-[18px] lg:leading-[32px] lg:tracking-[1.6px] text-[18px] leading-[32px] tracking-[1.6px] font-medium text-[#436C5E] font-['Shippori_Mincho']">交通アクセス</h3>
-                <div class="lg:text-[14px] lg:leading-[22.75px] lg:tracking-[2.1px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#483F38] font-['Shippori_Mincho']">
+                <div class="lg:text-[14px] lg:leading-[30px] lg:tracking-[1.4px] text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
                   <p class="mb-0">宮崎空港より車で15分</p>
                   <p class="mb-0">青島駅より徒歩4分</p>
                   <p>バス停青島ホステルより徒歩２分</p>
@@ -741,7 +726,7 @@ import '../styles/index.css';
           </div>
 
           <!-- Right Map -->
-          <div class="lg:w-[629px] lg:h-[424px] w-full h-[231px] relative lg:block hidden">
+          <div class="lg:w-[600px] lg:h-[400px] w-full h-[220px] relative lg:block hidden">
             <img 
               src="/images/access-map.jpg" 
               alt="Access Map"
@@ -750,7 +735,7 @@ import '../styles/index.css';
           </div>
           
           <!-- SP Map -->
-          <div class="w-full h-[231px] relative lg:hidden block">
+          <div class="w-full h-[220px] relative lg:hidden block">
             <img 
               src="/images/access-map-sp.jpg" 
               alt="Access Map"
@@ -770,8 +755,8 @@ import '../styles/index.css';
           <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']">よくあるご質問</p>
         </div>
 
-        <div class="space-y-[24px]">
-          <div class="border-b border-[#436C5E]/20 pb-[24px]">
+        <div class="space-y-[32px]">
+          <div class="border-b border-[#436C5E]/20 pb-[32px]">
             <div class="flex gap-1 items-start mb-2">
               <span class="text-[#436C5E] text-[16px] leading-[32px] tracking-[1px] font-['Shippori_Mincho']">Q.</span>
               <p class="text-[#436C5E] text-[15px] leading-[27px] tracking-[1.6px] font-['Shippori_Mincho'] flex-1">
@@ -785,7 +770,7 @@ import '../styles/index.css';
             </div>
           </div>
           
-          <div class="border-b border-[#436C5E]/20 pb-[24px]">
+          <div class="border-b border-[#436C5E]/20 pb-[32px]">
             <div class="flex gap-1 items-start mb-2">
               <span class="text-[#436C5E] text-[16px] leading-[32px] tracking-[1px] font-['Shippori_Mincho']">Q.</span>
               <p class="text-[#436C5E] text-[15px] leading-[27px] tracking-[1.6px] font-['Shippori_Mincho'] flex-1">
@@ -799,7 +784,7 @@ import '../styles/index.css';
             </div>
           </div>
           
-          <div class="border-b border-[#436C5E]/20 pb-[24px]">
+          <div class="border-b border-[#436C5E]/20 pb-[32px]">
             <div class="flex gap-1 items-start mb-2">
               <span class="text-[#436C5E] text-[16px] leading-[32px] tracking-[1px] font-['Shippori_Mincho']">Q.</span>
               <p class="text-[#436C5E] text-[15px] leading-[27px] tracking-[1.6px] font-['Shippori_Mincho'] flex-1">
@@ -889,8 +874,8 @@ import '../styles/index.css';
         </div>
 
         <!-- Contact Form -->
-        <div class="bg-white lg:p-[48px] p-[24px] rounded-lg shadow-sm lg:w-[672px] mx-auto">
-          <form class="space-y-[56px] lg:w-[576px] mx-auto">
+        <div class="bg-white lg:p-[48px] p-[24px] rounded-lg shadow-sm lg:w-[892px] mx-auto">
+          <form class="space-y-[56px] lg:w-[796px] mx-auto">
             <div class="lg:space-y-8 space-y-6">
               <!-- Contact Type -->
               <div class="space-y-2">
@@ -899,12 +884,12 @@ import '../styles/index.css';
                   <span class="text-[12px] tracking-[1.2px] text-red-500 uppercase font-['Shippori_Mincho']">*</span>
                 </div>
                 <div class="lg:flex lg:gap-6 space-y-4 lg:space-y-0">
-                  <label class="flex items-center lg:gap-[13px] gap-3">
-                    <input type="radio" name="contact_type" class="w-[29px] h-[29px] accent-[#436C5E]">
+                  <label class="flex items-center lg:gap-[12px] gap-[12px]">
+                    <input type="radio" name="contact_type" class="w-[20px] h-[20px] accent-[#436C5E]">
                     <span class="text-[16px] leading-[32px] tracking-[1px] text-[#475569] font-['Shippori_Mincho']">一般のお客様</span>
                   </label>
-                  <label class="flex items-center lg:gap-[13px] gap-3">
-                    <input type="radio" name="contact_type" class="w-[29px] h-[29px] accent-[#436C5E]">
+                  <label class="flex items-center lg:gap-[12px] gap-[12px]">
+                    <input type="radio" name="contact_type" class="w-[20px] h-[20px] accent-[#436C5E]">
                     <span class="text-[16px] leading-[32px] tracking-[1px] text-[#475569] font-['Shippori_Mincho']">法人・団体の方</span>
                   </label>
                 </div>
@@ -945,7 +930,17 @@ import '../styles/index.css';
                 </p>
                 <label class="flex items-start lg:items-center gap-2 cursor-pointer">
                   <input type="checkbox" class="w-4 h-4 mt-1 lg:mt-0 accent-[#436C5E]">
-                  <span class="leading-[32px] tracking-[1.6px]">プライバシーポリシーに同意する</span>
+                  <span class="leading-[32px] tracking-[1.6px]">
+                    <a href="/privacy-policy" class="inline-flex items-center gap-1 text-[#436C5E] hover:opacity-60 transition-opacity">
+                      プライバシーポリシー
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 1H11V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M11 1L6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 2H2C1.44772 2 1 2.44772 1 3V10C1 10.5523 1.44772 11 2 11H9C9.55228 11 10 10.5523 10 10V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </a>
+                    に同意する
+                  </span>
                 </label>
               </div>
             </div>

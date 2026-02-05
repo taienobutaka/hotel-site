@@ -29,19 +29,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
 
-<header class="bg-[#f5efea] backdrop-blur-[2px] sticky top-0 z-50">
+<header class="bg-[#f5efea] backdrop-blur-[2px] fixed top-0 left-0 right-0 z-50">
   <!-- Mobile Header (SP: ~768px) - Figmaのバリアント2準拠: W:375px H:61px -->
   <div class="lg:hidden">
     <div class="flex items-center justify-between w-[375px] mx-auto px-[24px] py-[16px] h-[72px]" data-name="プロパティ1=バリアント2" data-node-id="124:3949">
       <!-- Logo - Figma準拠: W:70.688px H:28px -->
       <img src="/images/logo.png" alt="LOGO" class="h-[40px] w-auto flex-shrink-0" />
       
-      <!-- Icon Group (Search + Menu) - Figma準拠: W:155px -->
+      <!-- Icon Group (Instagram + Menu) - Figma準拠: W:155px -->
       <div class="flex items-center gap-[24px] w-[155px] justify-end">
-        <!-- Search Icon - Figma準拠: W:29px H:29.011px -->
-        <button class="w-[29px] h-[29px] flex-shrink-0" aria-label="検索">
-          <img src="/images/icons/search-icon.svg" alt="Search" class="w-full h-full" />
-        </button>
+        <!-- Instagram Icon -->
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-[29px] h-[29px] flex-shrink-0 hover:opacity-60 transition-opacity duration-300" aria-label="Instagram">
+          <img src="/images/icons/search-icon.svg" alt="Instagram" class="w-full h-full" />
+        </a>
         
         <!-- Mobile Menu Button - Figma準拠: W:26px H:16px -->
         <button id="mobile-menu-btn" class="w-[26px] h-[16px] flex flex-col justify-between" aria-label="メニューを開く">
@@ -53,8 +53,8 @@
     </div>
     
     <!-- Mobile Menu (Hidden by default) - Figma準拠のオープンメニュー -->
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-[#F5EFEA] z-50">
-      <div class="w-[375px] h-[669px] mx-auto pt-[24px] pb-[34px] bg-[#F5EFEA]">
+    <div id="mobile-menu" class="fixed inset-0 bg-[#F5EFEA] z-[100] opacity-0 pointer-events-none transition-opacity duration-300">
+      <div class="w-full min-h-screen pt-[24px] pb-[34px] bg-[#F5EFEA] transition-transform duration-300 translate-y-[8px]">
         <div class="w-[327px] mx-auto">
           <!-- Top Close Icon -->
           <div class="flex items-center justify-end h-[28px]">
@@ -90,9 +90,11 @@
             <div class="w-[317px] border-t-[1.5px] border-[#436c5e]"></div>
           </nav>
 
-          <!-- Bottom Search Icon -->
+          <!-- Bottom Instagram Icon -->
           <div class="mt-[40px] flex justify-end">
-            <img src="/images/icons/search-icon.svg" alt="Search" class="w-[29px] h-[29px]" />
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-[29px] h-[29px] hover:opacity-60 transition-opacity duration-300" aria-label="Instagram">
+              <img src="/images/icons/search-icon.svg" alt="Instagram" class="w-[29px] h-[29px]" />
+            </a>
           </div>
         </div>
       </div>
@@ -119,10 +121,10 @@
           
           <!-- Search & Reservation -->
           <div class="flex items-center gap-4 w-[271px] justify-end">
-            <!-- Search Icon - Figma正確なデザイン -->
-            <button class="w-[29px] h-[29px]">
-              <img src="/images/icons/search-icon.svg" alt="Search" class="w-full h-full" />
-            </button>
+            <!-- Instagram Icon -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-[29px] h-[29px] hover:opacity-60 transition-opacity duration-300" aria-label="Instagram">
+              <img src="/images/icons/search-icon.svg" alt="Instagram" class="w-full h-full" />
+            </a>
             
             <!-- Reservation Button -->
             <a href="/contact" class="bg-[#436c5e] border border-[#436c5e] text-white px-[49px] py-[10px] rounded-full flex items-center gap-2.5 text-sm tracking-[2.1px] font-['Shippori_Mincho'] hover:bg-white hover:text-[#436c5e] hover:border-[#436c5e] transition-all w-[139px] justify-center whitespace-nowrap">
@@ -148,17 +150,18 @@
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuPanel = mobileMenu?.querySelector('div');
     
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', function() {
-        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('is-open');
         document.body.style.overflow = 'hidden'; // スクロール停止
       });
     }
     
     if (mobileMenuClose && mobileMenu) {
       mobileMenuClose.addEventListener('click', function() {
-        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('is-open');
         document.body.style.overflow = ''; // スクロール復活
       });
     }
@@ -166,9 +169,20 @@
     // メニュー外クリックで閉じる
     mobileMenu?.addEventListener('click', function(e) {
       if (e.target === mobileMenu) {
-        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('is-open');
         document.body.style.overflow = '';
       }
     });
   });
 </script>
+
+<style>
+  #mobile-menu.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #mobile-menu.is-open > div {
+    transform: translateY(0);
+  }
+</style>

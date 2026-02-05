@@ -9,8 +9,22 @@
   bottom: 32px !important;
 }
 
+/* Scroll Fade-in for images (except FV) */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.scroll-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+
   /* FV Section */
   section.relative.h-[828px] {
     height: 475px;
@@ -58,6 +72,36 @@
     flex-direction: column;
     gap: 24px;
     height: auto;
+  }
+
+  .sp-services {
+    max-width: 343px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sp-services-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .sp-services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .sp-service-item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sp-service-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .w-[368px],
