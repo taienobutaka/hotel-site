@@ -173,6 +173,15 @@
         document.body.style.overflow = '';
       }
     });
+
+    // メニュー内リンククリックで閉じる
+    const mobileMenuLinks = mobileMenu?.querySelectorAll('a[href^="/#"]');
+    mobileMenuLinks?.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
   });
 </script>
 
