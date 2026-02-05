@@ -1,415 +1,607 @@
 ---
-/**
- * サービス紹介ページ
- * 施設のサービス（サウナ、BBQ）の詳細情報を掲載
- * Figmaデザイン: TOPページのサービスセクションを拡張
- */
-export const prerender = true;
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content={Astro.generator} />
-  
-  <title>サービス紹介 | aoshima tei 鈴 – SUZU</title>
-  <meta name="description" content="宮崎の自然の中で極上のリラクゼーション。プライベートサウナとBBQエリアで特別な時間をお過ごしください。aoshima tei 鈴のこだわりのサービスをご紹介します。" />
-  <meta name="keywords" content="宮崎, 旅館, サウナ, BBQ, プライベート, 青島, リゾート" />
-  
-  <!-- OGP -->
-  <meta property="og:title" content="サービス紹介 | aoshima tei 鈴 – SUZU" />
-  <meta property="og:description" content="宮崎の自然の中で極上のリラクゼーション。プライベートサウナとBBQエリアで特別な時間をお過ごしください。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/images/og-services.jpg" />
-  <meta property="og:url" content="https://aoshima-tei-suzu.com/services" />
-  <meta property="og:site_name" content="aoshima tei 鈴 – SUZU" />
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@aoshima_tei_suzu" />
-  <meta name="twitter:title" content="サービス紹介 | aoshima tei 鈴 – SUZU" />
-  <meta name="twitter:description" content="宮崎の自然の中で極上のリラクゼーション。プライベートサウナとBBQエリアで特別な時間をお過ごしください。" />
-  <meta name="twitter:image" content="/images/og-services.jpg" />
+<Layout title="SERVICE | サービス紹介">
+  <div class="bg-[#F5EFEA] text-[#483F38]">
+    <Header />
 
-  <!-- Shippori Mincho Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-
-<body class="min-h-screen bg-[#F5EFEA] text-[#483F38]">
-  <!-- Header -->
-  <header class="bg-[#F5EFEA] py-4 px-6 md:px-20 lg:px-28 border-b border-[#436C5E]/10">
-    <nav class="flex justify-between items-center">
-      <a href="/" class="text-[#436C5E] text-xl md:text-2xl font-semibold tracking-wider">
-        aoshima tei 鈴 – SUZU
-      </a>
-      
-      <!-- デスクトップメニュー -->
-      <ul class="hidden lg:flex space-x-8 text-[#436C5E] font-medium">
-        <li><a href="/" class="hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
-        <li><a href="/rooms" class="hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
-        <li><a href="/services" class="text-[#B99563] tracking-wide">サービス</a></li>
-        <li><a href="/plans" class="hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
-        <li><a href="/contact" class="hover:opacity-70 transition-opacity tracking-wide">お問い合わせ</a></li>
-      </ul>
-
-      <!-- モバイルハンバーガーメニュー -->
-      <button class="lg:hidden text-[#436C5E]" id="mobile-menu-button">
-        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </nav>
-
-    <!-- モバイルメニュー -->
-    <div class="lg:hidden hidden" id="mobile-menu">
-      <div class="pt-4 pb-3 border-t border-[#436C5E]/10 mt-4">
-        <ul class="space-y-3 text-[#436C5E] font-medium">
-          <li><a href="/" class="block hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
-          <li><a href="/rooms" class="block hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
-          <li><a href="/services" class="block text-[#B99563] tracking-wide">サービス</a></li>
-          <li><a href="/plans" class="block hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
-          <li><a href="/contact" class="block hover:opacity-70 transition-opacity tracking-wide">お問い合わせ</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <!-- メインコンテンツ -->
-  <main class="flex-1">
-    <!-- ヒーローセクション -->
-    <section class="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-      <div 
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style="background-image: url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')"
-      ></div>
-      <div class="absolute inset-0 bg-black/30"></div>
-      
-      <div class="relative z-10 text-center text-white px-4">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 tracking-wider">
-          心を満たす、特別な時間
-        </h1>
-        <p class="text-lg md:text-xl lg:text-2xl tracking-[0.3em] opacity-90">
-          SERVICES
-        </p>
-      </div>
-    </section>
-
-    <!-- サービス紹介セクション -->
-    <section class="py-20 md:py-32 px-4 md:px-8 lg:px-20">
-      <div class="max-w-7xl mx-auto">
-        <!-- セクションタイトル -->
-        <div class="text-center mb-20 md:mb-32">
-          <h2 class="text-[#436C5E] text-3xl md:text-4xl font-semibold tracking-[0.1em] mb-4">
-            SERVICES
-          </h2>
-          <p class="text-[#436C5E] text-sm tracking-[0.1em]">
-            施設のご案内
-          </p>
+    <main>
+      <!-- KV -->
+      <section class="relative h-[339px] lg:h-[546px] overflow-hidden">
+        <img src="/images/services/service-kv.jpg" alt="" class="absolute service-kv-img max-w-none object-cover" />
+        <div class="absolute inset-0 bg-[#483F38]/39"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <h1 class="text-[32px] lg:text-[48px] leading-[48px] tracking-[4.8px] text-white/85 font-['Shippori_Mincho']">
+            SERVICE
+          </h1>
         </div>
+      </section>
 
-        <!-- サービス一覧 -->
-        <div class="space-y-20 lg:space-y-32">
-          <!-- サウナ -->
-          <div class="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center">
-            <!-- 画像 -->
-            <div class="w-full lg:w-1/2 h-[300px] md:h-[400px] lg:h-[500px] relative overflow-hidden rounded-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                alt="プライベートサウナ"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            
-            <!-- テキスト -->
-            <div class="w-full lg:w-1/2 space-y-6">
-              <div class="space-y-2">
-                <p class="text-[#B99563] text-xs tracking-[0.4em] font-medium">
-                  PRIVATE SAUNA
-                </p>
-                <h3 class="text-[#436C5E] text-2xl md:text-3xl font-semibold tracking-wide">
-                  サウナ
-                </h3>
-              </div>
-              
-              <div class="space-y-4 text-[#483F38] text-sm md:text-base leading-relaxed tracking-wide">
-                <p>薪ストーブ式のプライベートサウナを完備。</p>
-                <p>自ら火を入れ、薪の香りと熱に包まれながら、<br>
-                   ゆっくりと自分自身を取り戻す時間を提供します。</p>
-                <p>専用の外気浴スペースで風を感じ、<br>
-                   深い休息をご堪能いただけます。</p>
-              </div>
-
-              <!-- 特徴ポイント -->
-              <div class="space-y-3 pt-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-2 h-2 bg-[#B99563] rounded-full"></div>
-                  <span class="text-sm text-[#436C5E]">薪ストーブ式でより深いサウナ体験</span>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <div class="w-2 h-2 bg-[#B99563] rounded-full"></div>
-                  <span class="text-sm text-[#436C5E]">完全プライベート空間</span>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <div class="w-2 h-2 bg-[#B99563] rounded-full"></div>
-                  <span class="text-sm text-[#436C5E]">専用外気浴エリア完備</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- BBQ -->
-          <div class="flex flex-col lg:flex-row-reverse gap-8 lg:gap-20 items-center">
-            <!-- 画像 -->
-            <div class="w-full lg:w-1/2 h-[300px] md:h-[400px] lg:h-[500px] relative overflow-hidden rounded-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                alt="プライベートBBQ"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            
-            <!-- テキスト -->
-            <div class="w-full lg:w-1/2 space-y-6">
-              <div class="space-y-2">
-                <p class="text-[#B99563] text-xs tracking-[0.4em] font-medium">
-                  FOOD
-                </p>
-                <h3 class="text-[#436C5E] text-2xl md:text-3xl font-semibold tracking-wide">
-                  お食事
-                </h3>
-              </div>
-              
-              <div class="space-y-4 text-[#483F38] text-sm md:text-base leading-relaxed tracking-wide">
-                <p>手ぶらで楽しめる<br>
-                   プライベートBBQスペースをご用意。</p>
-                <p>地元の新鮮な食材を使った<br>
-                   こだわりのBBQセットで、</p>
-                <p>大切な人との楽しい時間をお過ごしください。</p>
-              </div>
-
-              <!-- 特徴ポイント -->
-              <div class="space-y-3 pt-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-2 h-2 bg-[#B99563] rounded-full"></div>
-                  <span class="text-sm text-[#436C5E]">手ぶらOK！器材・食材すべて用意</span>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <div class="w-2 h-2 bg-[#B99563] rounded-full"></div>
-                  <span class="text-sm text-[#436C5E]">宮崎県産の厳選食材</span>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <div class="w-2 h-2 bg-[#B99563] rounded-full"></div>
-                  <span class="text-sm text-[#436C5E]">プライベートテラス完備</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 温泉（追加サービス） -->
-          <div class="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center">
-            <!-- 画像 -->
-            <div class="w-full lg:w-1/2 h-[300px] md:h-[400px] lg:h-[500px] relative overflow-hidden rounded-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                alt="プライベート温泉"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            
-            <!-- テキスト -->
-            <div class="w-full lg:w-1/2 space-y-6">
-              <div class="space-y-2">
-                <p class="text-[#B99563] text-xs tracking-[0.4em] font-medium">
-                  HOT SPRING
-                </p>
-                <h3 class="text-[#436C5E] text-2xl md:text-3xl font-semibold tracking-wide">
-                  貸切温泉
-                </h3>
-              </div>
-              
-              <div class="space-y-4 text-[#483F38] text-sm md:text-base leading-relaxed tracking-wide">
-                <p>宮崎の自然に囲まれた<br>
-                   完全プライベートな温泉で、</p>
-                <p>心と体を深くリラックスさせる<br>
-                   至極のひとときを。</p>
-                <p>夜は星空を、朝は小鳥のさえずりを感じながら<br>
-                   特別な温泉体験をお楽しみください。</p>
-              </div>
-
-              <!-- 特徴ポイント -->
-              <div class="space-y-3 pt-4">
-                <div class="flex items-center space-x-3">
-                  <div class="w-2 h-2 bg-[#B99563] rounded-full"></div>
-                  <span class="text-sm text-[#436C5E]">24時間いつでも利用可能</span>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <div class="w-2 h-2 bg-[#B99563] rounded-full"></div>
-                  <span class="text-sm text-[#436C5E]">源泉かけ流しの天然温泉</span>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <div class="w-2 h-2 bg-[#B99563] rounded-full"></div>
-                  <span class="text-sm text-[#436C5E]">絶景を望む露天風呂</span>
-                </div>
-              </div>
-            </div>
-          </div>
+      <!-- Service Text -->
+      <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:px-[256px] lg:py-[150px]">
+        <div class="mx-auto w-full lg:max-w-[928px] text-center text-[15px] leading-[33px] tracking-[1.6px] text-[#483F38] font-['Shippori_Mincho'] lg:text-[16px] lg:leading-[48px]">
+          <span class="block">大きな窓から差し込む柔らかな光と、</span>
+          <span class="block">高く広がる空。</span>
+          <span class="block">刻一刻と表情を変える</span>
+          <span class="block">自然の移ろいを眺めながら、</span>
+          <span class="block">日常の喧騒から解き放たれる</span>
+          <span class="block">贅沢なひとときを。</span>
+          <span class="block">当施設では本格的な薪サウナや</span>
+          <span class="block">天然の湧水を用いた露天風呂、</span>
+          <span class="block">旬を味わうお食事をご用意し、</span>
+          <span class="block">心から満たされる</span>
+          <span class="block">リフレッシュ体験をお約束します。</span>
         </div>
+      </section>
 
-        <!-- CTAセクション -->
-        <div class="text-center mt-20 md:mt-32 pt-20 border-t border-[#436C5E]/20">
-          <h3 class="text-[#436C5E] text-2xl md:text-3xl font-semibold mb-6 tracking-wide">
-            特別な体験をご予約ください
-          </h3>
-          <p class="text-[#483F38] mb-10 leading-relaxed tracking-wide">
-            すべてのサービスはご宿泊のお客様専用となります。<br>
-            詳細やご予約については、お気軽にお問い合わせください。
-          </p>
-          
-          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a 
-              href="/plans" 
-              class="inline-flex items-center justify-center px-8 py-3 bg-[#436C5E] text-white rounded-full hover:bg-[#436C5E]/90 transition-colors tracking-wide font-medium"
-            >
-              宿泊プランを見る
-            </a>
-            <a 
-              href="/contact" 
-              class="inline-flex items-center justify-center px-8 py-3 border border-[#436C5E] text-[#436C5E] rounded-full hover:bg-[#436C5E] hover:text-white transition-colors tracking-wide font-medium"
-            >
-              お問い合わせ
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+      <!-- Cover Image -->
+      <section class="relative h-[192px] lg:h-[501px] overflow-hidden">
+        <img
+          src="/images/services/service-cover.jpg"
+          alt=""
+          class="fade-target service-cover-img absolute max-w-none object-cover"
+        />
+      </section>
 
-  <!-- フッター -->
-  <footer class="bg-[#436C5E] text-white py-16 px-4 md:px-8">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-        <!-- ロゴ・連絡先セクション -->
-        <div class="space-y-6">
-          <h2 class="text-2xl md:text-3xl font-semibold tracking-wider">
-            aoshima tei 鈴 – SUZU
-          </h2>
-          
-          <div class="space-y-4 text-sm leading-relaxed opacity-90">
-            <div>
-              <p class="font-medium mb-1">〒 889-2162</p>
-              <p>宮崎県宮崎市青島4-48-4</p>
-            </div>
-            <div>
-              <p class="font-medium mb-1">TEL: 012-345-6789</p>
-              <p>FAX: 012-345-6790</p>
-            </div>
-            <div>
-              <p class="font-medium mb-1">チェックイン: 15:00～18:00</p>
-              <p>チェックアウト: ～11:00</p>
-            </div>
-          </div>
-          
-          <div class="flex space-x-4">
-            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.024-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 23.998 12.017 24c6.624 0 11.99-5.367 11.99-12C24.007 5.367 18.641.001.012.017 0z"/>
-              </svg>
-            </a>
-            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ナビゲーションセクション -->
-        <div class="grid grid-cols-2 gap-8">
+      <!-- Service Main -->
+      <section class="bg-white px-[16px] pt-[80px] pb-[40px] lg:px-0 lg:py-[150px]">
+        <div class="mx-auto w-full lg:max-w-[1232px] space-y-[80px] lg:space-y-[120px]">
+          <!-- Sauna -->
           <div>
-            <h3 class="font-semibold mb-4 text-[#B99563]">サイトマップ</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/" class="hover:text-[#B99563] transition-colors">TOP</a></li>
-              <li><a href="/rooms" class="hover:text-[#B99563] transition-colors">客室紹介</a></li>
-              <li><a href="/services" class="hover:text-[#B99563] transition-colors">サービス</a></li>
-              <li><a href="/plans" class="hover:text-[#B99563] transition-colors">プラン</a></li>
-              <li><a href="/contact" class="hover:text-[#B99563] transition-colors">お問い合わせ</a></li>
-            </ul>
+            <div class="lg:hidden w-[343px] mx-auto">
+              <div class="space-y-[16px] text-left">
+                <div class="space-y-[8px]">
+                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">PRIVATE SAUNA</p>
+                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">プライベートサウナ</h3>
+                </div>
+                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
+                  <span class="block">パチパチと薪が爆ぜる音だけが響く空間で、五感を研ぎ澄ますひととき。</span>
+                  <span class="block">水風呂から外気浴まで、計算し尽くされた導線があなたを深い休息へと誘います。</span>
+                  <span class="block">綺麗に整えられたプライベートエリアで、誰にも邪魔されない至高の贅沢を。</span>
+                  <span class="block">&nbsp;</span>
+                  <span class="block">屋外で湯に浸かり、サウナでととのう——自然の気配とともに過ごすひとときは、この宿ならではの魅力です。</span>
+                </p>
+              </div>
+              <div class="fade-target mt-[40px] sauna-main-sp">
+                <img src="/images/services/sauna-main.jpg" alt="プライベートサウナ" class="sauna-main-sp-img" />
+              </div>
+              <div class="fade-target mt-[27px] ml-[149px] sauna-sub-sp">
+                <img src="/images/services/sauna-sub.jpg" alt="" class="sauna-sub-sp-img" />
+              </div>
+            </div>
+
+            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[100px]">
+              <div class="fade-target sauna-main h-[292px] w-full lg:h-[813px] lg:w-[563px] lg:flex-shrink-0">
+                <img src="/images/services/sauna-main.jpg" alt="プライベートサウナ" class="sauna-main-img" />
+              </div>
+              <div class="lg:w-[569px] space-y-[24px]">
+                <div class="space-y-[8px]">
+                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">PRIVATE SAUNA</p>
+                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">プライベートサウナ</h3>
+                </div>
+                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:w-[580px] whitespace-pre-line">
+                  パチパチと薪が爆ぜる音だけが響く空間で、五感を研ぎ澄ますひととき。
+                  水風呂から外気浴まで、計算し尽くされた導線があなたを深い休息へと誘います。
+                  綺麗に整えられたプライベートエリアで、誰にも邪魔されない至高の贅沢を。
+
+                  屋外で湯に浸かり、サウナでととのう——自然の気配とともに過ごすひとときは、 
+                  この宿ならではの魅力です。
+                </p>
+              </div>
+            </div>
+
+            <div class="hidden lg:block lg:mt-[40px] lg:ml-auto lg:w-[476px]">
+              <div class="fade-target sauna-sub h-[220px] w-full lg:h-[369px]">
+                <img src="/images/services/sauna-sub.jpg" alt="" class="sauna-sub-img" />
+              </div>
+            </div>
           </div>
+
+          <!-- Onsen -->
           <div>
-            <h3 class="font-semibold mb-4 text-[#B99563]">その他</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/privacy-policy" class="hover:text-[#B99563] transition-colors">プライバシーポリシー</a></li>
-              <li><a href="/terms" class="hover:text-[#B99563] transition-colors">利用規約</a></li>
-              <li><a href="/usage-terms" class="hover:text-[#B99563] transition-colors">宿泊約款</a></li>
-              <li><a href="/faq" class="hover:text-[#B99563] transition-colors">よくあるご質問</a></li>
-            </ul>
+            <div class="lg:hidden pt-[40px] pb-0">
+              <div class="relative h-[646px] w-[343px]">
+                <div class="absolute left-0 top-0 w-[343px] space-y-[16px] text-left">
+                  <div class="space-y-[8px]">
+                    <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">ONSEN</p>
+                    <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">温泉</h3>
+                  </div>
+                  <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
+                    青島の地から汲み上げた、<br />
+                    自然由来の成分を含む湧き水を使用した露天風呂。<br />
+                    開放的な空間で、心身ともに癒しのひとときをお楽しみいただけます。
+                  </p>
+                </div>
+                <div class="fade-target absolute left-0 top-[312px] onsen-images-sp">
+                  <div class="onsen-main-window">
+                    <img src="/images/services/onsen-main.jpg" alt="温泉" class="onsen-main-sp-img" />
+                  </div>
+                  <div class="onsen-sub-window">
+                    <img src="/images/services/onsen-sub.jpg" alt="" class="onsen-sub-sp-img" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[100px]">
+              <div class="lg:w-[435px] space-y-[24px]">
+                <div class="space-y-[8px]">
+                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">ONSEN</p>
+                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">温泉</h3>
+                </div>
+                <p class="text-[14px] leading-[28px] tracking-[1.6px] text-[#475569] font-['Shippori_Mincho'] lg:w-[398px]">
+                  青島の地から汲み上げた、<br />
+                  自然由来の成分を含む湧き水を使用した露天風呂。<br />
+                  開放的な空間で、心身ともに癒しのひとときをお楽しみいただけます。
+                </p>
+              </div>
+              <div class="fade-target onsen-main h-[292px] w-full lg:h-[773px] lg:w-[768px] lg:flex-shrink-0">
+                <img src="/images/services/onsen-main.jpg" alt="温泉" class="onsen-main-img" />
+              </div>
+            </div>
+            <div class="hidden lg:block lg:mt-[40px] lg:ml-0 lg:w-[495px]">
+              <div class="fade-target onsen-sub h-[220px] w-full lg:h-[346px]">
+                <img src="/images/services/onsen-sub.jpg" alt="" class="onsen-sub-img" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Food -->
+          <div>
+            <div class="lg:hidden pt-[40px] pb-[80px] -mt-[40px]">
+              <div class="relative h-[815px] w-[343px]">
+                <div class="absolute left-0 top-0 w-[343px] space-y-[16px] text-left">
+                  <div class="space-y-[8px]">
+                    <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">FOOD</p>
+                    <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">お食事</h3>
+                  </div>
+                  <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
+                    県内より厳選した特産品を、オールインクルーシブの形でご提供。<br />
+                    洗練されたダイニングでの調理も、テラスでの開放的なBBQも思いのまま。<br />
+                    選び抜かれた生産者の想いを、一棟貸しの邸宅で心ゆくまで味わってください。
+                  </p>
+                </div>
+                <div class="fade-target absolute left-0 top-[312px] food-images-sp">
+                  <div class="food-main-window">
+                    <img src="/images/services/food-main.jpg" alt="お食事" class="food-main-sp-img" />
+                  </div>
+                  <div class="food-sub-window">
+                    <img src="/images/services/food-sub.jpg" alt="" class="food-sub-sp-img" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[100px]">
+              <div class="fade-target food-main h-[292px] w-full lg:h-[703px] lg:w-[612px] lg:flex-shrink-0">
+                <img src="/images/services/food-main.jpg" alt="お食事" class="food-main-img" />
+              </div>
+              <div class="lg:w-[569px] space-y-[24px]">
+                <div class="space-y-[8px]">
+                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">FOOD</p>
+                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">お食事</h3>
+                </div>
+                <p class="text-[14px] leading-[28px] tracking-[1.6px] text-[#475569] font-['Shippori_Mincho'] lg:w-[580px]">
+                  県内より厳選した特産品を、オールインクルーシブの形でご提供。<br />
+                  洗練されたダイニングでの調理も、テラスでの開放的なBBQも思いのまま。<br />
+                  選び抜かれた生産者の想いを、一棟貸しの邸宅で心ゆくまで味わってください。
+                </p>
+              </div>
+            </div>
+            <div class="hidden lg:block lg:mt-[40px] lg:ml-auto lg:w-[447px]">
+              <div class="fade-target food-sub h-[220px] w-full lg:h-[436px]">
+                <img src="/images/services/food-sub.jpg" alt="" class="food-sub-img" />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- コピーライト -->
-      <div class="text-center pt-8 border-t border-white/20">
-        <p class="text-sm opacity-70">
-          &copy; 2024 aoshima tei 鈴 – SUZU. All rights reserved.
-        </p>
-      </div>
-    </div>
-  </footer>
+      <!-- Option -->
+      <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:px-[232px] lg:pt-[70px] lg:pb-[150px]">
+        <div class="mx-0 w-full max-w-none lg:mx-auto lg:w-full lg:max-w-[976px] space-y-[40px] lg:space-y-[40px]">
+          <div class="text-center space-y-[16px] text-[#436C5E] font-['Shippori_Mincho'] lg:-mt-[10px]">
+            <p class="text-[36px] leading-[40px] tracking-[3.6px] font-semibold">OPTION</p>
+            <p class="text-[14px] leading-[20px] tracking-[1.4px]">特別な体験をプラスする</p>
+          </div>
 
-  <script>
-    // モバイルメニューの制御
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton?.addEventListener('click', () => {
-      mobileMenu?.classList.toggle('hidden');
-    });
+          <div class="flex flex-col items-center gap-[32px] lg:flex-row lg:items-stretch">
+            <div class="w-[304px] overflow-hidden rounded-[8px] bg-white lg:w-[304px] lg:h-[478px] flex flex-col">
+              <div class="fade-target option-img option-img-1 h-[256px] w-[304px]">
+                <img src="/images/services/option-1.jpg" alt="温泉" class="option-img-inner option-img-inner-1" />
+              </div>
+              <div class="px-[26px] py-[32px] lg:h-[222px]">
+                <p class="text-center text-[16px] leading-[48px] tracking-[1.6px] text-[#483F38] font-['Shippori_Mincho']">温泉</p>
+                <p class="mt-[16px] w-full text-left text-[14px] leading-[22.75px] tracking-[2.1px] text-[#475569] font-['Shippori_Mincho'] lg:w-[252px]">
+                  青島の地から汲み上げた、自然由来の成分を含む湧き水を使用。開放的な屋外スペースで、心身を癒す露天風呂を体験いただけます。
+                </p>
+              </div>
+            </div>
+            <div class="w-[304px] overflow-hidden rounded-[8px] bg-white lg:w-[304px] lg:h-[478px] flex flex-col">
+              <div class="fade-target option-img option-img-2 h-[256px] w-[304px]">
+                <img src="/images/services/option-2.jpg" alt="プライベートBBQ" class="option-img-inner option-img-inner-2" />
+              </div>
+              <div class="px-[26px] py-[32px] lg:h-[222px]">
+                <p class="text-center text-[16px] leading-[48px] tracking-[1.6px] text-[#483F38] font-['Shippori_Mincho']">プライベートBBQ</p>
+                <p class="mt-[16px] w-full text-left text-[14px] leading-[22.75px] tracking-[2.1px] text-[#475569] font-['Shippori_Mincho'] lg:w-[252px]">
+                  プロ仕様の機材一式を無料で貸し出しております。宮崎の厳選された特産品を、プライベートなテラスで気兼ねなくお楽しみください。
+                </p>
+              </div>
+            </div>
+            <div class="w-[304px] overflow-hidden rounded-[8px] bg-white lg:w-[304px] lg:h-[478px] flex flex-col">
+              <div class="fade-target option-img option-img-3 h-[256px] w-[304px]">
+                <img src="/images/services/option-3.jpg" alt="ファットバイクのレンタル" class="option-img-inner option-img-inner-3" />
+              </div>
+              <div class="px-[26px] py-[32px] lg:h-[222px]">
+                <p class="text-center text-[16px] leading-[48px] tracking-[1.6px] text-[#483F38] font-['Shippori_Mincho']">ファットバイクのレンタル</p>
+                <p class="mt-[16px] w-full text-left text-[14px] leading-[22.75px] tracking-[2.1px] text-[#475569] font-['Shippori_Mincho'] lg:w-[252px]">
+                  砂浜や未舗装路も軽快に走行できるファットバイクをご用意。宮崎の海岸線や周辺スポットを、ご自身のペースで自由に探索いただけます。
+                </p>
+              </div>
+            </div>
+          </div>
 
-    // スムーススクロール
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
+          <div class="flex justify-center">
+            <a href="/services" class="inline-flex h-[43px] w-[290px] items-center justify-center rounded-full border border-transparent bg-[#436C5E] text-[14px] leading-[22.75px] tracking-[2.1px] text-white font-['Shippori_Mincho'] hover:bg-[#3b5e52] transition-colors lg:h-auto lg:w-auto lg:px-[24px] lg:py-[12px]">
+              オプションの詳細はこちら
+            </a>
+          </div>
+        </div>
+      </section>
 
-    // ページロード時のアニメーション
-    window.addEventListener('load', () => {
-      const elementsToAnimate = document.querySelectorAll('h1, h2, h3, p, img');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+      <!-- Reservation -->
+      <section class="relative h-[438px] overflow-hidden bg-black px-[16px] py-[80px] lg:h-[578px] lg:w-[1440px] lg:px-0 lg:py-0 lg:mx-auto">
+        <div class="reservation-bg fade-target absolute inset-0"></div>
+        <div class="absolute inset-0 bg-black/[0.16] mix-blend-multiply"></div>
+        <div class="relative mx-auto w-full text-center lg:mx-auto lg:w-[1440px] lg:max-w-none lg:text-left">
+          <div class="flex w-full flex-col items-center gap-[48px] lg:block lg:h-[578px] lg:gap-0">
+            <div class="flex w-full flex-col items-center gap-[16px] lg:absolute lg:left-[364px] lg:top-[150px] lg:h-[76px] lg:w-[712px]">
+              <p class="text-[36px] leading-[54px] tracking-[3.6px] text-white font-semibold font-['Shippori_Mincho'] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px]">
+                RESERVATION
+              </p>
+              <p class="text-center text-[14px] leading-[22.75px] tracking-[2.1px] text-[#CBD5E1] font-['Shippori_Mincho']">
+                ご予約
+              </p>
+            </div>
+            <p class="h-[56px] w-full whitespace-pre-line text-center text-[15px] leading-[27px] tracking-[1.6px] text-[#E2E8F0] font-['Shippori_Mincho'] lg:absolute lg:left-[518px] lg:top-[315px] lg:flex lg:h-[56px] lg:w-[404px] lg:items-center lg:justify-center lg:text-[16px] lg:leading-[32px] lg:tracking-[1px]" style="transform: translateY(-55px);">
+              <span class="lg:hidden">
+                オンラインで簡単に
+                空室確認・ご予約が可能です。
+                特別なひとときをお過ごしください。
+              </span>
+              <span class="hidden lg:inline">
+                オンラインで簡単に空室確認・ご予約が可能です。特別なひとときをお過ごしください。
+              </span>
+            </p>
+            <a href="/reservation" class="inline-flex h-[50px] w-[230px] -mt-[15px] items-center justify-center rounded-[6px] bg-white text-[#436C5E] text-[16px] leading-[26px] tracking-[1.6px] font-medium font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors lg:absolute lg:left-[518px] lg:top-[390px] lg:h-[50px] lg:w-[404px] lg:max-w-none">
+              ご予約はこちら
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
+
+<style>
+
+  .scroll-fade {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+  }
+
+  .scroll-fade.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .service-cover-img {
+    width: 438px;
+    height: 292px;
+    left: -20px;
+    top: -35px;
+  }
+
+  .service-kv-img {
+    width: 528.06px;
+    height: 792px;
+    left: -104.53px;
+    top: -174.01px;
+  }
+
+  .reservation-bg {
+    background-image: url('/images/rooms/reservation-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 175.16% 100%;
+    background-position: 35% 0%;
+  }
+
+  .sauna-main-sp,
+  .sauna-sub-sp {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sauna-main-sp {
+    width: 197.71px;
+    height: 313px;
+  }
+
+  .sauna-main-sp-img {
+    position: absolute;
+    width: 451.32px;
+    height: 300.92px;
+    left: -65.08px;
+    top: -4.77px;
+    object-fit: cover;
+    max-width: none;
+  }
+
+  .sauna-sub-sp {
+    width: 193.68px;
+    height: 149.99px;
+  }
+
+  .sauna-sub-sp-img {
+    position: absolute;
+    width: 195.7px;
+    height: 293.51px;
+    left: -2.06px;
+    top: -55.39px;
+    object-fit: cover;
+    max-width: none;
+  }
+
+  .onsen-images-sp {
+    position: relative;
+    width: 343px;
+    height: 334px;
+  }
+
+  .onsen-main-window,
+  .onsen-sub-window {
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .onsen-main-window {
+    width: 240px;
+    height: 241.56px;
+    left: 103px;
+    top: -47px;
+  }
+
+  .onsen-main-sp-img {
+    position: absolute;
+    width: 425.3px;
+    height: 283.57px;
+    left: -37.92px;
+    top: -68.1px;
+    object-fit: cover;
+    max-width: none;
+  }
+
+  .onsen-sub-window {
+    width: 165.95px;
+    height: 116px;
+    left: 0;
+    top: 218px;
+  }
+
+  .onsen-sub-sp-img {
+    position: absolute;
+    width: 232.21px;
+    height: 154.83px;
+    left: -14.78px;
+    top: -29.52px;
+    object-fit: cover;
+    max-width: none;
+  }
+
+  .food-images-sp {
+    position: relative;
+    width: 343px;
+    height: 560px;
+  }
+
+  .food-main-window,
+  .food-sub-window {
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .food-main-window {
+    width: 265px;
+    height: 304.4px;
+    left: 0;
+    top: 0;
+  }
+
+  .food-main-sp-img {
+    position: absolute;
+    width: 515.07px;
+    height: 343.42px;
+    left: -115.75px;
+    top: -32.48px;
+    object-fit: cover;
+    max-width: none;
+  }
+
+  .food-sub-window {
+    width: 191.4px;
+    height: 172.42px;
+    left: 150.9px;
+    top: 331px;
+  }
+
+  .food-sub-sp-img {
+    position: absolute;
+    width: 331.2px;
+    height: 220.83px;
+    left: -83.62px;
+    top: -13.68px;
+    object-fit: cover;
+    max-width: none;
+  }
+
+  .sauna-main,
+  .sauna-sub,
+  .onsen-main,
+  .onsen-sub,
+  .food-main,
+  .food-sub,
+  .option-img {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sauna-main-img,
+  .sauna-sub-img,
+  .onsen-main-img,
+  .onsen-sub-img,
+  .food-main-img,
+  .food-sub-img,
+  .option-img-inner {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: none;
+  }
+
+  .option-img-inner-1 {
+    width: 488px;
+    height: 731px;
+    left: -55px;
+    top: -394px;
+    right: auto;
+    bottom: auto;
+  }
+
+  .option-img-inner-2 {
+    width: 670px;
+    height: 446px;
+    left: -215px;
+    top: -147px;
+    right: auto;
+    bottom: auto;
+  }
+
+  .option-img-inner-3 {
+    width: 333px;
+    height: 499.44px;
+    left: -15px;
+    top: -123px;
+    right: auto;
+    bottom: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .service-kv-img {
+      width: 1440px;
+      height: 2230px;
+      left: 0;
+      top: -467px;
+    }
+
+    .service-cover-img {
+      width: 1440px;
+      height: 960px;
+      left: 0;
+      top: -110px;
+    }
+
+    .sauna-main-img {
+      width: 1228px;
+      height: 818px;
+      left: -202px;
+      top: -6px;
+    }
+
+    .sauna-sub-img {
+      width: 481px;
+      height: 722px;
+      left: -5px;
+      top: -136px;
+    }
+
+    .onsen-main-img {
+      width: 1361px;
+      height: 907px;
+      left: -451px;
+      top: -68px;
+    }
+
+    .onsen-sub-img {
+      width: 693px;
+      height: 462px;
+      left: -44px;
+      top: -88px;
+    }
+
+    .food-main-img {
+      width: 1189px;
+      height: 793px;
+      left: -267px;
+      top: -75px;
+    }
+
+    .food-sub-img {
+      width: 806px;
+      height: 537px;
+      left: -211px;
+      top: -24px;
+    }
+
+    .reservation-bg {
+      background-size: 1594.7px 1063.5px;
+      background-position: -77.1px -374.7px;
+    }
+
+    .option-img-1 {
+      background-size: 569px 854px;
+      background-position: -150px -320px;
+    }
+
+    .option-img-2 {
+      background-size: 670px 446px;
+      background-position: -55px -147px;
+    }
+
+    .option-img-3 {
+      background-size: 348px 521px;
+      background-position: -15px -123px;
+    }
+
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const targets = Array.from(document.querySelectorAll('.fade-target'));
+    targets.forEach((el) => el.classList.add('scroll-fade'));
+
+    if (!targets.length) return;
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
           }
         });
-      }, {
-        threshold: 0.1
-      });
+      },
+      { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
+    );
 
-      elementsToAnimate.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-      });
-    });
-  </script>
-
-  <style>
-    * {
-      font-family: 'Shippori Mincho', serif;
-    }
-  </style>
-</body>
-</html>
+    targets.forEach((el) => observer.observe(el));
+  });
+</script>

@@ -1,697 +1,100 @@
 ---
-/**
- * よくある質問（FAQ）ページ
- * お客様からよく寄せられる質問と回答
- * Figmaデザイン: PC・SPレイアウト対応
- */
-export const prerender = true;
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content={Astro.generator} />
-  
-  <title>よくあるご質問 | aoshima tei 鈴 – SUZU</title>
-  <meta name="description" content="aoshima tei 鈴 – SUZUへよく寄せられるご質問とその回答。ご宿泊前の疑問やご不明な点を解決いたします。" />
-  
-  <!-- OGP -->
-  <meta property="og:title" content="よくあるご質問 | aoshima tei 鈴 – SUZU" />
-  <meta property="og:description" content="aoshima tei 鈴 – SUZUへよく寄せられるご質問とその回答。ご宿泊前の疑問やご不明な点を解決いたします。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/images/ogp.jpg" />
-  <meta property="og:site_name" content="aoshima tei 鈴 – SUZU" />
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="よくあるご質問 | aoshima tei 鈴 – SUZU" />
-  <meta name="twitter:description" content="aoshima tei 鈴 – SUZUへよく寄せられるご質問とその回答。ご宿泊前の疑問やご不明な点を解決いたします。" />
-  <meta name="twitter:image" content="/images/ogp.jpg" />
+<Layout title="FAQ | よくある質問">
+  <div class="bg-white text-[#483F38]">
+    <Header />
 
-  <!-- Shippori Mincho Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-
-<body class="min-h-screen bg-[#F5EFEA] text-[#483F38]">
-  <!-- Header -->
-  <header class="bg-[#F5EFEA] py-4 px-6 md:px-20 lg:px-28 border-b border-[#436C5E]/10">
-    <nav class="flex justify-between items-center">
-      <a href="/" class="text-[#436C5E] text-xl md:text-2xl font-semibold tracking-wider">
-        aoshima tei 鈴 – SUZU
-      </a>
-      
-      <!-- デスクトップメニュー -->
-      <ul class="hidden lg:flex space-x-8 text-[#436C5E] font-medium">
-        <li><a href="/" class="hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
-        <li><a href="/rooms" class="hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
-        <li><a href="/services" class="hover:opacity-70 transition-opacity tracking-wide">サービス</a></li>
-        <li><a href="/plans" class="hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
-        <li><a href="/contact" class="hover:opacity-70 transition-opacity tracking-wide">お問い合わせ</a></li>
-      </ul>
-
-      <!-- モバイルハンバーガーメニュー -->
-      <button class="lg:hidden text-[#436C5E]" id="mobile-menu-button">
-        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </nav>
-
-    <!-- モバイルメニュー -->
-    <div class="lg:hidden hidden" id="mobile-menu">
-      <div class="pt-4 pb-3 border-t border-[#436C5E]/10 mt-4">
-        <ul class="space-y-3 text-[#436C5E] font-medium">
-          <li><a href="/" class="block hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
-          <li><a href="/rooms" class="block hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
-          <li><a href="/services" class="block hover:opacity-70 transition-opacity tracking-wide">サービス</a></li>
-          <li><a href="/plans" class="block hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
-          <li><a href="/contact" class="block hover:opacity-70 transition-opacity tracking-wide">お問い合わせ</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <!-- メインコンテンツ -->
-  <main class="flex-1">
-    <!-- パンくずナビ -->
-    <div class="bg-white border-b border-[#436C5E]/10">
-      <div class="max-w-6xl mx-auto py-3 px-4 md:px-8">
-        <nav class="text-sm text-[#483F38] opacity-70">
-          <ol class="flex items-center space-x-2">
-            <li><a href="/" class="hover:opacity-80 transition-opacity">TOP</a></li>
-            <li><span class="mx-2">›</span></li>
-            <li class="text-[#436C5E] font-medium">よくあるご質問</li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-
-    <!-- FAQページ本文 -->
-    <section class="py-16 md:py-24 px-4 md:px-8">
-      <div class="max-w-5xl mx-auto">
-        
-        <!-- ページタイトル -->
-        <div class="text-center mb-12 md:mb-16">
-          <h1 class="text-[#436C5E] text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide mb-6">
-            よくあるご質問
+    <main>
+      <section class="bg-[#FAFAFA] py-[80px] lg:py-[150px] lg:px-[256px]">
+        <div class="mx-auto flex w-full max-w-[343px] flex-col items-center gap-[40px] font-['Shippori_Mincho'] lg:max-w-none lg:gap-[80px]">
+          <h1 class="text-center text-[32px] leading-[48px] tracking-[3.6px] text-[#436C5E] font-semibold lg:w-[480px] lg:text-[36px] lg:leading-[54px]">
+            よくある質問
           </h1>
-          <div class="w-20 h-px bg-gradient-to-r from-transparent via-[#B99563] to-transparent mx-auto mb-6"></div>
-          <p class="text-[#483F38] leading-relaxed tracking-wide max-w-2xl mx-auto">
-            お客様からよく寄せられるご質問をまとめました。<br>
-            こちらで解決されない場合は、お気軽にお問い合わせください。
-          </p>
-        </div>
 
-        <!-- 検索・絞り込み -->
-        <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-12">
-          <div class="flex flex-col md:flex-row gap-4 items-center">
-            <div class="flex-1 w-full">
-              <div class="relative">
-                <input 
-                  type="text" 
-                  id="faq-search" 
-                  placeholder="質問を検索..." 
-                  class="w-full px-4 py-3 pl-12 border border-[#436C5E]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#436C5E]/30 focus:border-[#436C5E] tracking-wide"
-                >
-                <svg class="absolute left-4 top-3.5 w-5 h-5 text-[#436C5E]/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
+          <div class="flex w-full flex-col gap-[24px] lg:w-[774px] lg:gap-[40px]">
+            <div class="border-b border-[#D1C7BF] pb-[24px] lg:pb-[25px]">
+              <div class="flex items-start gap-[4px] text-[#436C5E]">
+                <span class="text-[16px] leading-[32px] tracking-[1px] lg:text-[20px] lg:leading-[28px] lg:tracking-[1.6px]">Q.</span>
+                <p class="text-[15px] leading-[27px] tracking-[1.6px] lg:text-[18px] lg:leading-[28px] lg:tracking-[1.6px]">チェックイン、チェックアウトの時間は？</p>
               </div>
+              <p class="mt-[8px] pl-[24px] text-[14px] leading-[23px] tracking-[1.4px] text-[#483F38] lg:pl-[32px] lg:text-[16px] lg:leading-[26px] lg:tracking-[1.6px]">
+                A. チェックインは15:00から、チェックアウトは11:00までとなります。
+              </p>
             </div>
-            <div class="flex flex-wrap gap-2">
-              <button class="faq-filter px-4 py-2 bg-[#436C5E] text-white rounded-full text-sm font-medium tracking-wide active" data-category="all">
-                すべて
-              </button>
-              <button class="faq-filter px-4 py-2 bg-white border border-[#436C5E]/30 text-[#436C5E] rounded-full text-sm font-medium tracking-wide hover:bg-[#436C5E] hover:text-white transition-colors" data-category="reservation">
-                予約
-              </button>
-              <button class="faq-filter px-4 py-2 bg-white border border-[#436C5E]/30 text-[#436C5E] rounded-full text-sm font-medium tracking-wide hover:bg-[#436C5E] hover:text-white transition-colors" data-category="facility">
-                施設
-              </button>
-              <button class="faq-filter px-4 py-2 bg-white border border-[#436C5E]/30 text-[#436C5E] rounded-full text-sm font-medium tracking-wide hover:bg-[#436C5E] hover:text-white transition-colors" data-category="service">
-                サービス
-              </button>
-              <button class="faq-filter px-4 py-2 bg-white border border-[#436C5E]/30 text-[#436C5E] rounded-full text-sm font-medium tracking-wide hover:bg-[#436C5E] hover:text-white transition-colors" data-category="other">
-                その他
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <!-- FAQ項目 -->
-        <div class="space-y-6" id="faq-list">
-          
-          <!-- 予約関連 -->
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="reservation" data-keywords="予約 キャンセル 変更 申し込み 確認">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-[#436C5E] text-white text-xs rounded-full font-medium mr-3">予約</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">予約の変更・キャンセルはいつまで可能ですか？</span>
+            <div class="border-b border-[#D1C7BF] pb-[24px] lg:pb-[25px]">
+              <div class="flex items-start gap-[4px] text-[#436C5E]">
+                <span class="text-[16px] leading-[32px] tracking-[1px] lg:text-[20px] lg:leading-[28px] lg:tracking-[1.6px]">Q.</span>
+                <p class="text-[15px] leading-[27px] tracking-[1.6px] lg:text-[18px] lg:leading-[28px] lg:tracking-[1.6px]">駐車場はありますか？</p>
               </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  <strong class="text-[#436C5E]">予約変更：</strong>宿泊日の前日まで可能です。ただし、空室状況により変更できない場合があります。
-                </p>
-                <p>
-                  <strong class="text-[#436C5E]">キャンセル：</strong>以下の取消料が発生いたします。
-                </p>
-                <ul class="list-disc list-inside space-y-1 pl-4">
-                  <li>宿泊日の前日：基本宿泊料の20%</li>
-                  <li>宿泊日当日（18時まで）：基本宿泊料の50%</li>
-                  <li>宿泊日当日（18時以降）：基本宿泊料の80%</li>
-                  <li>無連絡不泊：基本宿泊料の100%</li>
-                </ul>
-                <p>
-                  お電話またはWebサイトからお手続きください。
-                </p>
+              <p class="mt-[8px] pl-[24px] text-[14px] leading-[23px] tracking-[1.4px] text-[#483F38] lg:pl-[32px] lg:text-[16px] lg:leading-[26px] lg:tracking-[1.6px]">
+                A. チェックインは15:00から、チェックアウトは11:00までとなります。
+              </p>
+            </div>
+
+            <div class="border-b border-[#D1C7BF] pb-[24px] lg:pb-[25px]">
+              <div class="flex items-start gap-[4px] text-[#436C5E]">
+                <span class="text-[16px] leading-[32px] tracking-[1px] lg:text-[20px] lg:leading-[28px] lg:tracking-[1.6px]">Q.</span>
+                <p class="text-[15px] leading-[27px] tracking-[1.6px] lg:text-[18px] lg:leading-[28px] lg:tracking-[1.6px]">アメニティには何がありますか？</p>
               </div>
+              <p class="mt-[8px] pl-[24px] text-[14px] leading-[23px] tracking-[1.4px] text-[#483F38] lg:pl-[32px] lg:text-[16px] lg:leading-[26px] lg:tracking-[1.6px]">
+                A. タオル、歯ブラシ、シャンプー、コンディショナー、ボディソープなどをご用意しております。
+              </p>
+            </div>
+
+            <div class="border-b border-[#D1C7BF] pb-[24px] lg:pb-[25px]">
+              <div class="flex items-start gap-[4px] text-[#436C5E]">
+                <span class="text-[16px] leading-[32px] tracking-[1px] lg:text-[20px] lg:leading-[28px] lg:tracking-[1.6px]">Q.</span>
+                <p class="text-[15px] leading-[27px] tracking-[1.6px] lg:text-[18px] lg:leading-[28px] lg:tracking-[1.6px]">チェックイン、チェックアウトの時間は？</p>
+              </div>
+              <p class="mt-[8px] pl-[24px] text-[14px] leading-[23px] tracking-[1.4px] text-[#483F38] lg:pl-[32px] lg:text-[16px] lg:leading-[26px] lg:tracking-[1.6px]">
+                A. チェックインは15:00から、チェックアウトは11:00までとなります。
+              </p>
+            </div>
+
+            <div class="border-b border-[#D1C7BF] pb-[24px] lg:pb-[25px]">
+              <div class="flex items-start gap-[4px] text-[#436C5E]">
+                <span class="text-[16px] leading-[32px] tracking-[1px] lg:text-[20px] lg:leading-[28px] lg:tracking-[1.6px]">Q.</span>
+                <p class="text-[15px] leading-[27px] tracking-[1.6px] lg:text-[18px] lg:leading-[28px] lg:tracking-[1.6px]">チェックイン、チェックアウトの時間は？</p>
+              </div>
+              <p class="mt-[8px] pl-[24px] text-[14px] leading-[23px] tracking-[1.4px] text-[#483F38] lg:pl-[32px] lg:text-[16px] lg:leading-[26px] lg:tracking-[1.6px]">
+                A. チェックインは15:00から、チェックアウトは11:00までとなります。
+              </p>
+            </div>
+
+            <div class="border-b border-[#D1C7BF] pb-[24px] lg:pb-[25px]">
+              <div class="flex items-start gap-[4px] text-[#436C5E]">
+                <span class="text-[16px] leading-[32px] tracking-[1px] lg:text-[20px] lg:leading-[28px] lg:tracking-[1.6px]">Q.</span>
+                <p class="text-[15px] leading-[27px] tracking-[1.6px] lg:text-[18px] lg:leading-[28px] lg:tracking-[1.6px]">チェックイン、チェックアウトの時間は？</p>
+              </div>
+              <p class="mt-[8px] pl-[24px] text-[14px] leading-[23px] tracking-[1.4px] text-[#483F38] lg:pl-[32px] lg:text-[16px] lg:leading-[26px] lg:tracking-[1.6px]">
+                A. チェックインは15:00から、チェックアウトは11:00までとなります。
+              </p>
+            </div>
+
+            <div class="border-b border-[#D1C7BF] pb-[24px] lg:pb-[25px]">
+              <div class="flex items-start gap-[4px] text-[#436C5E]">
+                <span class="text-[16px] leading-[32px] tracking-[1px] lg:text-[20px] lg:leading-[28px] lg:tracking-[1.6px]">Q.</span>
+                <p class="text-[15px] leading-[27px] tracking-[1.6px] lg:text-[18px] lg:leading-[28px] lg:tracking-[1.6px]">チェックイン、チェックアウトの時間は？</p>
+              </div>
+              <p class="mt-[8px] pl-[24px] text-[14px] leading-[23px] tracking-[1.4px] text-[#483F38] lg:pl-[32px] lg:text-[16px] lg:leading-[26px] lg:tracking-[1.6px]">
+                A. チェックインは15:00から、チェックアウトは11:00までとなります。
+              </p>
             </div>
           </div>
 
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="reservation" data-keywords="予約 確認 メール 確定 申し込み">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-[#436C5E] text-white text-xs rounded-full font-medium mr-3">予約</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">予約確認メールが届きません。</span>
-              </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  以下をご確認ください：
-                </p>
-                <ol class="list-decimal list-inside space-y-2">
-                  <li><strong>迷惑メールフォルダ</strong>をご確認ください</li>
-                  <li>メールアドレスの入力間違いがないかご確認ください</li>
-                  <li>ドメイン指定受信設定で「@aoshima-suzu.com」を許可してください</li>
-                </ol>
-                <p>
-                  上記を確認しても届かない場合は、お電話（012-345-6789）にてお問い合わせください。
-                  予約番号をお調べしてご連絡いたします。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="reservation" data-keywords="人数 変更 追加 子供 幼児">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-[#436C5E] text-white text-xs rounded-full font-medium mr-3">予約</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">宿泊人数の変更は可能ですか？</span>
-              </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  宿泊人数の変更は、お部屋の定員内であれば可能です。
-                </p>
-                <p>
-                  <strong class="text-[#436C5E]">人数減少の場合：</strong>宿泊日の前日まで承ります。<br>
-                  <strong class="text-[#436C5E]">人数増加の場合：</strong>お部屋の定員以内であれば、空きがある限り当日まで対応可能です。
-                </p>
-                <p>
-                  料金が変更となる場合がございますので、お早めにご連絡ください。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 施設関連 -->
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="facility" data-keywords="チェックイン チェックアウト 時間 到着 出発">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-[#B99563] text-white text-xs rounded-full font-medium mr-3">施設</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">チェックイン・チェックアウトの時間を教えてください。</span>
-              </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  <strong class="text-[#436C5E]">チェックイン：</strong>15:00〜18:00<br>
-                  <strong class="text-[#436C5E]">チェックアウト：</strong>〜11:00
-                </p>
-                <p>
-                  到着が18:00を過ぎる場合は、事前にご連絡ください。
-                  また、アーリーチェックインやレイトチェックアウトをご希望の場合は、
-                  追加料金にて承ります（空室状況による）。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="facility" data-keywords="駐車場 車 無料 料金 台数">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-[#B99563] text-white text-xs rounded-full font-medium mr-3">施設</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">駐車場はありますか？料金はかかりますか？</span>
-              </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  はい、館内に無料の専用駐車場をご用意しております（約20台）。
-                </p>
-                <p>
-                  先着順となっておりますので、満車の場合は近隣のコインパーキングを
-                  ご案内させていただきます。事前予約は承っておりませんので、
-                  ご了承ください。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="facility" data-keywords="温泉 お風呂 時間 貸切 プライベート">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-[#B99563] text-white text-xs rounded-full font-medium mr-3">施設</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">温泉の利用時間を教えてください。</span>
-              </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  <strong class="text-[#436C5E]">大浴場：</strong>5:30〜10:00、15:00〜24:00<br>
-                  <strong class="text-[#436C5E]">貸切風呂：</strong>15:00〜23:00（要予約）
-                </p>
-                <p>
-                  貸切風呂は1回45分、1組様3,000円（税込）でご利用いただけます。
-                  チェックイン時にフロントでご予約ください。
-                </p>
-                <p>
-                  清掃時間（10:00〜15:00）はご利用いただけませんので、ご注意ください。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- サービス関連 -->
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="service" data-keywords="食事 朝食 夕食 アレルギー 対応">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-[#483F38] text-white text-xs rounded-full font-medium mr-3">サービス</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">食事のアレルギー対応は可能ですか？</span>
-              </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  はい、可能な限り対応させていただきます。
-                </p>
-                <p>
-                  アレルギーをお持ちの方は、<strong class="text-[#436C5E]">ご宿泊の3日前まで</strong>に
-                  以下の情報をお知らせください：
-                </p>
-                <ul class="list-disc list-inside space-y-1 pl-4">
-                  <li>アレルギー品目</li>
-                  <li>重篤度（摂取不可・調理器具の共用不可など）</li>
-                  <li>該当される方の人数</li>
-                </ul>
-                <p>
-                  ただし、食材や調理器具の関係で完全な除去が困難な場合もございます。
-                  詳細はお電話にてご相談ください。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="service" data-keywords="WiFi 無線LAN インターネット 接続">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-[#483F38] text-white text-xs rounded-full font-medium mr-3">サービス</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">WiFiは利用できますか？</span>
-              </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  はい、館内全域で無料WiFiをご利用いただけます。
-                </p>
-                <p>
-                  接続方法：
-                </p>
-                <ol class="list-decimal list-inside space-y-1 pl-4">
-                  <li>「SUZU_Guest」を選択</li>
-                  <li>パスワード：suzu2024（客室内にも記載あり）</li>
-                </ol>
-                <p>
-                  接続に問題がございましたら、フロントまでお気軽にお声かけください。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="service" data-keywords="荷物 宅配 配送 宅急便">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-[#483F38] text-white text-xs rounded-full font-medium mr-3">サービス</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">荷物の宅配便サービスはありますか？</span>
-              </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  はい、承っております。
-                </p>
-                <p>
-                  <strong class="text-[#436C5E]">荷物受取：</strong>ご宿泊日の1週間前から承ります。
-                  送り状に「宿泊日○月○日 お客様氏名」をご記入ください。
-                </p>
-                <p>
-                  <strong class="text-[#436C5E]">荷物発送：</strong>フロントにて各種宅配便の受付をしております。
-                  発送料金はお客様のご負担となります。
-                </p>
-                <p>
-                  冷蔵・冷凍品のお預かりはできませんので、ご注意ください。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- その他 -->
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="other" data-keywords="ペット 同伴 犬 猫 動物">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-gray-500 text-white text-xs rounded-full font-medium mr-3">その他</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">ペットと一緒に宿泊できますか？</span>
-              </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  申し訳ございませんが、ペットとのご宿泊はお断りしております。
-                </p>
-                <p>
-                  介助犬・盲導犬・聴導犬などの身体障害者補助犬は除きます。
-                  事前にお電話にてご相談ください。
-                </p>
-                <p>
-                  お客様にはご不便をおかけいたしますが、ご理解いただけますようお願いいたします。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="other" data-keywords="キャッシュレス 支払い方法 クレジットカード 電子マネー">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-gray-500 text-white text-xs rounded-full font-medium mr-3">その他</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">キャッシュレス決済に対応していますか？</span>
-              </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  はい、以下の決済方法をご利用いただけます：
-                </p>
-                <p>
-                  <strong class="text-[#436C5E]">クレジットカード：</strong><br>
-                  VISA、MasterCard、JCB、American Express、Diners Club
-                </p>
-                <p>
-                  <strong class="text-[#436C5E]">電子マネー：</strong><br>
-                  交通系IC（Suica、PASMO等）、楽天Edy、WAON、nanaco
-                </p>
-                <p>
-                  <strong class="text-[#436C5E]">QRコード決済：</strong><br>
-                  PayPay、楽天Pay、d払い、au PAY
-                </p>
-                <p>
-                  現金でのお支払いも可能です。
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item bg-white rounded-lg shadow-lg overflow-hidden" data-category="other" data-keywords="喫煙 禁煙 タバコ 喫煙所">
-            <button class="faq-question w-full px-6 md:px-8 py-6 text-left flex justify-between items-center hover:bg-[#F5EFEA] transition-colors">
-              <div>
-                <span class="inline-block px-3 py-1 bg-gray-500 text-white text-xs rounded-full font-medium mr-3">その他</span>
-                <span class="text-[#483F38] text-base md:text-lg font-medium tracking-wide">館内で喫煙はできますか？</span>
-              </div>
-              <svg class="faq-arrow w-5 h-5 text-[#436C5E] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 md:px-8 pb-6">
-              <div class="pl-16 text-[#483F38] leading-relaxed tracking-wide space-y-3">
-                <p>
-                  当館は全館禁煙となっております。
-                </p>
-                <p>
-                  喫煙をご希望のお客様は、以下の場所をご利用ください：
-                </p>
-                <ul class="list-disc list-inside space-y-1 pl-4">
-                  <li>1階エントランス横の屋外喫煙スペース</li>
-                  <li>中庭の指定エリア</li>
-                </ul>
-                <p>
-                  灰皿は各喫煙スペースに設置しております。
-                  他のお客様のご迷惑になりませんよう、指定場所以外での喫煙はご遠慮ください。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 検索結果なし -->
-        <div id="no-results" class="hidden text-center py-12">
-          <div class="text-[#436C5E] text-6xl mb-4">🔍</div>
-          <h3 class="text-[#436C5E] text-xl font-semibold mb-2">該当する質問が見つかりませんでした</h3>
-          <p class="text-[#483F38] opacity-70 mb-6">検索条件を変更してお試しください。</p>
-          <a href="/contact" class="inline-flex items-center px-6 py-3 bg-[#436C5E] text-white rounded-full hover:bg-[#436C5E]/90 transition-colors tracking-wide font-medium">
-            お問い合わせフォームへ
+          <a href="/" class="inline-flex items-center justify-center rounded-full border border-[#B99563] bg-[#B99563] px-[49px] py-[10px] text-[14px] leading-[22.75px] tracking-[2.1px] text-white hover:bg-white hover:text-[#B99563] hover:border-[#B99563] transition-all duration-300">
+            <span class="lg:hidden">TOP</span>
+            <span class="hidden lg:inline">戻る</span>
           </a>
         </div>
+      </section>
+    </main>
 
-        <!-- その他お問い合わせ -->
-        <div class="text-center mt-16 md:mt-20">
-          <div class="bg-[#436C5E] text-white rounded-lg p-8 md:p-12">
-            <h2 class="text-xl md:text-2xl font-semibold mb-4 tracking-wide">
-              その他ご不明な点がございましたら
-            </h2>
-            <p class="text-sm md:text-base leading-relaxed mb-8 opacity-90">
-              上記以外にもご質問やご不明な点がございましたら、<br>
-              お気軽にお問い合わせください。
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-              <a href="tel:012-345-6789" class="inline-flex items-center justify-center px-8 py-3 bg-white text-[#436C5E] rounded-full hover:bg-gray-50 transition-colors tracking-wide font-medium">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                </svg>
-                お電話で相談
-              </a>
-              <a href="/contact" class="inline-flex items-center justify-center px-8 py-3 border border-white text-white rounded-full hover:bg-white hover:text-[#436C5E] transition-colors tracking-wide font-medium">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                </svg>
-                メールで問い合わせ
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- フッター -->
-  <footer class="bg-[#436C5E] text-white py-16 px-4 md:px-8">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-        <!-- ロゴ・連絡先セクション -->
-        <div class="space-y-6">
-          <h2 class="text-2xl md:text-3xl font-semibold tracking-wider">
-            aoshima tei 鈴 – SUZU
-          </h2>
-          
-          <div class="space-y-4 text-sm leading-relaxed opacity-90">
-            <div>
-              <p class="font-medium mb-1">〒 889-2162</p>
-              <p>宮崎県宮崎市青島4-48-4</p>
-            </div>
-            <div>
-              <p class="font-medium mb-1">TEL: 012-345-6789</p>
-              <p>FAX: 012-345-6790</p>
-            </div>
-            <div>
-              <p class="font-medium mb-1">チェックイン: 15:00～18:00</p>
-              <p>チェックアウト: ～11:00</p>
-            </div>
-          </div>
-          
-          <div class="flex space-x-4">
-            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.024-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 23.998 12.017 24c6.624 0 11.99-5.367 11.99-12C24.007 5.367 18.641.001.012.017 0z"/>
-              </svg>
-            </a>
-            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- ナビゲーションセクション -->
-        <div class="grid grid-cols-2 gap-8">
-          <div>
-            <h3 class="font-semibold mb-4 text-[#B99563]">サイトマップ</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/" class="hover:text-[#B99563] transition-colors">TOP</a></li>
-              <li><a href="/rooms" class="hover:text-[#B99563] transition-colors">客室紹介</a></li>
-              <li><a href="/services" class="hover:text-[#B99563] transition-colors">サービス</a></li>
-              <li><a href="/plans" class="hover:text-[#B99563] transition-colors">プラン</a></li>
-              <li><a href="/contact" class="hover:text-[#B99563] transition-colors">お問い合わせ</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-semibold mb-4 text-[#B99563]">その他</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/privacy-policy" class="hover:text-[#B99563] transition-colors">プライバシーポリシー</a></li>
-              <li><a href="/terms" class="hover:text-[#B99563] transition-colors">利用規約</a></li>
-              <li><a href="/usage-terms" class="hover:text-[#B99563] transition-colors">宿泊約款</a></li>
-              <li><a href="/faq" class="text-[#B99563]">よくあるご質問</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- コピーライト -->
-      <div class="text-center pt-8 border-t border-white/20">
-        <p class="text-sm opacity-70">
-          &copy; 2024 aoshima tei 鈴 – SUZU. All rights reserved.
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // モバイルメニューの制御
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton?.addEventListener('click', () => {
-      mobileMenu?.classList.toggle('hidden');
-    });
-
-    // FAQ検索機能
-    const searchInput = document.getElementById('faq-search');
-    const faqItems = document.querySelectorAll('.faq-item');
-    const noResults = document.getElementById('no-results');
-    const filterButtons = document.querySelectorAll('.faq-filter');
-
-    // FAQ項目のクリックイベント
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const arrow = question.querySelector('.faq-arrow');
-        
-        // 他のFAQを閉じる
-        document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
-          if (otherAnswer !== answer && !otherAnswer.classList.contains('hidden')) {
-            otherAnswer.classList.add('hidden');
-            otherAnswer.previousElementSibling.querySelector('.faq-arrow').style.transform = 'rotate(0deg)';
-          }
-        });
-        
-        // 現在のFAQを開閉
-        answer.classList.toggle('hidden');
-        arrow.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-      });
-    });
-
-    // 検索機能
-    function filterFAQ() {
-      const searchTerm = searchInput.value.toLowerCase();
-      const activeCategory = document.querySelector('.faq-filter.active').dataset.category;
-      let visibleCount = 0;
-
-      faqItems.forEach(item => {
-        const keywords = item.dataset.keywords.toLowerCase();
-        const category = item.dataset.category;
-        const question = item.querySelector('.faq-question span:last-child').textContent.toLowerCase();
-        
-        const matchesSearch = searchTerm === '' || keywords.includes(searchTerm) || question.includes(searchTerm);
-        const matchesCategory = activeCategory === 'all' || category === activeCategory;
-        
-        if (matchesSearch && matchesCategory) {
-          item.style.display = 'block';
-          visibleCount++;
-        } else {
-          item.style.display = 'none';
-        }
-      });
-
-      // 結果なしメッセージの表示制御
-      noResults.classList.toggle('hidden', visibleCount > 0);
-    }
-
-    // 検索入力イベント
-    searchInput.addEventListener('input', filterFAQ);
-
-    // カテゴリフィルターイベント
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // アクティブボタンの切り替え
-        filterButtons.forEach(btn => {
-          btn.classList.remove('active');
-          btn.classList.remove('bg-[#436C5E]', 'text-white');
-          btn.classList.add('bg-white', 'border-[#436C5E]/30', 'text-[#436C5E]');
-        });
-        
-        button.classList.add('active');
-        button.classList.remove('bg-white', 'border-[#436C5E]/30', 'text-[#436C5E]');
-        button.classList.add('bg-[#436C5E]', 'text-white');
-        
-        filterFAQ();
-      });
-    });
-  </script>
-
-  <style>
-    * {
-      font-family: 'Shippori Mincho', serif;
-    }
-  </style>
-</body>
-</html>
+    <Footer />
+  </div>
+</Layout>

@@ -1,313 +1,68 @@
 ---
-/**
- * お問い合わせ確認ページ
- * お問い合わせフォームから送信された内容の確認
- * Figmaデザイン: PC・SPレイアウト対応
- */
-export const prerender = true;
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content={Astro.generator} />
-  
-  <title>お問い合わせ確認 | aoshima tei 鈴 – SUZU</title>
-  <meta name="description" content="お問い合わせ内容の確認ページです。内容をご確認の上、送信ボタンを押してください。" />
-  <meta name="robots" content="noindex, nofollow" />
+<Layout title="CONTACT CONFIRM | お問い合わせ内容確認">
+  <div class="bg-white text-[#483F38]">
+    <Header />
 
-  <!-- Shippori Mincho Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
+    <main>
+      <section class="bg-[#FAFAFA] py-[80px] lg:py-[150px]">
+        <div class="mx-auto flex w-[343px] flex-col gap-[40px] lg:w-[953px] lg:gap-[80px]">
+          <div class="text-center text-[#436C5E] font-['Shippori_Mincho']">
+            <h1 class="text-[32px] leading-[48px] tracking-[3.6px] font-semibold lg:mx-auto lg:w-[616px] lg:text-[36px] lg:leading-[40px]">
+              <span class="block lg:hidden">お問い合わせ</span>
+              <span class="block lg:hidden">内容確認</span>
+              <span class="hidden lg:block">お問い合わせ内容確認</span>
+            </h1>
+            <p class="mt-[32px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#483F38] lg:mx-auto lg:w-[953px] lg:text-[16px] lg:leading-[32px] lg:tracking-[1px]">
+              以下の内容でよろしければ、「送信する」ボタンを押してください。<br />
+              内容を修正する場合は、「戻る」ボタンを押して修正してください。
+            </p>
+          </div>
 
-<body class="min-h-screen bg-[#F5EFEA] text-[#483F38]">
-  <!-- Header -->
-  <header class="bg-[#F5EFEA] py-4 px-6 md:px-20 lg:px-28 border-b border-[#436C5E]/10">
-    <nav class="flex justify-between items-center">
-      <a href="/" class="text-[#436C5E] text-xl md:text-2xl font-semibold tracking-wider">
-        aoshima tei 鈴 – SUZU
-      </a>
-      
-      <!-- デスクトップメニュー -->
-      <ul class="hidden lg:flex space-x-8 text-[#436C5E] font-medium">
-        <li><a href="/" class="hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
-        <li><a href="/rooms" class="hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
-        <li><a href="/services" class="hover:opacity-70 transition-opacity tracking-wide">サービス</a></li>
-        <li><a href="/plans" class="hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
-        <li><a href="/contact" class="text-[#B99563] tracking-wide">お問い合わせ</a></li>
-      </ul>
-
-      <!-- モバイルハンバーガーメニュー -->
-      <button class="lg:hidden text-[#436C5E]" id="mobile-menu-button">
-        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </nav>
-
-    <!-- モバイルメニュー -->
-    <div class="lg:hidden hidden" id="mobile-menu">
-      <div class="pt-4 pb-3 border-t border-[#436C5E]/10 mt-4">
-        <ul class="space-y-3 text-[#436C5E] font-medium">
-          <li><a href="/" class="block hover:opacity-70 transition-opacity tracking-wide">TOP</a></li>
-          <li><a href="/rooms" class="block hover:opacity-70 transition-opacity tracking-wide">客室紹介</a></li>
-          <li><a href="/services" class="block hover:opacity-70 transition-opacity tracking-wide">サービス</a></li>
-          <li><a href="/plans" class="block hover:opacity-70 transition-opacity tracking-wide">プラン</a></li>
-          <li><a href="/contact" class="block text-[#B99563] tracking-wide">お問い合わせ</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <!-- メインコンテンツ -->
-  <main class="flex-1">
-    <!-- 確認セクション -->
-    <section class="py-20 md:py-32 px-4 md:px-8">
-      <div class="max-w-4xl mx-auto">
-        <!-- ページタイトル -->
-        <div class="text-center mb-12 md:mb-16">
-          <h1 class="text-[#436C5E] text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide mb-6">
-            お問い合わせ内容の確認
-          </h1>
-          <p class="text-[#483F38] leading-relaxed tracking-wide max-w-3xl mx-auto">
-            以下の内容でよろしければ、「送信する」ボタンを押してください。<br>
-            内容を修正する場合は、「戻る」ボタンを押して修正してください。
-          </p>
-        </div>
-
-        <!-- 確認フォーム -->
-        <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
-          <form id="confirmForm" class="space-y-8">
-            <!-- 入力内容確認 -->
-            <div class="space-y-6">
-              <!-- お問い合わせ種別 -->
-              <div class="border-b border-[#436C5E]/20 pb-4">
-                <h3 class="text-[#436C5E] font-semibold mb-2 text-sm md:text-base tracking-wide">
-                  お問い合わせ種別
-                </h3>
-                <p id="inquiryType" class="text-[#483F38] text-base md:text-lg">
-                  宿泊のご予約について
-                </p>
-              </div>
-
-              <!-- お名前 -->
-              <div class="border-b border-[#436C5E]/20 pb-4">
-                <h3 class="text-[#436C5E] font-semibold mb-2 text-sm md:text-base tracking-wide">
-                  お名前
-                </h3>
-                <p id="fullName" class="text-[#483F38] text-base md:text-lg">
-                  山田 太郎
-                </p>
-              </div>
-
-              <!-- メールアドレス -->
-              <div class="border-b border-[#436C5E]/20 pb-4">
-                <h3 class="text-[#436C5E] font-semibold mb-2 text-sm md:text-base tracking-wide">
-                  メールアドレス
-                </h3>
-                <p id="email" class="text-[#483F38] text-base md:text-lg">
-                  yamada.taro@example.com
-                </p>
-              </div>
-
-              <!-- お電話番号 -->
-              <div class="border-b border-[#436C5E]/20 pb-4">
-                <h3 class="text-[#436C5E] font-semibold mb-2 text-sm md:text-base tracking-wide">
-                  お電話番号
-                </h3>
-                <p id="phone" class="text-[#483F38] text-base md:text-lg">
-                  090-1234-5678
-                </p>
-              </div>
-
-              <!-- お問い合わせ内容 -->
-              <div>
-                <h3 class="text-[#436C5E] font-semibold mb-2 text-sm md:text-base tracking-wide">
-                  お問い合わせ内容
-                </h3>
-                <div id="message" class="text-[#483F38] text-base leading-relaxed tracking-wide bg-[#F5EFEA] p-4 rounded-lg">
-                  来月の宮崎旅行を計画しており、貸切温泉付きプランでの宿泊を希望しております。
-                  2名での利用で、チェックイン日は3月15日を考えています。
-                  空室状況と詳細な料金について教えてください。
-                  また、夕食のオプションがあれば併せてご連絡いただけると幸いです。
+          <form id="confirmForm" class="mx-auto rounded-[8px] bg-white px-[16px] py-[40px] shadow-sm lg:w-[576px] lg:px-[48px] lg:py-[56px]">
+            <div class="space-y-[56px]">
+              <div class="space-y-[32px] text-[12px] leading-[16px] tracking-[1.2px] font-['Shippori_Mincho']">
+                <div class="space-y-[12px]">
+                  <p class="text-[#436C5E]">お名前</p>
+                  <p class="text-[#483F38]" id="fullName">名前が入ります</p>
                 </div>
-              </div>
-            </div>
-
-            <!-- プライバシーポリシー同意 -->
-            <div class="border-t border-[#436C5E]/20 pt-6">
-              <div class="bg-[#F5EFEA] p-6 rounded-lg">
-                <h4 class="text-[#436C5E] font-semibold mb-4 text-sm md:text-base">
-                  個人情報の取り扱いについて
-                </h4>
-                <div class="text-[#483F38] text-sm leading-relaxed tracking-wide mb-4">
-                  <p class="mb-3">
-                    当社が本サービスを通じて取得したユーザーの個人情報については、当社が規定する個人情報保護方針および個人情報保護法等法令の規定に準拠して取り扱うものとします。
-                  </p>
-                  <p>
-                    弊社のプライバシーポリシーをお読みいただき、同意いただける場合には下記のボタンから情報をご送信ください。
+                <div class="space-y-[12px]">
+                  <p class="text-[#436C5E]">メールアドレス</p>
+                  <p class="text-[#483F38]" id="email">メールアドレスが入ります</p>
+                </div>
+                <div class="space-y-[12px]">
+                  <p class="text-[#436C5E]">お問い合わせ内容</p>
+                  <p class="text-[#483F38]" id="message">
+                    お問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入りますお問い合わせ内容が入ります
                   </p>
                 </div>
-                <div class="flex items-center space-x-3">
-                  <div class="w-5 h-5 bg-[#436C5E] rounded flex items-center justify-center">
-                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span class="text-[#436C5E] font-medium text-sm">
-                    プライバシーポリシーに同意する
-                  </span>
-                </div>
               </div>
-            </div>
 
-            <!-- ボタンエリア -->
-            <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-8 pt-8">
-              <button
-                type="button"
-                onclick="history.back()"
-                class="w-full md:w-auto inline-flex items-center justify-center px-8 py-3 border border-[#436C5E] text-[#436C5E] rounded-full hover:bg-[#436C5E]/5 transition-colors tracking-wide font-medium"
-              >
-                戻る
-              </button>
-              
-              <button
-                type="submit"
-                class="w-full md:w-auto inline-flex items-center justify-center px-8 py-3 bg-[#436C5E] text-white rounded-full hover:bg-[#436C5E]/90 transition-colors tracking-wide font-medium"
-              >
-                送信する
-              </button>
+              <div class="flex flex-col items-center gap-[24px]">
+                <button type="submit" class="inline-flex items-center justify-center rounded-full border border-[#B99563] bg-[#B99563] px-[49px] py-[10px] text-[14px] leading-[22.75px] tracking-[2.1px] text-white font-['Shippori_Mincho'] hover:bg-white hover:text-[#B99563] hover:border-[#B99563] transition-all duration-300">
+                  送信する
+                </button>
+                <button type="button" onclick="history.back()" class="text-[12px] leading-[16px] tracking-[1.2px] text-[#475569] font-['Shippori_Mincho']">
+                  戻る
+                </button>
+              </div>
             </div>
           </form>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <!-- フッター -->
-  <footer class="bg-[#436C5E] text-white py-16 px-4 md:px-8">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-        <!-- ロゴ・連絡先セクション -->
-        <div class="space-y-6">
-          <h2 class="text-2xl md:text-3xl font-semibold tracking-wider">
-            aoshima tei 鈴 – SUZU
-          </h2>
-          
-          <div class="space-y-4 text-sm leading-relaxed opacity-90">
-            <div>
-              <p class="font-medium mb-1">〒 889-2162</p>
-              <p>宮崎県宮崎市青島4-48-4</p>
-            </div>
-            <div>
-              <p class="font-medium mb-1">TEL: 012-345-6789</p>
-              <p>FAX: 012-345-6790</p>
-            </div>
-            <div>
-              <p class="font-medium mb-1">チェックイン: 15:00～18:00</p>
-              <p>チェックアウト: ～11:00</p>
-            </div>
-          </div>
-          
-          <div class="flex space-x-4">
-            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.024-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 23.998 12.017 24c6.624 0 11.99-5.367 11.99-12C24.007 5.367 18.641.001.012.017 0z"/>
-              </svg>
-            </a>
-            <a href="#" class="text-white hover:text-[#B99563] transition-colors">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
+    <Footer />
+  </div>
+</Layout>
 
-        <!-- ナビゲーションセクション -->
-        <div class="grid grid-cols-2 gap-8">
-          <div>
-            <h3 class="font-semibold mb-4 text-[#B99563]">サイトマップ</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/" class="hover:text-[#B99563] transition-colors">TOP</a></li>
-              <li><a href="/rooms" class="hover:text-[#B99563] transition-colors">客室紹介</a></li>
-              <li><a href="/services" class="hover:text-[#B99563] transition-colors">サービス</a></li>
-              <li><a href="/plans" class="hover:text-[#B99563] transition-colors">プラン</a></li>
-              <li><a href="/contact" class="hover:text-[#B99563] transition-colors">お問い合わせ</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-semibold mb-4 text-[#B99563]">その他</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/privacy-policy" class="hover:text-[#B99563] transition-colors">プライバシーポリシー</a></li>
-              <li><a href="/terms" class="hover:text-[#B99563] transition-colors">利用規約</a></li>
-              <li><a href="/usage-terms" class="hover:text-[#B99563] transition-colors">宿泊約款</a></li>
-              <li><a href="/faq" class="hover:text-[#B99563] transition-colors">よくあるご質問</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- コピーライト -->
-      <div class="text-center pt-8 border-t border-white/20">
-        <p class="text-sm opacity-70">
-          &copy; 2024 aoshima tei 鈴 – SUZU. All rights reserved.
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // モバイルメニューの制御
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuButton?.addEventListener('click', () => {
-      mobileMenu?.classList.toggle('hidden');
-    });
-
-    // フォーム送信処理
-    document.getElementById('confirmForm')?.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // 実際のアプリケーションでは、ここでサーバーにデータを送信
-      // この例では、完了ページに遷移
-      window.location.href = '/contact-complete';
-    });
-
-    // URLパラメータから確認画面の内容を動的に設定
-    // （実際のフォームからリダイレクトされた場合）
-    function loadConfirmationData() {
-      const params = new URLSearchParams(window.location.search);
-      
-      if (params.get('inquiryType')) {
-        document.getElementById('inquiryType').textContent = params.get('inquiryType');
-      }
-      if (params.get('fullName')) {
-        document.getElementById('fullName').textContent = params.get('fullName');
-      }
-      if (params.get('email')) {
-        document.getElementById('email').textContent = params.get('email');
-      }
-      if (params.get('phone')) {
-        document.getElementById('phone').textContent = params.get('phone');
-      }
-      if (params.get('message')) {
-        document.getElementById('message').textContent = params.get('message');
-      }
-    }
-
-    // ページ読み込み時に確認データを設定
-    window.addEventListener('load', loadConfirmationData);
-  </script>
-
-  <style>
-    * {
-      font-family: 'Shippori Mincho', serif;
-    }
-  </style>
-</body>
-</html>
+<script>
+  document.getElementById('confirmForm')?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.location.href = '/contact-complete';
+  });
+</script>
