@@ -39,7 +39,7 @@ import Footer from '../components/Footer.astro';
       <section class="bg-white px-[16px] pb-[80px] lg:px-0 lg:py-[150px] space-y-[40px] lg:space-y-[120px]">
         <!-- Onsen Plan -->
         <div class="mx-auto flex flex-col gap-[32px] lg:flex-row lg:items-center lg:gap-0 max-w-[1440px]">
-          <div class="plan-image-window plan-image-window-onsen mx-auto">
+          <div class="plan-image-window plan-image-window-onsen mx-auto fade-target">
             <img src="/images/plans/plan-onsen.jpg" alt="貸切温泉付きプラン" class="plan-onsen-img" />
           </div>
           <div class="lg:w-[692px] lg:h-[700px] lg:relative">
@@ -82,11 +82,11 @@ import Footer from '../components/Footer.astro';
 
         <!-- Miyazaki Plan -->
         <div class="mx-auto flex flex-col gap-[32px] lg:flex-row-reverse lg:items-center lg:gap-0 max-w-[1440px]">
-          <div class="plan-image-window plan-image-window-miyazaki mx-auto">
+          <div class="plan-image-window plan-image-window-miyazaki mx-auto fade-target">
             <img src="/images/plans/plan-miyazaki.jpg" alt="宮崎堪能プラン" class="plan-miyazaki-img" />
           </div>
           <div class="lg:w-[692px] lg:h-[701px] lg:relative">
-            <div class="lg:absolute lg:left-[96px] lg:top-[135px] lg:w-[500px] space-y-[32px] lg:space-y-[62px] lg:opacity-60">
+            <div class="lg:absolute lg:left-[96px] lg:top-[135px] lg:w-[500px] space-y-[32px] lg:space-y-[62px]">
               <div class="space-y-[16px] lg:space-y-[32px]">
                 <div class="space-y-[16px]">
                   <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">
@@ -181,6 +181,18 @@ import Footer from '../components/Footer.astro';
     background-position: 35% 0%;
   }
 
+  .scroll-fade {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+  }
+
+  .scroll-fade.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .plan-image-window {
     position: relative;
     overflow: hidden;
@@ -254,3 +266,25 @@ import Footer from '../components/Footer.astro';
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const targets = Array.from(document.querySelectorAll('.fade-target'));
+    targets.forEach((el) => el.classList.add('scroll-fade'));
+
+    if (!targets.length) return;
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+  });
+</script>
