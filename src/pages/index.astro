@@ -87,7 +87,7 @@ import '../styles/index.css';
         <div class="hero-text lg:block hidden text-center text-white font-['Shippori_Mincho'] z-10 text-shadow-hero" data-node-id="155:1174">
           <div class="w-[726.34px] h-[88px] flex flex-col gap-4 mx-auto">
             <!-- PC タイトル: 40px -->
-            <h1 class="font-semibold text-[40px] leading-[60px] tracking-[6px] h-[60px] flex items-center justify-center whitespace-pre-wrap">心を満たす、特別な時間</h1>
+            <h1 class="font-semibold text-[32px] leading-[60px] tracking-[6px] h-[60px] flex items-center justify-center whitespace-pre-wrap">心を満たす、特別な時間</h1>
             <!-- PC サブテキスト: 16px -->
             <p class="font-normal text-[16px] leading-[28px] tracking-[1.8px] h-[28px] flex items-center justify-center w-[394.914px] mx-auto whitespace-pre-wrap">静寂と美しさが織りなす、極上のリゾートへ</p>
           </div>
@@ -97,7 +97,7 @@ import '../styles/index.css';
         <div class="hero-text lg:hidden block text-center text-white font-['Shippori_Mincho'] z-10 text-shadow-hero" data-node-id="176:1890">
           <div class="w-[375px] h-[88px] flex flex-col gap-[8px] mx-auto">
             <!-- SP タイトル: 24px -->
-            <h1 class="font-semibold text-[24px] leading-[32px] tracking-[2.4px] h-[32px] flex items-center justify-center whitespace-pre-wrap">心を満たす、特別な時間</h1>
+            <h1 class="font-semibold text-[32px] leading-[32px] tracking-[2.4px] h-[32px] flex items-center justify-center whitespace-pre-wrap">心を満たす、特別な時間</h1>
             <!-- SP サブテキスト: 14px -->
             <div class="font-normal text-[14px] leading-[24px] tracking-[1.8px] h-[48px] w-[394.914px] mx-auto flex flex-col justify-center">
               <p class="mb-0">静寂と美しさが織りなす、</p>
@@ -220,9 +220,25 @@ import '../styles/index.css';
 
       const fixedReservationBtn = document.getElementById('fixed-reservation-btn');
       if (fixedReservationBtn) {
+        let footerInView = false;
         const updateReservationButton = () => {
-          fixedReservationBtn.style.display = window.innerWidth <= 768 ? 'block' : 'none';
+          const shouldShow = window.innerWidth <= 768 && !footerInView;
+          fixedReservationBtn.style.display = shouldShow ? 'block' : 'none';
         };
+
+        const footer = document.querySelector('footer');
+        if (footer) {
+          const footerObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                footerInView = entry.isIntersecting;
+                updateReservationButton();
+              });
+            },
+            { root: null, threshold: 0 }
+          );
+          footerObserver.observe(footer);
+        }
 
         updateReservationButton();
         window.addEventListener('resize', updateReservationButton);
@@ -270,11 +286,11 @@ import '../styles/index.css';
     <!-- SP: section.concept - W:375px H:578px, py:80px px:16px -->
     <section class="bg-[#F5EFEA] lg:py-[150px] lg:px-[256px] py-[80px] px-[16px] text-center" data-name="section.concept" data-node-id="371:2660">
       <!-- PC Layout: Container 928px width centered -->
-      <div class="lg:block hidden lg:space-y-[40px]">
+      <div class="lg:block hidden lg:space-y-[32px]">
         <!-- PC Title block.title - W:928px H:76px -->
-        <div class="w-[928px] mx-auto space-y-[16px]">
-          <h2 class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="371:2662">CONCEPT</h2>
-          <p class="text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="371:2663">私たちの想い</p>
+        <div class="w-[928px] mx-auto space-y-[8px]">
+          <h2 class="text-[32px] leading-[40px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="371:2662">CONCEPT</h2>
+          <p class="text-[14px] leading-[20px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="371:2663">私たちの想い</p>
         </div>
         
         <!-- PC Content Text Block - W:928px H:252px -->
@@ -292,7 +308,7 @@ import '../styles/index.css';
         <!-- SP Title block.title - W:343px H:68px -->
         <div class="w-[343px] mx-auto space-y-[8px]">
           <h2 class="text-[32px] leading-[48px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="371:2700">CONCEPT</h2>
-          <p class="text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="371:2701">私たちの想い</p>
+          <p class="text-[14px] leading-[20px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="371:2701">私たちの想い</p>
         </div>
         
         <!-- SP Content Text - W:343px H:243px, font-size:15px line-height:27px -->
@@ -306,12 +322,7 @@ import '../styles/index.css';
           四季折々の風景を楽しみながら、心と体をリフレッシュしてください。
         </div>
         
-        <!-- SP Secondary Button - W:177px H:43px -->
-        <div class="flex justify-center">
-          <a href="/concept" class="flex items-center justify-center border border-[#436C5E] text-[#436C5E] px-[49px] py-[10px] rounded-full font-['Shippori_Mincho'] font-normal text-[14px] text-center tracking-[2.1px] transition-all duration-300 hover:bg-[#436C5E] hover:text-white min-w-[177px] h-[43px]" data-node-id="371:2703">
-            <span class="whitespace-nowrap">MORE</span>
-          </a>
-        </div>
+        <!-- SP: ボタンなし（Figma修正指示） -->
       </div>
     </section>
 
@@ -344,10 +355,10 @@ import '../styles/index.css';
     <!-- SP: section.service - W:375px H:1332.607px, py:80px px:16px -->
     <section class="bg-[#F5EFEA] lg:py-[150px] lg:px-[80px] py-[80px] px-[16px]" data-name="section.service" data-node-id="95:236">
       <!-- PC Layout -->
-      <div class="lg:block hidden max-w-[1280px] mx-auto space-y-[120px]">
+      <div class="lg:block hidden max-w-[1280px] mx-auto space-y-[80px]">
         <!-- PC Title -->
-        <div class="text-center space-y-[16px]" data-name="block.title" data-node-id="95:238">
-          <h2 class="text-[36px] leading-[40px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:239">SERVICES</h2>
+        <div class="text-center space-y-[8px]" data-name="block.title" data-node-id="95:238">
+          <h2 class="text-[32px] leading-[40px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:239">SERVICES</h2>
           <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:240">施設のご案内</p>
         </div>
 
@@ -419,7 +430,7 @@ import '../styles/index.css';
 
       <!-- SP Layout: Frame 114 - W:343px H:1172.607px at px:16px -->
       <div class="lg:hidden block w-full sp-services">
-        <div class="sp-services-inner flex flex-col gap-[40px]" style="gap: 40px;">
+        <div class="sp-services-inner flex flex-col gap-[32px]" style="gap: 32px;">
           <!-- SP Title: block.title - W:227.967px H:68px, centered -->
           <div class="text-center space-y-[8px]" data-name="block.title" data-node-id="183:2035">
             <h2 class="text-[32px] leading-[48px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho'] w-[227.967px] mx-auto" data-node-id="183:2036">SERVICES</h2>
@@ -517,8 +528,8 @@ import '../styles/index.css';
           <div class="absolute lg:block hidden lg:bottom-0 lg:left-0 lg:w-[625px] lg:h-[156px] bg-[#F5EFEA]" data-node-id="95:266">
             <div class="absolute top-[46px] left-[104px] w-[471px] h-[68px] flex items-end justify-between" data-node-id="171:1196">
               <div class="space-y-[8px]" data-name="block.title" data-node-id="95:268">
-                <h2 class="text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:269">ROOMS</h2>
-                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:270">お部屋</p>
+                <h2 class="text-[36px] leading-[40px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:269">ROOMS</h2>
+                <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="95:270">お部屋</p>
               </div>
               <a href="/rooms" class="border border-[#436C5E] text-[#436C5E] px-[49px] py-[10px] rounded-full text-[14px] tracking-[2.1px] leading-[22.75px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho'] inline-block h-[43px] flex items-center" data-name="secondary" data-node-id="95:271">
                 MORE
@@ -534,8 +545,8 @@ import '../styles/index.css';
           <div class="lg:hidden absolute top-[356.381px] left-0 w-[297px] h-[127px]" data-node-id="183:2143">
             <div class="absolute left-[16px] top-0 w-[265px] h-full flex flex-col justify-start gap-[8px]" data-node-id="183:2144">
               <div class="relative h-[68px]" data-name="block.title" data-node-id="183:2147">
-                <h2 class="absolute left-0 top-0 text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2145">ROOMS</h2>
-                <p class="absolute left-0 top-[48px] text-[14px] leading-[30px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2148">お部屋</p>
+                <h2 class="absolute left-0 top-0 text-[32px] leading-[48px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2145">ROOMS</h2>
+                <p class="absolute left-0 top-[48px] text-[14px] leading-[20px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']" data-node-id="183:2148">お部屋</p>
               </div>
               <a href="/rooms" class="absolute left-[110px] top-[70px] border border-[#436C5E] text-[#436C5E] px-[49px] py-[10px] rounded-full text-[14px] tracking-[2.1px] leading-[22.75px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho']" data-name="secondary" data-node-id="183:2149">
                 MORE
@@ -688,9 +699,9 @@ import '../styles/index.css';
     <section id="access" class="bg-white lg:py-[150px] lg:px-[256px] py-[80px] px-[16px]">
       <div class="lg:gap-[32px] gap-[32px] flex flex-col items-center">
         <!-- Title -->
-        <div class="text-center space-y-[16px] w-full">
-          <h2 class="lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">ACCESS</h2>
-          <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']">アクセス</p>
+        <div class="text-center space-y-[8px] w-full">
+          <h2 class="lg:text-[32px] lg:leading-[40px] lg:tracking-[3.6px] text-[32px] leading-[48px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">ACCESS</h2>
+          <p class="lg:leading-[20px] text-[14px] leading-[20px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']">アクセス</p>
         </div>
 
         <!-- Main Content -->
@@ -753,10 +764,10 @@ import '../styles/index.css';
 
     <!-- FAQ Section - レスポンシブ対応 -->
     <section class="bg-[#F5EFEA] lg:py-[150px] lg:px-[80px] py-[80px] px-[16px]">
-      <div class="lg:max-w-[1280px] max-w-full mx-auto lg:space-y-[80px] space-y-[40px] lg:px-[194px] px-0">
+      <div class="lg:max-w-[1280px] max-w-full mx-auto lg:space-y-[32px] space-y-[32px] lg:px-[194px] px-0">
         <!-- Title -->
-        <div class="text-center space-y-[16px]">
-          <h2 class="lg:text-[36px] lg:leading-[40px] lg:tracking-[3.6px] text-[36px] leading-[40px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">FAQ</h2>
+        <div class="text-center space-y-[8px]">
+          <h2 class="lg:text-[32px] lg:leading-[40px] lg:tracking-[3.6px] text-[32px] leading-[48px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">FAQ</h2>
           <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#436C5E] font-['Shippori_Mincho']">よくあるご質問</p>
         </div>
 
@@ -831,10 +842,10 @@ import '../styles/index.css';
       <div class="absolute inset-0 bg-black/16 mix-blend-multiply"></div>
       
       <div class="relative z-10 w-full">
-        <div class="flex flex-col lg:gap-[40px] gap-[48px] items-center">
+        <div class="flex flex-col lg:gap-[32px] gap-[32px] items-center">
           <!-- Title -->
-          <div class="text-center space-y-[16px]">
-            <h2 class="lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[36px] leading-[54px] tracking-[3.6px] font-semibold text-white font-['Shippori_Mincho']">RESERVATION</h2>
+          <div class="text-center space-y-[8px]">
+            <h2 class="lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[32px] leading-[54px] tracking-[3.6px] font-semibold text-white font-['Shippori_Mincho']">RESERVATION</h2>
             <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#CBD5E1] font-['Shippori_Mincho']">ご予約</p>
           </div>
           
@@ -857,13 +868,13 @@ import '../styles/index.css';
     <section id="contact" class="bg-[#FAFAFA] lg:py-[150px] py-[80px]">
       <div class="lg:px-[256px] px-[20px] w-full">
         <!-- Title & Description -->
-        <div class="text-center lg:space-y-[40px] space-y-[30px] lg:mb-[80px] mb-20">
-          <div class="space-y-4">
-            <h2 class="lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[28px] leading-[42px] tracking-[2.8px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">CONTACT</h2>
-            <p class="lg:text-[14px] lg:leading-[22.75px] lg:tracking-[2.1px] text-[13px] leading-[20px] tracking-[1.8px] text-[#436C5E] font-['Shippori_Mincho']">お問い合わせ</p>
+        <div class="text-center lg:space-y-[32px] space-y-[32px] lg:mb-[80px] mb-20">
+          <div class="space-y-2">
+            <h2 class="lg:text-[32px] lg:leading-[40px] lg:tracking-[3.6px] text-[32px] leading-[48px] tracking-[3.6px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">CONTACT</h2>
+            <p class="lg:text-[14px] lg:leading-[20px] lg:tracking-[2.1px] text-[13px] leading-[20px] tracking-[1.8px] text-[#436C5E] font-['Shippori_Mincho']">お問い合わせ</p>
           </div>
           
-          <div class="lg:space-y-10 space-y-8">
+          <div class="lg:space-y-8 space-y-8">
             <p class="lg:text-[16px] lg:leading-[32px] lg:tracking-[1px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#483F38] font-['Shippori_Mincho'] text-center whitespace-pre-line">
               ご不明な点がございましたら、
               お気軽にお問い合わせください。
@@ -936,7 +947,7 @@ import '../styles/index.css';
                 <label class="flex items-start lg:items-center gap-2 cursor-pointer">
                   <input type="checkbox" class="w-4 h-4 mt-1 lg:mt-0 accent-[#436C5E]">
                   <span class="leading-[32px] tracking-[1.6px]">
-                    <a href="/privacy-policy" class="inline-flex items-center gap-1 text-[#436C5E] hover:opacity-60 transition-opacity">
+                    <a href="/privacy-policy" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-[#436C5E] hover:opacity-60 transition-opacity">
                       プライバシーポリシー
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M7 1H11V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>

@@ -11,10 +11,10 @@ import Footer from '../components/Footer.astro';
     <main>
       <!-- KV -->
       <section class="relative h-[339px] lg:h-[546px] overflow-hidden">
-        <img src="/images/services/service-kv.jpg" alt="" class="absolute service-kv-img max-w-none object-cover" />
-        <div class="absolute inset-0 bg-[#483F38]/39"></div>
+        <img src="/images/services/service-kv.jpg" alt="" class="absolute service-kv-img kv-fade-bg max-w-none object-cover" />
+        <div class="absolute inset-0 bg-[#483F38] kv-fade-overlay"></div>
         <div class="absolute inset-0 flex items-center justify-center">
-          <h1 class="text-[32px] lg:text-[48px] leading-[48px] tracking-[4.8px] text-white/85 font-['Shippori_Mincho']">
+          <h1 class="text-[32px] lg:text-[32px] leading-[48px] tracking-[4.8px] text-white/85 font-['Shippori_Mincho']">
             SERVICE
           </h1>
         </div>
@@ -22,7 +22,7 @@ import Footer from '../components/Footer.astro';
 
       <!-- Service Text -->
       <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:px-[256px] lg:py-[150px]">
-        <div class="mx-auto w-full lg:max-w-[928px] text-center text-[15px] leading-[33px] tracking-[1.6px] text-[#483F38] font-['Shippori_Mincho'] lg:text-[16px] lg:leading-[48px]">
+        <div class="mx-auto w-[343px] lg:w-full lg:max-w-[928px] text-center text-[15px] leading-[33px] tracking-[1.6px] text-[#483F38] font-['Shippori_Mincho'] lg:text-[16px] lg:leading-[48px]">
           <span class="block">大きな窓から差し込む柔らかな光と、</span>
           <span class="block">高く広がる空。</span>
           <span class="block">刻一刻と表情を変える</span>
@@ -204,7 +204,7 @@ import Footer from '../components/Footer.astro';
       <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:px-[232px] lg:pt-[70px] lg:pb-[150px]">
         <div class="mx-0 w-full max-w-none lg:mx-auto lg:w-full lg:max-w-[976px] space-y-[40px] lg:space-y-[40px]">
           <div class="text-center space-y-[16px] text-[#436C5E] font-['Shippori_Mincho'] lg:-mt-[10px]">
-            <p class="text-[36px] leading-[40px] tracking-[3.6px] font-semibold">OPTION</p>
+            <p class="text-[32px] leading-[40px] tracking-[3.6px] font-semibold">OPTION</p>
             <p class="text-[14px] leading-[20px] tracking-[1.4px]">特別な体験をプラスする</p>
           </div>
 
@@ -258,8 +258,8 @@ import Footer from '../components/Footer.astro';
         <div class="absolute inset-0 bg-black/[0.16] mix-blend-multiply"></div>
         <div class="relative mx-auto w-full text-center lg:mx-auto lg:w-[1440px] lg:max-w-none lg:text-left">
           <div class="flex w-full flex-col items-center gap-[48px] lg:block lg:h-[578px] lg:gap-0">
-            <div class="flex w-full flex-col items-center gap-[16px] lg:absolute lg:left-[364px] lg:top-[150px] lg:h-[76px] lg:w-[712px]">
-              <p class="text-[36px] leading-[54px] tracking-[3.6px] text-white font-semibold font-['Shippori_Mincho'] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px]">
+            <div class="flex w-full flex-col items-center gap-[8px] lg:absolute lg:left-[364px] lg:top-[150px] lg:h-[76px] lg:w-[712px]">
+              <p class="text-[32px] leading-[54px] tracking-[3.6px] text-white font-semibold font-['Shippori_Mincho'] lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px]">
                 RESERVATION
               </p>
               <p class="text-center text-[14px] leading-[22.75px] tracking-[2.1px] text-[#CBD5E1] font-['Shippori_Mincho']">
@@ -300,6 +300,26 @@ import Footer from '../components/Footer.astro';
   .scroll-fade.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .kv-fade-bg {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    will-change: opacity;
+  }
+
+  .kv-fade-bg.is-visible {
+    opacity: 1;
+  }
+
+  .kv-fade-overlay {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    will-change: opacity;
+  }
+
+  .kv-fade-overlay.is-visible {
+    opacity: 0.39;
   }
 
   .service-cover-img {
@@ -590,6 +610,8 @@ import Footer from '../components/Footer.astro';
     targets.forEach((el) => el.classList.add('scroll-fade'));
 
     if (!targets.length) return;
+    const kvBg = document.querySelector('.kv-fade-bg');
+    const kvOverlay = document.querySelector('.kv-fade-overlay');
     const observer = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach((entry) => {
@@ -603,5 +625,11 @@ import Footer from '../components/Footer.astro';
     );
 
     targets.forEach((el) => observer.observe(el));
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (kvBg) kvBg.classList.add('is-visible');
+        if (kvOverlay) kvOverlay.classList.add('is-visible');
+      });
+    });
   });
 </script>
