@@ -29,7 +29,11 @@ import '../styles/index.css';
   </script>
   
   <div class="bg-white min-h-screen">
-    
+    <!-- Initial Access Overlay -->
+    <div id="intro-overlay" class="intro-overlay">
+      <img src="/images/logo.png" alt="LOGO" class="intro-logo" />
+    </div>
+
     <!-- Header -->
     <Header />
     
@@ -60,17 +64,16 @@ import '../styles/index.css';
 
       <!-- Rectangle43 - 動画コンテナ（黒い背景、将来動画差し替え用） -->
       <div class="absolute inset-0 bg-black w-full h-full" data-node-id="228:1588">
-        <!-- 動画要素（将来的に動画ファイルに差し替え可能） -->
+        <!-- 動画要素（Rectangle43 差し替え） -->
         <video 
           id="hero-video" 
-          class="absolute inset-0 w-full h-full min-w-full min-h-full object-cover hidden"
+          class="absolute inset-0 w-full h-full min-w-full min-h-full object-cover"
           autoplay 
           muted 
           loop 
           playsinline
         >
-          <source src="/videos/hero-video.mp4" type="video/mp4">
-          <source src="/videos/hero-video.webm" type="video/webm">
+          <source src="/videos/4441009-hd_1920_1080_25fps.mp4" type="video/mp4">
         </video>
         
         <!-- 動画がない場合のフォールバック（現在の表示：黒背景） -->
@@ -81,7 +84,7 @@ import '../styles/index.css';
       <!-- PC Layout: Group 14 - W:726.34px H:88px centered -->
       <div class="lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center absolute top-[287.99px] left-0 w-full">
         <!-- PC Layout: Group 14 - W:726.34px H:88px centered -->
-        <div class="lg:block hidden text-center text-white font-['Shippori_Mincho'] z-10 text-shadow-hero" data-node-id="155:1174">
+        <div class="hero-text lg:block hidden text-center text-white font-['Shippori_Mincho'] z-10 text-shadow-hero" data-node-id="155:1174">
           <div class="w-[726.34px] h-[88px] flex flex-col gap-4 mx-auto">
             <!-- PC タイトル: 40px -->
             <h1 class="font-semibold text-[40px] leading-[60px] tracking-[6px] h-[60px] flex items-center justify-center whitespace-pre-wrap">心を満たす、特別な時間</h1>
@@ -91,7 +94,7 @@ import '../styles/index.css';
         </div>
         
         <!-- SP Layout: Frame 111 - W:375px H:88px at top:287.99px -->
-        <div class="lg:hidden block text-center text-white font-['Shippori_Mincho'] z-10 text-shadow-hero" data-node-id="176:1890">
+        <div class="hero-text lg:hidden block text-center text-white font-['Shippori_Mincho'] z-10 text-shadow-hero" data-node-id="176:1890">
           <div class="w-[375px] h-[88px] flex flex-col gap-[8px] mx-auto">
             <!-- SP タイトル: 24px -->
             <h1 class="font-semibold text-[24px] leading-[32px] tracking-[2.4px] h-[32px] flex items-center justify-center whitespace-pre-wrap">心を満たす、特別な時間</h1>
@@ -104,73 +107,78 @@ import '../styles/index.css';
         </div>
       </div>
 
-      <!-- Video Toggle Button (Optional) -->
-      <div class="absolute bottom-4 right-4 z-20 hidden" id="video-controls">
-        <button 
-          id="video-toggle" 
-          class="bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all"
-          onclick="toggleHeroVideo()"
-          title="動画を再生/一時停止"
-        >
-          <svg id="play-icon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-          <svg id="pause-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-          </svg>
-        </button>
-      </div>
     </section>
     
     <!-- Video Control & Management Script -->
-    <script>
-      // 動画管理用の関数
-      function toggleHeroVideo() {
-        const video = document.getElementById('hero-video');
-        const playIcon = document.getElementById('play-icon');
-        const pauseIcon = document.getElementById('pause-icon');
-        
-        if (video.paused) {
-          video.play();
-          playIcon.style.display = 'none';
-          pauseIcon.style.display = 'block';
-        } else {
-          video.pause();
-          playIcon.style.display = 'block';
-          pauseIcon.style.display = 'none';
+  <script>
+    let videoReady = false;
+
+    const getHeroTexts = () => Array.from(document.querySelectorAll('.hero-text'));
+
+    const showHeroTexts = () => {
+      getHeroTexts().forEach((el) => {
+        el.classList.add('is-visible');
+        el.classList.remove('is-fading');
+      });
+    };
+
+    const fadeOutHeroTexts = () => {
+      getHeroTexts().forEach((el) => el.classList.add('is-fading'));
+    };
+
+    const hideIntroOverlay = () => {
+      const introOverlay = document.getElementById('intro-overlay');
+      if (!introOverlay) return;
+      introOverlay.classList.add('is-hidden');
+      setTimeout(() => {
+        introOverlay.style.display = 'none';
+        showHeroTexts();
+        if (videoReady) {
+          setTimeout(() => {
+            fadeOutHeroTexts();
+          }, 5000);
+        }
+      }, 3000);
+    };
+
+    // Rectangle43動画切り替え用の関数
+    function switchToVideo() {
+      const video = document.getElementById('hero-video');
+      const fallback = document.getElementById('hero-fallback');
+
+      if (video && fallback) {
+        fallback.style.display = 'none';
+        video.style.display = 'block';
+        videoReady = true;
+
+        const introOverlay = document.getElementById('intro-overlay');
+        const overlayHidden = introOverlay && introOverlay.style.display === 'none';
+        if (overlayHidden) {
+          setTimeout(() => {
+            fadeOutHeroTexts();
+          }, 5000);
         }
       }
+    }
       
-      // Rectangle43動画切り替え用の関数
-      function switchToVideo() {
-        const video = document.getElementById('hero-video');
-        const fallback = document.getElementById('hero-fallback');
-        const controls = document.getElementById('video-controls');
-        
-        if (video && fallback) {
-          fallback.style.display = 'none';
-          video.style.display = 'block';
-          if (controls) controls.style.display = 'block';
-        }
+    // Rectangle43を黒背景表示に戻す
+    function switchToBlackBackground() {
+      const video = document.getElementById('hero-video');
+      const fallback = document.getElementById('hero-fallback');
+
+      if (video && fallback) {
+        video.style.display = 'none';
+        fallback.style.display = 'block';
+        videoReady = false;
+        showHeroTexts();
       }
-      
-      // Rectangle43を黒背景表示に戻す
-      function switchToBlackBackground() {
-        const video = document.getElementById('hero-video');
-        const fallback = document.getElementById('hero-fallback');
-        const controls = document.getElementById('video-controls');
-        
-        if (video && fallback) {
-          video.style.display = 'none';
-          fallback.style.display = 'block';
-          if (controls) controls.style.display = 'none';
-        }
-      }
+    }
       
       // ページ読み込み時に動画ファイルの存在をチェック
       document.addEventListener('DOMContentLoaded', function() {
+        hideIntroOverlay();
         // 動画ファイルが存在する場合は自動的に切り替え
-        fetch('/videos/hero-video.mp4', { method: 'HEAD' })
+        fetch('/videos/4441009-hd_1920_1080_25fps.mp4', { method: 'HEAD' })
           .then(response => {
             if (response.ok) {
               switchToVideo();

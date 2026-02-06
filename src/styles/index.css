@@ -22,6 +22,51 @@
   transform: translateY(0);
 }
 
+/* Initial access overlay */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5efea;
+  opacity: 1;
+  transition: opacity 6s ease;
+  will-change: opacity;
+  pointer-events: none;
+}
+
+.intro-overlay.is-hidden {
+  opacity: 0;
+}
+
+.intro-logo {
+  width: 140px;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .intro-logo {
+    width: 200px;
+  }
+}
+
+/* Hero text fade-out when video appears */
+.hero-text {
+  opacity: 0;
+  transition: opacity 2.4s ease;
+  will-change: opacity;
+}
+
+.hero-text.is-visible {
+  opacity: 1;
+}
+
+.hero-text.is-fading {
+  opacity: 0;
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
 
