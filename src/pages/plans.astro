@@ -13,20 +13,20 @@ import Footer from '../components/Footer.astro';
       <section class="relative h-[339px] lg:h-[540px] overflow-hidden">
         <img src="/images/plans/plan-kv.jpg" alt="宿泊プラン" class="plans-kv-img absolute max-w-none object-cover" />
         <div class="absolute inset-0 bg-[#483F38]/39"></div>
-        <div class="absolute inset-0 flex items-center justify-center">
-          <h1 class="text-[28px] lg:text-[36px] leading-[54px] tracking-[2.8px] lg:tracking-[3.6px] text-white/85 font-semibold font-['Shippori_Mincho']">
+        <div class="absolute inset-0 flex items-center justify-center translate-y-[1px]">
+          <h1 class="text-[36px] lg:text-[36px] leading-[54px] tracking-[3.6px] text-white/85 font-semibold font-['Shippori_Mincho']">
             PLAN
           </h1>
         </div>
       </section>
 
       <!-- Plan Text -->
-      <section class="bg-white px-[16px] py-[80px] lg:px-[256px] lg:py-[150px]">
-        <div class="mx-auto w-full max-w-[343px] lg:max-w-[540px] text-center text-[#436C5E] font-['Shippori_Mincho']">
+      <section class="bg-[#FAFAFA] px-[16px] py-[80px] lg:px-[256px] lg:py-[150px]">
+        <div class="mx-auto flex w-full max-w-[343px] flex-col items-center gap-[24px] text-center text-[#436C5E] font-['Shippori_Mincho'] lg:max-w-[540px] lg:gap-[40px]">
           <h2 class="text-[32px] lg:text-[36px] leading-[48px] lg:leading-[40px] tracking-[3.6px] font-semibold">
             宿泊プランのご案内
           </h2>
-          <p class="mt-[24px] lg:mt-[40px] text-[15px] lg:text-[16px] leading-[27px] lg:leading-[32px] tracking-[1.6px] lg:tracking-[1px] text-[#483F38]">
+          <p class="text-[15px] lg:text-[16px] leading-[27px] lg:leading-[32px] tracking-[1.6px] lg:tracking-[1px] text-[#483F38]">
             <span class="block">宮崎の豊かな自然と、</span>
             <span class="block">極上のプライベート空間を享受する。</span>
             <span class="block">特別な体験を約束する</span>
@@ -39,7 +39,7 @@ import Footer from '../components/Footer.astro';
       <section class="bg-white px-[16px] pb-[80px] lg:px-0 lg:py-[150px] space-y-[40px] lg:space-y-[120px]">
         <!-- Onsen Plan -->
         <div class="mx-auto flex flex-col gap-[32px] lg:flex-row lg:items-center lg:gap-0 max-w-[1440px]">
-          <div class="plan-image-window plan-image-window-onsen">
+          <div class="plan-image-window plan-image-window-onsen mx-auto">
             <img src="/images/plans/plan-onsen.jpg" alt="貸切温泉付きプラン" class="plan-onsen-img" />
           </div>
           <div class="lg:w-[692px] lg:h-[700px] lg:relative">
@@ -51,10 +51,20 @@ import Footer from '../components/Footer.astro';
                   </h3>
                   <div class="h-px w-[48px] bg-[#B99563]"></div>
                 </div>
-                <p class="text-[14px] leading-[22.75px] lg:leading-[30px] tracking-[2.1px] lg:tracking-[1.4px] text-[#475569] font-['Shippori_Mincho']">
-                  「何もしない」という贅沢。専用のプライベート温泉で、宮崎の風を感じながら心ゆくまで癒やしのひとときを。<br /><br />
-                  静寂に包まれた空間で、刻一刻と移ろう景色を眺める。誰にも邪魔されない、あなただけの極上な休日をお約束します。<br />
-                  夜は星空を眺めながらの入浴、朝は小鳥のさえずりと共に。
+                <p class="text-[14px] leading-[22.75px] lg:leading-[30px] tracking-[2.1px] lg:tracking-[1.4px] text-[#483F38] lg:text-[#475569] font-['Shippori_Mincho'] lg:w-[445px]">
+                  <span class="lg:hidden">
+                    「何もしない」という贅沢。専用のプライベート温泉で、宮崎の風を感じながら心ゆくまで癒やしのひとときを。<br /><br />
+                    静寂に包まれた空間で、刻一刻と移ろう景色を眺める。誰にも邪魔されない、あなただけの極上な休日をお約束します。<br />
+                    夜は星空を眺めながらの入浴、朝は小鳥のさえずりと共に。
+                  </span>
+                  <span class="hidden lg:block">
+                    <span class="block">「何もしない」という贅沢。専用のプライベート温泉で、宮</span>
+                    <span class="block">崎の風を感じながら心ゆくまで癒やしのひとときを。</span>
+                    <span class="block h-[30px]" aria-hidden="true"></span>
+                    <span class="block">静寂に包まれた空間で、刻一刻と移ろう景色を眺める。誰に</span>
+                    <span class="block">も邪魔されない、あなただけの極上な休日をお約束します。</span>
+                    <span class="block">夜は星空を眺めながらの入浴、朝は小鳥のさえずりと共に。</span>
+                  </span>
                 </p>
                 <div class="border-t border-[#B99563] pt-[18px]">
                   <div class="flex items-center gap-[8px]">
@@ -64,7 +74,7 @@ import Footer from '../components/Footer.astro';
                 </div>
               </div>
               <a href="/contact-confirm" class="inline-flex items-center justify-center rounded-full border border-[#436C5E] px-[49px] py-[10px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors">
-                MORE
+                詳細はこちら
               </a>
             </div>
           </div>
@@ -72,7 +82,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Miyazaki Plan -->
         <div class="mx-auto flex flex-col gap-[32px] lg:flex-row-reverse lg:items-center lg:gap-0 max-w-[1440px]">
-          <div class="plan-image-window plan-image-window-miyazaki">
+          <div class="plan-image-window plan-image-window-miyazaki mx-auto">
             <img src="/images/plans/plan-miyazaki.jpg" alt="宮崎堪能プラン" class="plan-miyazaki-img" />
           </div>
           <div class="lg:w-[692px] lg:h-[701px] lg:relative">
@@ -84,9 +94,20 @@ import Footer from '../components/Footer.astro';
                   </h3>
                   <div class="h-px w-[48px] bg-[#B99563]"></div>
                 </div>
-                <p class="text-[14px] leading-[22.75px] lg:leading-[30px] tracking-[2.1px] lg:tracking-[1.4px] text-[#475569] font-['Shippori_Mincho']">
-                  宮崎の太陽が育んだ至極の食材を、プライベートなテラスで。最高級の宮崎牛と地元産の新鮮な野菜をBBQスタイルでお愉しみください。<br /><br />
-                  専属のシェフが厳選した旬の味覚を、大切な方と囲む。心地よい夜風を感じながら、宮崎の「美味しい」を五感で味わう。食の感動が、旅の思い出をより一層深めます。
+                <p class="text-[14px] leading-[22.75px] lg:leading-[30px] tracking-[2.1px] lg:tracking-[1.4px] text-[#483F38] lg:text-[#475569] font-['Shippori_Mincho'] lg:w-[451px]">
+                  <span class="lg:hidden">
+                    宮崎の太陽が育んだ至極の食材を、プライベートなテラスで。最高級の宮崎牛と地元産の新鮮な野菜をBBQスタイルでお愉しみください。<br /><br />
+                    専属のシェフが厳選した旬の味覚を、大切な方と囲む。心地よい夜風を感じながら、宮崎の「美味しい」を五感で味わう。食の感動が、旅の思い出をより一層深めます。
+                  </span>
+                  <span class="hidden lg:block">
+                    <span class="block">宮崎の太陽が育んだ至極の食材を、プライベートなテラス</span>
+                    <span class="block">で。最高級の宮崎牛と地元産の新鮮な野菜をBBQスタイルで</span>
+                    <span class="block">お愉しみください。</span>
+                    <span class="block h-[30px]" aria-hidden="true"></span>
+                    <span class="block">専属のシェフが厳選した旬の味覚を、大切な方と囲む。心地</span>
+                    <span class="block">よい夜風を感じながら、宮崎の「美味しい」を五感で味わ</span>
+                    <span class="block">う。食の感動が、旅の思い出をより一層深めます。</span>
+                  </span>
                 </p>
                 <div class="border-t border-[#B99563] pt-[18px]">
                   <div class="flex items-center gap-[32px]">
@@ -102,7 +123,7 @@ import Footer from '../components/Footer.astro';
                 </div>
               </div>
               <a href="/contact-confirm" class="inline-flex items-center justify-center rounded-full border border-[#436C5E] px-[49px] py-[10px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors">
-                MORE
+                詳細はこちら
               </a>
             </div>
           </div>
@@ -147,10 +168,10 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .plans-kv-img {
-    width: 438px;
-    height: 292px;
-    left: -20px;
-    top: -35px;
+    width: 841px;
+    height: 561px;
+    left: -178px;
+    top: -96px;
   }
 
   .reservation-bg {
@@ -175,10 +196,12 @@ import Footer from '../components/Footer.astro';
   }
 
   .plan-onsen-img {
-    width: 772.59px;
-    height: 515.12px;
+    width: 772.586px;
+    height: 515.121px;
     left: -172.26px;
-    top: -96.45px;
+    top: -96.449px;
+    right: auto;
+    bottom: auto;
   }
 
   .plan-miyazaki-img {
@@ -186,6 +209,8 @@ import Footer from '../components/Footer.astro';
     height: 510px;
     left: -172.26px;
     top: -96.45px;
+    right: auto;
+    bottom: auto;
   }
 
   @media (min-width: 1024px) {
@@ -199,6 +224,14 @@ import Footer from '../components/Footer.astro';
     .plan-image-window {
       width: 607.5px;
       height: 700px;
+    }
+
+    .plan-image-window-onsen {
+      margin-left: 80px;
+    }
+
+    .plan-image-window-miyazaki {
+      margin-right: 80px;
     }
 
     .plan-onsen-img {
