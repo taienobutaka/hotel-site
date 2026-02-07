@@ -10,13 +10,16 @@ import Footer from '../components/Footer.astro';
 
     <main>
       <!-- Privacy Policy Main (SP 기준) -->
-      <section class="bg-[#FAFAFA] py-[80px] lg:py-[150px] lg:px-[256px]">
-        <div class="mx-auto flex w-full max-w-[343px] flex-col items-center gap-[32px] font-['Shippori_Mincho'] lg:max-w-none lg:gap-[32px]">
-          <h1 class="text-center text-[32px] leading-[48px] tracking-[3.6px] text-[#436C5E] font-semibold lg:w-[480px] lg:text-[32px] lg:leading-[54px]">
-            プライバシーポリシー
-          </h1>
-          <div class="text-[14px] leading-[22.75px] tracking-[2.1px] text-[#483F38] whitespace-pre-wrap lg:text-[16px] lg:leading-[32px] lg:tracking-[1.6px] lg:text-[#475569]">
+      <section class="privacy-policy-section bg-[#FAFAFA] pb-[80px] lg:pt-[150px] lg:pb-[150px]">
+        <div class="mx-auto flex w-full px-[16px] flex-col items-center gap-[40px] font-['Shippori_Mincho'] lg:w-[953px] lg:gap-[80px]">
+          <div class="text-center text-[#436C5E] font-['Shippori_Mincho']">
+            <h1 class="m-0 text-[32px] leading-[48px] tracking-[3.6px] font-semibold lg:mx-auto lg:w-[616px] lg:text-[36px] lg:leading-[54px]">
+              <span class="lg:hidden">プライバシーポリ<br />シー</span>
+              <span class="hidden lg:inline">プライバシーポリシー</span>
+            </h1>
+            <p class="mt-[40px] lg:mt-[80px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#483F38] whitespace-pre-wrap lg:text-[16px] lg:leading-[32px] lg:tracking-[1px]">
             内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります内容が入ります
+            </p>
           </div>
           <a href="/" class="inline-flex items-center justify-center rounded-full border border-[#B99563] bg-[#B99563] px-[49px] py-[10px] text-[14px] leading-[22.75px] tracking-[2.1px] text-white hover:bg-white hover:text-[#B99563] hover:border-[#B99563] transition-all duration-300">
             <span class="lg:hidden">TOP</span>
@@ -28,4 +31,11 @@ import Footer from '../components/Footer.astro';
 
     <Footer />
   </div>
+  <style>
+    @media (max-width: 1023px) {
+      .privacy-policy-section {
+        padding-top: calc(var(--header-height, 72px) + 80px);
+      }
+    }
+  </style>
 </Layout>
