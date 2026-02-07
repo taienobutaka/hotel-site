@@ -147,6 +147,16 @@
 <!-- Mobile Menu JavaScript -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header');
+    const setHeaderHeight = () => {
+      if (header) {
+        document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+      }
+    };
+
+    setHeaderHeight();
+    window.addEventListener('resize', setHeaderHeight);
+
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
