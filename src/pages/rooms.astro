@@ -10,10 +10,10 @@ import Footer from '../components/Footer.astro';
 
     <!-- KV -->
     <section class="relative h-[380px] lg:h-[640px] overflow-hidden">
-      <div class="rooms-kv-bg kv-fade-bg absolute inset-0"></div>
+      <div class="rooms-kv-bg kv-fade-bg absolute inset-0" style="background-position: center; background-size: cover;"></div>
       <div class="kv-fade-overlay absolute inset-0 bg-[#483F38]"></div>
       <div class="absolute inset-0 flex items-center justify-center">
-        <h1 class="text-center text-white/85 text-[32px] lg:text-[32px] leading-none tracking-[2.8px] lg:tracking-[4.8px] font-['Shippori_Mincho'] translate-y-[6px] lg:translate-y-[8px]">
+        <h1 class="text-center text-white/85 text-[32px] lg:text-[32px] leading-[32px] tracking-[2.8px] lg:tracking-[4.8px] font-['Shippori_Mincho'] translate-y-[20.5px] lg:translate-y-0">
           ROOM
         </h1>
       </div>
@@ -280,8 +280,8 @@ import Footer from '../components/Footer.astro';
   .rooms-kv-bg {
     background-image: url('/images/rooms/rooms-kv.jpg');
     background-repeat: no-repeat;
-    background-size: 179.54% 132.48%;
-    background-position: 55% 58%;
+    background-size: cover;
+    background-position: center;
   }
 
   .rooms-cover-bg {
