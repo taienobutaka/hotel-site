@@ -10,11 +10,11 @@ import Footer from '../components/Footer.astro';
 
     <main>
       <!-- KV -->
-      <section class="relative h-[339px] lg:h-[546px] overflow-hidden">
+      <section class="relative h-[380px] lg:h-[640px] overflow-hidden">
         <img src="/images/services/service-kv.jpg" alt="" class="absolute service-kv-img kv-fade-bg max-w-none object-cover" />
         <div class="absolute inset-0 bg-[#483F38] kv-fade-overlay"></div>
         <div class="absolute inset-0 flex items-center justify-center">
-          <h1 class="text-[32px] lg:text-[32px] leading-[48px] tracking-[4.8px] text-white/85 font-['Shippori_Mincho'] translate-y-[30.5px] lg:translate-y-0">
+          <h1 class="text-[32px] lg:text-[32px] leading-[48px] tracking-[4.8px] text-white/85 font-['Shippori_Mincho'] translate-y-[20.5px] lg:translate-y-0">
             SERVICE
           </h1>
         </div>
@@ -58,14 +58,14 @@ import Footer from '../components/Footer.astro';
 
       <!-- Service Main -->
       <section class="bg-white px-[16px] pt-[80px] pb-[40px] lg:px-0 lg:py-[150px]">
-        <div class="mx-auto w-full lg:max-w-[1232px] space-y-[80px] lg:space-y-[120px]">
+        <div class="mx-auto w-full lg:max-w-[960px] xl:max-w-[1232px] space-y-[80px] lg:space-y-[120px]">
           <!-- Sauna -->
           <div>
             <div class="lg:hidden w-[343px] mx-auto">
-              <div class="space-y-[16px] text-left">
+              <div class="flex flex-col gap-[24px] text-left">
                 <div class="space-y-[8px]">
                   <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">PRIVATE SAUNA</p>
-                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">プライベートサウナ</h3>
+                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">プライベートサウナ</h3>
                 </div>
                 <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
                   <span class="block">パチパチと薪が爆ぜる音だけが響く空間で、五感を研ぎ澄ますひととき。</span>
@@ -83,16 +83,16 @@ import Footer from '../components/Footer.astro';
               </div>
             </div>
 
-            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[100px]">
-              <div class="fade-target sauna-main h-[292px] w-full lg:h-[813px] lg:w-[563px] lg:flex-shrink-0">
+            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[40px] xl:gap-[100px] service-pc-row">
+              <div class="fade-target sauna-main h-[292px] w-full lg:h-[813px] lg:w-[480px] xl:w-[563px] lg:flex-shrink-0 service-pc-media">
                 <img src="/images/services/sauna-main.jpg" alt="プライベートサウナ" class="sauna-main-img" />
               </div>
-              <div class="lg:w-[569px] space-y-[24px]">
+              <div class="lg:w-[420px] xl:w-[569px] flex flex-col gap-[24px] service-pc-text">
                 <div class="space-y-[8px]">
                   <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">PRIVATE SAUNA</p>
-                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">プライベートサウナ</h3>
+                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">プライベートサウナ</h3>
                 </div>
-                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:w-[580px] whitespace-pre-line">
+                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:w-full xl:w-[580px] whitespace-pre-line">
                   パチパチと薪が爆ぜる音だけが響く空間で、五感を研ぎ澄ますひととき。
                   水風呂から外気浴まで、計算し尽くされた導線があなたを深い休息へと誘います。
                   綺麗に整えられたプライベートエリアで、誰にも邪魔されない至高の贅沢を。
@@ -113,42 +113,40 @@ import Footer from '../components/Footer.astro';
           <!-- Onsen -->
           <div>
             <div class="lg:hidden pt-[40px] pb-0">
-              <div class="relative h-[646px] w-[343px]">
-                <div class="absolute left-0 top-0 w-[343px] space-y-[16px] text-left">
-                  <div class="space-y-[8px]">
-                    <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">ONSEN</p>
-                    <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">温泉</h3>
-                  </div>
-                  <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
-                    青島の地から汲み上げた、<br />
-                    自然由来の成分を含む湧き水を使用した露天風呂。<br />
-                    開放的な空間で、心身ともに癒しのひとときをお楽しみいただけます。
-                  </p>
+              <div class="w-[343px] mx-auto flex flex-col gap-[24px] text-left">
+                <div class="space-y-[8px]">
+                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">ONSEN</p>
+                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">温泉</h3>
                 </div>
-                <div class="fade-target absolute left-0 top-[312px] onsen-images-sp">
-                  <div class="onsen-main-window">
-                    <img src="/images/services/onsen-main.jpg" alt="温泉" class="onsen-main-sp-img" />
-                  </div>
-                  <div class="onsen-sub-window">
-                    <img src="/images/services/onsen-sub.jpg" alt="" class="onsen-sub-sp-img" />
-                  </div>
+                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho'] whitespace-pre-line">
+                  青島の地から汲み上げた、
+                  自然由来の成分を含む湧き水を使用した露天風呂。
+                  開放的な空間で、心身ともに癒しのひとときをお楽しみいただけます。
+                </p>
+              </div>
+              <div class="fade-target mt-[87px] onsen-images-sp mx-auto">
+                <div class="onsen-main-window">
+                  <img src="/images/services/onsen-main.jpg" alt="温泉" class="onsen-main-sp-img" />
+                </div>
+                <div class="onsen-sub-window">
+                  <img src="/images/services/onsen-sub.jpg" alt="" class="onsen-sub-sp-img" />
                 </div>
               </div>
             </div>
 
-            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[100px]">
-              <div class="lg:w-[435px] space-y-[24px]">
+            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[40px] xl:gap-[100px] service-pc-row">
+              <div class="lg:w-[360px] xl:w-[435px] flex flex-col gap-[24px] service-pc-text">
                 <div class="space-y-[8px]">
                   <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">ONSEN</p>
-                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">温泉</h3>
+                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">温泉</h3>
                 </div>
-                <p class="text-[14px] leading-[28px] tracking-[1.6px] text-[#475569] font-['Shippori_Mincho'] lg:w-[398px]">
-                  青島の地から汲み上げた、<br />
-                  自然由来の成分を含む湧き水を使用した露天風呂。<br />
+                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:w-full xl:w-[398px] whitespace-pre-line">
+                  青島の地から汲み上げた、
+                  自然由来の成分を含む湧き水を使用した露天風呂。
                   開放的な空間で、心身ともに癒しのひとときをお楽しみいただけます。
                 </p>
               </div>
-              <div class="fade-target onsen-main h-[292px] w-full lg:h-[773px] lg:w-[768px] lg:flex-shrink-0">
+              <div class="fade-target onsen-main h-[292px] w-full lg:h-[773px] lg:w-[520px] xl:w-[768px] lg:flex-shrink-0 service-pc-media">
                 <img src="/images/services/onsen-main.jpg" alt="温泉" class="onsen-main-img" />
               </div>
             </div>
@@ -160,43 +158,41 @@ import Footer from '../components/Footer.astro';
           </div>
 
           <!-- Food -->
-          <div>
+          <div class="lg:pt-[164px]">
             <div class="lg:hidden pt-[40px] pb-[80px] -mt-[40px]">
-              <div class="relative h-[815px] w-[343px]">
-                <div class="absolute left-0 top-0 w-[343px] space-y-[16px] text-left">
-                  <div class="space-y-[8px]">
-                    <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">FOOD</p>
-                    <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">お食事</h3>
-                  </div>
-                  <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
-                    県内より厳選した特産品を、オールインクルーシブの形でご提供。<br />
-                    洗練されたダイニングでの調理も、テラスでの開放的なBBQも思いのまま。<br />
-                    選び抜かれた生産者の想いを、一棟貸しの邸宅で心ゆくまで味わってください。
-                  </p>
+              <div class="w-[343px] mx-auto flex flex-col gap-[24px] text-left">
+                <div class="space-y-[8px]">
+                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">FOOD</p>
+                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">お食事</h3>
                 </div>
-                <div class="fade-target absolute left-0 top-[312px] food-images-sp">
-                  <div class="food-main-window">
-                    <img src="/images/services/food-main.jpg" alt="お食事" class="food-main-sp-img" />
-                  </div>
-                  <div class="food-sub-window">
-                    <img src="/images/services/food-sub.jpg" alt="" class="food-sub-sp-img" />
-                  </div>
+                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho'] whitespace-pre-line">
+                  県内より厳選した特産品を、オールインクルーシブの形でご提供。
+                  洗練されたダイニングでの調理も、テラスでの開放的なBBQも思いのまま。
+                  選び抜かれた生産者の想いを、一棟貸しの邸宅で心ゆくまで味わってください。
+                </p>
+              </div>
+              <div class="fade-target mt-[40px] pt-[33px] food-images-sp mx-auto">
+                <div class="food-main-window">
+                  <img src="/images/services/food-main.jpg" alt="お食事" class="food-main-sp-img" />
+                </div>
+                <div class="food-sub-window">
+                  <img src="/images/services/food-sub.jpg" alt="" class="food-sub-sp-img" />
                 </div>
               </div>
             </div>
 
-            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[100px]">
-              <div class="fade-target food-main h-[292px] w-full lg:h-[703px] lg:w-[612px] lg:flex-shrink-0">
+            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[40px] xl:gap-[100px] service-pc-row">
+              <div class="fade-target food-main h-[292px] w-full lg:h-[703px] lg:w-[480px] xl:w-[612px] lg:flex-shrink-0 service-pc-media">
                 <img src="/images/services/food-main.jpg" alt="お食事" class="food-main-img" />
               </div>
-              <div class="lg:w-[569px] space-y-[24px]">
+              <div class="lg:w-[420px] xl:w-[569px] flex flex-col gap-[24px] service-pc-text">
                 <div class="space-y-[8px]">
                   <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">FOOD</p>
-                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">お食事</h3>
+                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">お食事</h3>
                 </div>
-                <p class="text-[14px] leading-[28px] tracking-[1.6px] text-[#475569] font-['Shippori_Mincho'] lg:w-[580px]">
-                  県内より厳選した特産品を、オールインクルーシブの形でご提供。<br />
-                  洗練されたダイニングでの調理も、テラスでの開放的なBBQも思いのまま。<br />
+                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:w-full xl:w-[580px] whitespace-pre-line">
+                  県内より厳選した特産品を、オールインクルーシブの形でご提供。
+                  洗練されたダイニングでの調理も、テラスでの開放的なBBQも思いのまま。
                   選び抜かれた生産者の想いを、一棟貸しの邸宅で心ゆくまで味わってください。
                 </p>
               </div>
@@ -211,7 +207,7 @@ import Footer from '../components/Footer.astro';
       </section>
 
       <!-- Option -->
-      <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:px-[232px] lg:pt-[70px] lg:pb-[150px]">
+      <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:px-[24px] xl:px-[232px] lg:pt-[70px] lg:pb-[150px]">
         <div class="mx-auto w-[343px] space-y-[40px] lg:mx-auto lg:w-full lg:max-w-[976px] lg:space-y-[80px]">
           <div class="text-center space-y-[16px] text-[#436C5E] font-['Shippori_Mincho'] lg:-mt-[10px]">
             <p class="text-[32px] leading-[40px] tracking-[3.6px] font-semibold">OPTION</p>
@@ -262,33 +258,38 @@ import Footer from '../components/Footer.astro';
         </div>
       </section>
 
-      <!-- Reservation -->
-      <section class="relative h-[438px] overflow-hidden bg-black px-[16px] py-[80px] lg:h-[578px] lg:w-[1440px] lg:px-0 lg:py-0 lg:mx-auto">
-        <div class="reservation-bg fade-target absolute inset-0"></div>
-        <div class="absolute inset-0 bg-black/[0.16] mix-blend-multiply"></div>
-        <div class="relative mx-auto w-full text-center lg:mx-auto lg:w-[1440px] lg:max-w-none lg:text-left">
-          <div class="flex w-full flex-col items-center gap-[48px] lg:block lg:h-[578px] lg:gap-0">
-            <div class="flex w-full flex-col items-center gap-[8px] lg:absolute lg:left-[364px] lg:top-[150px] lg:h-[76px] lg:w-[712px]">
-              <p class="text-[32px] leading-[54px] tracking-[3.6px] text-white font-semibold font-['Shippori_Mincho'] lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px]">
-                RESERVATION
-              </p>
-              <p class="text-center text-[14px] leading-[22.75px] tracking-[2.1px] text-[#CBD5E1] font-['Shippori_Mincho']">
-                ご予約
-              </p>
+      <!-- Reservation Section - レスポンシブ対応 -->
+      <section class="relative lg:py-[150px] lg:px-[272px] py-[80px] px-[16px]">
+        <div class="absolute inset-0 overflow-hidden">
+          <img
+            src="/images/rooms/reservation-bg.jpg"
+            alt=""
+            class="hidden lg:block absolute inset-0 w-full h-full object-cover"
+          />
+          <img
+            src="/images/rooms/reservation-bg.jpg"
+            alt=""
+            class="lg:hidden absolute inset-0 w-full h-full object-cover object-[position:34.8%_0%]"
+          />
+        </div>
+        <div class="absolute inset-0 bg-black/16 mix-blend-multiply"></div>
+
+        <div class="relative z-10 w-full">
+          <div class="flex flex-col lg:gap-[32px] gap-[32px] items-center">
+            <div class="text-center space-y-[8px]">
+              <h2 class="lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[32px] leading-[54px] tracking-[3.6px] font-semibold text-white font-['Shippori_Mincho']">RESERVATION</h2>
+              <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#CBD5E1] font-['Shippori_Mincho']">ご予約</p>
             </div>
-            <p class="h-[56px] w-full whitespace-pre-line text-center text-[15px] leading-[27px] tracking-[1.6px] text-[#E2E8F0] font-['Shippori_Mincho'] lg:absolute lg:left-[518px] lg:top-[315px] lg:flex lg:h-[56px] lg:w-[404px] lg:items-center lg:justify-center lg:text-[16px] lg:leading-[32px] lg:tracking-[1px]" style="transform: translateY(-55px);">
-              <span class="lg:hidden">
-                オンラインで簡単に
-                空室確認・ご予約が可能です。
-                特別なひとときをお過ごしください。
-              </span>
-              <span class="hidden lg:inline">
-                オンラインで簡単に空室確認・ご予約が可能です。特別なひとときをお過ごしください。
-              </span>
-            </p>
-            <a href="/404" class="inline-flex h-[50px] w-[230px] -mt-[15px] items-center justify-center rounded-[6px] bg-white text-[#436C5E] text-[16px] leading-[26px] tracking-[1.6px] font-medium font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors lg:absolute lg:left-[518px] lg:top-[390px] lg:h-[50px] lg:w-[404px] lg:max-w-none">
-              ご予約はこちら
-            </a>
+
+            <div class="lg:text-[16px] lg:leading-[32px] text-[15px] leading-[27px] tracking-[1.6px] text-[#E2E8F0] font-['Shippori_Mincho'] text-center whitespace-pre-line lg:max-w-[896px] max-w-full">オンラインで簡単に
+空室確認・ご予約が可能です。
+特別なひとときをお過ごしください。</div>
+
+            <div class="flex justify-center">
+              <a href="/404" class="bg-white text-[#436C5E] rounded-[6px] font-medium leading-[26px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho'] lg:w-[404px] w-[230px] h-[50px] text-[16px] tracking-[1.6px] flex items-center justify-center">
+                ご予約はこちら
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -303,7 +304,7 @@ import Footer from '../components/Footer.astro';
   .scroll-fade {
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 5s ease, transform 5s ease;
     will-change: opacity, transform;
   }
 
@@ -314,7 +315,7 @@ import Footer from '../components/Footer.astro';
 
   .kv-fade-bg {
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 5s ease;
     will-change: opacity;
   }
 
@@ -324,7 +325,7 @@ import Footer from '../components/Footer.astro';
 
   .kv-fade-overlay {
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 5s ease;
     will-change: opacity;
   }
 
@@ -333,24 +334,28 @@ import Footer from '../components/Footer.astro';
   }
 
   .service-cover-img {
-    width: 438px;
-    height: 292px;
-    left: -20px;
-    top: -35px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
   }
 
   .service-kv-img {
-    width: 528.06px;
-    height: 792px;
-    left: -104.53px;
-    top: -174.01px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
   }
 
   .reservation-bg {
     background-image: url('/images/rooms/reservation-bg.jpg');
     background-repeat: no-repeat;
-    background-size: 175.16% 100%;
-    background-position: 35% 0%;
+    background-size: cover;
+    background-position: center;
   }
 
   .sauna-main-sp,
@@ -534,12 +539,27 @@ import Footer from '../components/Footer.astro';
     bottom: auto;
   }
 
+  @media (max-width: 1023px) {
+    .option-img-inner-1,
+    .option-img-inner-2,
+    .option-img-inner-3 {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      right: auto;
+      bottom: auto;
+    }
+  }
+
   @media (min-width: 1024px) {
     .service-kv-img {
-      width: 1440px;
-      height: 2230px;
+      width: 100%;
+      height: 100%;
       left: 0;
-      top: -467px;
+      top: 0;
+      object-fit: cover;
+      object-position: center;
     }
 
     .service-cover-img {
@@ -592,8 +612,8 @@ import Footer from '../components/Footer.astro';
     }
 
     .reservation-bg {
-      background-size: 1594.7px 1063.5px;
-      background-position: -77.1px -374.7px;
+      background-size: cover;
+      background-position: center;
     }
 
     .option-img-1 {
@@ -615,31 +635,39 @@ import Footer from '../components/Footer.astro';
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  const initServiceFade = () => {
     const targets = Array.from(document.querySelectorAll('.fade-target'));
     targets.forEach((el) => el.classList.add('scroll-fade'));
 
-    if (!targets.length) return;
     const kvBg = document.querySelector('.kv-fade-bg');
     const kvOverlay = document.querySelector('.kv-fade-overlay');
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
-    );
 
-    targets.forEach((el) => observer.observe(el));
+    if (kvBg) kvBg.classList.remove('is-visible');
+    if (kvOverlay) kvOverlay.classList.remove('is-visible');
+
+    if (targets.length) {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
+      );
+      targets.forEach((el) => observer.observe(el));
+    }
+
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         if (kvBg) kvBg.classList.add('is-visible');
         if (kvOverlay) kvOverlay.classList.add('is-visible');
       });
     });
-  });
+  };
+
+  document.addEventListener('DOMContentLoaded', initServiceFade);
+  window.addEventListener('pageshow', initServiceFade);
 </script>

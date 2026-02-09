@@ -10,10 +10,10 @@ import Footer from '../components/Footer.astro';
 
     <main>
       <!-- KV -->
-      <section class="relative h-[339px] lg:h-[540px] overflow-hidden">
-        <img src="/images/plans/plan-kv.jpg" alt="宿泊プラン" class="plans-kv-img absolute max-w-none object-cover" />
-        <div class="absolute inset-0 bg-[#483F38]/39"></div>
-        <div class="absolute inset-0 flex items-center justify-center translate-y-[30.5px] lg:translate-y-0">
+      <section class="relative h-[380px] lg:h-[640px] overflow-hidden">
+        <img src="/images/plans/plan-kv.jpg" alt="宿泊プラン" class="plans-kv-img kv-fade-bg absolute max-w-none object-cover" />
+        <div class="absolute inset-0 bg-[#483F38] kv-fade-overlay"></div>
+        <div class="absolute inset-0 flex items-center justify-center translate-y-[20.5px] lg:translate-y-0">
           <h1 class="text-[32px] lg:text-[32px] leading-[54px] tracking-[3.6px] text-white/85 font-semibold font-['Shippori_Mincho']">
             PLAN
           </h1>
@@ -184,9 +184,29 @@ import Footer from '../components/Footer.astro';
   .scroll-fade {
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 5s ease, transform 5s ease;
     will-change: opacity, transform;
   }
+  .kv-fade-bg {
+    opacity: 0;
+    transition: opacity 5s ease;
+    will-change: opacity;
+  }
+
+  .kv-fade-bg.is-visible {
+    opacity: 1;
+  }
+
+  .kv-fade-overlay {
+    opacity: 0;
+    transition: opacity 5s ease;
+    will-change: opacity;
+  }
+
+  .kv-fade-overlay.is-visible {
+    opacity: 0.39;
+  }
+
 
   .scroll-fade.is-visible {
     opacity: 1;
@@ -268,23 +288,39 @@ import Footer from '../components/Footer.astro';
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  const initPlanFade = () => {
     const targets = Array.from(document.querySelectorAll('.fade-target'));
     targets.forEach((el) => el.classList.add('scroll-fade'));
 
-    if (!targets.length) return;
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
-    );
+    const kvBg = document.querySelector('.kv-fade-bg');
+    const kvOverlay = document.querySelector('.kv-fade-overlay');
 
-    targets.forEach((el) => observer.observe(el));
-  });
+    if (kvBg) kvBg.classList.remove('is-visible');
+    if (kvOverlay) kvOverlay.classList.remove('is-visible');
+
+    if (targets.length) {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
+      );
+      targets.forEach((el) => observer.observe(el));
+    }
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (kvBg) kvBg.classList.add('is-visible');
+        if (kvOverlay) kvOverlay.classList.add('is-visible');
+      });
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', initPlanFade);
+  window.addEventListener('pageshow', initPlanFade);
 </script>
