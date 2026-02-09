@@ -22,60 +22,91 @@ import Footer from '../components/Footer.astro';
 
       <!-- Plan Text -->
       <section class="bg-[#FAFAFA] px-[16px] py-[80px] lg:px-[256px] lg:py-[150px]">
-        <div class="mx-auto flex w-full max-w-[343px] flex-col items-center gap-[32px] text-center text-[#436C5E] font-['Shippori_Mincho'] lg:max-w-[540px] lg:gap-[32px]">
+        <div class="mx-auto flex w-full max-w-[343px] flex-col items-center gap-[24px] text-center text-[#436C5E] font-['Shippori_Mincho'] lg:max-w-[540px] lg:gap-[32px]">
           <h2 class="text-[32px] lg:text-[32px] leading-[48px] lg:leading-[40px] tracking-[3.6px] font-semibold">
             宿泊プランのご案内
           </h2>
-          <p class="text-[15px] lg:text-[16px] leading-[27px] lg:leading-[32px] tracking-[1.6px] lg:tracking-[1px] text-[#483F38]">
-            <span class="block">宮崎の豊かな自然と、</span>
-            <span class="block">極上のプライベート空間を享受する。</span>
-            <span class="block">特別な体験を約束する</span>
-            <span class="block">二つのスタイルをご用意いたしました。</span>
-          </p>
+          <div class="flex h-[128px] flex-col justify-center text-[15px] lg:text-[16px] leading-[27px] lg:leading-[32px] tracking-[1.6px] lg:tracking-[1px] text-[#483F38] text-center lg:w-[540px] lg:h-auto lg:justify-start">
+            <div class="lg:hidden">
+              <p class="mb-0">宮崎の豊かな自然と、</p>
+              <p class="mb-0">極上のプライベート空間を享受する。</p>
+              <p class="mb-0">特別な体験を約束する</p>
+              <p>二つのスタイルをご用意いたしました。</p>
+            </div>
+            <div class="hidden lg:block">
+              <p class="mb-0">宮崎の豊かな自然と、極上のプライベート空間を享受する。</p>
+              <p>特別な体験を約束する二つのスタイルをご用意いたしました。</p>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- Plan Section -->
-      <section class="bg-white px-[16px] pb-[80px] lg:px-0 lg:py-[150px] space-y-[40px] lg:space-y-[120px]">
+      <section class="bg-white px-[16px] pb-[80px] lg:px-0 lg:py-[150px] space-y-[80px] lg:space-y-[120px]">
         <!-- Onsen Plan -->
         <div class="mx-auto flex flex-col gap-[32px] lg:flex-row lg:items-center lg:gap-0 max-w-[1440px]">
           <div class="plan-image-window plan-image-window-onsen mx-auto fade-target">
             <img src="/images/plans/plan-onsen.jpg" alt="貸切温泉付きプラン" class="plan-onsen-img" />
           </div>
-          <div class="lg:w-[692px] lg:h-[700px] lg:relative">
-            <div class="lg:absolute lg:left-[96px] lg:top-[137px] lg:w-[500px] space-y-[32px] lg:space-y-[62px]">
-              <div class="space-y-[16px] lg:space-y-[32px]">
+          <div class="plan-text-panel lg:w-[692px] lg:h-[700px] lg:relative">
+            <div class="plan-text-inner lg:absolute lg:left-[96px] lg:top-[137px] lg:w-[500px]">
+              <!-- SP -->
+              <div class="space-y-[32px] lg:hidden">
                 <div class="space-y-[16px]">
                   <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">
                     貸切温泉付きプラン
                   </h3>
                   <div class="h-px w-[48px] bg-[#B99563]"></div>
                 </div>
-                <p class="text-[14px] leading-[22.75px] lg:leading-[30px] tracking-[2.1px] lg:tracking-[1.4px] text-[#483F38] lg:text-[#475569] font-['Shippori_Mincho'] lg:w-[445px]">
-                  <span class="lg:hidden">
-                    「何もしない」という贅沢。専用のプライベート温泉で、宮崎の風を感じながら心ゆくまで癒やしのひとときを。<br /><br />
-                    静寂に包まれた空間で、刻一刻と移ろう景色を眺める。誰にも邪魔されない、あなただけの極上な休日をお約束します。<br />
-                    夜は星空を眺めながらの入浴、朝は小鳥のさえずりと共に。
-                  </span>
-                  <span class="hidden lg:block">
+                <div class="text-[14px] leading-[22.75px] tracking-[2.1px] text-[#483F38] font-['Shippori_Mincho']">
+                  <p class="mb-0">「何もしない」という贅沢。専用のプライベート温泉で、宮崎の風を感じながら心ゆくまで癒やしのひとときを。</p>
+                  <p class="mb-0">&nbsp;</p>
+                  <p class="mb-0">静寂に包まれた空間で、刻一刻と移ろう景色を眺める。誰にも邪魔されない、あなただけの極上な休日をお約束します。</p>
+                  <p class="mb-0">夜は星空を眺めながらの入浴、朝は小鳥のさえずりと共に。</p>
+                </div>
+                <div class="h-[45px] w-full border-t border-[#B99563]">
+                  <div class="flex items-center gap-[12px] pt-[18px]">
+                    <img src="/images/icons/plan-bath.svg" alt="" class="h-[24px] w-[20px]" style="transform: scaleY(-1);" />
+                    <span class="text-[14px] leading-[22.75px] tracking-[2.1px] text-[#483F38] font-['Shippori_Mincho'] whitespace-nowrap">
+                      源泉かけ流し
+                    </span>
+                  </div>
+                </div>
+                <a href="/plan-detail" class="inline-flex items-center justify-center rounded-full border border-[#436C5E] px-[49px] py-[10px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors">
+                  詳細はこちら
+                </a>
+              </div>
+
+              <!-- PC -->
+              <div class="hidden lg:block space-y-[62px]">
+                <div class="space-y-[32px]">
+                  <div class="space-y-[16px]">
+                    <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">
+                      貸切温泉付きプラン
+                    </h3>
+                    <div class="h-px w-[48px] bg-[#B99563]"></div>
+                  </div>
+                  <p class="plan-text-desc text-[14px] leading-[22.75px] lg:leading-[30px] tracking-[2.1px] lg:tracking-[1.4px] text-[#483F38] lg:text-[#475569] font-['Shippori_Mincho'] lg:w-[445px]">
                     <span class="block">「何もしない」という贅沢。専用のプライベート温泉で、宮</span>
                     <span class="block">崎の風を感じながら心ゆくまで癒やしのひとときを。</span>
                     <span class="block h-[30px]" aria-hidden="true"></span>
                     <span class="block">静寂に包まれた空間で、刻一刻と移ろう景色を眺める。誰に</span>
                     <span class="block">も邪魔されない、あなただけの極上な休日をお約束します。</span>
                     <span class="block">夜は星空を眺めながらの入浴、朝は小鳥のさえずりと共に。</span>
-                  </span>
-                </p>
-                <div class="border-t border-[#B99563] pt-[18px]">
-                  <div class="flex items-center gap-[8px]">
-                    <img src="/images/icons/plan-bath.svg" alt="" class="h-[24px] w-[20px]" style="transform: scaleY(-1);" />
-                    <span class="text-[14px] lg:text-[12px] leading-[22.75px] lg:leading-[48px] tracking-[2.1px] lg:tracking-[4.8px] text-[#483F38] font-['Shippori_Mincho']">源泉かけ流し</span>
+                  </p>
+                  <div class="border-t border-[#B99563] pt-[18px]">
+                    <div class="flex items-center gap-[8px]">
+                      <img src="/images/icons/plan-bath.svg" alt="" class="h-[24px] w-[20px]" style="transform: scaleY(-1);" />
+                      <span class="text-[12px] leading-[48px] tracking-[4.8px] text-[#483F38] font-['Shippori_Mincho']">露天風呂</span>
+                      <img src="/images/icons/plan-wine.svg" alt="" class="h-[24px] w-[20px]" style="transform: scaleY(-1);" />
+                      <span class="text-[12px] leading-[48px] tracking-[4.8px] text-[#483F38] font-['Shippori_Mincho']">宮崎の特産品</span>
+                    </div>
                   </div>
                 </div>
+                <a href="/plan-detail" class="inline-flex items-center justify-center rounded-full border border-[#436C5E] px-[49px] py-[10px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors">
+                  詳細はこちら
+                </a>
               </div>
-              <a href="/plan-detail" class="inline-flex items-center justify-center rounded-full border border-[#436C5E] px-[49px] py-[10px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors">
-                詳細はこちら
-              </a>
             </div>
           </div>
         </div>
@@ -85,16 +116,16 @@ import Footer from '../components/Footer.astro';
           <div class="plan-image-window plan-image-window-miyazaki mx-auto fade-target">
             <img src="/images/plans/plan-miyazaki.jpg" alt="宮崎堪能プラン" class="plan-miyazaki-img" />
           </div>
-          <div class="lg:w-[692px] lg:h-[701px] lg:relative">
-            <div class="lg:absolute lg:left-[96px] lg:top-[135px] lg:w-[500px] space-y-[32px] lg:space-y-[62px]">
-              <div class="space-y-[16px] lg:space-y-[32px]">
+          <div class="plan-text-panel lg:w-[692px] lg:h-[701px] lg:relative">
+            <div class="plan-text-inner lg:absolute lg:left-[96px] lg:top-[135px] lg:w-[500px] space-y-[32px] lg:space-y-[62px]">
+              <div class="space-y-[32px] lg:space-y-[32px]">
                 <div class="space-y-[16px]">
                   <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">
                     宮崎堪能プラン
                   </h3>
                   <div class="h-px w-[48px] bg-[#B99563]"></div>
                 </div>
-                <p class="text-[14px] leading-[22.75px] lg:leading-[30px] tracking-[2.1px] lg:tracking-[1.4px] text-[#483F38] lg:text-[#475569] font-['Shippori_Mincho'] lg:w-[451px]">
+                <p class="plan-text-desc text-[14px] leading-[22.75px] lg:leading-[30px] tracking-[2.1px] lg:tracking-[1.4px] text-[#483F38] lg:text-[#475569] font-['Shippori_Mincho'] lg:w-[451px]">
                   <span class="lg:hidden">
                     宮崎の太陽が育んだ至極の食材を、プライベートなテラスで。最高級の宮崎牛と地元産の新鮮な野菜をBBQスタイルでお愉しみください。<br /><br />
                     専属のシェフが厳選した旬の味覚を、大切な方と囲む。心地よい夜風を感じながら、宮崎の「美味しい」を五感で味わう。食の感動が、旅の思い出をより一層深めます。
@@ -130,33 +161,38 @@ import Footer from '../components/Footer.astro';
         </div>
       </section>
 
-      <!-- Reservation -->
-      <section class="relative h-[438px] overflow-hidden bg-black px-[16px] py-[80px] lg:h-[578px] lg:w-[1440px] lg:px-0 lg:py-0 lg:mx-auto">
-        <div class="reservation-bg fade-target absolute inset-0"></div>
-        <div class="absolute inset-0 bg-black/[0.16] mix-blend-multiply"></div>
-        <div class="relative mx-auto w-full text-center lg:h-[578px] lg:w-[1440px] lg:max-w-none lg:text-left">
-          <div class="flex w-full flex-col items-center gap-[48px] lg:block lg:h-[578px] lg:gap-0">
-            <div class="flex w-full flex-col items-center gap-[16px] lg:absolute lg:left-[364px] lg:top-[150px] lg:h-[76px] lg:w-[712px]">
-              <p class="text-[32px] leading-[54px] tracking-[3.6px] text-white font-semibold font-['Shippori_Mincho'] lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px]">
-                RESERVATION
-              </p>
-              <p class="text-center text-[14px] leading-[22.75px] tracking-[2.1px] text-[#CBD5E1] font-['Shippori_Mincho']">
-                ご予約
-              </p>
+      <!-- Reservation Section - レスポンシブ対応 -->
+      <section class="relative lg:py-[150px] lg:px-[272px] py-[80px] px-[16px]">
+        <div class="absolute inset-0 overflow-hidden">
+          <img
+            src="/images/rooms/reservation-bg.jpg"
+            alt=""
+            class="hidden lg:block absolute inset-0 w-full h-full object-cover"
+          />
+          <img
+            src="/images/rooms/reservation-bg.jpg"
+            alt=""
+            class="lg:hidden absolute inset-0 w-full h-full object-cover object-[position:34.8%_0%]"
+          />
+        </div>
+        <div class="absolute inset-0 bg-black/16 mix-blend-multiply"></div>
+
+        <div class="relative z-10 w-full">
+          <div class="flex flex-col lg:gap-[32px] gap-[32px] items-center">
+            <div class="text-center space-y-[8px]">
+              <h2 class="lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[32px] leading-[54px] tracking-[3.6px] font-semibold text-white font-['Shippori_Mincho']">RESERVATION</h2>
+              <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#CBD5E1] font-['Shippori_Mincho']">ご予約</p>
             </div>
-            <p class="h-[56px] w-full whitespace-pre-line text-center text-[15px] leading-[27px] tracking-[1.6px] text-[#E2E8F0] font-['Shippori_Mincho'] lg:absolute lg:left-[518px] lg:top-[315px] lg:flex lg:h-[56px] lg:w-[404px] lg:items-center lg:justify-center lg:text-[16px] lg:leading-[32px] lg:tracking-[1px]" style="transform: translateY(-55px);">
-              <span class="lg:hidden">
-                オンラインで簡単に
-                空室確認・ご予約が可能です。
-                特別なひとときをお過ごしください。
-              </span>
-              <span class="hidden lg:inline">
-                オンラインで簡単に空室確認・ご予約が可能です。特別なひとときをお過ごしください。
-              </span>
-            </p>
-            <a href="/404" class="inline-flex h-[50px] w-[230px] -mt-[15px] items-center justify-center rounded-[6px] bg-white text-[#436C5E] text-[16px] leading-[26px] tracking-[1.6px] font-medium font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors lg:absolute lg:left-[518px] lg:top-[390px] lg:h-[50px] lg:w-[404px] lg:max-w-none">
-              ご予約はこちら
-            </a>
+
+            <div class="lg:text-[16px] lg:leading-[32px] text-[15px] leading-[27px] tracking-[1.6px] text-[#E2E8F0] font-['Shippori_Mincho'] text-center whitespace-pre-line lg:max-w-[896px] max-w-full">オンラインで簡単に
+空室確認・ご予約が可能です。
+特別なひとときをお過ごしください。</div>
+
+            <div class="flex justify-center">
+              <a href="/404" class="bg-white text-[#436C5E] rounded-[6px] font-medium leading-[26px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho'] lg:w-[404px] w-[230px] h-[50px] text-[16px] tracking-[1.6px] flex items-center justify-center">
+                ご予約はこちら
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -168,10 +204,12 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .plans-kv-img {
-    width: 841px;
-    height: 561px;
-    left: -178px;
-    top: -96px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
   }
 
   .reservation-bg {
@@ -283,6 +321,50 @@ import Footer from '../components/Footer.astro';
     .reservation-bg {
       background-size: 1594.7px 1063.5px;
       background-position: -77.1px -374.7px;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    .plan-image-window {
+      width: 480px;
+      height: 560px;
+    }
+
+    .plan-image-window-onsen {
+      margin-left: 32px;
+    }
+
+    .plan-image-window-miyazaki {
+      margin-right: 32px;
+    }
+
+    .plan-onsen-img {
+      width: 1100px;
+      height: 733px;
+      left: -245px;
+      top: -130px;
+    }
+
+    .plan-miyazaki-img {
+      width: 900px;
+      height: 600px;
+      left: -90px;
+      top: -10px;
+    }
+
+    .plan-text-panel {
+      width: 520px;
+      height: 560px;
+    }
+
+    .plan-text-inner {
+      left: 48px;
+      top: 96px;
+      width: 420px;
+    }
+
+    .plan-text-desc {
+      width: 100%;
     }
   }
 </style>
