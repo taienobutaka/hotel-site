@@ -68,7 +68,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Features -->
-    <section class="bg-[#FAFAFA] px-[16px] py-[80px] lg:bg-[#F5EFEA] lg:px-0 lg:py-[150px]">
+    <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:bg-[#F5EFEA] lg:px-0 lg:py-[150px]">
       <div class="mx-auto w-full max-w-[343px] lg:max-w-[1232px]">
         <div class="text-center w-[294px] mx-auto">
           <p class="text-[36px] leading-[54px] tracking-[3.6px] text-[#483F38] font-semibold font-['Shippori_Mincho'] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] lg:text-[#436C5E]">
@@ -127,7 +127,7 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Information -->
-    <section class="bg-[#FAFAFA] px-[16px] py-[80px] lg:px-[80px] lg:py-[150px]">
+    <section class="bg-[#FAFAFA] px-[16px] pt-[160px] pb-[80px] lg:px-[80px] lg:py-[150px]">
       <div class="mx-auto w-full max-w-[343px] lg:flex lg:max-w-[1100px] lg:items-center lg:gap-[100px]">
         <div class="mx-auto w-[343px] text-center lg:w-[334px] lg:self-center">
           <p class="text-[36px] leading-[54px] tracking-[3.6px] text-[#436C5E] font-semibold font-['Shippori_Mincho'] lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px]">
@@ -138,7 +138,7 @@ import Footer from '../components/Footer.astro';
           </p>
         </div>
 
-        <div class="mt-[32px] w-[343px] lg:mt-0 lg:w-[665px]">
+        <div class="mt-[40px] w-[343px] lg:mt-0 lg:w-[665px]">
           {[
             ['広さ', 'XXX㎡'],
             ['定員', '1~6名'],
@@ -189,7 +189,7 @@ import Footer from '../components/Footer.astro';
               <img
                 src={item.image}
                 alt={item.label}
-                class="h-[153px] w-[153px] rounded-[8px] object-cover lg:h-[216px] lg:w-full"
+                class="fade-target h-[153px] w-[153px] rounded-[8px] object-cover lg:h-[216px] lg:w-full"
               />
               <p class="mt-[8px] text-[16px] leading-[32px] tracking-[1px] text-[#483F38] font-['Shippori_Mincho']">
                 {item.label}
@@ -359,7 +359,7 @@ import Footer from '../components/Footer.astro';
   .scroll-fade {
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 5s ease, transform 5s ease;
     will-change: opacity, transform;
   }
 
@@ -370,7 +370,7 @@ import Footer from '../components/Footer.astro';
 
   .kv-fade-bg {
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 5s ease;
     will-change: opacity;
   }
 
@@ -380,7 +380,7 @@ import Footer from '../components/Footer.astro';
 
   .kv-fade-overlay {
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 5s ease;
     will-change: opacity;
   }
 
@@ -414,32 +414,39 @@ import Footer from '../components/Footer.astro';
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  const initRoomsFade = () => {
     const targets = Array.from(document.querySelectorAll('.fade-target'));
     targets.forEach((el) => el.classList.add('scroll-fade'));
 
-    if (!targets.length) return;
     const kvBg = document.querySelector('.kv-fade-bg');
     const kvOverlay = document.querySelector('.kv-fade-overlay');
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
-    );
 
-    const observeTargets = targets;
+    if (kvBg) kvBg.classList.remove('is-visible');
+    if (kvOverlay) kvOverlay.classList.remove('is-visible');
+
+    if (targets.length) {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
+      );
+      targets.forEach((el) => observer.observe(el));
+    }
+
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         if (kvBg) kvBg.classList.add('is-visible');
         if (kvOverlay) kvOverlay.classList.add('is-visible');
       });
     });
-    observeTargets.forEach((el) => observer.observe(el));
-  });
+  };
+
+  document.addEventListener('DOMContentLoaded', initRoomsFade);
+  window.addEventListener('pageshow', initRoomsFade);
 </script>
