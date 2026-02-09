@@ -893,7 +893,7 @@ import '../styles/index.css';
 
         <!-- Contact Form -->
         <div class="bg-white lg:p-[48px] p-[24px] rounded-[8px] shadow-sm lg:w-[672px] mx-auto w-full">
-          <form action="/contact-confirm" method="get" class="space-y-[56px] lg:w-[576px] mx-auto w-full">
+          <form id="contact-form" action="/contact-confirm" method="get" class="space-y-[56px] lg:w-[576px] mx-auto w-full" novalidate>
             <div class="lg:space-y-8 space-y-6">
               <!-- Contact Type -->
               <div class="space-y-2">
@@ -903,14 +903,15 @@ import '../styles/index.css';
                 </div>
                 <div class="lg:flex lg:gap-6 space-y-4 lg:space-y-0">
                   <label class="flex items-center lg:gap-[12px] gap-[12px]">
-                    <input type="radio" name="contact_type" class="w-[20px] h-[20px] accent-[#436C5E]">
+                    <input type="radio" name="contact_type" class="w-[20px] h-[20px] accent-[#436C5E]" data-required>
                     <span class="text-[16px] leading-[32px] tracking-[1px] text-[#475569] font-['Shippori_Mincho']">一般のお客様</span>
                   </label>
                   <label class="flex items-center lg:gap-[12px] gap-[12px]">
-                    <input type="radio" name="contact_type" class="w-[20px] h-[20px] accent-[#436C5E]">
+                    <input type="radio" name="contact_type" class="w-[20px] h-[20px] accent-[#436C5E]" data-required>
                     <span class="text-[16px] leading-[32px] tracking-[1px] text-[#475569] font-['Shippori_Mincho']">法人・団体の方</span>
                   </label>
                 </div>
+                <p id="contact-type-error" class="hidden text-red-500 text-[12px] leading-[16px] tracking-[1.2px] font-['Shippori_Mincho']">必須項目です</p>
               </div>
 
               <!-- Name -->
@@ -919,7 +920,8 @@ import '../styles/index.css';
                   <label class="text-[16px] leading-[32px] tracking-[1px] text-[#436C5E] font-['Shippori_Mincho']">お名前</label>
                   <span class="text-[12px] leading-[16px] tracking-[1.2px] text-red-500 uppercase font-['Shippori_Mincho']">*</span>
                 </div>
-                <input type="text" class="w-full h-[45px] border border-[#93A9A1] bg-white px-4">
+                <input type="text" id="contact-name" name="name" class="w-full h-[45px] border border-[#93A9A1] bg-white px-4" data-required>
+                <p id="contact-name-error" class="hidden text-red-500 text-[12px] leading-[16px] tracking-[1.2px] font-['Shippori_Mincho']">必須項目です</p>
               </div>
 
               <!-- Email -->
@@ -928,7 +930,8 @@ import '../styles/index.css';
                   <label class="text-[16px] leading-[32px] tracking-[1px] text-[#436C5E] font-['Shippori_Mincho']">メールアドレス</label>
                   <span class="text-[12px] leading-[16px] tracking-[1.2px] text-red-500 uppercase font-['Shippori_Mincho']">*</span>
                 </div>
-                <input type="email" class="w-full h-[45px] border border-[#93A9A1] bg-white px-4">
+                <input type="email" id="contact-email" name="email" class="w-full h-[45px] border border-[#93A9A1] bg-white px-4" data-required>
+                <p id="contact-email-error" class="hidden text-red-500 text-[12px] leading-[16px] tracking-[1.2px] font-['Shippori_Mincho']">必須項目です</p>
               </div>
 
               <!-- Message -->
@@ -937,7 +940,8 @@ import '../styles/index.css';
                   <label class="text-[16px] leading-[32px] tracking-[1px] text-[#436C5E] font-['Shippori_Mincho']">内容</label>
                   <span class="text-[12px] leading-[16px] tracking-[1.2px] text-red-500 uppercase font-['Shippori_Mincho']">*</span>
                 </div>
-                <textarea class="w-full h-[160px] border border-[#93A9A1] bg-white p-4 resize-none"></textarea>
+                <textarea id="contact-message" name="message" class="w-full h-[160px] border border-[#93A9A1] bg-white p-4 resize-none" data-required></textarea>
+                <p id="contact-message-error" class="hidden text-red-500 text-[12px] leading-[16px] tracking-[1.2px] font-['Shippori_Mincho']">必須項目です</p>
               </div>
 
               <!-- Privacy Policy -->
@@ -947,7 +951,7 @@ import '../styles/index.css';
                   当社が本サービスを通じて取得したユーザーの個人情報については、当社が規定する個人情報保護方針および個人情報保護法等法令の規定に準拠して取り扱うものとします。弊社のプライバシーポリシーをお読み頂き、同意いただける場合には下記のボタンから情報をご送信下さい。
                 </p>
                 <label class="flex items-start lg:items-center gap-2 cursor-pointer">
-                  <input type="checkbox" class="w-4 h-4 mt-1 lg:mt-0 accent-[#436C5E]">
+                  <input type="checkbox" id="contact-privacy" class="w-4 h-4 mt-1 lg:mt-0 accent-[#436C5E]">
                   <span class="leading-[32px] tracking-[1.6px]">
                     <a href="/privacy-policy" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-[#436C5E] hover:opacity-60 transition-opacity">
                       プライバシーポリシー
@@ -964,7 +968,7 @@ import '../styles/index.css';
             </div>
 
             <div class="text-center">
-              <button type="submit" class="bg-[#B99563] border border-[#B99563] text-white lg:px-[49px] px-12 lg:py-[10px] py-3 rounded-full text-[14px] leading-[22.75px] tracking-[2.1px] hover:bg-white hover:text-[#B99563] hover:border-[#B99563] transition-all duration-300 font-['Shippori_Mincho']" data-name="primary" data-node-id="79:1911">
+              <button type="submit" class="bg-[#B99563] border border-[#B99563] text-white lg:px-[49px] px-12 lg:py-[10px] py-3 rounded-full text-[14px] leading-[22.75px] tracking-[2.1px] hover:bg-white hover:text-[#B99563] hover:border-[#B99563] transition-all duration-300 font-['Shippori_Mincho'] disabled:bg-[#D9D9D9] disabled:border-[#D9D9D9] disabled:text-[#8B8B8B] disabled:cursor-not-allowed disabled:hover:bg-[#D9D9D9] disabled:hover:text-[#8B8B8B] disabled:hover:border-[#D9D9D9]" data-name="primary" data-node-id="79:1911">
                 送信する
               </button>
             </div>
@@ -976,6 +980,91 @@ import '../styles/index.css';
     <!-- Footer -->
     <Footer />
     
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('contact-form');
+        if (!form) return;
+
+        const requiredFields = [
+          { input: document.getElementById('contact-name'), error: document.getElementById('contact-name-error') },
+          { input: document.getElementById('contact-email'), error: document.getElementById('contact-email-error') },
+          { input: document.getElementById('contact-message'), error: document.getElementById('contact-message-error') },
+        ];
+        const contactTypeError = document.getElementById('contact-type-error');
+        const contactTypeInputs = Array.from(form.querySelectorAll('input[name="contact_type"]'));
+        const privacyCheckbox = document.getElementById('contact-privacy');
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        const toggleError = (target, show) => {
+          if (!target) return;
+          target.classList.toggle('hidden', !show);
+        };
+
+        const validateRequired = () => {
+          let hasError = false;
+          requiredFields.forEach(({ input, error }) => {
+            const value = input?.value?.trim() ?? '';
+            const isEmpty = value.length === 0;
+            toggleError(error, isEmpty);
+            if (isEmpty) {
+              hasError = true;
+            }
+          });
+          const contactTypeSelected = contactTypeInputs.some((input) => input.checked);
+          toggleError(contactTypeError, !contactTypeSelected);
+          if (!contactTypeSelected) {
+            hasError = true;
+          }
+          const privacyChecked = privacyCheckbox?.checked ?? false;
+          if (!privacyChecked) {
+            hasError = true;
+          }
+          return !hasError;
+        };
+
+        const updateSubmitState = () => {
+          if (!submitButton) return;
+          const requiredFilled = requiredFields.every(({ input }) => (input?.value?.trim() ?? '').length > 0);
+          const contactTypeSelected = contactTypeInputs.some((input) => input.checked);
+          const privacyChecked = privacyCheckbox?.checked ?? false;
+          const canSubmit = requiredFilled && contactTypeSelected && privacyChecked;
+          submitButton.disabled = !canSubmit;
+          submitButton.setAttribute('aria-disabled', String(!canSubmit));
+        };
+
+        requiredFields.forEach(({ input, error }) => {
+          if (!input) return;
+          input.addEventListener('blur', () => {
+            const isEmpty = input.value.trim().length === 0;
+            toggleError(error, isEmpty);
+          });
+          input.addEventListener('input', () => {
+            if (input.value.trim().length > 0) {
+              toggleError(error, false);
+            }
+            updateSubmitState();
+          });
+        });
+
+        privacyCheckbox?.addEventListener('change', updateSubmitState);
+        contactTypeInputs.forEach((input) => {
+          input.addEventListener('change', () => {
+            const selected = contactTypeInputs.some((item) => item.checked);
+            toggleError(contactTypeError, !selected);
+            updateSubmitState();
+          });
+        });
+        updateSubmitState();
+
+        form.addEventListener('submit', (event) => {
+          const isValid = validateRequired();
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+      });
+    </script>
+
     <!-- Fixed Reservation Button (SP only) - スクロール追従ボタン -->
     <div id="fixed-reservation-btn" class="fixed left-1/2 transform -translate-x-1/2 z-50 lg:hidden">
       <a href="/404" class="flex items-center justify-center gap-[10px] bg-[#436C5E] border border-[#436C5E] text-white px-[20px] py-[10px] rounded-full font-['Shippori_Mincho'] font-normal text-[14px] tracking-[2.1px] transition-all duration-300 shadow-lg hover:bg-white hover:text-[#436C5E] hover:border-[#436C5E] hover:shadow-xl min-w-[139px] h-[43px]">
