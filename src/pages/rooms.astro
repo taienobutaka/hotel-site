@@ -242,32 +242,42 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Reservation -->
-    <section class="relative h-[438px] overflow-hidden bg-black px-[16px] py-[80px] lg:h-[578px] lg:w-full lg:px-0 lg:py-0">
-      <div class="reservation-bg fade-target absolute inset-0"></div>
-      <div class="absolute inset-0 bg-black/[0.16] mix-blend-multiply"></div>
-      <div class="relative mx-auto w-full max-w-[343px] text-center lg:h-[578px] lg:w-[1440px] lg:max-w-none lg:text-left">
-        <div class="flex w-full flex-col items-center gap-[32px] lg:block lg:h-[578px] lg:gap-0">
-          <div class="flex w-full flex-col items-center gap-[8px] lg:absolute lg:left-[364px] lg:top-[150px] lg:h-[76px] lg:w-[712px]">
-            <p class="text-[32px] leading-[54px] tracking-[3.6px] text-white font-semibold font-['Shippori_Mincho'] lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px]">
-              RESERVATION
-            </p>
-            <p class="text-center text-[14px] leading-[22.75px] tracking-[2.1px] text-[#CBD5E1] font-['Shippori_Mincho']">
-              ご予約
-            </p>
+    <section class="relative lg:py-[150px] lg:px-[272px] py-[80px] px-[16px]">
+      <!-- Background image with precise positioning -->
+      <div class="absolute inset-0 overflow-hidden">
+        <img 
+          src="/images/rooms/reservation-bg.jpg" 
+          alt=""
+          class="hidden lg:block absolute inset-0 w-full h-full object-cover"
+        />
+        <img
+          src="/images/rooms/reservation-bg.jpg"
+          alt=""
+          class="lg:hidden absolute inset-0 w-full h-full object-cover object-[position:34.8%_0%]"
+        />
+      </div>
+      <!-- Background overlay -->
+      <div class="absolute inset-0 bg-black/16 mix-blend-multiply"></div>
+      
+      <div class="relative z-10 w-full">
+        <div class="flex flex-col lg:gap-[32px] gap-[32px] items-center">
+          <!-- Title -->
+          <div class="text-center space-y-[8px]">
+            <h2 class="lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[32px] leading-[54px] tracking-[3.6px] font-semibold text-white font-['Shippori_Mincho']">RESERVATION</h2>
+            <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#CBD5E1] font-['Shippori_Mincho']">ご予約</p>
           </div>
-          <p class="h-[56px] w-full whitespace-pre-line text-center text-[15px] leading-[27px] tracking-[1.6px] text-[#E2E8F0] font-['Shippori_Mincho'] lg:absolute lg:left-[518px] lg:top-[315px] lg:flex lg:h-[56px] lg:w-[404px] lg:items-center lg:justify-center lg:text-[16px] lg:leading-[32px] lg:tracking-[1px]" style="transform: translateY(-55px);">
-            <span class="lg:hidden">
-              オンラインで簡単に
-              空室確認・ご予約が可能です。
-              特別なひとときをお過ごしください。
-            </span>
-            <span class="hidden lg:inline">
-              オンラインで簡単に空室確認・ご予約が可能です。特別なひとときをお過ごしください。
-            </span>
-          </p>
-          <a href="/404" class="inline-flex h-[50px] w-[230px] -mt-[15px] items-center justify-center rounded-[6px] bg-white text-[#436C5E] text-[16px] leading-[26px] tracking-[1.6px] font-medium font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors lg:absolute lg:left-[518px] lg:top-[390px] lg:h-[50px] lg:w-[404px] lg:max-w-none">
-            ご予約はこちら
-          </a>
+          
+          <!-- Description -->
+          <div class="lg:text-[16px] lg:leading-[32px] text-[15px] leading-[27px] tracking-[1.6px] text-[#E2E8F0] font-['Shippori_Mincho'] text-center whitespace-pre-line lg:max-w-[896px] max-w-full">オンラインで簡単に
+空室確認・ご予約が可能です。
+特別なひとときをお過ごしください。</div>
+          
+          <!-- Button -->
+          <div class="flex justify-center">
+            <a href="/404" class="bg-white text-[#436C5E] rounded-[6px] font-medium leading-[26px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho'] lg:w-[404px] w-[230px] h-[50px] text-[16px] tracking-[1.6px] flex items-center justify-center" data-name="tertiary" data-node-id="85:207">
+              ご予約はこちら
+            </a>
+          </div>
         </div>
       </div>
     </section>

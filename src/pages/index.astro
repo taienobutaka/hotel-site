@@ -28,12 +28,7 @@ import '../styles/index.css';
     }
   </script>
   
-  <div class="bg-white min-h-screen">
-    <!-- Initial Access Overlay -->
-    <div id="intro-overlay" class="intro-overlay">
-      <img src="/images/logo.png" alt="LOGO" class="intro-logo" />
-    </div>
-
+  <div class="bg-white min-h-screen relative">
     <!-- Header -->
     <Header />
     
@@ -78,6 +73,11 @@ import '../styles/index.css';
         
         <!-- 動画がない場合のフォールバック（現在の表示：黒背景） -->
         <div id="hero-fallback" class="absolute inset-0 w-full h-full bg-black"></div>
+      </div>
+
+      <!-- Initial Access Overlay (SP/PC) -->
+      <div id="intro-overlay" class="intro-overlay">
+        <img src="/images/logo.png" alt="LOGO" class="intro-logo" />
       </div>
       
       <!-- Hero Text Content - Frame 111 (SP): W:375px H:88px at top:287.99px -->
@@ -133,11 +133,7 @@ import '../styles/index.css';
       setTimeout(() => {
         introOverlay.style.display = 'none';
         showHeroTexts();
-        if (videoReady) {
-          setTimeout(() => {
-            fadeOutHeroTexts();
-          }, 5000);
-        }
+        // Keep hero texts visible after intro.
       }, 3000);
     };
 
@@ -153,11 +149,7 @@ import '../styles/index.css';
 
         const introOverlay = document.getElementById('intro-overlay');
         const overlayHidden = introOverlay && introOverlay.style.display === 'none';
-        if (overlayHidden) {
-          setTimeout(() => {
-            fadeOutHeroTexts();
-          }, 5000);
-        }
+        // Keep hero texts visible after video loads.
       }
     }
       

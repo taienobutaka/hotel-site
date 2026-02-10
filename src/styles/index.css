@@ -24,7 +24,7 @@
 
 /* Initial access overlay */
 .intro-overlay {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 60;
   display: flex;
@@ -49,6 +49,24 @@
 @media (min-width: 1024px) {
   .intro-logo {
     width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: 753px;
+    align-items: flex-start;
+  }
+
+  .intro-logo {
+    position: absolute;
+    top: 332px;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
