@@ -29,12 +29,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
 
-<header class="bg-[#f5efea] backdrop-blur-[2px] fixed top-0 left-0 right-0 z-50">
+<header class="header-gradient backdrop-blur-[2px] fixed top-0 left-0 right-0 z-50">
   <!-- Mobile Header (SP: ~768px) - Figmaのバリアント2準拠: W:375px H:61px -->
   <div class="lg:hidden">
     <div class="flex items-center justify-between w-[375px] mx-auto px-[24px] py-[16px] h-[72px]" data-name="プロパティ1=バリアント2" data-node-id="124:3949">
       <!-- Logo - Figma準拠: W:70.688px H:28px -->
-      <img src="/images/logo.png" alt="LOGO" class="h-[40px] w-auto flex-shrink-0" />
+      <a href="/" aria-label="トップページへ" class="inline-block">
+        <img src="/images/logo.png" alt="LOGO" class="h-[40px] w-auto flex-shrink-0 cursor-pointer" />
+      </a>
       
       <!-- Icon Group (Instagram + Menu) - Figma準拠: W:155px -->
       <div class="flex items-center gap-[24px] w-[155px] justify-end">
@@ -67,7 +69,9 @@
           </div>
 
           <!-- Logo -->
-          <img src="/images/logo.png" alt="LOGO" class="mt-[40px] h-[40px] w-auto flex-shrink-0 mx-auto" />
+          <a href="/" aria-label="トップページへ" class="inline-block">
+            <img src="/images/logo.png" alt="LOGO" class="mt-[40px] h-[40px] w-auto flex-shrink-0 mx-auto cursor-pointer" />
+          </a>
 
           <!-- Reservation Button -->
           <div class="mt-[40px]">
@@ -112,7 +116,9 @@
     <div class="max-w-[1440px] mx-auto lg:px-[40px] xl:px-[80px] py-4">
       <div class="flex items-center justify-between w-full max-w-[1254.388px] mx-auto">
         <!-- Logo -->
-        <img src="/images/logo.png" alt="LOGO" class="h-[40px] w-auto flex-shrink-0" />
+        <a href="/" aria-label="トップページへ" class="inline-block">
+          <img src="/images/logo.png" alt="LOGO" class="h-[40px] w-auto flex-shrink-0 cursor-pointer" />
+        </a>
         
         <!-- Navigation & Actions Container -->
         <div class="flex items-center lg:gap-[64px] xl:gap-[141px]">
@@ -224,6 +230,10 @@
 </script>
 
 <style>
+  .header-gradient {
+    background: linear-gradient(180deg, #f5efea 0%, rgba(245, 239, 234, 0) 100%);
+  }
+
   #mobile-menu.is-open {
     opacity: 1;
     pointer-events: auto;
