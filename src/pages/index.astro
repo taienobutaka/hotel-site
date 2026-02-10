@@ -87,7 +87,7 @@ import '../styles/index.css';
         <div class="hero-text lg:block hidden text-center text-white font-['Shippori_Mincho'] z-10 text-shadow-hero" data-node-id="155:1174">
           <div class="w-[726.34px] h-[88px] flex flex-col gap-4 mx-auto">
             <!-- PC タイトル: 40px -->
-            <h1 class="font-semibold text-[32px] leading-[60px] tracking-[6px] h-[60px] flex items-center justify-center whitespace-pre-wrap">心を満たす、特別な時間</h1>
+            <h1 class="font-normal text-[32px] leading-[60px] tracking-[6px] h-[60px] flex items-center justify-center whitespace-pre-wrap">心を満たす、特別な時間</h1>
             <!-- PC サブテキスト: 16px -->
             <p class="font-normal text-[16px] leading-[28px] tracking-[1.8px] h-[28px] flex items-center justify-center w-[394.914px] mx-auto whitespace-pre-wrap">静寂と美しさが織りなす、極上のリゾートへ</p>
           </div>
@@ -97,7 +97,7 @@ import '../styles/index.css';
         <div class="hero-text lg:hidden block text-center text-white font-['Shippori_Mincho'] z-10 text-shadow-hero" data-node-id="176:1890">
           <div class="w-full max-w-[375px] flex flex-col items-center gap-[8px] mx-auto">
             <!-- SP タイトル: 24px -->
-            <h1 class="font-semibold text-[24px] leading-[32px] tracking-[2.4px] h-[32px] w-full flex items-center justify-center whitespace-nowrap">心を満たす、特別な時間</h1>
+            <h1 class="font-normal text-[24px] leading-[32px] tracking-[2.4px] h-[32px] w-full flex items-center justify-center whitespace-nowrap">心を満たす、特別な時間</h1>
             <!-- SP サブテキスト: 14px -->
             <div class="font-normal text-[14px] leading-[24px] tracking-[1.8px] h-[48px] w-full mx-auto flex flex-col items-center justify-center text-center">
               <p class="mb-0 w-full">静寂と美しさが織りなす、</p>
@@ -294,11 +294,19 @@ import '../styles/index.css';
         </div>
         
         <!-- PC Content Text Block - W:928px H:252px -->
-        <div class="w-[928px] mx-auto text-[16px] text-[#483F38] leading-[56px] tracking-[1.6px] font-['Shippori_Mincho'] text-center" data-name="block.text" data-node-id="371:2664">
-          <div class="space-y-[38px]">
-            <p>都会の喧騒から離れ、心安らぐひとときを。<br />私たちのリゾートは、豊かな自然に囲まれた特別な空間です。</p>
-            <p>最高のおもてなしと洗練された施設で、<br />忘れられない体験をお約束します。</p>
-            <p>四季折々の風景を楽しみながら、心と体をリフレッシュしてください。</p>
+        <div class="w-[928px] mx-auto" data-name="block.text" data-node-id="371:2664">
+          <div class="flex flex-col items-center gap-[38px] px-[183px] py-[16px] text-[16px] text-[#483F38] tracking-[1.6px] font-['Shippori_Mincho'] text-center">
+            <div class="w-[491.4px] h-[56px] flex flex-col justify-center leading-[48px]">
+              <p class="mb-0 whitespace-nowrap">都会の喧騒から離れ、心安らぐひとときを。</p>
+              <p class="whitespace-nowrap">私たちのリゾートは、豊かな自然に囲まれた特別な空間です。</p>
+            </div>
+            <div class="w-[315.74px] h-[56px] flex flex-col justify-center leading-[48px]">
+              <p class="mb-0 whitespace-nowrap">最高のおもてなしと洗練された施設で、</p>
+              <p class="whitespace-nowrap">忘れられない体験をお約束します。</p>
+            </div>
+            <div class="w-[562.56px] h-[32px] flex flex-col justify-center">
+              <p class="leading-[48px] whitespace-nowrap">四季折々の風景を楽しみながら、心と体をリフレッシュしてください。</p>
+            </div>
           </div>
         </div>
       </div>
@@ -366,7 +374,7 @@ import '../styles/index.css';
           <!-- PC Sauna Service -->
           <div class="flex items-center gap-[80px]" data-name="block.top-service.sauna" data-node-id="95:241">
             <!-- PC Image Left -->
-            <div class="w-[800px] h-[501px] relative overflow-hidden" data-name="element.top-service.sauna-image" data-node-id="95:242">
+            <div class="w-[800px] h-[501px] relative overflow-hidden lg:-ml-[80px]" data-name="element.top-service.sauna-image" data-node-id="95:242">
               <img 
                 src="/images/services/sauna.jpg" 
                 alt="Private Sauna"
@@ -392,7 +400,7 @@ import '../styles/index.css';
           </div>
 
           <!-- PC Food Service -->
-          <div class="flex items-center gap-[80px]" data-name="block.top-service.food" data-node-id="171:1089">
+          <div class="flex items-center gap-[80px] lg:justify-end" data-name="block.top-service.food" data-node-id="171:1089">
             <!-- PC Text Left -->
             <div class="w-[332px] space-y-[24px]" data-name="element.top-service.sauna-text" data-node-id="171:1094">
               <div class="space-y-0" data-node-id="171:1095">
@@ -409,11 +417,11 @@ import '../styles/index.css';
             </div>
 
             <!-- PC Image Right -->
-            <div class="w-[800px] h-[501px] relative overflow-hidden" data-name="element.top-service.sauna-image" data-node-id="171:1091">
+            <div class="w-[800px] h-[501px] relative overflow-hidden lg:-mr-[80px]" data-name="element.top-service.sauna-image" data-node-id="171:1091">
               <img 
                 src="/images/services/food.jpg" 
                 alt="Private BBQ"
-                class="w-full h-full object-cover"
+                class="absolute max-w-none w-[1130px] h-[753px] left-[-192px] top-[-132px] object-cover"
                 data-node-id="171:1110"
               />
             </div>
@@ -781,7 +789,7 @@ import '../styles/index.css';
               </p>
             </div>
             <div class="pl-6">
-              <p class="text-[#436C5E] text-[14px] leading-[23px] tracking-[1.4px] font-['Shippori_Mincho']">
+              <p class="text-[#483F38] text-[14px] leading-[23px] tracking-[1.4px] font-['Shippori_Mincho']">
                 A. チェックインは15:00から、チェックアウトは11:00までとなります。
               </p>
             </div>
@@ -795,7 +803,7 @@ import '../styles/index.css';
               </p>
             </div>
             <div class="pl-6">
-              <p class="text-[#436C5E] text-[14px] leading-[23px] tracking-[1.4px] font-['Shippori_Mincho']">
+              <p class="text-[#483F38] text-[14px] leading-[23px] tracking-[1.4px] font-['Shippori_Mincho']">
                 A. 
               </p>
             </div>
@@ -809,7 +817,7 @@ import '../styles/index.css';
               </p>
             </div>
             <div class="pl-6">
-              <p class="text-[#436C5E] text-[14px] leading-[23px] tracking-[1.4px] font-['Shippori_Mincho']">
+              <p class="text-[#483F38] text-[14px] leading-[23px] tracking-[1.4px] font-['Shippori_Mincho']">
                 A. タオル、歯ブラシ、シャンプー、コンディショナー、ボディソープ、ドライヤーなどを<br>
                 ご用意しております。
               </p>
@@ -885,8 +893,7 @@ import '../styles/index.css';
             
             <div class="space-y-[8px] text-center lg:w-[544px] lg:mx-auto">
               <p class="lg:text-[14px] lg:leading-[22.75px] lg:tracking-[2.1px] text-[13px] leading-[20px] tracking-[1.8px] text-[#483F38] font-['Shippori_Mincho']">お電話でのお問い合わせ</p>
-              <h3 class="lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[28px] leading-[42px] tracking-[2.8px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">012-345-6789</h3>
-              <p class="lg:text-[14px] lg:leading-[22.75px] lg:tracking-[2.1px] text-[13px] leading-[20px] tracking-[1.8px] text-[#483F38] font-['Shippori_Mincho']">(受付時間 9:00 - 18:00)</p>
+              <h3 class="lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[28px] leading-[42px] tracking-[2.8px] font-semibold text-[#436C5E] font-['Shippori_Mincho']">0985-73-8555</h3>
             </div>
           </div>
         </div>
@@ -903,7 +910,7 @@ import '../styles/index.css';
                 </div>
                 <div class="lg:flex lg:gap-6 space-y-4 lg:space-y-0">
                   <label class="flex items-center lg:gap-[12px] gap-[12px]">
-                    <input type="radio" name="contact_type" class="w-[20px] h-[20px] accent-[#436C5E]" data-required>
+                    <input type="radio" name="contact_type" class="w-[20px] h-[20px] accent-[#436C5E]" checked>
                     <span class="text-[16px] leading-[32px] tracking-[1px] text-[#475569] font-['Shippori_Mincho']">一般のお客様</span>
                   </label>
                   <label class="flex items-center lg:gap-[12px] gap-[12px]">
@@ -911,7 +918,6 @@ import '../styles/index.css';
                     <span class="text-[16px] leading-[32px] tracking-[1px] text-[#475569] font-['Shippori_Mincho']">法人・団体の方</span>
                   </label>
                 </div>
-                <p id="contact-type-error" class="hidden text-red-500 text-[12px] leading-[16px] tracking-[1.2px] font-['Shippori_Mincho']">必須項目です</p>
               </div>
 
               <!-- Name -->
@@ -990,8 +996,6 @@ import '../styles/index.css';
           { input: document.getElementById('contact-email'), error: document.getElementById('contact-email-error') },
           { input: document.getElementById('contact-message'), error: document.getElementById('contact-message-error') },
         ];
-        const contactTypeError = document.getElementById('contact-type-error');
-        const contactTypeInputs = Array.from(form.querySelectorAll('input[name="contact_type"]'));
         const privacyCheckbox = document.getElementById('contact-privacy');
         const submitButton = form.querySelector('button[type="submit"]');
 
@@ -1010,11 +1014,6 @@ import '../styles/index.css';
               hasError = true;
             }
           });
-          const contactTypeSelected = contactTypeInputs.some((input) => input.checked);
-          toggleError(contactTypeError, !contactTypeSelected);
-          if (!contactTypeSelected) {
-            hasError = true;
-          }
           const privacyChecked = privacyCheckbox?.checked ?? false;
           if (!privacyChecked) {
             hasError = true;
@@ -1025,9 +1024,8 @@ import '../styles/index.css';
         const updateSubmitState = () => {
           if (!submitButton) return;
           const requiredFilled = requiredFields.every(({ input }) => (input?.value?.trim() ?? '').length > 0);
-          const contactTypeSelected = contactTypeInputs.some((input) => input.checked);
           const privacyChecked = privacyCheckbox?.checked ?? false;
-          const canSubmit = requiredFilled && contactTypeSelected && privacyChecked;
+          const canSubmit = requiredFilled && privacyChecked;
           submitButton.disabled = !canSubmit;
           submitButton.setAttribute('aria-disabled', String(!canSubmit));
         };
@@ -1047,13 +1045,6 @@ import '../styles/index.css';
         });
 
         privacyCheckbox?.addEventListener('change', updateSubmitState);
-        contactTypeInputs.forEach((input) => {
-          input.addEventListener('change', () => {
-            const selected = contactTypeInputs.some((item) => item.checked);
-            toggleError(contactTypeError, !selected);
-            updateSubmitState();
-          });
-        });
         updateSubmitState();
 
         form.addEventListener('submit', (event) => {
