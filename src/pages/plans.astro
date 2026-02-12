@@ -14,7 +14,7 @@ import Footer from '../components/Footer.astro';
         <img src="/images/plans/plan-kv.jpg" alt="宿泊プラン" class="plans-kv-img kv-fade-bg absolute max-w-none object-cover" />
         <div class="absolute inset-0 bg-[#483F38] kv-fade-overlay"></div>
         <div class="absolute inset-0 flex items-center justify-center translate-y-[20.5px] lg:translate-y-0">
-          <h1 class="text-[32px] lg:text-[32px] leading-[54px] tracking-[3.6px] text-white/85 font-semibold font-['Shippori_Mincho']">
+          <h1 class="text-[32px] lg:text-[32px] leading-[54px] tracking-[3.6px] text-white/85 font-medium font-['Shippori_Mincho']">
             PLAN
           </h1>
         </div>
@@ -23,7 +23,7 @@ import Footer from '../components/Footer.astro';
       <!-- Plan Text -->
       <section class="bg-[#FAFAFA] px-[16px] py-[80px] lg:px-[256px] lg:py-[150px]">
         <div class="mx-auto flex w-full max-w-[343px] flex-col items-center gap-[24px] text-center text-[#436C5E] font-['Shippori_Mincho'] lg:max-w-[540px] lg:gap-[32px]">
-          <h2 class="text-[32px] lg:text-[32px] leading-[48px] lg:leading-[40px] tracking-[3.6px] font-semibold">
+          <h2 class="text-[32px] lg:text-[32px] leading-[48px] lg:leading-[40px] tracking-[3.6px] font-medium">
             宿泊プランのご案内
           </h2>
           <div class="flex h-[128px] flex-col justify-center text-[15px] lg:text-[16px] leading-[27px] lg:leading-[32px] tracking-[1.6px] lg:tracking-[1px] text-[#483F38] text-center lg:w-[540px] lg:h-auto lg:justify-start">
@@ -53,7 +53,7 @@ import Footer from '../components/Footer.astro';
               <!-- SP -->
               <div class="space-y-[32px] lg:hidden">
                 <div class="space-y-[16px]">
-                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">
+                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho']">
                     貸切温泉付きプラン
                   </h3>
                   <div class="h-px w-[48px] bg-[#B99563]"></div>
@@ -81,7 +81,7 @@ import Footer from '../components/Footer.astro';
               <div class="hidden lg:block space-y-[62px]">
                 <div class="space-y-[32px]">
                   <div class="space-y-[16px]">
-                    <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">
+                    <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho']">
                       貸切温泉付きプラン
                     </h3>
                     <div class="h-px w-[48px] bg-[#B99563]"></div>
@@ -120,7 +120,7 @@ import Footer from '../components/Footer.astro';
             <div class="plan-text-inner lg:absolute lg:left-[96px] lg:top-[135px] lg:w-[500px] space-y-[32px] lg:space-y-[62px]">
               <div class="space-y-[32px] lg:space-y-[32px]">
                 <div class="space-y-[16px]">
-                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">
+                  <h3 class="text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho']">
                     宮崎堪能プラン
                   </h3>
                   <div class="h-px w-[48px] bg-[#B99563]"></div>
@@ -168,11 +168,13 @@ import Footer from '../components/Footer.astro';
             src="/images/reservation-bg.jpg"
             alt=""
             class="hidden lg:block absolute inset-0 w-full h-full object-cover"
+            data-no-fade
           />
           <img
             src="/images/reservation-bg.jpg"
             alt=""
             class="lg:hidden absolute inset-0 w-full h-full object-cover object-[position:34.8%_0%]"
+            data-no-fade
           />
         </div>
         <div class="absolute inset-0 bg-black/16 mix-blend-multiply"></div>
@@ -180,7 +182,7 @@ import Footer from '../components/Footer.astro';
         <div class="relative z-10 w-full">
           <div class="flex flex-col lg:gap-[32px] gap-[32px] items-center">
             <div class="text-center space-y-[8px]">
-              <h2 class="lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[32px] leading-[54px] tracking-[3.6px] font-semibold text-white font-['Shippori_Mincho']">RESERVATION</h2>
+              <h2 class="lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[32px] leading-[54px] tracking-[3.6px] font-medium text-white font-['Shippori_Mincho']">RESERVATION</h2>
               <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#CBD5E1] font-['Shippori_Mincho']">ご予約</p>
             </div>
 
@@ -321,6 +323,13 @@ import Footer from '../components/Footer.astro';
     .reservation-bg {
       background-size: 1594.7px 1063.5px;
       background-position: -77.1px -374.7px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .plans-kv-img {
+      width: 100vw;
+      left: calc(50% - 50vw);
     }
   }
 

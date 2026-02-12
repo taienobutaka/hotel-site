@@ -58,16 +58,16 @@ import Footer from '../components/Footer.astro';
 
       <!-- Service Main -->
       <section class="bg-white px-[16px] pt-[80px] pb-[40px] lg:px-0 lg:py-[150px]">
-        <div class="mx-auto w-full lg:max-w-[960px] xl:max-w-[1232px] space-y-[80px] lg:space-y-[120px]">
+        <div class="mx-auto w-full lg:max-w-[960px] xl:max-w-[1232px] space-y-0 lg:space-y-[120px]">
           <!-- Sauna -->
           <div>
-            <div class="lg:hidden w-[343px] mx-auto">
-              <div class="flex flex-col gap-[24px] text-left">
-                <div class="space-y-[8px]">
-                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">PRIVATE SAUNA</p>
-                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">プライベートサウナ</h3>
+            <div class="lg:hidden w-[343px] mx-auto pb-[40px]">
+              <div class="flex flex-col text-left">
+                <div>
+                  <p class="flex h-[21px] items-center text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">PRIVATE SAUNA</p>
+                  <h3 class="mt-[8px] flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho']">プライベートサウナ</h3>
                 </div>
-                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
+                <p class="mt-[16px] text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
                   <span class="block">パチパチと薪が爆ぜる音だけが響く空間で、五感を研ぎ澄ますひととき。</span>
                   <span class="block">水風呂から外気浴まで、計算し尽くされた導線があなたを深い休息へと誘います。</span>
                   <span class="block">綺麗に整えられたプライベートエリアで、誰にも邪魔されない至高の贅沢を。</span>
@@ -83,22 +83,21 @@ import Footer from '../components/Footer.astro';
               </div>
             </div>
 
-            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[40px] xl:gap-[100px] service-pc-row">
+            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[100px] service-pc-row">
               <div class="fade-target sauna-main h-[292px] w-full lg:h-[813px] lg:w-[480px] xl:w-[563px] lg:flex-shrink-0 service-pc-media">
                 <img src="/images/services/sauna-main.jpg" alt="プライベートサウナ" class="sauna-main-img" />
               </div>
-              <div class="lg:w-[420px] xl:w-[569px] flex flex-col gap-[24px] service-pc-text">
-                <div class="space-y-[8px]">
-                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">PRIVATE SAUNA</p>
-                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">プライベートサウナ</h3>
+              <div class="lg:w-[420px] xl:w-[569px] flex flex-col service-pc-text">
+                <div>
+                  <p class="flex h-[21px] items-center text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">PRIVATE SAUNA</p>
+                  <h3 class="mt-[8px] flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho']">プライベートサウナ</h3>
                 </div>
-                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:w-full xl:w-[580px] whitespace-pre-line">
-                  パチパチと薪が爆ぜる音だけが響く空間で、五感を研ぎ澄ますひととき。
-                  水風呂から外気浴まで、計算し尽くされた導線があなたを深い休息へと誘います。
-                  綺麗に整えられたプライベートエリアで、誰にも邪魔されない至高の贅沢を。
-
-                  屋外で湯に浸かり、サウナでととのう——自然の気配とともに過ごすひとときは、 
-                  この宿ならではの魅力です。
+                <p class="mt-[24px] text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:w-full xl:w-[580px]">
+                  <span class="block">パチパチと薪が爆ぜる音だけが響く空間で、五感を研ぎ澄ますひととき。</span>
+                  <span class="block">水風呂から外気浴まで、計算し尽くされた導線があなたを深い休息へと誘います。</span>
+                  <span class="block">綺麗に整えられたプライベートエリアで、誰にも邪魔されない至高の贅沢を。</span>
+                  <span class="block">&nbsp;</span>
+                  <span class="block">屋外で湯に浸かり、サウナでととのう——自然の気配とともに過ごすひとときは、この宿ならではの魅力です。</span>
                 </p>
               </div>
             </div>
@@ -113,15 +112,15 @@ import Footer from '../components/Footer.astro';
           <!-- Onsen -->
           <div>
             <div class="lg:hidden pt-[40px] pb-0">
-              <div class="w-[343px] mx-auto flex flex-col gap-[24px] text-left">
-                <div class="space-y-[8px]">
-                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">ONSEN</p>
-                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">温泉</h3>
+              <div class="w-[343px] mx-auto flex flex-col text-left">
+                <div>
+                  <p class="flex h-[21px] items-center text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">ONSEN</p>
+                  <h3 class="mt-[8px] flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho']">温泉</h3>
                 </div>
-                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho'] whitespace-pre-line">
-                  青島の地から汲み上げた、
-                  自然由来の成分を含む湧き水を使用した露天風呂。
-                  開放的な空間で、心身ともに癒しのひとときをお楽しみいただけます。
+                <p class="mt-[16px] text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
+                  <span class="block">青島の地から汲み上げた、</span>
+                  <span class="block">自然由来の成分を含む湧き水を使用した露天風呂。</span>
+                  <span class="block">開放的な空間で、心身ともに癒しのひとときをお楽しみいただけます。</span>
                 </p>
               </div>
               <div class="fade-target mt-[87px] onsen-images-sp mx-auto">
@@ -134,16 +133,16 @@ import Footer from '../components/Footer.astro';
               </div>
             </div>
 
-            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[40px] xl:gap-[100px] service-pc-row">
-              <div class="lg:w-[360px] xl:w-[435px] flex flex-col gap-[24px] service-pc-text">
-                <div class="space-y-[8px]">
-                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">ONSEN</p>
-                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">温泉</h3>
+            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[100px] service-pc-row">
+              <div class="lg:w-[360px] xl:w-[435px] flex flex-col service-pc-text">
+                <div>
+                  <p class="flex h-[21px] items-center text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">ONSEN</p>
+                  <h3 class="mt-[8px] flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho']">温泉</h3>
                 </div>
-                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:w-full xl:w-[398px] whitespace-pre-line">
-                  青島の地から汲み上げた、
-                  自然由来の成分を含む湧き水を使用した露天風呂。
-                  開放的な空間で、心身ともに癒しのひとときをお楽しみいただけます。
+                <p class="mt-[24px] text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:w-full xl:w-[398px]">
+                  <span class="block">青島の地から汲み上げた、</span>
+                  <span class="block">自然由来の成分を含む湧き水を使用した露天風呂。</span>
+                  <span class="block">開放的な空間で、心身ともに癒しのひとときをお楽しみいただけます。</span>
                 </p>
               </div>
               <div class="fade-target onsen-main h-[292px] w-full lg:h-[773px] lg:w-[520px] xl:w-[768px] lg:flex-shrink-0 service-pc-media">
@@ -159,16 +158,16 @@ import Footer from '../components/Footer.astro';
 
           <!-- Food -->
           <div class="lg:pt-[164px]">
-            <div class="lg:hidden pt-[40px] pb-[80px] -mt-[40px]">
-              <div class="w-[343px] mx-auto flex flex-col gap-[24px] text-left">
-                <div class="space-y-[8px]">
-                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">FOOD</p>
-                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">お食事</h3>
+            <div class="lg:hidden pt-[46px] pb-0">
+              <div class="w-[343px] mx-auto flex flex-col text-left">
+                <div>
+                  <p class="flex h-[21px] items-center text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">FOOD</p>
+                  <h3 class="mt-[8px] flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho']">お食事</h3>
                 </div>
-                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho'] whitespace-pre-line">
-                  県内より厳選した特産品を、オールインクルーシブの形でご提供。
-                  洗練されたダイニングでの調理も、テラスでの開放的なBBQも思いのまま。
-                  選び抜かれた生産者の想いを、一棟貸しの邸宅で心ゆくまで味わってください。
+                <p class="mt-[16px] text-[14px] leading-[30px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho']">
+                  <span class="block">県内より厳選した特産品を、オールインクルーシブの形でご提供。</span>
+                  <span class="block">洗練されたダイニングでの調理も、テラスでの開放的なBBQも思いのまま。</span>
+                  <span class="block">選び抜かれた生産者の想いを、一棟貸しの邸宅で心ゆくまで味わってください。</span>
                 </p>
               </div>
               <div class="fade-target mt-[40px] pt-[33px] food-images-sp mx-auto">
@@ -181,19 +180,19 @@ import Footer from '../components/Footer.astro';
               </div>
             </div>
 
-            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[40px] xl:gap-[100px] service-pc-row">
+            <div class="hidden lg:flex lg:flex-row lg:items-center lg:gap-[100px] service-pc-row">
               <div class="fade-target food-main h-[292px] w-full lg:h-[703px] lg:w-[480px] xl:w-[612px] lg:flex-shrink-0 service-pc-media">
                 <img src="/images/services/food-main.jpg" alt="お食事" class="food-main-img" />
               </div>
-              <div class="lg:w-[420px] xl:w-[569px] flex flex-col gap-[24px] service-pc-text">
-                <div class="space-y-[8px]">
-                  <p class="text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">FOOD</p>
-                  <h3 class="flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-semibold font-['Shippori_Mincho']">お食事</h3>
+              <div class="lg:w-[420px] xl:w-[569px] flex flex-col service-pc-text">
+                <div>
+                  <p class="flex h-[21px] items-center text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">FOOD</p>
+                  <h3 class="mt-[8px] flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho']">お食事</h3>
                 </div>
-                <p class="text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:w-full xl:w-[580px] whitespace-pre-line">
-                  県内より厳選した特産品を、オールインクルーシブの形でご提供。
-                  洗練されたダイニングでの調理も、テラスでの開放的なBBQも思いのまま。
-                  選び抜かれた生産者の想いを、一棟貸しの邸宅で心ゆくまで味わってください。
+                <p class="mt-[24px] text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:w-full xl:w-[580px]">
+                  <span class="block">県内より厳選した特産品を、オールインクルーシブの形でご提供。</span>
+                  <span class="block">洗練されたダイニングでの調理も、テラスでの開放的なBBQも思いのまま。</span>
+                  <span class="block">選び抜かれた生産者の想いを、一棟貸しの邸宅で心ゆくまで味わってください。</span>
                 </p>
               </div>
             </div>
@@ -210,7 +209,7 @@ import Footer from '../components/Footer.astro';
       <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:px-[24px] xl:px-[232px] lg:pt-[70px] lg:pb-[150px]">
         <div class="mx-auto w-[343px] space-y-[40px] lg:mx-auto lg:w-full lg:max-w-[976px] lg:space-y-[80px]">
           <div class="text-center space-y-[16px] text-[#436C5E] font-['Shippori_Mincho'] lg:-mt-[10px]">
-            <p class="text-[32px] leading-[40px] tracking-[3.6px] font-semibold">OPTION</p>
+            <p class="text-[32px] leading-[40px] tracking-[3.6px] font-medium">OPTION</p>
             <p class="text-[14px] leading-[20px] tracking-[1.4px]">特別な体験をプラスする</p>
           </div>
 
@@ -265,11 +264,13 @@ import Footer from '../components/Footer.astro';
             src="/images/reservation-bg.jpg"
             alt=""
             class="hidden lg:block absolute inset-0 w-full h-full object-cover"
+            data-no-fade
           />
           <img
             src="/images/reservation-bg.jpg"
             alt=""
             class="lg:hidden absolute inset-0 w-full h-full object-cover object-[position:34.8%_0%]"
+            data-no-fade
           />
         </div>
         <div class="absolute inset-0 bg-black/16 mix-blend-multiply"></div>
@@ -277,7 +278,7 @@ import Footer from '../components/Footer.astro';
         <div class="relative z-10 w-full">
           <div class="flex flex-col lg:gap-[32px] gap-[32px] items-center">
             <div class="text-center space-y-[8px]">
-              <h2 class="lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[32px] leading-[54px] tracking-[3.6px] font-semibold text-white font-['Shippori_Mincho']">RESERVATION</h2>
+              <h2 class="lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[32px] leading-[54px] tracking-[3.6px] font-medium text-white font-['Shippori_Mincho']">RESERVATION</h2>
               <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#CBD5E1] font-['Shippori_Mincho']">ご予約</p>
             </div>
 
@@ -427,7 +428,7 @@ import Footer from '../components/Footer.astro';
     width: 165.95px;
     height: 116px;
     left: 0;
-    top: 218px;
+    top: 188.48px;
   }
 
   .onsen-sub-sp-img {
@@ -631,6 +632,13 @@ import Footer from '../components/Footer.astro';
       background-position: -15px -123px;
     }
 
+  }
+
+  @media (min-width: 1440px) {
+    .service-cover-img {
+      width: 100vw;
+      left: calc(50% - 50vw);
+    }
   }
 </style>
 
