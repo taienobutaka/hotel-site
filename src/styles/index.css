@@ -138,9 +138,7 @@
   }
 
   .sp-services {
-    max-width: 343px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
   }
 
   .sp-services-inner {
