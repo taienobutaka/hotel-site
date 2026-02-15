@@ -21,8 +21,8 @@ import Footer from '../components/Footer.astro';
       </section>
 
       <!-- Service Text -->
-      <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:px-[256px] lg:py-[150px]">
-        <div class="mx-auto w-[343px] lg:w-full lg:max-w-[928px] text-center text-[15px] leading-[33px] tracking-[1.6px] text-[#483F38] font-['Shippori_Mincho'] lg:text-[16px] lg:leading-[48px]">
+      <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:px-[16px] xl:px-[256px] lg:py-[150px]">
+        <div class="mx-auto w-full lg:max-w-[calc(100%-32px)] xl:max-w-[928px] text-center text-[15px] leading-[33px] tracking-[1.6px] text-[#483F38] font-['Shippori_Mincho'] lg:text-[16px] lg:leading-[48px]">
           <span class="hidden lg:block">
             大きな窓から差し込む柔らかな光と、高く広がる空。<br />
             刻一刻と表情を変える自然の移ろいを眺めながら、<br />
@@ -57,11 +57,11 @@ import Footer from '../components/Footer.astro';
       </section>
 
       <!-- Service Main -->
-      <section class="bg-white px-[16px] pt-[80px] pb-[40px] lg:px-0 lg:py-[150px]">
-        <div class="mx-auto w-full lg:max-w-[960px] xl:max-w-[1232px] space-y-0 lg:space-y-[120px]">
+      <section class="bg-white px-[16px] pt-[80px] pb-[40px] lg:px-[16px] xl:px-0 lg:py-[150px]">
+        <div class="mx-auto w-full lg:max-w-[calc(100%-32px)] xl:max-w-[960px] 2xl:max-w-[1232px] space-y-0 lg:space-y-[120px]">
           <!-- Sauna -->
           <div>
-            <div class="lg:hidden w-[343px] mx-auto pb-[40px]">
+            <div class="lg:hidden w-full pb-[40px]">
               <div class="flex flex-col text-left">
                 <div>
                   <p class="flex h-[21px] items-center text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">PRIVATE SAUNA</p>
@@ -75,11 +75,13 @@ import Footer from '../components/Footer.astro';
                   <span class="block">屋外で湯に浸かり、サウナでととのう——自然の気配とともに過ごすひとときは、この宿ならではの魅力です。</span>
                 </p>
               </div>
-              <div class="fade-target mt-[40px] sauna-main-sp">
-                <img src="/images/services/sauna-main.jpg" alt="プライベートサウナ" class="sauna-main-sp-img" />
-              </div>
-              <div class="fade-target mt-[27px] ml-[149px] sauna-sub-sp">
-                <img src="/images/services/sauna-sub.jpg" alt="" class="sauna-sub-sp-img" />
+              <div class="fade-target mt-[40px] sauna-images-sp">
+                <div class="sauna-main-window">
+                  <img src="/images/services/sauna-main.jpg" alt="プライベートサウナ" class="sauna-main-sp-img" />
+                </div>
+                <div class="sauna-sub-window">
+                  <img src="/images/services/sauna-sub.jpg" alt="" class="sauna-sub-sp-img" />
+                </div>
               </div>
             </div>
 
@@ -112,7 +114,7 @@ import Footer from '../components/Footer.astro';
           <!-- Onsen -->
           <div>
             <div class="lg:hidden pt-[40px] pb-0">
-              <div class="w-[343px] mx-auto flex flex-col text-left">
+              <div class="w-full flex flex-col text-left">
                 <div>
                   <p class="flex h-[21px] items-center text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">ONSEN</p>
                   <h3 class="mt-[8px] flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho']">温泉</h3>
@@ -159,7 +161,7 @@ import Footer from '../components/Footer.astro';
           <!-- Food -->
           <div class="lg:pt-[160px]">
             <div class="lg:hidden pt-[46px] pb-0">
-              <div class="w-[343px] mx-auto flex flex-col text-left">
+              <div class="w-full flex flex-col text-left">
                 <div>
                   <p class="flex h-[21px] items-center text-[12px] leading-[48px] tracking-[4.8px] text-[#B99563] font-['Shippori_Mincho']">FOOD</p>
                   <h3 class="mt-[8px] flex h-[52px] items-center text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho']">お食事</h3>
@@ -206,14 +208,14 @@ import Footer from '../components/Footer.astro';
       </section>
 
       <!-- Option -->
-      <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:px-[24px] xl:px-[232px] lg:pt-[70px] lg:pb-[150px]">
-        <div class="mx-auto w-[343px] space-y-[40px] lg:mx-auto lg:w-full lg:max-w-[976px] lg:space-y-[80px]">
+      <section class="bg-[#F5EFEA] px-[16px] py-[80px] lg:px-[16px] min-[1400px]:px-[232px] lg:pt-[70px] lg:pb-[150px]">
+        <div class="mx-auto w-full space-y-[40px] lg:w-full lg:max-w-[calc(100%-32px)] min-[1400px]:max-w-[976px] lg:space-y-[80px]">
           <div class="text-center space-y-[16px] text-[#436C5E] font-['Shippori_Mincho'] lg:-mt-[10px]">
             <p class="text-[32px] leading-[40px] tracking-[3.6px] font-medium">OPTION</p>
             <p class="text-[14px] leading-[20px] tracking-[1.4px]">特別な体験をプラスする</p>
           </div>
 
-          <div class="flex flex-col items-center gap-[32px] lg:flex-row lg:items-stretch">
+          <div class="flex flex-col items-center gap-[32px] lg:flex-row lg:items-stretch lg:justify-center">
             <div class="w-full overflow-hidden rounded-[8px] bg-white lg:w-[304px] lg:h-[510px] flex flex-col">
               <div class="option-img option-img-1 h-[256px] w-full">
                 <img src="/images/services/option-1.jpg" alt="温泉" class="option-img-inner option-img-inner-1" />
@@ -258,7 +260,7 @@ import Footer from '../components/Footer.astro';
       </section>
 
       <!-- Reservation Section - レスポンシブ対応 -->
-      <section class="relative lg:py-[150px] lg:px-[272px] py-[80px] px-[16px]">
+      <section class="relative lg:py-[150px] lg:px-[16px] xl:px-[272px] py-[80px] px-[16px]">
         <div class="absolute inset-0 overflow-hidden">
           <img
             src="/images/reservation-bg.jpg"
@@ -359,46 +361,56 @@ import Footer from '../components/Footer.astro';
     background-position: center;
   }
 
-  .sauna-main-sp,
-  .sauna-sub-sp {
+  .sauna-images-sp {
     position: relative;
+    width: 100%;
+    aspect-ratio: 343 / 490;
+  }
+
+  .sauna-main-window,
+  .sauna-sub-window {
+    position: absolute;
     overflow: hidden;
   }
 
-  .sauna-main-sp {
-    width: 197.71px;
-    height: 313px;
+  .sauna-main-window {
+    width: 57.65%;
+    height: 63.88%;
+    left: 0;
+    top: 0;
   }
 
   .sauna-main-sp-img {
     position: absolute;
-    width: 451.32px;
-    height: 300.92px;
-    left: -65.08px;
-    top: -4.77px;
+    width: 228.3%;
+    height: 96.1%;
+    left: -32.92%;
+    top: -1.52%;
     object-fit: cover;
     max-width: none;
   }
 
-  .sauna-sub-sp {
-    width: 193.68px;
-    height: 149.99px;
+  .sauna-sub-window {
+    width: 56.48%;
+    height: 30.61%;
+    left: 43.44%;
+    top: 69.39%;
   }
 
   .sauna-sub-sp-img {
     position: absolute;
-    width: 195.7px;
-    height: 293.51px;
-    left: -2.06px;
-    top: -55.39px;
+    width: 101.04%;
+    height: 195.68%;
+    left: -1.06%;
+    top: -36.93%;
     object-fit: cover;
     max-width: none;
   }
 
   .onsen-images-sp {
     position: relative;
-    width: 343px;
-    height: 334px;
+    width: 100%;
+    aspect-ratio: 343 / 334;
   }
 
   .onsen-main-window,
@@ -408,43 +420,43 @@ import Footer from '../components/Footer.astro';
   }
 
   .onsen-main-window {
-    width: 240px;
-    height: 241.56px;
-    left: 103px;
-    top: -47px;
+    width: 69.97%;
+    height: 72.34%;
+    left: 30.03%;
+    top: max(-47px, -14.07%);
   }
 
   .onsen-main-sp-img {
     position: absolute;
-    width: 425.3px;
-    height: 283.57px;
-    left: -37.92px;
-    top: -68.1px;
+    width: 177.21%;
+    height: 117.39%;
+    left: -15.8%;
+    top: -28.19%;
     object-fit: cover;
     max-width: none;
   }
 
   .onsen-sub-window {
-    width: 165.95px;
-    height: 116px;
+    width: 48.39%;
+    height: 34.73%;
     left: 0;
-    top: 188.48px;
+    top: 60%;
   }
 
   .onsen-sub-sp-img {
     position: absolute;
-    width: 232.21px;
-    height: 154.83px;
-    left: -14.78px;
-    top: -29.52px;
+    width: 139.9%;
+    height: 133.5%;
+    left: -8.91%;
+    top: -25.45%;
     object-fit: cover;
     max-width: none;
   }
 
   .food-images-sp {
     position: relative;
-    width: 343px;
-    height: 560px;
+    width: 100%;
+    aspect-ratio: 343 / 560;
   }
 
   .food-main-window,
@@ -454,35 +466,35 @@ import Footer from '../components/Footer.astro';
   }
 
   .food-main-window {
-    width: 265px;
-    height: 304.4px;
+    width: 77.26%;
+    height: 54.36%;
     left: 0;
     top: 0;
   }
 
   .food-main-sp-img {
     position: absolute;
-    width: 515.07px;
-    height: 343.42px;
-    left: -115.75px;
-    top: -32.48px;
+    width: 194.4%;
+    height: 112.8%;
+    left: -43.77%;
+    top: -10.67%;
     object-fit: cover;
     max-width: none;
   }
 
   .food-sub-window {
-    width: 191.4px;
-    height: 172.42px;
-    left: 150.9px;
-    top: 331px;
+    width: 55.81%;
+    height: 30.79%;
+    left: 44%;
+    top: 59.11%;
   }
 
   .food-sub-sp-img {
     position: absolute;
-    width: 331.2px;
-    height: 220.83px;
-    left: -83.62px;
-    top: -13.68px;
+    width: 173.1%;
+    height: 128%;
+    left: -43.69%;
+    top: -7.93%;
     object-fit: cover;
     max-width: none;
   }
@@ -550,6 +562,11 @@ import Footer from '../components/Footer.astro';
       top: 0;
       right: auto;
       bottom: auto;
+    }
+
+    .option-img {
+      height: auto;
+      aspect-ratio: 304 / 256;
     }
   }
 
