@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/en/Header.astro';
+import Footer from '../../components/en/Footer.astro';
 ---
 
-<Layout title="ROOM | お部屋">
+<Layout title="ROOM | Rooms">
   <div class="bg-white text-[#483F38]">
     <Header />
 
@@ -23,17 +23,20 @@ import Footer from '../components/Footer.astro';
     <section class="bg-[#F5EFEA] px-[16px] py-[80px] min-[1025px]:px-[256px] lg:py-[120px]">
       <div class="mx-auto flex max-w-[928px] flex-col items-center text-center">
         <h2 class="text-[24px] leading-[39px] tracking-[3.6px] lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[#436C5E] font-medium font-['Shippori_Mincho']">
-          <span class="block lg:inline">日常を忘れ、</span>
-          <span class="block lg:inline">静寂とデザインに浸る</span>
+          <span class="block lg:inline">Forget the everyday,</span>
+          <span class="block lg:inline">immerse in silence and design</span>
         </h2>
+        <p class="mt-[32px] text-[15px] leading-[27px] tracking-[1.6px] lg:mt-[40px] lg:w-[928px] lg:text-[16px] lg:leading-[48px] lg:tracking-[1.6px] text-[#483F38] font-['Shippori_Mincho']"><span class="block lg:inline">Forget the everyday,</span>
+          <span class="block lg:inline">immerse in silence and design</span></p>
         <p class="mt-[32px] text-[15px] leading-[27px] tracking-[1.6px] lg:mt-[40px] lg:w-[928px] lg:text-[16px] lg:leading-[48px] lg:tracking-[1.6px] text-[#483F38] font-['Shippori_Mincho']">
-          <span class="block">吹き抜けが心地よい開放的なリビングと、機能美を追求したキッチン。</span>
-          <span class="block">選び抜かれたデザイナーズ家具に囲まれ、何にも邪魔されない私的な時間をお過ごしください。</span>
-          <span class="block">本格的な薪サウナや露天風呂も完備。</span>
-          <span class="block">宮崎の空を近くに感じるこの場所で、心身が解き放たれる上質な滞在を。</span>
+          <span class="block">A soaring, open living room and a kitchen designed for functional beauty.</span>
+          <span class="block">Surrounded by carefully selected designer furniture, enjoy uninterrupted private time.</span>
+          <span class="block">A full-scale wood sauna and open-air bath are also available.</span>
+          <span class="block">Here, close to the Miyazaki sky, enjoy a refined stay that frees mind and body.</span>
         </p>
-        <a href="/404" class="mt-[32px] inline-flex h-[43px] w-[177px] items-center justify-center rounded-full border border-[#436C5E] text-[#436C5E] text-[14px] leading-[22.75px] tracking-[2.1px] font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors lg:mt-[40px]">
-          予約をする
+        <a href="/404" class="mt-[32px] inline-flex h-[43px] w-[260px] items-center justify-center rounded-full border border-[#436C5E] text-[#436C5E] text-[14px] leading-[22.75px] tracking-[2.1px] font-['Shippori_Mincho'] hover:bg-[#436C5E] hover:text-white transition-colors lg:mt-[40px]">
+          <span class="block leading-none">BOOK YOUR STAY</span>
+          <span class="block leading-none">ROOM</span>
         </a>
       </div>
     </section>
@@ -45,24 +48,22 @@ import Footer from '../components/Footer.astro';
           <p class="text-[32px] leading-[48px] tracking-[3.6px] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] text-[#436C5E] font-medium font-['Shippori_Mincho']">
             ROOM
           </p>
-          <p class="mt-[16px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho']">
-            お部屋
-          </p>
+          <p class="mt-[16px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho'] invisible">Rooms</p>
         </div>
         <p class="room-desc w-full text-center text-[15px] leading-[27px] tracking-[1.6px] text-[#483F38] lg:w-[627px] lg:text-[16px] lg:leading-[32px] lg:tracking-[1px] font-['Shippori_Mincho']">
           <span class="hidden lg:block">
-            <span class="block">室内には欧州家具やブランド食器、高品質なドライヤーなど、</span>
-            <span class="block">細部までこだわった備品を揃えています。</span>
-            <span class="block">静かに、深く、青島での時間を味わうための滞在をお楽しみください。</span>
+            <span class="block">Inside, we provide European furniture, branded tableware, and premium dryers,</span>
+            <span class="block">with attention to detail throughout.</span>
+            <span class="block">Enjoy a stay to savor time in Aoshima—quietly and deeply.</span>
           </span>
           <span class="lg:hidden">
-            <span class="block">室内には欧州家具やブランド食器、高品質なドライヤーなど、</span>
-            <span class="block">細部までこだわった備品を揃えています。</span>
-            <span class="block">静かに、深く、青島での時間を味わうための滞在をお楽しみください。</span>
+            <span class="block">Inside, we provide European furniture, branded tableware, and premium dryers,</span>
+            <span class="block">with attention to detail throughout.</span>
+            <span class="block">Enjoy a stay to savor time in Aoshima—quietly and deeply.</span>
           </span>
         </p>
         <div class="w-full pt-[0] lg:w-[800px] lg:pt-[40px]">
-          <img src="/images/rooms/room-main.jpg" alt="客室メイン" class="fade-target w-full h-auto lg:h-[628px] lg:w-[800px] lg:object-cover" />
+          <img src="/images/rooms/room-main.jpg" alt="Main Room" class="fade-target w-full h-auto lg:h-[628px] lg:w-[800px] lg:object-cover" />
         </div>
       </div>
     </section>
@@ -74,39 +75,37 @@ import Footer from '../components/Footer.astro';
           <p class="text-[36px] leading-[54px] tracking-[3.6px] text-[#483F38] font-medium font-['Shippori_Mincho'] lg:text-[36px] lg:leading-[54px] lg:tracking-[3.6px] lg:text-[#436C5E]">
             FEATURES
           </p>
-          <p class="mt-[16px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#B99563] font-['Shippori_Mincho'] lg:text-[#436C5E]">
-            部屋の特徴
-          </p>
+          <p class="mt-[16px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#B99563] font-['Shippori_Mincho'] lg:text-[#436C5E] invisible">Room Features</p>
         </div>
 
         <div class="mt-[40px] space-y-[40px] lg:mt-[120px] lg:space-y-[120px]">
-          <!-- Feature 1: 一日一組限定の一棟貸し -->
+          <!-- Feature 1: One private villa per day -->
           <div class="flex flex-col gap-[24px] lg:flex-row lg:items-center lg:gap-[100px]">
             <div class="feature-1-img fade-target w-full lg:h-[501px] lg:w-[563px]" style="aspect-ratio: 343 / 305;"></div>
             <div class="w-full max-w-[538px] lg:w-[538px] flex flex-col gap-[16px]">
               <h3 class="mt-0 text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho'] lg:mt-0 lg:text-[24px] lg:leading-[32px] lg:tracking-[2.4px]">
-                一日一組限定の一棟貸し
+                One private villa per day
               </h3>
               <p class="mt-0 mb-[40px] text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:mb-0 lg:w-[525px] lg:text-[14px] lg:leading-[30px] lg:tracking-[1.4px]">
-                <span class="block">完全なプライベート空間で、</span>
-                <span class="block">誰にも邪魔されずにおくつろぎいただけます。</span>
+                <span class="block">In a completely private space,</span>
+                <span class="block">relax without being disturbed by anyone.</span>
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Feature 2: 光と余白に癒える、非日常の邸宅 -->
+      <!-- Feature 2: A retreat of light and space -->
       <div class="mt-[40px] lg:mt-[120px]">
         <div class="mx-auto w-full lg:max-w-[1232px] lg:px-[16px]">
           <div class="flex flex-col gap-[24px] lg:flex-row lg:items-center lg:gap-[100px]">
             <div class="order-2 w-full max-w-[538px] lg:order-1 lg:w-[538px] flex flex-col gap-[16px]">
               <h3 class="mt-0 text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho'] lg:mt-0 lg:text-[24px] lg:leading-[32px] lg:tracking-[2.4px]">
-                光と余白に癒える、非日常の邸宅
+                A retreat of light and space
               </h3>
               <p class="mt-0 mb-[40px] text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:mb-0 lg:w-[525px] lg:text-[14px] lg:leading-[30px] lg:tracking-[1.4px]">
-                <span class="block">吹き抜けが心地よい開放的なダイニング。</span>
-                <span class="block">大切な人と「つくる」愉しみ、「味わう」歓びを分かち合ってください。</span>
+                <span class="block">An open dining room with a comfortable void above.</span>
+                <span class="block">Share the joy of creating and tasting with someone special.</span>
               </p>
             </div>
             <div class="feature-2-img fade-target order-1 w-full lg:order-2 lg:h-[501px] lg:w-[563px]" style="aspect-ratio: 343 / 305;"></div>
@@ -114,18 +113,18 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
 
-      <!-- Feature 3: こだわりの高級家具・家電 -->
+      <!-- Feature 3: Premium furniture and appliances -->
       <div class="mt-[40px] lg:mt-[120px]">
         <div class="mx-auto w-full lg:max-w-[1232px] lg:px-[16px]">
           <div class="flex flex-col gap-[24px] lg:flex-row lg:items-center lg:gap-[100px]">
               <div class="feature-3-img fade-target w-full lg:h-[501px] lg:w-[563px]" style="aspect-ratio: 343 / 305;"></div>
             <div class="w-full max-w-[538px] lg:w-[538px] flex flex-col gap-[16px]">
               <h3 class="mt-0 text-[24px] leading-[32px] tracking-[2.4px] text-[#483F38] font-medium font-['Shippori_Mincho'] lg:mt-0 lg:text-[24px] lg:leading-[32px] lg:tracking-[2.4px]">
-                こだわりの高級家具・家電
+                Premium furniture and appliances
               </h3>
               <p class="mt-0 mb-[40px] text-[14px] leading-[30px] tracking-[1.4px] text-[#475569] font-['Shippori_Mincho'] lg:mb-0 lg:w-[525px] lg:text-[14px] lg:leading-[30px] lg:tracking-[1.4px]">
-                <span class="block">デザイン性と機能性を両立した、</span>
-                <span class="block">上質なインテリアで快適な滞在を。</span>
+                <span class="block">Balancing design and functionality,</span>
+                <span class="block">our refined interiors ensure a comfortable stay.</span>
               </p>
             </div>
           </div>
@@ -144,19 +143,17 @@ import Footer from '../components/Footer.astro';
           <p class="text-[36px] leading-[54px] tracking-[3.6px] text-[#436C5E] font-medium font-['Shippori_Mincho'] lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px]">
             INFORMATION
           </p>
-          <p class="mt-[16px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho'] lg:mt-[8px]">
-            設備情報
-          </p>
+          <p class="mt-[16px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho'] lg:mt-[8px] invisible">Room Information</p>
         </div>
 
         <div class="mt-[40px] w-full lg:mt-0 lg:w-[665px]">
           {[
-            ['広さ', 'XXX㎡'],
-            ['定員', '1~6名'],
-            ['間取り', '〈1F〉リビング、キッチン、トイレ、バルコニー\\n〈2F〉洋室、バルコニー、トイレ'],
-            ['ベッドタイプ', 'シングルベッド（2台）、ダブルベッド（1台）'],
-            ['設備・備品', 'テレビ、ポータブルオーディオ用スピーカー、電子レンジ、食器、洗濯機、乾燥機、シャンプー・リンス、ボディソープ・石鹸、タオル、ハミガキセット、ブラシ、ドライヤー、スリッパ、洗顔料、化粧水、乳液、メイク落とし、冷蔵庫、湯沸しポット、お茶セット'],
-            ['駐車場', '2台（宿泊者無料）'],
+            ['Size', 'XXX m²'],
+            ['Capacity', '1-6 guests'],
+            ['Layout', '〈1F〉Living room, kitchen, toilet, balcony\\n〈2F〉Bedroom, balcony, toilet'],
+            ['Bed Type', '2 single beds, 1 double bed'],
+            ['Facilities & Amenities', 'TV, portable speaker, microwave, tableware, washer, dryer, shampoo & conditioner, body soap, towels, toothbrush set, brush, hair dryer, slippers, face wash, toner, lotion, makeup remover, refrigerator, kettle, tea set'],
+            ['Parking', '2 spaces (free for guests)'],
           ].map(([label, value]) => (
             <div class="flex flex-wrap items-center gap-[16px] border-b border-[#D1C7BF] py-[16px] text-[12px] leading-[20px] tracking-[1.4px] text-[#483F38] font-['Shippori_Mincho'] lg:flex-nowrap lg:items-center lg:gap-[159px] lg:py-[16px]">
               <div class="w-[134px] shrink-0 text-[#483F38]">{label}</div>
@@ -174,11 +171,9 @@ import Footer from '../components/Footer.astro';
           <p class="text-[32px] leading-[54px] tracking-[3.6px] lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[#436C5E] font-medium font-['Shippori_Mincho']">
             AMENITIES
           </p>
-          <p class="mt-[8px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho']">
-            アメニティ
-          </p>
+          <p class="mt-[8px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho'] invisible">Amenities</p>
           <p class="mt-[32px] text-[15px] leading-[27px] tracking-[1.6px] lg:text-[16px] lg:leading-[32px] lg:tracking-[1px] text-[#483F38] font-['Shippori_Mincho']">
-            上質な滞在を演出する、こだわりのアメニティをご用意しております。
+            We provide premium amenities for a refined stay.
           </p>
         </div>
       </div>
@@ -191,9 +186,9 @@ import Footer from '../components/Footer.astro';
         <div class="grid grid-cols-2 gap-[32px] md:grid-cols-3 md:gap-[24px] lg:grid-cols-5 lg:gap-[24px]">
           {[
             { label: 'BALMUDA ', image: '/images/rooms/amenities-item-1.jpg' },
-            { label: 'ル・クルーゼ', image: '/images/rooms/amenities-item-2.jpg' },
-            { label: 'レプロナイザー', image: '/images/rooms/amenities-item-3.jpg' },
-            { label: 'トルコ製ソファ', image: '/images/rooms/amenities-item-4.jpg' },
+            { label: 'Le Creuset', image: '/images/rooms/amenities-item-2.jpg' },
+            { label: 'Repronizer', image: '/images/rooms/amenities-item-3.jpg' },
+            { label: 'Turkish Sofa', image: '/images/rooms/amenities-item-4.jpg' },
             { label: 'Aesop ', image: '/images/rooms/amenities-item-5.jpg' },
           ].map((item) => (
             <div class="flex flex-col items-center text-center">
@@ -228,19 +223,17 @@ import Footer from '../components/Footer.astro';
         <p class="text-[32px] leading-[36px] tracking-[2.4px] lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[#436C5E] font-medium font-['Shippori_Mincho']">
           GALLERY
         </p>
-        <p class="mt-[8px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho']">
-          ギャラリー
-        </p>
+        <p class="mt-[8px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#436C5E] font-['Shippori_Mincho'] invisible">Gallery</p>
       </div>
 
       <div class="mx-auto mt-[40px] max-w-[1232px] lg:mt-[120px]">
         <div class="flex flex-col gap-[16px] lg:flex-row lg:gap-[32px]">
-          <img src="/images/rooms/gallery-left.jpg" alt="ギャラリー1" class="fade-target h-[240px] w-full rounded-[8px] object-cover lg:h-[600px] lg:w-[600px]" />
+          <img src="/images/rooms/gallery-left.jpg" alt="Gallery1" class="fade-target h-[240px] w-full rounded-[8px] object-cover lg:h-[600px] lg:w-[600px]" />
           <div class="grid w-full grid-cols-2 gap-[16px] lg:w-[600px]">
-            <img src="/images/rooms/gallery-top-left.jpg" alt="ギャラリー2" class="fade-target h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
-            <img src="/images/rooms/gallery-top-right.jpg" alt="ギャラリー3" class="fade-target h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
-            <img src="/images/rooms/gallery-bottom-left.jpg" alt="ギャラリー4" class="fade-target h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
-            <img src="/images/rooms/gallery-bottom-right.jpg" alt="ギャラリー5" class="fade-target h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
+            <img src="/images/rooms/gallery-top-left.jpg" alt="Gallery2" class="fade-target h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
+            <img src="/images/rooms/gallery-top-right.jpg" alt="Gallery3" class="fade-target h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
+            <img src="/images/rooms/gallery-bottom-left.jpg" alt="Gallery4" class="fade-target h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
+            <img src="/images/rooms/gallery-bottom-right.jpg" alt="Gallery5" class="fade-target h-[140px] w-full rounded-[8px] object-cover lg:h-[292px]" />
           </div>
         </div>
       </div>
@@ -277,18 +270,17 @@ import Footer from '../components/Footer.astro';
           <!-- Title -->
           <div class="text-center space-y-[8px]">
             <h2 class="lg:text-[32px] lg:leading-[54px] lg:tracking-[3.6px] text-[32px] leading-[54px] tracking-[3.6px] font-medium text-white font-['Shippori_Mincho']">RESERVATION</h2>
-            <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#CBD5E1] font-['Shippori_Mincho']">ご予約</p>
+            <p class="text-[14px] leading-[20px] tracking-[1.4px] text-[#CBD5E1] font-['Shippori_Mincho'] invisible">RESERVATION</p>
           </div>
           
           <!-- Description -->
-          <div class="lg:text-[16px] lg:leading-[32px] text-[15px] leading-[27px] tracking-[1.6px] text-[#E2E8F0] font-['Shippori_Mincho'] text-center whitespace-pre-line lg:max-w-[896px] max-w-full">オンラインで簡単に
-空室確認・ご予約が可能です。
-特別なひとときをお過ごしください。</div>
+          <div class="lg:text-[16px] lg:leading-[32px] text-[15px] leading-[27px] tracking-[1.6px] text-[#E2E8F0] font-['Shippori_Mincho'] text-center whitespace-pre-line lg:max-w-[896px] max-w-full">Check availability and book easily online.
+Enjoy a special time with us.</div>
           
           <!-- Button -->
           <div class="flex justify-center">
             <a href="/404" class="bg-white text-[#436C5E] rounded-[6px] font-medium leading-[26px] hover:bg-[#436C5E] hover:text-white transition-all duration-300 font-['Shippori_Mincho'] lg:w-[404px] w-[230px] h-[50px] text-[16px] tracking-[1.6px] flex items-center justify-center" data-name="tertiary" data-node-id="85:207">
-              ご予約はこちら
+              BOOK YOUR STAY
             </a>
           </div>
         </div>

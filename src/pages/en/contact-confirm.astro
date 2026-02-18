@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/en/Header.astro';
+import Footer from '../../components/en/Footer.astro';
+---
+
+<Layout title="CONTACT CONFIRM | Contact Confirmation">
+  <div class="bg-white text-[#483F38]">
+    <Header />
+
+    <main>
+      <section class="bg-[#FAFAFA] pt-[141px] pb-[80px] lg:pt-[222px] lg:pb-[150px]">
+        <div class="mx-auto flex w-full px-[20px] flex-col items-center gap-[40px] lg:w-[953px] lg:gap-[80px]">
+          <div class="text-center text-[#436C5E] font-['Shippori_Mincho']">
+          <h1 class="text-[32px] leading-[48px] tracking-[3.6px] font-medium lg:mx-auto lg:w-[616px] lg:text-[36px] lg:leading-[40px]">
+              <span class="block lg:hidden">Contact</span>
+              <span class="block lg:hidden">Confirmation</span>
+              <span class="hidden lg:block">Contact Confirmation</span>
+            </h1>
+            <p class="mt-[32px] text-[14px] leading-[22.75px] tracking-[2.1px] text-[#483F38] lg:mx-auto lg:w-[953px] lg:text-[16px] lg:leading-[32px] lg:tracking-[1px]">
+              If the details below are correct, please press the “Send” button.<br />
+              To make changes, please press the “Back” button.
+            </p>
+          </div>
+
+          <form id="confirmForm" class="mx-auto rounded-[8px] bg-white px-[16px] py-[40px] shadow-sm lg:w-[672px] lg:px-[48px] lg:py-[56px]">
+            <div class="space-y-[56px]">
+              <div class="space-y-[32px] text-[16px] leading-[24px] tracking-[1.6px] font-['Shippori_Mincho']">
+                <div class="space-y-[12px]">
+                  <p class="text-[#436C5E]">Name</p>
+                  <p class="text-[#483F38]" id="fullName">Your Name</p>
+                </div>
+                <div class="space-y-[12px]">
+                  <p class="text-[#436C5E]">Email</p>
+                  <p class="text-[#483F38]" id="email">your@email.com</p>
+                </div>
+                <div class="space-y-[12px]">
+                  <p class="text-[#436C5E]">Message</p>
+                  <p class="text-[#483F38]" id="message">
+                    Your message will appear here.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center gap-[24px]">
+                <button type="submit" class="inline-flex items-center justify-center rounded-full border border-[#B99563] bg-[#B99563] px-[49px] py-[10px] text-[14px] leading-[22.75px] tracking-[2.1px] text-white font-['Shippori_Mincho'] hover:bg-white hover:text-[#B99563] hover:border-[#B99563] transition-all duration-300">
+                  Send
+                </button>
+                <button type="button" onclick="history.back()" class="text-[12px] leading-[16px] tracking-[1.2px] text-[#475569] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity">
+                  Back
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
+
+<script>
+  document.getElementById('confirmForm')?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.location.href = '/en/contact-complete';
+  });
+</script>
