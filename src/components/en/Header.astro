@@ -30,8 +30,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
 
 <header class="header-gradient backdrop-blur-[2px] fixed top-0 left-0 right-0 z-50">
-  <!-- Mobile Header (SP: ~768px) - Figmaのバリアント2準拠: W:375px H:61px -->
-  <div class="lg:hidden">
+  <!-- Mobile Header (SP: <=1300px) - Figmaのバリアント2準拠: W:375px H:61px -->
+  <div class="sp-header">
     <div class="flex items-center justify-between w-full px-[24px] py-[16px] h-[72px]" data-name="プロパティ1=バリアント2" data-node-id="124:3949">
       <!-- Logo - Figma準拠: W:70.688px H:28px -->
       <a href="/en/" aria-label="Go to top" class="inline-block">
@@ -111,20 +111,20 @@
     </div>
   </div>
 
-  <!-- PC Header (1024px+) - Figma準拠 -->
-  <div class="hidden lg:block">
-    <!-- 1024px以上: Figma準拠マージン -->
-    <div class="mx-auto lg:px-[40px] xl:px-[80px] py-4 max-w-[1440px]">
+  <!-- PC Header (1301px+) - Figma準拠 -->
+  <div class="pc-header">
+    <!-- 1024px以上: Figma準拠マージン（left: 92.81px） -->
+    <div class="mx-auto lg:px-[93px] py-4 max-w-[1440px]">
       <div class="flex items-center justify-between w-full max-w-[1254.388px] mx-auto">
         <!-- Logo -->
-        <a href="/en/" aria-label="Go to top" class="inline-block">
+        <a href="/en/" aria-label="Go to top" class="inline-block flex-shrink-0">
           <img src="/images/logo.png" alt="LOGO" class="h-[40px] w-auto flex-shrink-0 cursor-pointer" />
         </a>
         
         <!-- Navigation & Actions Container -->
-        <div class="flex items-center lg:gap-[40px] xl:gap-[141px]">
+        <div class="flex items-center gap-[141px] flex-shrink-0">
           <!-- Navigation -->
-          <nav class="flex items-center lg:gap-[20px] xl:gap-[47px]">
+          <nav class="flex items-center gap-[47px]">
             <a href="/en/rooms" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity leading-5">ROOM</a>
             <a href="/en/services" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity leading-5">SERVICE</a>
             <a href="/en/plans" class="text-[#436c5e] text-sm tracking-[1.4px] font-['Shippori_Mincho'] hover:opacity-60 transition-opacity leading-5">PLAN</a>
@@ -134,7 +134,7 @@
           </nav>
           
           <!-- Search & Reservation -->
-          <div class="flex items-center lg:gap-[12px] xl:gap-[16px] lg:w-auto xl:w-[271px] justify-end">
+          <div class="flex items-center gap-[16px] w-[271px] justify-end">
             <!-- Instagram Icon - Figma準拠のSVGアイコン -->
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-[29px] h-[29px] hover:opacity-60 transition-opacity duration-300" aria-label="Instagram">
               <svg class="w-[29px] h-[29px]" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -235,6 +235,24 @@
 </script>
 
 <style>
+  .sp-header {
+    display: block;
+  }
+
+  .pc-header {
+    display: none;
+  }
+
+  @media (min-width: 1301px) {
+    .sp-header {
+      display: none;
+    }
+
+    .pc-header {
+      display: block;
+    }
+  }
+
   .header-gradient {
     background-color: rgba(245, 239, 234, 0.1);
   }
