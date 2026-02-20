@@ -69,3 +69,9 @@ npm run dev
 ## 各ページの設計書
 
 `docs/page-specs.md` に記載しています。
+
+## SEO
+
+- 各ページ共通のメタ情報は `src/layouts/Layout.astro` で管理しています。
+- `description` はページ単位で指定可能です。
+- `Astro.site` が設定されている場合、`canonical` と `hreflang` を出力します。

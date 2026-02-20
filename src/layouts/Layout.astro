@@ -8,16 +8,37 @@ export interface Props {
 }
 
 const { title, description } = Astro.props;
+const pathname = Astro.url?.pathname ?? "/";
+const isEn = pathname.startsWith("/en");
+const lang = isEn ? "en" : "ja";
+const resolvedDescription =
+  description || "山と川に恵まれた自然の中で、特別なひとときをお過ごしください。";
+const ogLocale = isEn ? "en_US" : "ja_JP";
+const canonicalUrl = Astro.site ? new URL(pathname, Astro.site).toString() : null;
+const alternateJa = Astro.site ? new URL(pathname.replace(/^\/en/, "/ja"), Astro.site).toString() : null;
+const alternateEn = Astro.site ? new URL(pathname.replace(/^\/ja/, "/en"), Astro.site).toString() : null;
 ---
 
 <!DOCTYPE html>
-<html lang="ja">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description || "山と川に恵まれた自然の中で、特別なひとときをお過ごしください。"} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={resolvedDescription} />
+    <meta name="robots" content="index,follow" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
+    {alternateJa ? <link rel="alternate" hrefLang="ja" href={alternateJa} /> : null}
+    {alternateEn ? <link rel="alternate" hrefLang="en" href={alternateEn} /> : null}
     <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={resolvedDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={ogLocale} />
+    {canonicalUrl ? <meta property="og:url" content={canonicalUrl} /> : null}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={resolvedDescription} />
   </head>
   <body class="font-shippori text-text-color">
     <main>
